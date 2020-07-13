@@ -7,26 +7,30 @@
 //
 
 #import "MaskListingViewController.h"
+#import "SceneDelegate.h"
+#import <Parse/Parse.h>
+
+#pragma mark - Interface
 
 @interface MaskListingViewController ()
 
 @end
 
+#pragma mark - Implementation
+
 @implementation MaskListingViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
+#pragma mark - Gesture Recognizers
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)onTapLogout:(id)sender
+{
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+           SceneDelegate *const sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+           UIStoryboard *const storyboard = [UIStoryboard storyboardWithName:@"Main"
+                                                                      bundle:nil];
+           UIViewController *const viewController = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
+           sceneDelegate.window.rootViewController = viewController;
+       }];
 }
-*/
 
 @end
