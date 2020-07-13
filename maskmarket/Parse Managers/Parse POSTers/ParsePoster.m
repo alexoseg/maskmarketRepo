@@ -23,4 +23,16 @@
     [user signUpInBackgroundWithBlock:completion];
 }
 
++ (void)loginWithUsername:(NSString *)username
+              password:(NSString *)password
+        withCompletion:(void (^)(PFUser * _Nullable, NSError * _Nullable))completion
+{
+    NSString *const copyUsername = [username copy];
+    NSString *const copyPassword = [password copy];
+    
+    [PFUser logInWithUsernameInBackground:copyUsername
+                                 password:copyPassword
+                                    block:completion];
+}
+
 @end

@@ -14,9 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ParsePoster : NSObject
 
 + (void)createAccountWithUsername:(NSString *)username
-                            email:(NSString *)password
+                            email:(NSString *)email
                          password:(NSString *)password
                    withCompletion:(PFBooleanResultBlock _Nullable)completion;
+
++ (void)loginWithUsername:(NSString *)username
+              password:(NSString *)password
+        withCompletion:(void (^)(PFUser * _Nullable, NSError * _Nullable))completion;
 
 + (instancetype)new NS_UNAVAILABLE;
 
