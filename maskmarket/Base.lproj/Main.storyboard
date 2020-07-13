@@ -31,7 +31,7 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tph-Lp-jsO">
-                                <rect key="frame" x="35" y="355" width="344" height="34"/>
+                                <rect key="frame" x="35" y="345" width="344" height="34"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
@@ -41,25 +41,32 @@
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Uf-r8-9Lb">
-                                <rect key="frame" x="35" y="424" width="344" height="34"/>
+                                <rect key="frame" x="35" y="404" width="344" height="34"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziT-1R-xHT">
-                                <rect key="frame" x="34.999999999999993" y="520" width="101.33333333333331" height="30.666666666666629"/>
+                                <rect key="frame" x="34.999999999999993" y="500.00000000000006" width="101.33333333333331" height="30.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aT-zG-qQE">
-                                <rect key="frame" x="349" y="520.66666666666663" width="30" height="30"/>
-                                <state key="normal" title="Go"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aT-zG-qQE" customClass="NextCustomButton">
+                                <rect key="frame" x="319" y="485.33333333333326" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="PCD-f0-mDQ"/>
+                                    <constraint firstAttribute="width" constant="60" id="ezt-TA-LTR"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="onTapSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F2E-BK-CS4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUN-an-kOl">
-                                <rect key="frame" x="35" y="610.66666666666663" width="47" height="30"/>
+                                <rect key="frame" x="35" y="590.66666666666663" width="54" height="31"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
                                 <state key="normal" title="Sign In"/>
                             </button>
                         </subviews>
@@ -67,34 +74,35 @@
                         <constraints>
                             <constraint firstItem="IJC-8l-WmG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="110" id="1dc-JC-Sn9"/>
                             <constraint firstItem="Tph-Lp-jsO" firstAttribute="trailing" secondItem="WuB-q5-87v" secondAttribute="trailing" id="3bL-Yb-Ifi"/>
+                            <constraint firstItem="4aT-zG-qQE" firstAttribute="centerY" secondItem="ziT-1R-xHT" secondAttribute="centerY" id="5uh-XN-Ojo"/>
                             <constraint firstItem="Tph-Lp-jsO" firstAttribute="leading" secondItem="WuB-q5-87v" secondAttribute="leading" id="AF4-a4-SAo"/>
                             <constraint firstItem="WuB-q5-87v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="Bti-3V-qg8"/>
                             <constraint firstItem="AUN-an-kOl" firstAttribute="top" secondItem="ziT-1R-xHT" secondAttribute="bottom" constant="60" id="CHb-Ia-uBN"/>
                             <constraint firstItem="ziT-1R-xHT" firstAttribute="top" secondItem="0Uf-r8-9Lb" secondAttribute="bottom" constant="62" id="Kuh-1I-fd3"/>
-                            <constraint firstItem="Tph-Lp-jsO" firstAttribute="top" secondItem="WuB-q5-87v" secondAttribute="bottom" constant="35" id="Pi8-p2-fHT"/>
+                            <constraint firstItem="Tph-Lp-jsO" firstAttribute="top" secondItem="WuB-q5-87v" secondAttribute="bottom" constant="25" id="Pi8-p2-fHT"/>
                             <constraint firstItem="IJC-8l-WmG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ptn-6r-pzQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WuB-q5-87v" secondAttribute="trailing" constant="35" id="RwY-eu-sna"/>
                             <constraint firstItem="AUN-an-kOl" firstAttribute="leading" secondItem="WuB-q5-87v" secondAttribute="leading" id="aoC-PL-BxW"/>
                             <constraint firstItem="0Uf-r8-9Lb" firstAttribute="trailing" secondItem="WuB-q5-87v" secondAttribute="trailing" id="bCH-Uk-1xF"/>
                             <constraint firstItem="0Uf-r8-9Lb" firstAttribute="leading" secondItem="WuB-q5-87v" secondAttribute="leading" id="fA7-yu-dCp"/>
                             <constraint firstItem="ziT-1R-xHT" firstAttribute="leading" secondItem="WuB-q5-87v" secondAttribute="leading" id="hzc-LH-Hwr"/>
-                            <constraint firstItem="4aT-zG-qQE" firstAttribute="bottom" secondItem="ziT-1R-xHT" secondAttribute="bottom" id="jiP-Qb-kUR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="AUN-an-kOl" secondAttribute="trailing" constant="35" id="kkR-65-93c"/>
                             <constraint firstItem="WuB-q5-87v" firstAttribute="top" secondItem="IJC-8l-WmG" secondAttribute="bottom" constant="80" id="oLR-UE-cfJ"/>
-                            <constraint firstItem="0Uf-r8-9Lb" firstAttribute="top" secondItem="Tph-Lp-jsO" secondAttribute="bottom" constant="35" id="rCM-E4-FqI"/>
+                            <constraint firstItem="0Uf-r8-9Lb" firstAttribute="top" secondItem="Tph-Lp-jsO" secondAttribute="bottom" constant="25" id="rCM-E4-FqI"/>
                             <constraint firstItem="4aT-zG-qQE" firstAttribute="trailing" secondItem="WuB-q5-87v" secondAttribute="trailing" id="zJQ-w8-9Dz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="Tph-Lp-jsO" id="oVv-lg-MdL"/>
+                        <outlet property="nextButton" destination="4aT-zG-qQE" id="Xcu-j0-KFs"/>
                         <outlet property="passwordTextField" destination="0Uf-r8-9Lb" id="aIb-Wl-gdQ"/>
                         <outlet property="usernameTextField" destination="WuB-q5-87v" id="Tz6-BR-CKm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="103"/>
+            <point key="canvasLocation" x="58" y="107"/>
         </scene>
     </scenes>
     <resources>
