@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="58" y="107"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="lRx-bb-ul0">
             <objects>
-                <viewController id="qR1-62-agK" sceneMemberID="viewController">
+                <viewController id="qR1-62-agK" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lia-2a-5Cz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -145,6 +145,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="onLoginTap:" destination="qR1-62-agK" eventType="touchUpInside" id="btk-33-FtC"/>
                                     <action selector="onTapSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Uj-AT-jh4"/>
                                 </connections>
                             </button>
@@ -173,6 +174,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aI1-iz-sOD"/>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="q6B-xp-h5f" id="C63-nr-hpp"/>
+                        <outlet property="usernameTextField" destination="Iz8-7h-0xx" id="NHd-x2-6TQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZ6-HP-euI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
