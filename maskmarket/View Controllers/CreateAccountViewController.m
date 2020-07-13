@@ -8,6 +8,7 @@
 
 #import "CreateAccountViewController.h"
 #import "ParsePoster.h"
+#import "SceneDelegate.h"
 
 #pragma mark - Interface
 
@@ -45,6 +46,10 @@
             NSLog(@"%@", error.localizedDescription);
         } else {
             NSLog(@"Create Account Successful!");
+            SceneDelegate *const sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+            UIStoryboard *const storyboard = [UIStoryboard storyboardWithName:@"Main"
+                                                                       bundle:nil];
+            sceneDelegate.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"homeTabController"];
         }
     }];
 }
