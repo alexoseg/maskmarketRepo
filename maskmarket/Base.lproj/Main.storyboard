@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TGo-QS-OkX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qR1-62-agK">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -111,7 +111,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="ocD-LW-pmO">
             <objects>
-                <tabBarController id="TGo-QS-OkX" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="homeTabController" id="TGo-QS-OkX" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WZS-ed-OL9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -151,7 +151,7 @@
         <!--Home Screen-->
         <scene sceneID="UxO-eY-Vca">
             <objects>
-                <viewController id="qe7-YN-34P" sceneMemberID="viewController">
+                <viewController id="qe7-YN-34P" customClass="MaskListingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RcY-NS-lZl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,6 +161,9 @@
                     <navigationItem key="navigationItem" title="Home Screen" id="4da-st-HaF">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="Wk4-2V-C5M">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onTapLogout:" destination="qe7-YN-34P" id="XGB-uU-Ift"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -171,7 +174,7 @@
         <!--Login View Controller-->
         <scene sceneID="lRx-bb-ul0">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="qR1-62-agK" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" modalPresentationStyle="fullScreen" id="qR1-62-agK" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lia-2a-5Cz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,7 +197,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3b-8G-9ag">
-                                <rect key="frame" x="35.000000000000007" y="441" width="89.666666666666686" height="30"/>
+                                <rect key="frame" x="34.999999999999993" y="441" width="77.333333333333314" height="30"/>
                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -214,7 +217,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAl-Ff-dhH">
-                                <rect key="frame" x="35" y="496" width="61" height="31"/>
+                                <rect key="frame" x="35" y="496" width="54" height="30"/>
                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
