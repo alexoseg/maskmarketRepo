@@ -57,6 +57,12 @@
                                          forEvent:nil];
 }
 
+- (IBAction)onSignInTap:(id)sender
+{
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
+}
+
 #pragma mark - Setup
 
 - (void)setupViews

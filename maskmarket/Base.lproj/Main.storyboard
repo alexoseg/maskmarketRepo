@@ -18,7 +18,7 @@
         <!--Create Account View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CreateAccountViewController" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="currentContext" id="BYZ-38-t0r" customClass="CreateAccountViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,13 +46,13 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziT-1R-xHT">
-                                <rect key="frame" x="35" y="499.99999999999994" width="90" height="29.333333333333314"/>
+                                <rect key="frame" x="34.999999999999993" y="500.00000000000006" width="101.33333333333331" height="30.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aT-zG-qQE" customClass="NextCustomButton">
-                                <rect key="frame" x="319" y="484.66666666666674" width="60" height="60"/>
+                                <rect key="frame" x="319" y="485.33333333333326" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="PCD-f0-mDQ"/>
                                     <constraint firstAttribute="width" constant="60" id="ezt-TA-LTR"/>
@@ -65,9 +65,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUN-an-kOl">
-                                <rect key="frame" x="35" y="589.33333333333337" width="47" height="30"/>
+                                <rect key="frame" x="35" y="555.66666666666663" width="54" height="31"/>
                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
                                 <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="onSignInTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9zw-KY-0Fj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -77,7 +80,7 @@
                             <constraint firstItem="4aT-zG-qQE" firstAttribute="centerY" secondItem="ziT-1R-xHT" secondAttribute="centerY" id="5uh-XN-Ojo"/>
                             <constraint firstItem="Tph-Lp-jsO" firstAttribute="leading" secondItem="WuB-q5-87v" secondAttribute="leading" id="AF4-a4-SAo"/>
                             <constraint firstItem="WuB-q5-87v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="Bti-3V-qg8"/>
-                            <constraint firstItem="AUN-an-kOl" firstAttribute="top" secondItem="ziT-1R-xHT" secondAttribute="bottom" constant="60" id="CHb-Ia-uBN"/>
+                            <constraint firstItem="AUN-an-kOl" firstAttribute="top" secondItem="ziT-1R-xHT" secondAttribute="bottom" constant="25" id="CHb-Ia-uBN"/>
                             <constraint firstItem="ziT-1R-xHT" firstAttribute="top" secondItem="0Uf-r8-9Lb" secondAttribute="bottom" constant="62" id="Kuh-1I-fd3"/>
                             <constraint firstItem="Tph-Lp-jsO" firstAttribute="top" secondItem="WuB-q5-87v" secondAttribute="bottom" constant="25" id="Pi8-p2-fHT"/>
                             <constraint firstItem="IJC-8l-WmG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ptn-6r-pzQ"/>
@@ -93,6 +96,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Q8Z-LI-cFc"/>
                     <connections>
                         <outlet property="emailTextField" destination="Tph-Lp-jsO" id="oVv-lg-MdL"/>
                         <outlet property="nextButton" destination="4aT-zG-qQE" id="Xcu-j0-KFs"/>
@@ -107,7 +111,7 @@
         <!--Login View Controller-->
         <scene sceneID="lRx-bb-ul0">
             <objects>
-                <viewController id="qR1-62-agK" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="qR1-62-agK" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lia-2a-5Cz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,7 +134,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3b-8G-9ag">
-                                <rect key="frame" x="34.999999999999993" y="441" width="77.333333333333314" height="30"/>
+                                <rect key="frame" x="35.000000000000007" y="441" width="89.666666666666686" height="30"/>
                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -150,9 +154,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAl-Ff-dhH">
-                                <rect key="frame" x="35" y="531" width="54" height="30"/>
+                                <rect key="frame" x="35" y="496" width="61" height="31"/>
                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="onSignUpTap:" destination="qR1-62-agK" eventType="touchUpInside" id="G7L-TB-rWh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -161,7 +168,7 @@
                             <constraint firstItem="ipF-6K-Gkx" firstAttribute="centerY" secondItem="I3b-8G-9ag" secondAttribute="centerY" id="BSf-IG-wz5"/>
                             <constraint firstItem="Iz8-7h-0xx" firstAttribute="top" secondItem="L67-FC-wZ2" secondAttribute="bottom" constant="80" id="KRY-aC-4wt"/>
                             <constraint firstItem="ipF-6K-Gkx" firstAttribute="trailing" secondItem="Iz8-7h-0xx" secondAttribute="trailing" id="Mbk-Dq-AYf"/>
-                            <constraint firstItem="uAl-Ff-dhH" firstAttribute="top" secondItem="I3b-8G-9ag" secondAttribute="bottom" constant="60" id="VTS-4V-lwt"/>
+                            <constraint firstItem="uAl-Ff-dhH" firstAttribute="top" secondItem="I3b-8G-9ag" secondAttribute="bottom" constant="25" id="VTS-4V-lwt"/>
                             <constraint firstItem="Iz8-7h-0xx" firstAttribute="leading" secondItem="aI1-iz-sOD" secondAttribute="leading" constant="35" id="WMn-tG-klQ"/>
                             <constraint firstItem="q6B-xp-h5f" firstAttribute="top" secondItem="Iz8-7h-0xx" secondAttribute="bottom" constant="25" id="bin-vb-qRj"/>
                             <constraint firstItem="uAl-Ff-dhH" firstAttribute="leading" secondItem="Iz8-7h-0xx" secondAttribute="leading" id="hzJ-Bf-cA3"/>
@@ -174,14 +181,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aI1-iz-sOD"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Zo9-N2-gPg"/>
                     <connections>
                         <outlet property="passwordTextField" destination="q6B-xp-h5f" id="C63-nr-hpp"/>
                         <outlet property="usernameTextField" destination="Iz8-7h-0xx" id="NHd-x2-6TQ"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showSignUpSegue" id="zGH-Cn-b8Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZ6-HP-euI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="871" y="107"/>
+            <point key="canvasLocation" x="58" y="-629"/>
         </scene>
     </scenes>
     <resources>

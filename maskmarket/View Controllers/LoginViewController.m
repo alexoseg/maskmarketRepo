@@ -48,6 +48,12 @@
     }];
 }
 
+- (IBAction)onSignUpTap:(id)sender
+{
+    [self performSegueWithIdentifier:@"showSignUpSegue"
+                              sender:nil];
+}
+
 - (void)dismissKeyboard
 {
     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder)
