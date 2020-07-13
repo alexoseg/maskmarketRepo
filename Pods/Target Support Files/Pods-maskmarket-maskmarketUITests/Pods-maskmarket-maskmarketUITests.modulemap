@@ -1,0 +1,6 @@
+framework module Pods_maskmarket_maskmarketUITests {
+  umbrella header "Pods-maskmarket-maskmarketUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
