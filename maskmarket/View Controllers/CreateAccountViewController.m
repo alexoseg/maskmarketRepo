@@ -64,20 +64,6 @@
     UITapGestureRecognizer *const screenTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                       action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:screenTap];
-//    [self setUpButton];
 }
-
-//- (void)setUpButton
-//{
-//    self.nextButton.layer.cornerRadius = self.nextButton.frame.size.width / 2;
-//    UIColor *const appGreen = [UIColor colorWithRed:38.0f/255.0f
-//                                              green:184.0f/255.0f
-//                                               blue:153.0f/255.0f
-//                                              alpha:1.0f];
-//    UIImage *const nextImage = [UIImage imageNamed:@"next.png"];
-//    UIImageView *const myImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
-//    self.nextButton.backgroundColor = appGreen;
-//    self.nextButton.imageView = ;
-//}
 
 @end
