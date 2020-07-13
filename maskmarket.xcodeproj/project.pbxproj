@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		0F97CD7124BCCFA400CA7C9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CD7024BCCFA400CA7C9E /* main.m */; };
 		0F97CD7B24BCCFA400CA7C9E /* maskmarketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CD7A24BCCFA400CA7C9E /* maskmarketTests.m */; };
 		0F97CD8624BCCFA400CA7C9E /* maskmarketUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CD8524BCCFA400CA7C9E /* maskmarketUITests.m */; };
+		0F97CD9624BCDAFB00CA7C9E /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CD9524BCDAFB00CA7C9E /* CreateAccountViewController.m */; };
+		0F97CD9B24BCDBFF00CA7C9E /* ParsePoster.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CD9A24BCDBFF00CA7C9E /* ParsePoster.m */; };
 		277BD8C0ADE42DC2B1DBD5AC /* Pods_maskmarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A51C4A454F0EBD1743F46C /* Pods_maskmarket.framework */; };
 		3E4FBA7AFE1B5E3BC88841D2 /* Pods_maskmarketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3EB4D5E036F75B76B9CB44 /* Pods_maskmarketTests.framework */; };
 		763D322912A57636A5B2004E /* Pods_maskmarket_maskmarketUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1DFF2771C130099606633 /* Pods_maskmarket_maskmarketUITests.framework */; };
@@ -55,6 +57,10 @@
 		0F97CD8124BCCFA400CA7C9E /* maskmarketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = maskmarketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F97CD8524BCCFA400CA7C9E /* maskmarketUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = maskmarketUITests.m; sourceTree = "<group>"; };
 		0F97CD8724BCCFA400CA7C9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F97CD9424BCDAFB00CA7C9E /* CreateAccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateAccountViewController.h; sourceTree = "<group>"; };
+		0F97CD9524BCDAFB00CA7C9E /* CreateAccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateAccountViewController.m; sourceTree = "<group>"; };
+		0F97CD9924BCDBFF00CA7C9E /* ParsePoster.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParsePoster.h; sourceTree = "<group>"; };
+		0F97CD9A24BCDBFF00CA7C9E /* ParsePoster.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParsePoster.m; sourceTree = "<group>"; };
 		1712B4619B99D17884EDEEB5 /* Pods-maskmarketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maskmarketTests.debug.xcconfig"; path = "Target Support Files/Pods-maskmarketTests/Pods-maskmarketTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4853E7F1932583BD3C927CD8 /* Pods-maskmarketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maskmarketTests.release.xcconfig"; path = "Target Support Files/Pods-maskmarketTests/Pods-maskmarketTests.release.xcconfig"; sourceTree = "<group>"; };
 		50A1DFF2771C130099606633 /* Pods_maskmarket_maskmarketUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_maskmarket_maskmarketUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +109,6 @@
 				1712B4619B99D17884EDEEB5 /* Pods-maskmarketTests.debug.xcconfig */,
 				4853E7F1932583BD3C927CD8 /* Pods-maskmarketTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -132,6 +137,8 @@
 		0F97CD5D24BCCFA300CA7C9E /* maskmarket */ = {
 			isa = PBXGroup;
 			children = (
+				0F97CD9724BCDB9400CA7C9E /* Parse Managers */,
+				0F97CD9324BCDAE000CA7C9E /* View Controllers */,
 				0F97CD5E24BCCFA300CA7C9E /* AppDelegate.h */,
 				0F97CD5F24BCCFA300CA7C9E /* AppDelegate.m */,
 				0F97CD6124BCCFA300CA7C9E /* SceneDelegate.h */,
@@ -161,6 +168,32 @@
 				0F97CD8724BCCFA400CA7C9E /* Info.plist */,
 			);
 			path = maskmarketUITests;
+			sourceTree = "<group>";
+		};
+		0F97CD9324BCDAE000CA7C9E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F97CD9424BCDAFB00CA7C9E /* CreateAccountViewController.h */,
+				0F97CD9524BCDAFB00CA7C9E /* CreateAccountViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		0F97CD9724BCDB9400CA7C9E /* Parse Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0F97CD9824BCDBE100CA7C9E /* Parse POSTers */,
+			);
+			path = "Parse Managers";
+			sourceTree = "<group>";
+		};
+		0F97CD9824BCDBE100CA7C9E /* Parse POSTers */ = {
+			isa = PBXGroup;
+			children = (
+				0F97CD9924BCDBFF00CA7C9E /* ParsePoster.h */,
+				0F97CD9A24BCDBFF00CA7C9E /* ParsePoster.m */,
+			);
+			path = "Parse POSTers";
 			sourceTree = "<group>";
 		};
 		8CD8BBC855CDDF70575E4124 /* Frameworks */ = {
@@ -411,7 +444,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F97CD9624BCDAFB00CA7C9E /* CreateAccountViewController.m in Sources */,
 				0F97CD6024BCCFA300CA7C9E /* AppDelegate.m in Sources */,
+				0F97CD9B24BCDBFF00CA7C9E /* ParsePoster.m in Sources */,
 				0F97CD7124BCCFA400CA7C9E /* main.m in Sources */,
 				0F97CD6324BCCFA300CA7C9E /* SceneDelegate.m in Sources */,
 			);
