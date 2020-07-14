@@ -10,6 +10,7 @@
 		0F6C4D9D24BD18A800E2E846 /* MaskListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */; };
 		0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4DA024BD1F8900E2E846 /* MaskListing.m */; };
 		0F8B916424BD2B9400B1FB85 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B916324BD2B9400B1FB85 /* User.m */; };
+		0F8B916824BE208000B1FB85 /* MaskListingBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B916724BE208000B1FB85 /* MaskListingBuilder.m */; };
 		0F97CD6024BCCFA300CA7C9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CD5F24BCCFA300CA7C9E /* AppDelegate.m */; };
 		0F97CD6324BCCFA300CA7C9E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CD6224BCCFA300CA7C9E /* SceneDelegate.m */; };
 		0F97CD6924BCCFA300CA7C9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F97CD6724BCCFA300CA7C9E /* Main.storyboard */; };
@@ -52,6 +53,8 @@
 		0F6C4DA024BD1F8900E2E846 /* MaskListing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListing.m; sourceTree = "<group>"; };
 		0F8B916224BD2B9400B1FB85 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		0F8B916324BD2B9400B1FB85 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		0F8B916624BE208000B1FB85 /* MaskListingBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListingBuilder.h; sourceTree = "<group>"; };
+		0F8B916724BE208000B1FB85 /* MaskListingBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListingBuilder.m; sourceTree = "<group>"; };
 		0F97CD5B24BCCFA300CA7C9E /* maskmarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = maskmarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F97CD5E24BCCFA300CA7C9E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0F97CD5F24BCCFA300CA7C9E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -137,6 +140,7 @@
 		0F6C4D9E24BD1F6500E2E846 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0F8B916524BE206700B1FB85 /* Builders */,
 				0F8B916124BD2B8600B1FB85 /* User */,
 				0F6C4DA224BD1F9000E2E846 /* Mask Listing */,
 			);
@@ -159,6 +163,23 @@
 				0F8B916324BD2B9400B1FB85 /* User.m */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		0F8B916524BE206700B1FB85 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				0F8B916924BE213B00B1FB85 /* Mask Listing Builder */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
+		0F8B916924BE213B00B1FB85 /* Mask Listing Builder */ = {
+			isa = PBXGroup;
+			children = (
+				0F8B916624BE208000B1FB85 /* MaskListingBuilder.h */,
+				0F8B916724BE208000B1FB85 /* MaskListingBuilder.m */,
+			);
+			path = "Mask Listing Builder";
 			sourceTree = "<group>";
 		};
 		0F97CD5224BCCFA300CA7C9E = {
@@ -532,6 +553,7 @@
 				0F97CDBE24BD0C6300CA7C9E /* LoginViewController.m in Sources */,
 				0F97CD7124BCCFA400CA7C9E /* main.m in Sources */,
 				0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */,
+				0F8B916824BE208000B1FB85 /* MaskListingBuilder.m in Sources */,
 				0F97CD6324BCCFA300CA7C9E /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
