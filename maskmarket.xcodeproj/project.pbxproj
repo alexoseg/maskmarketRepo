@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0F6C4D9D24BD18A800E2E846 /* MaskListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */; };
 		0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4DA024BD1F8900E2E846 /* MaskListing.m */; };
-		0F8B916424BD2B9400B1FB85 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B916324BD2B9400B1FB85 /* User.m */; };
 		0F8B916824BE208000B1FB85 /* MaskListingBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B916724BE208000B1FB85 /* MaskListingBuilder.m */; };
 		0F8B916E24BE487300B1FB85 /* ImageTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B916D24BE487300B1FB85 /* ImageTitleViewController.m */; };
 		0F8B917224BE4E1F00B1FB85 /* DescLocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B917124BE4E1F00B1FB85 /* DescLocViewController.m */; };
@@ -54,8 +53,6 @@
 		0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListingViewController.m; sourceTree = "<group>"; };
 		0F6C4D9F24BD1F8900E2E846 /* MaskListing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListing.h; sourceTree = "<group>"; };
 		0F6C4DA024BD1F8900E2E846 /* MaskListing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListing.m; sourceTree = "<group>"; };
-		0F8B916224BD2B9400B1FB85 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		0F8B916324BD2B9400B1FB85 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		0F8B916624BE208000B1FB85 /* MaskListingBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListingBuilder.h; sourceTree = "<group>"; };
 		0F8B916724BE208000B1FB85 /* MaskListingBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListingBuilder.m; sourceTree = "<group>"; };
 		0F8B916C24BE487300B1FB85 /* ImageTitleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageTitleViewController.h; sourceTree = "<group>"; };
@@ -150,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				0F8B916524BE206700B1FB85 /* Builders */,
-				0F8B916124BD2B8600B1FB85 /* User */,
 				0F6C4DA224BD1F9000E2E846 /* Mask Listing */,
 			);
 			path = Models;
@@ -163,15 +159,6 @@
 				0F6C4DA024BD1F8900E2E846 /* MaskListing.m */,
 			);
 			path = "Mask Listing";
-			sourceTree = "<group>";
-		};
-		0F8B916124BD2B8600B1FB85 /* User */ = {
-			isa = PBXGroup;
-			children = (
-				0F8B916224BD2B9400B1FB85 /* User.h */,
-				0F8B916324BD2B9400B1FB85 /* User.m */,
-			);
-			path = User;
 			sourceTree = "<group>";
 		};
 		0F8B916524BE206700B1FB85 /* Builders */ = {
@@ -592,7 +579,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F8B917624BE53AB00B1FB85 /* PriceViewController.m in Sources */,
-				0F8B916424BD2B9400B1FB85 /* User.m in Sources */,
 				0F8B916E24BE487300B1FB85 /* ImageTitleViewController.m in Sources */,
 				0F97CD9624BCDAFB00CA7C9E /* CreateAccountViewController.m in Sources */,
 				0F97CDB824BCFEDE00CA7C9E /* NextCustomButton.m in Sources */,
