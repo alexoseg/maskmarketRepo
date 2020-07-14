@@ -553,11 +553,11 @@
             </objects>
             <point key="canvasLocation" x="58" y="-629"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="MV4-He-1LL">
             <objects>
                 <navigationController id="Ohf-ck-Lvm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="p3M-VW-VCi"/>
+                    <tabBarItem key="tabBarItem" title="" image="sale" id="p3M-VW-VCi"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dq1-d6-IBq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -579,5 +579,6 @@
         <image name="default-image" width="720" height="405"/>
         <image name="home_tab" width="32" height="32"/>
         <image name="mask_icon" width="512" height="512"/>
+        <image name="sale" width="32" height="32"/>
     </resources>
 </document>

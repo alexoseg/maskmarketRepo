@@ -11,6 +11,9 @@
 		0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4DA024BD1F8900E2E846 /* MaskListing.m */; };
 		0F8B916424BD2B9400B1FB85 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B916324BD2B9400B1FB85 /* User.m */; };
 		0F8B916824BE208000B1FB85 /* MaskListingBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B916724BE208000B1FB85 /* MaskListingBuilder.m */; };
+		0F8B916E24BE487300B1FB85 /* ImageTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B916D24BE487300B1FB85 /* ImageTitleViewController.m */; };
+		0F8B917224BE4E1F00B1FB85 /* DescLocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B917124BE4E1F00B1FB85 /* DescLocViewController.m */; };
+		0F8B917624BE53AB00B1FB85 /* PriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B917524BE53AB00B1FB85 /* PriceViewController.m */; };
 		0F97CD6024BCCFA300CA7C9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CD5F24BCCFA300CA7C9E /* AppDelegate.m */; };
 		0F97CD6324BCCFA300CA7C9E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CD6224BCCFA300CA7C9E /* SceneDelegate.m */; };
 		0F97CD6924BCCFA300CA7C9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F97CD6724BCCFA300CA7C9E /* Main.storyboard */; };
@@ -55,6 +58,12 @@
 		0F8B916324BD2B9400B1FB85 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		0F8B916624BE208000B1FB85 /* MaskListingBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListingBuilder.h; sourceTree = "<group>"; };
 		0F8B916724BE208000B1FB85 /* MaskListingBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListingBuilder.m; sourceTree = "<group>"; };
+		0F8B916C24BE487300B1FB85 /* ImageTitleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageTitleViewController.h; sourceTree = "<group>"; };
+		0F8B916D24BE487300B1FB85 /* ImageTitleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageTitleViewController.m; sourceTree = "<group>"; };
+		0F8B917024BE4E1F00B1FB85 /* DescLocViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DescLocViewController.h; sourceTree = "<group>"; };
+		0F8B917124BE4E1F00B1FB85 /* DescLocViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DescLocViewController.m; sourceTree = "<group>"; };
+		0F8B917424BE53AB00B1FB85 /* PriceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PriceViewController.h; sourceTree = "<group>"; };
+		0F8B917524BE53AB00B1FB85 /* PriceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PriceViewController.m; sourceTree = "<group>"; };
 		0F97CD5B24BCCFA300CA7C9E /* maskmarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = maskmarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F97CD5E24BCCFA300CA7C9E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0F97CD5F24BCCFA300CA7C9E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -182,6 +191,43 @@
 			path = "Mask Listing Builder";
 			sourceTree = "<group>";
 		};
+		0F8B916A24BE483600B1FB85 /* Mask Listing Creation Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F8B917324BE539600B1FB85 /* Price Controller */,
+				0F8B916F24BE4DEE00B1FB85 /* Descript and Loc Controller */,
+				0F8B916B24BE484800B1FB85 /* Image and Title Controller */,
+			);
+			path = "Mask Listing Creation Controllers";
+			sourceTree = "<group>";
+		};
+		0F8B916B24BE484800B1FB85 /* Image and Title Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0F8B916C24BE487300B1FB85 /* ImageTitleViewController.h */,
+				0F8B916D24BE487300B1FB85 /* ImageTitleViewController.m */,
+			);
+			path = "Image and Title Controller";
+			sourceTree = "<group>";
+		};
+		0F8B916F24BE4DEE00B1FB85 /* Descript and Loc Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0F8B917024BE4E1F00B1FB85 /* DescLocViewController.h */,
+				0F8B917124BE4E1F00B1FB85 /* DescLocViewController.m */,
+			);
+			path = "Descript and Loc Controller";
+			sourceTree = "<group>";
+		};
+		0F8B917324BE539600B1FB85 /* Price Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0F8B917424BE53AB00B1FB85 /* PriceViewController.h */,
+				0F8B917524BE53AB00B1FB85 /* PriceViewController.m */,
+			);
+			path = "Price Controller";
+			sourceTree = "<group>";
+		};
 		0F97CD5224BCCFA300CA7C9E = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +292,7 @@
 		0F97CD9324BCDAE000CA7C9E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0F8B916A24BE483600B1FB85 /* Mask Listing Creation Controllers */,
 				0F97CD9424BCDAFB00CA7C9E /* CreateAccountViewController.h */,
 				0F97CD9524BCDAFB00CA7C9E /* CreateAccountViewController.m */,
 				0F97CDBC24BD0C6300CA7C9E /* LoginViewController.h */,
@@ -544,7 +591,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F8B917624BE53AB00B1FB85 /* PriceViewController.m in Sources */,
 				0F8B916424BD2B9400B1FB85 /* User.m in Sources */,
+				0F8B916E24BE487300B1FB85 /* ImageTitleViewController.m in Sources */,
 				0F97CD9624BCDAFB00CA7C9E /* CreateAccountViewController.m in Sources */,
 				0F97CDB824BCFEDE00CA7C9E /* NextCustomButton.m in Sources */,
 				0F97CD6024BCCFA300CA7C9E /* AppDelegate.m in Sources */,
@@ -552,6 +601,7 @@
 				0F97CD9B24BCDBFF00CA7C9E /* ParsePoster.m in Sources */,
 				0F97CDBE24BD0C6300CA7C9E /* LoginViewController.m in Sources */,
 				0F97CD7124BCCFA400CA7C9E /* main.m in Sources */,
+				0F8B917224BE4E1F00B1FB85 /* DescLocViewController.m in Sources */,
 				0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */,
 				0F8B916824BE208000B1FB85 /* MaskListingBuilder.m in Sources */,
 				0F97CD6324BCCFA300CA7C9E /* SceneDelegate.m in Sources */,
