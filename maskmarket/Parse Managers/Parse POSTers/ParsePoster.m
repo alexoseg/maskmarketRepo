@@ -8,7 +8,40 @@
 
 #import "ParsePoster.h"
 
+static NSString *const kDescription = @"description";
+static NSString *const kTitle = @"title";
+static NSString *const kCity = @"city";
+static NSString *const kState = @"state";
+static NSString *const kAuthor = @"author";
+static NSString *const kPrice = @"price";
+static NSString *const kPurchased = @"purchased";
+static NSString *const kPurchasedBy = @"purchasedBy";
+static NSString *const kImage = @"image";
+
 @implementation ParsePoster
+
++ (void)createListingFrom:(NSString *)title
+                     city:(NSString *)city
+                    state:(NSString *)state
+              description:(NSString *)description
+                    price:(NSNumber *)price
+                    image:(UIImage *)image
+                   author:(PFUser *)author
+           withCompletion:(PFBooleanResultBlock)completion
+{
+    PFObject *listing = [PFObject objectWithClassName:@"Listings"];
+    listing[kDescription] = description;
+    listing[kTitle] = title;
+    listing[kCity] = city;
+    listing[kState] = state;
+    listing[kAuthor] = PFUser.currentUser;
+    listing[kPrice] = price;
+    listing[kPurchased] = @NO;
+    listing[kPurchasedBy] = [PFUser new];
+    listing[@"image"] = image;
+
+    [listing saveInBackgroundWithBlock:completion];
+}
 
 + (void)createAccountWithUsername:(NSString *)username
                             email:(NSString *)email

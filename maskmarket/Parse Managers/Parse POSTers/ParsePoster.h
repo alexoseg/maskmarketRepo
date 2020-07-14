@@ -13,6 +13,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ParsePoster : NSObject
 
++ (void)createListingFrom:(NSString *)title
+                     city:(NSString *)city
+                    state:(NSString *)state
+              description:(NSString *)description
+                    price:(NSNumber *)price
+                    image:(UIImage *)image
+                   author:(PFUser *)author
+           withCompletion:(PFBooleanResultBlock)completion;
+
 + (void)createAccountWithUsername:(NSString *)username
                             email:(NSString *)email
                          password:(NSString *)password
