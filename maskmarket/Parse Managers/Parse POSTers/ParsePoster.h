@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ParsePoster : NSObject
 
-+ (void)createListingFrom:(NSString *)title
++ (void)createListingFromTitle:(NSString *)title
                      city:(NSString *)city
                     state:(NSString *)state
               description:(NSString *)description

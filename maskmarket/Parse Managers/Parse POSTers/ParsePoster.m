@@ -20,7 +20,7 @@ static NSString *const kImage = @"image";
 
 @implementation ParsePoster
 
-+ (void)createListingFrom:(NSString *)title
++ (void)createListingFromTitle:(NSString *)title
                      city:(NSString *)city
                     state:(NSString *)state
               description:(NSString *)description
@@ -34,10 +34,9 @@ static NSString *const kImage = @"image";
     listing[kTitle] = title;
     listing[kCity] = city;
     listing[kState] = state;
-    listing[kAuthor] = PFUser.currentUser;
+    listing[kAuthor] = author;
     listing[kPrice] = price;
     listing[kPurchased] = @NO;
-    listing[kPurchasedBy] = [PFUser new];
     
     NSData *const imageData = UIImagePNGRepresentation(image);
     listing[kImage] = [PFFileObject fileObjectWithName:@"image.png" data:imageData];
