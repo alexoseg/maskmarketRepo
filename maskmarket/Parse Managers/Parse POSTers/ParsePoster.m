@@ -29,7 +29,7 @@ static NSString *const kImage = @"image";
                    author:(PFUser *)author
            withCompletion:(PFBooleanResultBlock)completion
 {
-    PFObject *listing = [PFObject objectWithClassName:@"Listings"];
+    PFObject *const listing = [PFObject objectWithClassName:@"Listings"];
     listing[kDescription] = description;
     listing[kTitle] = title;
     listing[kCity] = city;
@@ -38,8 +38,10 @@ static NSString *const kImage = @"image";
     listing[kPrice] = price;
     listing[kPurchased] = @NO;
     listing[kPurchasedBy] = [PFUser new];
-    listing[@"image"] = image;
-
+    
+    NSData *const imageData = UIImagePNGRepresentation(image);
+    listing[kImage] = [PFFileObject fileObjectWithName:@"image.png" data:imageData];
+    
     [listing saveInBackgroundWithBlock:completion];
 }
 
