@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0F6C4D9D24BD18A800E2E846 /* MaskListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */; };
+		0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4DA024BD1F8900E2E846 /* MaskListing.m */; };
+		0F8B916424BD2B9400B1FB85 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B916324BD2B9400B1FB85 /* User.m */; };
 		0F97CD6024BCCFA300CA7C9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CD5F24BCCFA300CA7C9E /* AppDelegate.m */; };
 		0F97CD6324BCCFA300CA7C9E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CD6224BCCFA300CA7C9E /* SceneDelegate.m */; };
 		0F97CD6924BCCFA300CA7C9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F97CD6724BCCFA300CA7C9E /* Main.storyboard */; };
@@ -46,6 +48,10 @@
 		03FC078581BDA3D064BC0629 /* Pods-maskmarket-maskmarketUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maskmarket-maskmarketUITests.debug.xcconfig"; path = "Target Support Files/Pods-maskmarket-maskmarketUITests/Pods-maskmarket-maskmarketUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0F6C4D9B24BD18A800E2E846 /* MaskListingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListingViewController.h; sourceTree = "<group>"; };
 		0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListingViewController.m; sourceTree = "<group>"; };
+		0F6C4D9F24BD1F8900E2E846 /* MaskListing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListing.h; sourceTree = "<group>"; };
+		0F6C4DA024BD1F8900E2E846 /* MaskListing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListing.m; sourceTree = "<group>"; };
+		0F8B916224BD2B9400B1FB85 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		0F8B916324BD2B9400B1FB85 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		0F97CD5B24BCCFA300CA7C9E /* maskmarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = maskmarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F97CD5E24BCCFA300CA7C9E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0F97CD5F24BCCFA300CA7C9E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -128,6 +134,33 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		0F6C4D9E24BD1F6500E2E846 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0F8B916124BD2B8600B1FB85 /* User */,
+				0F6C4DA224BD1F9000E2E846 /* Mask Listing */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0F6C4DA224BD1F9000E2E846 /* Mask Listing */ = {
+			isa = PBXGroup;
+			children = (
+				0F6C4D9F24BD1F8900E2E846 /* MaskListing.h */,
+				0F6C4DA024BD1F8900E2E846 /* MaskListing.m */,
+			);
+			path = "Mask Listing";
+			sourceTree = "<group>";
+		};
+		0F8B916124BD2B8600B1FB85 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				0F8B916224BD2B9400B1FB85 /* User.h */,
+				0F8B916324BD2B9400B1FB85 /* User.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		0F97CD5224BCCFA300CA7C9E = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +186,7 @@
 		0F97CD5D24BCCFA300CA7C9E /* maskmarket */ = {
 			isa = PBXGroup;
 			children = (
+				0F6C4D9E24BD1F6500E2E846 /* Models */,
 				0F97CDB324BCFD2E00CA7C9E /* Views */,
 				0F97CD9C24BCE4DA00CA7C9E /* Fonts */,
 				0F97CD9724BCDB9400CA7C9E /* Parse Managers */,
@@ -489,6 +523,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F8B916424BD2B9400B1FB85 /* User.m in Sources */,
 				0F97CD9624BCDAFB00CA7C9E /* CreateAccountViewController.m in Sources */,
 				0F97CDB824BCFEDE00CA7C9E /* NextCustomButton.m in Sources */,
 				0F97CD6024BCCFA300CA7C9E /* AppDelegate.m in Sources */,
@@ -496,6 +531,7 @@
 				0F97CD9B24BCDBFF00CA7C9E /* ParsePoster.m in Sources */,
 				0F97CDBE24BD0C6300CA7C9E /* LoginViewController.m in Sources */,
 				0F97CD7124BCCFA400CA7C9E /* main.m in Sources */,
+				0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */,
 				0F97CD6324BCCFA300CA7C9E /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
