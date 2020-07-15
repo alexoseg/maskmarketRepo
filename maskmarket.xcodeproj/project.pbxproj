@@ -29,6 +29,7 @@
 		0F9ECFE024BF5FD60020B289 /* UserBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9ECFDF24BF5FD60020B289 /* UserBuilder.m */; };
 		0F9ECFE324BF72160020B289 /* ParseMaskListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9ECFE224BF72150020B289 /* ParseMaskListing.m */; };
 		0F9ECFEA24BF89330020B289 /* ParseGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9ECFE924BF89330020B289 /* ParseGetter.m */; };
+		0F9ECFED24BF955A0020B289 /* HomeListingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9ECFEC24BF955A0020B289 /* HomeListingCell.m */; };
 		277BD8C0ADE42DC2B1DBD5AC /* Pods_maskmarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A51C4A454F0EBD1743F46C /* Pods_maskmarket.framework */; };
 		3E4FBA7AFE1B5E3BC88841D2 /* Pods_maskmarketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3EB4D5E036F75B76B9CB44 /* Pods_maskmarketTests.framework */; };
 		763D322912A57636A5B2004E /* Pods_maskmarket_maskmarketUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1DFF2771C130099606633 /* Pods_maskmarket_maskmarketUITests.framework */; };
@@ -104,6 +105,8 @@
 		0F9ECFE224BF72150020B289 /* ParseMaskListing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParseMaskListing.m; sourceTree = "<group>"; };
 		0F9ECFE824BF89330020B289 /* ParseGetter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParseGetter.h; sourceTree = "<group>"; };
 		0F9ECFE924BF89330020B289 /* ParseGetter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParseGetter.m; sourceTree = "<group>"; };
+		0F9ECFEB24BF955A0020B289 /* HomeListingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeListingCell.h; sourceTree = "<group>"; };
+		0F9ECFEC24BF955A0020B289 /* HomeListingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeListingCell.m; sourceTree = "<group>"; };
 		1712B4619B99D17884EDEEB5 /* Pods-maskmarketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maskmarketTests.debug.xcconfig"; path = "Target Support Files/Pods-maskmarketTests/Pods-maskmarketTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4853E7F1932583BD3C927CD8 /* Pods-maskmarketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maskmarketTests.release.xcconfig"; path = "Target Support Files/Pods-maskmarketTests/Pods-maskmarketTests.release.xcconfig"; sourceTree = "<group>"; };
 		50A1DFF2771C130099606633 /* Pods_maskmarket_maskmarketUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_maskmarket_maskmarketUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -343,6 +346,8 @@
 			children = (
 				0F97CDB624BCFEDE00CA7C9E /* NextCustomButton.h */,
 				0F97CDB724BCFEDE00CA7C9E /* NextCustomButton.m */,
+				0F9ECFEB24BF955A0020B289 /* HomeListingCell.h */,
+				0F9ECFEC24BF955A0020B289 /* HomeListingCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -635,6 +640,7 @@
 				0F9ECFDC24BF5CA70020B289 /* User.m in Sources */,
 				0F97CD7124BCCFA400CA7C9E /* main.m in Sources */,
 				0F8B917224BE4E1F00B1FB85 /* DescLocViewController.m in Sources */,
+				0F9ECFED24BF955A0020B289 /* HomeListingCell.m in Sources */,
 				0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */,
 				0F8B916824BE208000B1FB85 /* MaskListingBuilder.m in Sources */,
 				0F9ECFE324BF72160020B289 /* ParseMaskListing.m in Sources */,
