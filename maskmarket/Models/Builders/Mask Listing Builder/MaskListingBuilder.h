@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (nullable MaskListing *)buildMaskListingFromPFObject:(PFObject *)object;
 
++ (NSArray<ParseMaskListing *> *)buildParseMaskListingsFromArray:(NSArray<PFObject *> *)listings;
+
 - (nullable MaskListing *)buildLocalMaskListing;
 
 + (instancetype)new NS_UNAVAILABLE;
