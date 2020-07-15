@@ -28,6 +28,7 @@
 		0F9ECFDC24BF5CA70020B289 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9ECFDB24BF5CA70020B289 /* User.m */; };
 		0F9ECFE024BF5FD60020B289 /* UserBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9ECFDF24BF5FD60020B289 /* UserBuilder.m */; };
 		0F9ECFE324BF72160020B289 /* ParseMaskListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9ECFE224BF72150020B289 /* ParseMaskListing.m */; };
+		0F9ECFEA24BF89330020B289 /* ParseGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9ECFE924BF89330020B289 /* ParseGetter.m */; };
 		277BD8C0ADE42DC2B1DBD5AC /* Pods_maskmarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A51C4A454F0EBD1743F46C /* Pods_maskmarket.framework */; };
 		3E4FBA7AFE1B5E3BC88841D2 /* Pods_maskmarketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3EB4D5E036F75B76B9CB44 /* Pods_maskmarketTests.framework */; };
 		763D322912A57636A5B2004E /* Pods_maskmarket_maskmarketUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1DFF2771C130099606633 /* Pods_maskmarket_maskmarketUITests.framework */; };
@@ -101,6 +102,8 @@
 		0F9ECFDF24BF5FD60020B289 /* UserBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserBuilder.m; sourceTree = "<group>"; };
 		0F9ECFE124BF72150020B289 /* ParseMaskListing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParseMaskListing.h; sourceTree = "<group>"; };
 		0F9ECFE224BF72150020B289 /* ParseMaskListing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParseMaskListing.m; sourceTree = "<group>"; };
+		0F9ECFE824BF89330020B289 /* ParseGetter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParseGetter.h; sourceTree = "<group>"; };
+		0F9ECFE924BF89330020B289 /* ParseGetter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParseGetter.m; sourceTree = "<group>"; };
 		1712B4619B99D17884EDEEB5 /* Pods-maskmarketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maskmarketTests.debug.xcconfig"; path = "Target Support Files/Pods-maskmarketTests/Pods-maskmarketTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4853E7F1932583BD3C927CD8 /* Pods-maskmarketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maskmarketTests.release.xcconfig"; path = "Target Support Files/Pods-maskmarketTests/Pods-maskmarketTests.release.xcconfig"; sourceTree = "<group>"; };
 		50A1DFF2771C130099606633 /* Pods_maskmarket_maskmarketUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_maskmarket_maskmarketUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -306,6 +309,7 @@
 		0F97CD9724BCDB9400CA7C9E /* Parse Managers */ = {
 			isa = PBXGroup;
 			children = (
+				0F9ECFE724BF891E0020B289 /* Parse GETters */,
 				0F97CD9824BCDBE100CA7C9E /* Parse POSTers */,
 			);
 			path = "Parse Managers";
@@ -359,6 +363,15 @@
 				0F9ECFDF24BF5FD60020B289 /* UserBuilder.m */,
 			);
 			path = "User Builder";
+			sourceTree = "<group>";
+		};
+		0F9ECFE724BF891E0020B289 /* Parse GETters */ = {
+			isa = PBXGroup;
+			children = (
+				0F9ECFE824BF89330020B289 /* ParseGetter.h */,
+				0F9ECFE924BF89330020B289 /* ParseGetter.m */,
+			);
+			path = "Parse GETters";
 			sourceTree = "<group>";
 		};
 		8CD8BBC855CDDF70575E4124 /* Frameworks */ = {
@@ -617,6 +630,7 @@
 				0F97CD6024BCCFA300CA7C9E /* AppDelegate.m in Sources */,
 				0F6C4D9D24BD18A800E2E846 /* MaskListingViewController.m in Sources */,
 				0F97CD9B24BCDBFF00CA7C9E /* ParsePoster.m in Sources */,
+				0F9ECFEA24BF89330020B289 /* ParseGetter.m in Sources */,
 				0F97CDBE24BD0C6300CA7C9E /* LoginViewController.m in Sources */,
 				0F9ECFDC24BF5CA70020B289 /* User.m in Sources */,
 				0F97CD7124BCCFA400CA7C9E /* main.m in Sources */,
