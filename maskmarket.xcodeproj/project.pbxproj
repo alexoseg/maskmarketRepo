@@ -25,6 +25,9 @@
 		0F97CD9B24BCDBFF00CA7C9E /* ParsePoster.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CD9A24BCDBFF00CA7C9E /* ParsePoster.m */; };
 		0F97CDB824BCFEDE00CA7C9E /* NextCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CDB724BCFEDE00CA7C9E /* NextCustomButton.m */; };
 		0F97CDBE24BD0C6300CA7C9E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CDBD24BD0C6300CA7C9E /* LoginViewController.m */; };
+		0F9ECFDC24BF5CA70020B289 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9ECFDB24BF5CA70020B289 /* User.m */; };
+		0F9ECFE024BF5FD60020B289 /* UserBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9ECFDF24BF5FD60020B289 /* UserBuilder.m */; };
+		0F9ECFE324BF72160020B289 /* ParseMaskListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9ECFE224BF72150020B289 /* ParseMaskListing.m */; };
 		277BD8C0ADE42DC2B1DBD5AC /* Pods_maskmarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A51C4A454F0EBD1743F46C /* Pods_maskmarket.framework */; };
 		3E4FBA7AFE1B5E3BC88841D2 /* Pods_maskmarketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3EB4D5E036F75B76B9CB44 /* Pods_maskmarketTests.framework */; };
 		763D322912A57636A5B2004E /* Pods_maskmarket_maskmarketUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1DFF2771C130099606633 /* Pods_maskmarket_maskmarketUITests.framework */; };
@@ -92,6 +95,12 @@
 		0F97CDB724BCFEDE00CA7C9E /* NextCustomButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextCustomButton.m; sourceTree = "<group>"; };
 		0F97CDBC24BD0C6300CA7C9E /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		0F97CDBD24BD0C6300CA7C9E /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		0F9ECFDA24BF5CA70020B289 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		0F9ECFDB24BF5CA70020B289 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		0F9ECFDE24BF5FD60020B289 /* UserBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserBuilder.h; sourceTree = "<group>"; };
+		0F9ECFDF24BF5FD60020B289 /* UserBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserBuilder.m; sourceTree = "<group>"; };
+		0F9ECFE124BF72150020B289 /* ParseMaskListing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParseMaskListing.h; sourceTree = "<group>"; };
+		0F9ECFE224BF72150020B289 /* ParseMaskListing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParseMaskListing.m; sourceTree = "<group>"; };
 		1712B4619B99D17884EDEEB5 /* Pods-maskmarketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maskmarketTests.debug.xcconfig"; path = "Target Support Files/Pods-maskmarketTests/Pods-maskmarketTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4853E7F1932583BD3C927CD8 /* Pods-maskmarketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maskmarketTests.release.xcconfig"; path = "Target Support Files/Pods-maskmarketTests/Pods-maskmarketTests.release.xcconfig"; sourceTree = "<group>"; };
 		50A1DFF2771C130099606633 /* Pods_maskmarket_maskmarketUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_maskmarket_maskmarketUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +155,7 @@
 		0F6C4D9E24BD1F6500E2E846 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0F9ECFD924BF5C830020B289 /* Users */,
 				0F8B916524BE206700B1FB85 /* Builders */,
 				0F6C4DA224BD1F9000E2E846 /* Mask Listing */,
 			);
@@ -157,6 +167,8 @@
 			children = (
 				0F6C4D9F24BD1F8900E2E846 /* MaskListing.h */,
 				0F6C4DA024BD1F8900E2E846 /* MaskListing.m */,
+				0F9ECFE124BF72150020B289 /* ParseMaskListing.h */,
+				0F9ECFE224BF72150020B289 /* ParseMaskListing.m */,
 			);
 			path = "Mask Listing";
 			sourceTree = "<group>";
@@ -164,6 +176,7 @@
 		0F8B916524BE206700B1FB85 /* Builders */ = {
 			isa = PBXGroup;
 			children = (
+				0F9ECFDD24BF5FC00020B289 /* User Builder */,
 				0F8B916924BE213B00B1FB85 /* Mask Listing Builder */,
 			);
 			path = Builders;
@@ -328,6 +341,24 @@
 				0F97CDB724BCFEDE00CA7C9E /* NextCustomButton.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0F9ECFD924BF5C830020B289 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				0F9ECFDA24BF5CA70020B289 /* User.h */,
+				0F9ECFDB24BF5CA70020B289 /* User.m */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		0F9ECFDD24BF5FC00020B289 /* User Builder */ = {
+			isa = PBXGroup;
+			children = (
+				0F9ECFDE24BF5FD60020B289 /* UserBuilder.h */,
+				0F9ECFDF24BF5FD60020B289 /* UserBuilder.m */,
+			);
+			path = "User Builder";
 			sourceTree = "<group>";
 		};
 		8CD8BBC855CDDF70575E4124 /* Frameworks */ = {
@@ -580,16 +611,19 @@
 			files = (
 				0F8B917624BE53AB00B1FB85 /* PriceViewController.m in Sources */,
 				0F8B916E24BE487300B1FB85 /* ImageTitleViewController.m in Sources */,
+				0F9ECFE024BF5FD60020B289 /* UserBuilder.m in Sources */,
 				0F97CD9624BCDAFB00CA7C9E /* CreateAccountViewController.m in Sources */,
 				0F97CDB824BCFEDE00CA7C9E /* NextCustomButton.m in Sources */,
 				0F97CD6024BCCFA300CA7C9E /* AppDelegate.m in Sources */,
 				0F6C4D9D24BD18A800E2E846 /* MaskListingViewController.m in Sources */,
 				0F97CD9B24BCDBFF00CA7C9E /* ParsePoster.m in Sources */,
 				0F97CDBE24BD0C6300CA7C9E /* LoginViewController.m in Sources */,
+				0F9ECFDC24BF5CA70020B289 /* User.m in Sources */,
 				0F97CD7124BCCFA400CA7C9E /* main.m in Sources */,
 				0F8B917224BE4E1F00B1FB85 /* DescLocViewController.m in Sources */,
 				0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */,
 				0F8B916824BE208000B1FB85 /* MaskListingBuilder.m in Sources */,
+				0F9ECFE324BF72160020B289 /* ParseMaskListing.m in Sources */,
 				0F97CD6324BCCFA300CA7C9E /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

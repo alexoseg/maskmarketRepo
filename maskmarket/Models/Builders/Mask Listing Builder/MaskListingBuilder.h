@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "MaskListing.h"
+#import "ParseMaskListing.h"
 #import <Parse/Parse.h>
+#import "UserBuilder.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber *listingPrice;
 
 + (nullable MaskListing *)buildMaskListingFromPFObject:(PFObject *)object;
+
+- (nullable MaskListing *)buildLocalMaskListing;
 
 + (instancetype)new NS_UNAVAILABLE;
 

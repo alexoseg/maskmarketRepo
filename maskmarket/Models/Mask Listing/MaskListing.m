@@ -10,23 +10,18 @@
 
 @implementation MaskListing
 
-- (instancetype)initWithListingId:(NSString *)listingId
-                        createdAt:(NSDate *)createdAt
-                  maskDescription:(NSString *)maskDescription
+- (instancetype)initWithMaskDescription:(NSString *)maskDescription
                             title:(NSString *)title
                              city:(NSString *)city
                             state:(NSString *)state
-                           author:(PFUser *)author
+                           author:(User *)author
                             price:(int)price
                         purchased:(BOOL)purchased
-                      purchasedBy:(PFUser *)purchasedBy
                         maskImage:(PFFileObject *)maskImage
 {
     self = [super init];
     
     if (self) {
-        _listingId = listingId;
-        _createdAt = createdAt;
         _maskDescription = maskDescription;
         _title = title;
         _city = city;
@@ -34,7 +29,6 @@
         _author = author;
         _price = price;
         _purchased = purchased;
-        _purchasedBy = purchasedBy;
         _maskImage = maskImage;
     }
     

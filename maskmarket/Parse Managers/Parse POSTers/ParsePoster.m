@@ -12,34 +12,36 @@ static NSString *const kDescription = @"description";
 static NSString *const kTitle = @"title";
 static NSString *const kCity = @"city";
 static NSString *const kState = @"state";
-static NSString *const kAuthor = @"author";
+static NSString *const kAuthorUsername = @"authorUsername";
+static NSString *const kAuthorEmail = @"authorEmail";
+static NSString *const kAuthorID = @"authorID";
 static NSString *const kPrice = @"price";
 static NSString *const kPurchased = @"purchased";
-static NSString *const kPurchasedBy = @"purchasedBy";
+static NSString *const kPurchasedUsername = @"purchasedUsername";
+static NSString *const kPurchasedEmail = @"purchasedEmail";
+static NSString *const kPurchasedID = @"purchasedID";
 static NSString *const kImage = @"image";
 
 @implementation ParsePoster
 
-+ (void)createListingFromTitle:(NSString *)title
-                     city:(NSString *)city
-                    state:(NSString *)state
-              description:(NSString *)description
-                    price:(NSNumber *)price
-                    image:(UIImage *)image
-                   author:(PFUser *)author
-           withCompletion:(PFBooleanResultBlock)completion
++(void)createListingFromListing:(MaskListing *)maskListing
+                 withCompletion:(nonnull PFBooleanResultBlock)completion
 {
     PFObject *const listing = [PFObject objectWithClassName:@"Listings"];
-    listing[kDescription] = description;
-    listing[kTitle] = title;
-    listing[kCity] = city;
-    listing[kState] = state;
-    listing[kAuthor] = author;
-    listing[kPrice] = price;
-    listing[kPurchased] = @NO;
+    listing[kDescription] = maskListing.maskDescription;
+    listing[kTitle] = maskListing.title;
+    listing[kCity] = maskListing.city;
+    listing[kState] = maskListing.state;
+    listing[kAuthorUsername] = maskListing.author.username;
+    listing[kAuthorEmail] = maskListing.author.email;
+    listing[kAuthorID] = maskListing.author.userID;
+    listing[kPrice] = [NSNumber numberWithInt:maskListing.price];
+    listing[kPurchased] = [NSNumber numberWithBool:maskListing.purchased];
+    listing[kImage] = maskListing.maskImage;
     
-    NSData *const imageData = UIImagePNGRepresentation(image);
-    listing[kImage] = [PFFileObject fileObjectWithName:@"image.png" data:imageData];
+    listing[kPurchasedUsername] = @"";
+    listing[kPurchasedEmail] = @"";
+    listing[kPurchasedID] = @"";
     
     [listing saveInBackgroundWithBlock:completion];
 }

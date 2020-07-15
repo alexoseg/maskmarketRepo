@@ -8,6 +8,7 @@
 
 #import "PriceViewController.h"
 #import "ParsePoster.h"
+#import "MaskListing.h"
 
 #pragma mark - Interface
 
@@ -34,16 +35,9 @@
 {
     NSNumberFormatter *const formatter = [[NSNumberFormatter alloc]init];
     self.builder.listingPrice = [formatter numberFromString:_priceTextField.text];
-    
-    [ParsePoster createListingFromTitle:_builder.listingTitle
-                                   city:_builder.listingCity
-                                  state:_builder.listingState
-                            description:_builder.listingDescription
-                                  price:_builder.listingPrice
-                                  image:_builder.listingImage
-                                 author:PFUser.currentUser
-                         withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-        
+    MaskListing *const maskListing = [self.builder buildLocalMaskListing];
+    [ParsePoster createListingFromListing:maskListing
+                           withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (error) {
             NSLog(@"%@", error.localizedDescription);
         } else {

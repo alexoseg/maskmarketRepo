@@ -8,19 +8,24 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import "UserBuilder.h"
+#import "MaskListing.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ParsePoster : NSObject
 
-+ (void)createListingFromTitle:(NSString *)title
-                     city:(NSString *)city
-                    state:(NSString *)state
-              description:(NSString *)description
-                    price:(NSNumber *)price
-                    image:(UIImage *)image
-                   author:(PFUser *)author
-           withCompletion:(PFBooleanResultBlock)completion;
++ (void)createListingFromListing:(MaskListing *)maskListing
+                  withCompletion:(PFBooleanResultBlock)completion;
+
+//+ (void)createListingFromTitle:(NSString *)title
+//                     city:(NSString *)city
+//                    state:(NSString *)state
+//              description:(NSString *)description
+//                    price:(NSNumber *)price
+//                    image:(UIImage *)image
+//                   author:(User *)author
+//           withCompletion:(PFBooleanResultBlock)completion;
 
 + (void)createAccountWithUsername:(NSString *)username
                             email:(NSString *)email
