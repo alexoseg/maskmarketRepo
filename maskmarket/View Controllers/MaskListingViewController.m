@@ -9,16 +9,115 @@
 #import "MaskListingViewController.h"
 #import "SceneDelegate.h"
 #import <Parse/Parse.h>
+#import "ParseMaskListing.h"
+#import "HomeListingCell.h"
+#import "ParseGetter.h"
+#import "MaskListingBuilder.h"
 
 #pragma mark - Interface
 
 @interface MaskListingViewController ()
+<UICollectionViewDelegate,
+UICollectionViewDataSource,
+UICollectionViewDelegateFlowLayout>
+
+#pragma mark - Properties
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) NSArray<ParseMaskListing *> *listingsArray;
 
 @end
 
 #pragma mark - Implementation
 
 @implementation MaskListingViewController
+
+#pragma mark - Constants
+
+static int const cellPaddingSize = 15;
+
+#pragma mark - Lifecylce
+
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self setUpViews];
+    [self fetchListings];
+}
+
+#pragma mark - Networking
+
+-(void)fetchListings
+{
+    typeof(self) __weak weakSelf = self;
+    [ParseGetter fetchAllListingsWithCompletion:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        typeof(weakSelf) strongSelf = weakSelf;
+        if (strongSelf == nil) {
+            return;
+        }
+        
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        } else {
+            NSLog(@"Fetched Listings!");
+            strongSelf.listingsArray = [MaskListingBuilder buildParseMaskListingsFromArray:objects];
+            [strongSelf.collectionView reloadData];
+        }
+    }];
+}
+
+#pragma mark - Collection View Code
+
+- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView
+                                   cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath
+{
+    HomeListingCell *const cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeListingCell"
+                                                                      forIndexPath:indexPath];
+    ParseMaskListing *const listing = self.listingsArray[indexPath.item];
+    [cell setUpViewsWithParseMaskListing:listing];
+    
+    return cell;
+}
+
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView
+     numberOfItemsInSection:(NSInteger)section
+{
+    return _listingsArray.count;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    int totalwidth = self.collectionView.bounds.size.width;
+    int numberOfCellsPerRow = 2;
+    int paddingSize = cellPaddingSize * 3;
+    int itemWidth = (CGFloat)((totalwidth - paddingSize) / numberOfCellsPerRow);
+    int itemHeight = itemWidth * 1.05;
+    
+    return CGSizeMake(itemWidth, itemHeight);
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView
+                        layout:(UICollectionViewLayout *)collectionViewLayout
+        insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(cellPaddingSize, cellPaddingSize, 0, cellPaddingSize);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView
+                   layout:(UICollectionViewLayout *)collectionViewLayout
+minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    return cellPaddingSize;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView
+                   layout:(UICollectionViewLayout *)collectionViewLayout
+minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return cellPaddingSize;
+}
 
 #pragma mark - Gesture Recognizers
 
@@ -31,6 +130,14 @@
            UIViewController *const viewController = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
            sceneDelegate.window.rootViewController = viewController;
        }];
+}
+
+#pragma mark - Setup
+
+- (void)setUpViews
+{
+    _collectionView.delegate = self;
+    _collectionView.dataSource = self;
 }
 
 @end
