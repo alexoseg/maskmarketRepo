@@ -18,15 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)createListingFromListing:(MaskListing *)maskListing
                   withCompletion:(PFBooleanResultBlock)completion;
 
-//+ (void)createListingFromTitle:(NSString *)title
-//                     city:(NSString *)city
-//                    state:(NSString *)state
-//              description:(NSString *)description
-//                    price:(NSNumber *)price
-//                    image:(UIImage *)image
-//                   author:(User *)author
-//           withCompletion:(PFBooleanResultBlock)completion;
-
 + (void)createAccountWithUsername:(NSString *)username
                             email:(NSString *)email
                          password:(NSString *)password
