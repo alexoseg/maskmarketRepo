@@ -12,6 +12,13 @@
 
 - (void)setUpViewsWithParseMaskListing:(ParseMaskListing *)listing
 {
+    self.layer.cornerRadius = 5;
+    self.layer.shadowColor = UIColor.blackColor.CGColor;
+    self.layer.shadowOffset = CGSizeMake(0, 2);
+    self.layer.shadowRadius = 3;
+    self.layer.shadowOpacity = 0.25;
+    self.layer.masksToBounds = false;
+    
     _titleTextField.text = listing.title;
     NSString *const locationString = [NSString stringWithFormat:@"%@, %@", listing.city, listing.state];
     _locationTextField.text = locationString;
