@@ -21,13 +21,33 @@ static NSString *const kPurchasedUsername = @"purchasedUsername";
 static NSString *const kPurchasedEmail = @"purchasedEmail";
 static NSString *const kPurchasedID = @"purchasedID";
 static NSString *const kImage = @"image";
+static NSString *const kListings = @"Listings";
 
 @implementation ParsePoster
 
-+(void)createListingFromListing:(MaskListing *)maskListing
++ (void)purchaseListingWithId:(NSString *)maskListingId
+               withCompletion:(PFBooleanResultBlock _Nullable)completion
+{
+    PFQuery *const query = [PFQuery queryWithClassName:kListings];
+    [query getObjectInBackgroundWithId:maskListingId
+                                 block:^(PFObject * _Nullable listing, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        } else {
+            listing[kPurchased] = @YES;
+            User *const purchasedByUser = [UserBuilder buildUserfromPFUser:[PFUser currentUser]];
+            listing[kPurchasedUsername] = purchasedByUser.username;
+            listing[kPurchasedEmail] = purchasedByUser.email;
+            listing[kPurchasedID] = purchasedByUser.userID;
+            [listing saveInBackgroundWithBlock:completion];
+        }
+    }];
+}
+
++ (void)createListingFromListing:(MaskListing *)maskListing
                  withCompletion:(nonnull PFBooleanResultBlock)completion
 {
-    PFObject *const listing = [PFObject objectWithClassName:@"Listings"];
+    PFObject *const listing = [PFObject objectWithClassName:kListings];
     listing[kDescription] = maskListing.maskDescription;
     listing[kTitle] = maskListing.title;
     listing[kCity] = maskListing.city;
