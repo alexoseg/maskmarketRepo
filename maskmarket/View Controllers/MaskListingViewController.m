@@ -13,6 +13,7 @@
 #import "HomeListingCell.h"
 #import "ParseGetter.h"
 #import "MaskListingBuilder.h"
+#import "BuyDetailViewController.h"
 
 #pragma mark - Interface
 
@@ -117,6 +118,18 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
     return cellPaddingSize;
+}
+
+#pragma mark - Gesture Recognizers
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{
+    UICollectionViewCell *const tappedCell = sender;
+    NSIndexPath *const indexPath = [self.collectionView indexPathForCell:tappedCell];
+    ParseMaskListing *const maskListing = self.listingsArray[indexPath.item];
+    BuyDetailViewController *const destinationViewController = [segue destinationViewController];
+    destinationViewController.maskListing = maskListing;
 }
 
 #pragma mark - Gesture Recognizers
