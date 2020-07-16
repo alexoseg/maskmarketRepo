@@ -63,7 +63,7 @@
     
     _profileImageView.layer.cornerRadius = _profileImageView.frame.size.width / 2;
     _priceLabel.text = [NSString stringWithFormat:@"$%d", _maskListing.price];
-    _locationLabel.text = [NSString stringWithFormat:@"%@, %@", _maskListing.city, _maskListing.state]; 
+    _locationLabel.text = [NSString stringWithFormat:@"%@, %@", _maskListing.city, _maskListing.state];
     _titleLabel.text = _maskListing.title;
     _usernameLabel.text = _maskListing.author.username;
     _descriptionLabel.text = _maskListing.maskDescription;
