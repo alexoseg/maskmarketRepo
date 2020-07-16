@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1E850624C0CE1100412F4D /* BuyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E850524C0CE1100412F4D /* BuyDetailViewController.m */; };
 		0F6C4D9D24BD18A800E2E846 /* MaskListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */; };
 		0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4DA024BD1F8900E2E846 /* MaskListing.m */; };
 		0F8B916824BE208000B1FB85 /* MaskListingBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B916724BE208000B1FB85 /* MaskListingBuilder.m */; };
@@ -54,6 +55,8 @@
 
 /* Begin PBXFileReference section */
 		03FC078581BDA3D064BC0629 /* Pods-maskmarket-maskmarketUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maskmarket-maskmarketUITests.debug.xcconfig"; path = "Target Support Files/Pods-maskmarket-maskmarketUITests/Pods-maskmarket-maskmarketUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0F1E850424C0CE1100412F4D /* BuyDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyDetailViewController.h; sourceTree = "<group>"; };
+		0F1E850524C0CE1100412F4D /* BuyDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyDetailViewController.m; sourceTree = "<group>"; };
 		0F6C4D9B24BD18A800E2E846 /* MaskListingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListingViewController.h; sourceTree = "<group>"; };
 		0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListingViewController.m; sourceTree = "<group>"; };
 		0F6C4D9F24BD1F8900E2E846 /* MaskListing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListing.h; sourceTree = "<group>"; };
@@ -298,6 +301,7 @@
 		0F97CD9324BCDAE000CA7C9E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0FD148D224C0CD060018015E /* Details Controllers */,
 				0F8B916A24BE483600B1FB85 /* Mask Listing Creation Controllers */,
 				0F97CD9424BCDAFB00CA7C9E /* CreateAccountViewController.h */,
 				0F97CD9524BCDAFB00CA7C9E /* CreateAccountViewController.m */,
@@ -377,6 +381,15 @@
 				0F9ECFE924BF89330020B289 /* ParseGetter.m */,
 			);
 			path = "Parse GETters";
+			sourceTree = "<group>";
+		};
+		0FD148D224C0CD060018015E /* Details Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F1E850424C0CE1100412F4D /* BuyDetailViewController.h */,
+				0F1E850524C0CE1100412F4D /* BuyDetailViewController.m */,
+			);
+			path = "Details Controllers";
 			sourceTree = "<group>";
 		};
 		8CD8BBC855CDDF70575E4124 /* Frameworks */ = {
@@ -644,6 +657,7 @@
 				0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */,
 				0F8B916824BE208000B1FB85 /* MaskListingBuilder.m in Sources */,
 				0F9ECFE324BF72160020B289 /* ParseMaskListing.m in Sources */,
+				0F1E850624C0CE1100412F4D /* BuyDetailViewController.m in Sources */,
 				0F97CD6324BCCFA300CA7C9E /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
