@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ParseGetter : NSObject
 
++ (void)fetchCurrentUserSellingsWithCompletion:(void (^)(NSArray * _Nullable, NSError * _Nullable))completion;
+
 + (void)fetchAllListingsWithCompletion:(void (^)(NSArray * _Nullable objects, NSError * _Nullable error))completion;
 
 - (instancetype)init NS_UNAVAILABLE;

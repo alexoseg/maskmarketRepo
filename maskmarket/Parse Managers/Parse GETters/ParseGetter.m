@@ -7,6 +7,7 @@
 //
 
 #import "ParseGetter.h"
+#import "UserBuilder.h"
 
 @implementation ParseGetter
 
@@ -23,11 +24,38 @@ static NSString *const kPurchasedUsername = @"purchasedUsername";
 static NSString *const kPurchasedEmail = @"purchasedEmail";
 static NSString *const kPurchasedID = @"purchasedID";
 static NSString *const kImage = @"image";
+static NSString *const kListings = @"Listings";
 
 + (void)fetchAllListingsWithCompletion:(void (^)(NSArray * _Nullable, NSError * _Nullable))completion
 {
-    PFQuery *const query = [PFQuery queryWithClassName:@"Listings"];
-    [query whereKey:@"purchased" equalTo:@NO];
+    PFQuery *const query = [PFQuery queryWithClassName:kListings];
+    [query whereKey:kPurchased equalTo:@NO];
+    
+    [query includeKey:kDescription];
+    [query includeKey:kTitle];
+    [query includeKey:kCity];
+    [query includeKey:kState];
+    [query includeKey:kAuthorUsername];
+    [query includeKey:kAuthorEmail];
+    [query includeKey:kAuthorID];
+    [query includeKey:kPrice];
+    [query includeKey:kPurchased];
+    [query includeKey:kPurchasedUsername];
+    [query includeKey:kPurchasedEmail];
+    [query includeKey:kPurchasedID];
+    [query includeKey:kImage];
+    
+    query.limit = 20;
+    
+    [query findObjectsInBackgroundWithBlock:completion];
+}
+
++ (void)fetchCurrentUserSellingsWithCompletion:(void (^)(NSArray * _Nullable, NSError * _Nullable))completion
+{
+    PFQuery *const query = [PFQuery queryWithClassName:kListings];
+    User *const currentUser = [UserBuilder buildUserfromPFUser:[PFUser currentUser]];
+    
+    [query whereKey:kAuthorID equalTo:currentUser.userID];
     
     [query includeKey:kDescription];
     [query includeKey:kTitle];
