@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0F1E850624C0CE1100412F4D /* BuyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E850524C0CE1100412F4D /* BuyDetailViewController.m */; };
+		0F1E850C24C1063000412F4D /* SellingListingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E850B24C1063000412F4D /* SellingListingCell.m */; };
+		0F1E851024C1082E00412F4D /* SellingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E850F24C1082E00412F4D /* SellingViewController.m */; };
 		0F6C4D9D24BD18A800E2E846 /* MaskListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */; };
 		0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4DA024BD1F8900E2E846 /* MaskListing.m */; };
 		0F8B916824BE208000B1FB85 /* MaskListingBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B916724BE208000B1FB85 /* MaskListingBuilder.m */; };
@@ -57,6 +59,10 @@
 		03FC078581BDA3D064BC0629 /* Pods-maskmarket-maskmarketUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maskmarket-maskmarketUITests.debug.xcconfig"; path = "Target Support Files/Pods-maskmarket-maskmarketUITests/Pods-maskmarket-maskmarketUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0F1E850424C0CE1100412F4D /* BuyDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyDetailViewController.h; sourceTree = "<group>"; };
 		0F1E850524C0CE1100412F4D /* BuyDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyDetailViewController.m; sourceTree = "<group>"; };
+		0F1E850A24C1063000412F4D /* SellingListingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellingListingCell.h; sourceTree = "<group>"; };
+		0F1E850B24C1063000412F4D /* SellingListingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellingListingCell.m; sourceTree = "<group>"; };
+		0F1E850E24C1082E00412F4D /* SellingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellingViewController.h; sourceTree = "<group>"; };
+		0F1E850F24C1082E00412F4D /* SellingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellingViewController.m; sourceTree = "<group>"; };
 		0F6C4D9B24BD18A800E2E846 /* MaskListingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListingViewController.h; sourceTree = "<group>"; };
 		0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListingViewController.m; sourceTree = "<group>"; };
 		0F6C4D9F24BD1F8900E2E846 /* MaskListing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListing.h; sourceTree = "<group>"; };
@@ -159,6 +165,15 @@
 				4853E7F1932583BD3C927CD8 /* Pods-maskmarketTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		0F1E850D24C1081100412F4D /* Selling Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F1E850E24C1082E00412F4D /* SellingViewController.h */,
+				0F1E850F24C1082E00412F4D /* SellingViewController.m */,
+			);
+			path = "Selling Controllers";
 			sourceTree = "<group>";
 		};
 		0F6C4D9E24BD1F6500E2E846 /* Models */ = {
@@ -301,6 +316,7 @@
 		0F97CD9324BCDAE000CA7C9E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0F1E850D24C1081100412F4D /* Selling Controllers */,
 				0FD148D224C0CD060018015E /* Details Controllers */,
 				0F8B916A24BE483600B1FB85 /* Mask Listing Creation Controllers */,
 				0F97CD9424BCDAFB00CA7C9E /* CreateAccountViewController.h */,
@@ -352,6 +368,8 @@
 				0F97CDB724BCFEDE00CA7C9E /* NextCustomButton.m */,
 				0F9ECFEB24BF955A0020B289 /* HomeListingCell.h */,
 				0F9ECFEC24BF955A0020B289 /* HomeListingCell.m */,
+				0F1E850A24C1063000412F4D /* SellingListingCell.h */,
+				0F1E850B24C1063000412F4D /* SellingListingCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -651,7 +669,9 @@
 				0F9ECFEA24BF89330020B289 /* ParseGetter.m in Sources */,
 				0F97CDBE24BD0C6300CA7C9E /* LoginViewController.m in Sources */,
 				0F9ECFDC24BF5CA70020B289 /* User.m in Sources */,
+				0F1E850C24C1063000412F4D /* SellingListingCell.m in Sources */,
 				0F97CD7124BCCFA400CA7C9E /* main.m in Sources */,
+				0F1E851024C1082E00412F4D /* SellingViewController.m in Sources */,
 				0F8B917224BE4E1F00B1FB85 /* DescLocViewController.m in Sources */,
 				0F9ECFED24BF955A0020B289 /* HomeListingCell.m in Sources */,
 				0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */,
