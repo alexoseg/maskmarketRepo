@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ParsePoster : NSObject
 
 + (void)purchaseListingWithId:(NSString *)maskListingId
+             amountToPurchase:(int)amountToPurchase
                withCompletion:(PFBooleanResultBlock _Nullable)completion;
 
 + (void)createListingFromListing:(MaskListing *)maskListing

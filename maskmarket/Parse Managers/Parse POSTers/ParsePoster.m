@@ -16,16 +16,15 @@ static NSString *const kAuthorUsername = @"authorUsername";
 static NSString *const kAuthorEmail = @"authorEmail";
 static NSString *const kAuthorID = @"authorID";
 static NSString *const kPrice = @"price";
-static NSString *const kPurchased = @"purchased";
-static NSString *const kPurchasedUsername = @"purchasedUsername";
-static NSString *const kPurchasedEmail = @"purchasedEmail";
-static NSString *const kPurchasedID = @"purchasedID";
+static NSString *const kMaskQuantity = @"maskQuantity";
 static NSString *const kImage = @"image";
 static NSString *const kListings = @"Listings";
+static NSString *const kPurchasedDict = @"purchasedDict";
 
 @implementation ParsePoster
 
 + (void)purchaseListingWithId:(NSString *)maskListingId
+             amountToPurchase:(int)amountToPurchase
                withCompletion:(PFBooleanResultBlock _Nullable)completion
 {
     PFQuery *const query = [PFQuery queryWithClassName:kListings];
@@ -34,11 +33,20 @@ static NSString *const kListings = @"Listings";
         if (error) {
             NSLog(@"%@", error.localizedDescription);
         } else {
-            listing[kPurchased] = @YES;
             User *const purchasedByUser = [UserBuilder buildUserfromPFUser:[PFUser currentUser]];
-            listing[kPurchasedUsername] = purchasedByUser.username;
-            listing[kPurchasedEmail] = purchasedByUser.email;
-            listing[kPurchasedID] = purchasedByUser.userID;
+            int const updatedQuantity = [listing[kMaskQuantity] intValue] - amountToPurchase;
+            listing[kMaskQuantity] = [NSNumber numberWithInt:updatedQuantity];
+            NSMutableDictionary<NSString *, NSNumber *> *purchasedDict = listing[kPurchasedDict];
+            
+            if ([purchasedDict objectForKey:purchasedByUser.userID]) {
+                int const previousQuantity = [purchasedDict[purchasedByUser.userID] intValue];
+                purchasedDict[purchasedByUser.userID] = [NSNumber numberWithInt:(previousQuantity + amountToPurchase)];
+            } else {
+                [purchasedDict setObject:[NSNumber numberWithInt:amountToPurchase]
+                                  forKey:purchasedByUser.userID];
+            }
+            
+            listing[kPurchasedDict] = purchasedDict;
             [listing saveInBackgroundWithBlock:completion];
         }
     }];
@@ -48,6 +56,7 @@ static NSString *const kListings = @"Listings";
                  withCompletion:(nonnull PFBooleanResultBlock)completion
 {
     PFObject *const listing = [PFObject objectWithClassName:kListings];
+    
     listing[kDescription] = maskListing.maskDescription;
     listing[kTitle] = maskListing.title;
     listing[kCity] = maskListing.city;
@@ -56,12 +65,9 @@ static NSString *const kListings = @"Listings";
     listing[kAuthorEmail] = maskListing.author.email;
     listing[kAuthorID] = maskListing.author.userID;
     listing[kPrice] = [NSNumber numberWithInt:maskListing.price];
-    listing[kPurchased] = [NSNumber numberWithBool:maskListing.purchased];
+    listing[kMaskQuantity] = [NSNumber numberWithInt:maskListing.maskQuantity];
     listing[kImage] = maskListing.maskImage;
-    
-    listing[kPurchasedUsername] = @"";
-    listing[kPurchasedEmail] = @"";
-    listing[kPurchasedID] = @"";
+    listing[kPurchasedDict] = @{};
     
     [listing saveInBackgroundWithBlock:completion];
 }
