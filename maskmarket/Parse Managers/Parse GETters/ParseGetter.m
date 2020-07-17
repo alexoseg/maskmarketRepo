@@ -19,17 +19,15 @@ static NSString *const kAuthorUsername = @"authorUsername";
 static NSString *const kAuthorEmail = @"authorEmail";
 static NSString *const kAuthorID = @"authorID";
 static NSString *const kPrice = @"price";
-static NSString *const kPurchased = @"purchased";
-static NSString *const kPurchasedUsername = @"purchasedUsername";
-static NSString *const kPurchasedEmail = @"purchasedEmail";
-static NSString *const kPurchasedID = @"purchasedID";
 static NSString *const kImage = @"image";
+static NSString *const kPurchasedDict = @"purchasedDict";
+static NSString *const kMaskQuantity = @"maskQuantity";
 static NSString *const kListings = @"Listings";
 
 + (void)fetchAllListingsWithCompletion:(void (^)(NSArray * _Nullable, NSError * _Nullable))completion
 {
     PFQuery *const query = [PFQuery queryWithClassName:kListings];
-    [query whereKey:kPurchased equalTo:@NO];
+    [query whereKey:kMaskQuantity greaterThan:@(0)];
     
     [query includeKey:kDescription];
     [query includeKey:kTitle];
@@ -39,10 +37,8 @@ static NSString *const kListings = @"Listings";
     [query includeKey:kAuthorEmail];
     [query includeKey:kAuthorID];
     [query includeKey:kPrice];
-    [query includeKey:kPurchased];
-    [query includeKey:kPurchasedUsername];
-    [query includeKey:kPurchasedEmail];
-    [query includeKey:kPurchasedID];
+    [query includeKey:kPurchasedDict];
+    [query includeKey:kMaskQuantity];
     [query includeKey:kImage];
     
     query.limit = 20;
@@ -65,10 +61,8 @@ static NSString *const kListings = @"Listings";
     [query includeKey:kAuthorEmail];
     [query includeKey:kAuthorID];
     [query includeKey:kPrice];
-    [query includeKey:kPurchased];
-    [query includeKey:kPurchasedUsername];
-    [query includeKey:kPurchasedEmail];
-    [query includeKey:kPurchasedID];
+    [query includeKey:kPurchasedDict];
+    [query includeKey:kMaskQuantity];
     [query includeKey:kImage];
     
     query.limit = 20;
