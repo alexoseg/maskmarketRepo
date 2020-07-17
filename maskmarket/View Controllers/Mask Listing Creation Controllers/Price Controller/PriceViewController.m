@@ -17,6 +17,7 @@
 #pragma mark - Properties
 
 @property (weak, nonatomic) IBOutlet UITextField *priceTextField;
+@property (weak, nonatomic) IBOutlet UITextField *maskQuantityTextField;
 
 @end
 
@@ -35,7 +36,9 @@
 {
     NSNumberFormatter *const formatter = [[NSNumberFormatter alloc]init];
     self.builder.listingPrice = [formatter numberFromString:_priceTextField.text];
+    self.builder.listingMaskQuantity = [formatter numberFromString:_maskQuantityTextField.text];
     MaskListing *const maskListing = [self.builder buildLocalMaskListing];
+    
     [ParsePoster createListingFromListing:maskListing
                            withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (error) {

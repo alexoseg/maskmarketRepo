@@ -799,7 +799,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0X-hX-6lT">
-                                <rect key="frame" x="62" y="271.66666666666669" width="290" height="40"/>
+                                <rect key="frame" x="62" y="269.33333333333331" width="290" height="40"/>
                                 <color key="backgroundColor" red="0.14901960780000001" green="0.72156862749999995" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="bcr-Dr-uud"/>
@@ -812,12 +812,24 @@
                                     <action selector="onTapPost:" destination="7Pp-5W-vIi" eventType="touchUpInside" id="4wj-wW-dgV"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantity" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E1w-V1-2bP">
+                                <rect key="frame" x="100" y="161.66666666666666" width="214" height="57.666666666666657"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57.670000000000002" id="GxV-TO-6Xd"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="dE3-4K-bo3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="g0X-hX-6lT" firstAttribute="top" secondItem="NOG-9V-EJy" secondAttribute="bottom" constant="140" id="3Ux-2K-wZK"/>
                             <constraint firstItem="iC7-aM-lmx" firstAttribute="trailing" secondItem="g0X-hX-6lT" secondAttribute="trailing" constant="62" id="9Jq-v1-sFm"/>
+                            <constraint firstItem="E1w-V1-2bP" firstAttribute="top" secondItem="NOG-9V-EJy" secondAttribute="bottom" constant="30" id="bFF-bn-gSF"/>
+                            <constraint firstItem="E1w-V1-2bP" firstAttribute="leading" secondItem="iC7-aM-lmx" secondAttribute="leading" constant="100" id="bSv-ZE-6nF"/>
                             <constraint firstItem="NOG-9V-EJy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iC7-aM-lmx" secondAttribute="leading" constant="100" id="dpT-xA-6bL"/>
+                            <constraint firstItem="iC7-aM-lmx" firstAttribute="trailing" secondItem="E1w-V1-2bP" secondAttribute="trailing" constant="100" id="fOq-ch-p2y"/>
+                            <constraint firstItem="g0X-hX-6lT" firstAttribute="top" secondItem="E1w-V1-2bP" secondAttribute="bottom" constant="50" id="j9P-IR-fZ9"/>
                             <constraint firstItem="iC7-aM-lmx" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NOG-9V-EJy" secondAttribute="trailing" constant="100" id="loH-EH-Zyk"/>
                             <constraint firstItem="NOG-9V-EJy" firstAttribute="top" secondItem="iC7-aM-lmx" secondAttribute="top" constant="30" id="mno-ip-UqN"/>
                             <constraint firstItem="NOG-9V-EJy" firstAttribute="centerX" secondItem="zfU-Xe-mni" secondAttribute="centerX" id="r3l-ah-HqU"/>
@@ -834,6 +846,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="maskQuantityTextField" destination="E1w-V1-2bP" id="7dl-TX-E5L"/>
                         <outlet property="priceTextField" destination="NOG-9V-EJy" id="h0L-36-eYh"/>
                     </connections>
                 </viewController>
