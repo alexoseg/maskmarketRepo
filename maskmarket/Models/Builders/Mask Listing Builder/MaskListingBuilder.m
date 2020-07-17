@@ -101,7 +101,7 @@ static NSString *const kImage = @"image";
 + (NSArray<ParseMaskListing *> *)buildParseMaskListingsFromArray:(NSArray<PFObject *> *)listings
 {
     NSMutableArray<ParseMaskListing *> *const arrayOfMaskListings = [NSMutableArray new];
-    for (PFObject *listingObject in listings) {
+    for (PFObject *const listingObject in listings) {
         ParseMaskListing *const listing = (ParseMaskListing *)[self buildMaskListingFromPFObject:listingObject];
         if (listing == nil) {
             return nil;
@@ -111,5 +111,4 @@ static NSString *const kImage = @"image";
     
     return [arrayOfMaskListings copy];
 }
-
 @end
