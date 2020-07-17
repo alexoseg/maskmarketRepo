@@ -11,13 +11,13 @@
 @implementation MaskListing
 
 - (instancetype)initWithMaskDescription:(NSString *)maskDescription
-                            title:(NSString *)title
-                             city:(NSString *)city
-                            state:(NSString *)state
-                           author:(User *)author
-                            price:(int)price
-                        purchased:(BOOL)purchased
-                        maskImage:(PFFileObject *)maskImage
+                                  title:(NSString *)title
+                                   city:(NSString *)city
+                                  state:(NSString *)state
+                                 author:(User *)author
+                                  price:(int)price
+                           maskQuantity:(int)maskQuantity
+                              maskImage:(PFFileObject *)maskImage
 {
     self = [super init];
     
@@ -28,7 +28,7 @@
         _state = state;
         _author = author;
         _price = price;
-        _purchased = purchased;
+        _maskQuantity = maskQuantity;
         _maskImage = maskImage;
     }
     

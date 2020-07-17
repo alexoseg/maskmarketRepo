@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) NSString *state;
 @property (nonatomic, strong, readonly) User *author;
 @property (nonatomic, readonly) int price;
-@property (nonatomic, readonly) BOOL purchased;
+@property (nonatomic, readonly) int maskQuantity;
 @property (nonatomic, strong, readonly) PFFileObject *maskImage;
 
 - (instancetype)initWithMaskDescription:(NSString *)maskDescription
@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
                                   state:(NSString *)state
                                  author:(User *)author
                                   price:(int)price
-                              purchased:(BOOL)purchased
+                              maskQuantity:(int)maskQuantity
                               maskImage:(PFFileObject *)maskImage;
 
 + (instancetype)new NS_UNAVAILABLE;

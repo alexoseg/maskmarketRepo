@@ -18,9 +18,9 @@
                             state:(NSString *)state
                            author:(User *)author
                             price:(int)price
-                        purchased:(BOOL)purchased
-                      purchasedBy:(User *)purchasedBy
-                        maskImage:(PFFileObject *)maskImage
+                     maskQuantity:(int)maskQuantity
+                      purchasedDict:(nonnull NSDictionary<NSString *,NSNumber *> *)purchasedDict
+                        maskImage:(nonnull PFFileObject *)maskImage
 {
     self = [super initWithMaskDescription:maskDescription
                                     title:title
@@ -28,13 +28,13 @@
                                     state:state
                                    author:author
                                     price:price
-                                purchased:purchased
+                                maskQuantity:maskQuantity
                                 maskImage:maskImage];
     
     if (self) {
         _listingId = listingId;
         _createdAt = createdAt;
-        _purchasedBy = purchasedBy;
+        _purchasedDict = purchasedDict;
     }
     
     return self;
