@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *listingState;
 @property (nonatomic, strong) NSString *listingDescription;
 @property (nonatomic, strong) NSNumber *listingPrice;
+@property (nonatomic, strong) NSNumber *listingMaskQuantity;
 
 + (nullable MaskListing *)buildMaskListingFromPFObject:(PFObject *)object;
 

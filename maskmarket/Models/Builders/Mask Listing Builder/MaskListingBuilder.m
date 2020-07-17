@@ -16,11 +16,9 @@ static NSString *const kAuthorUsername = @"authorUsername";
 static NSString *const kAuthorEmail = @"authorEmail";
 static NSString *const kAuthorID = @"authorID";
 static NSString *const kPrice = @"price";
-static NSString *const kPurchased = @"purchased";
-static NSString *const kPurchasedUsername = @"purchasedUsername";
-static NSString *const kPurchasedEmail = @"purchasedEmail";
-static NSString *const kPurchasedID = @"purchasedID";
 static NSString *const kImage = @"image";
+static NSString *const kPurchasedDict = @"purchasedDict";
+static NSString *const kMaskQuantity = @"maskQuantity";
 
 @implementation MaskListingBuilder
 
@@ -33,16 +31,15 @@ static NSString *const kImage = @"image";
     NSString *const city = object[kCity];
     NSString *const state = object[kState];
     NSNumber *const price = object[kPrice];
-    NSNumber *const purchased = object[kPurchased];
+    NSNumber *const maskQuantity = object[kMaskQuantity];
+    NSDictionary<NSString *, NSNumber *> *const purchasedDict = object[kPurchasedDict];
+    
     PFFileObject *const image = object[kImage];
     
     User *const author = [UserBuilder buildUserFromUserID:object[kAuthorID]
                                                  username:object[kAuthorUsername]
                                                     email:object[kAuthorEmail]];
-    User *const purchasedBy = [UserBuilder buildUserFromUserID:object[kPurchasedID]
-                                                      username:object[kPurchasedUsername]
-                                                         email:object[kPurchasedEmail]];
-    
+  
     if ( objectId == nil
         || createdAt == nil
         || description == nil
@@ -51,12 +48,11 @@ static NSString *const kImage = @"image";
         || state == nil
         || author == nil
         || price == nil
-        || purchased == nil
+        || maskQuantity == nil
         || image == nil ) {
         
         return nil;
     }
-    
     
     return [[ParseMaskListing alloc] initWithListingId:objectId
                                              createdAt:createdAt
@@ -66,8 +62,8 @@ static NSString *const kImage = @"image";
                                                  state:state
                                                 author:author
                                                  price:[price intValue]
-                                             purchased:[purchased boolValue]
-                                           purchasedBy:purchasedBy
+                                          maskQuantity:[maskQuantity intValue]
+                                         purchasedDict:purchasedDict
                                              maskImage:image];
 }
 
@@ -78,7 +74,8 @@ static NSString *const kImage = @"image";
         || self.listingCity == nil
         || self.listingState == nil
         || self.listingDescription == nil
-        || self.listingPrice == nil ) {
+        || self.listingPrice == nil
+        || self.listingMaskQuantity == nil) {
 
         return nil;
     }
@@ -88,13 +85,13 @@ static NSString *const kImage = @"image";
     NSData *const imageData = UIImagePNGRepresentation(self.listingImage);
     PFFileObject *const fileObject = [PFFileObject fileObjectWithName:@"image.png" data:imageData];
     
-    return [[MaskListing alloc] initWithMaskDescription:self.listingTitle
+    return [[MaskListing alloc] initWithMaskDescription:self.listingDescription
                                                   title:self.listingTitle
                                                    city:self.listingCity
                                                   state:self.listingState
                                                  author:currentUser
                                                   price:[self.listingPrice intValue]
-                                              purchased:[@0 boolValue]
+                                           maskQuantity:[self.listingMaskQuantity intValue]
                                               maskImage:fileObject];
 }
 
