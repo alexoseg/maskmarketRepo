@@ -8,6 +8,7 @@
 
 #import "BuyDetailViewController.h"
 #import "ParsePoster.h"
+#import "PurchaseViewController.h"
 
 #pragma mark - Interface
 
@@ -36,51 +37,6 @@
 {
     [super viewDidLoad];
     [self setUpViews];
-}
-
-#pragma mark - Networking
-- (void)performPurchase
-{
-    [ParsePoster purchaseListingWithId:_maskListing.listingId
-                        withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        } else {
-            NSLog(@"Successful Purchase!");
-            [self.navigationController popViewControllerAnimated:YES];
-        }
-    }];
-}
-
-#pragma mark - Alert Code
-
-- (void) displayAlertWithMessage:(NSString *)alertMessage
-{
-    NSString *const titleMessage = @"Confirm Purchase?";
-    UIAlertController *const alert = [UIAlertController alertControllerWithTitle:titleMessage
-                                                                         message:alertMessage
-                                                                  preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *const confirmAction = [UIAlertAction actionWithTitle:@"Confirm"
-                                                             style:UIAlertActionStyleDefault
-                                                           handler:^(UIAlertAction * _Nonnull action) {
-        [self performPurchase];
-    }];
-    UIAlertAction *const cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
-                                                                style:UIAlertActionStyleDefault
-                                                               handler:nil];
-    [alert addAction:cancelAction];
-    [alert addAction:confirmAction];
-    [self presentViewController:alert
-                       animated:YES
-                     completion:nil];
-}
-
-#pragma mark - Gesture Recognizers
-
-- (IBAction)onTapBuy:(id)sender
-{
-    NSString *const alertMessage = [NSString stringWithFormat:@"Purchase %@?", _maskListing.title];
-    [self displayAlertWithMessage:alertMessage];
 }
 
 #pragma mark - Setup Views
@@ -113,6 +69,15 @@
     _titleLabel.text = _maskListing.title;
     _usernameLabel.text = _maskListing.author.username;
     _descriptionLabel.text = _maskListing.maskDescription;
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{
+    PurchaseViewController *const destinationViewController = [segue destinationViewController];
+    destinationViewController.maskListing = self.maskListing;
 }
 
 @end
