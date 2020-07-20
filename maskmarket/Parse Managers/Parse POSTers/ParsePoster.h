@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "UserBuilder.h"
 #import "MaskListing.h"
+#import "PurchasedObjBuilder.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

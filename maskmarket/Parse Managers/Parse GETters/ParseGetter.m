@@ -20,7 +20,7 @@ static NSString *const kAuthorEmail = @"authorEmail";
 static NSString *const kAuthorID = @"authorID";
 static NSString *const kPrice = @"price";
 static NSString *const kImage = @"image";
-static NSString *const kPurchasedDict = @"purchasedDict";
+static NSString *const kPurchasedArray = @"purchasedArray";
 static NSString *const kMaskQuantity = @"maskQuantity";
 static NSString *const kListings = @"Listings";
 
@@ -37,7 +37,7 @@ static NSString *const kListings = @"Listings";
     [query includeKey:kAuthorEmail];
     [query includeKey:kAuthorID];
     [query includeKey:kPrice];
-    [query includeKey:kPurchasedDict];
+    [query includeKey:kPurchasedArray];
     [query includeKey:kMaskQuantity];
     [query includeKey:kImage];
     
@@ -61,7 +61,7 @@ static NSString *const kListings = @"Listings";
     [query includeKey:kAuthorEmail];
     [query includeKey:kAuthorID];
     [query includeKey:kPrice];
-    [query includeKey:kPurchasedDict];
+    [query includeKey:kPurchasedArray];
     [query includeKey:kMaskQuantity];
     [query includeKey:kImage];
     

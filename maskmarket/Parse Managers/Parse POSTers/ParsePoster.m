@@ -19,7 +19,10 @@ static NSString *const kPrice = @"price";
 static NSString *const kMaskQuantity = @"maskQuantity";
 static NSString *const kImage = @"image";
 static NSString *const kListings = @"Listings";
-static NSString *const kPurchasedDict = @"purchasedDict";
+static NSString *const kPurchasedArray = @"purchasedArray";
+static NSString *const kPurchasedObjs = @"PurchasedObjs";
+static NSString *const kUserID = @"userID";
+static NSString *const kListingID = @"listingID";
 
 @implementation ParsePoster
 
@@ -36,18 +39,16 @@ static NSString *const kPurchasedDict = @"purchasedDict";
             User *const purchasedByUser = [UserBuilder buildUserfromPFUser:[PFUser currentUser]];
             int const updatedQuantity = [listing[kMaskQuantity] intValue] - amountToPurchase;
             listing[kMaskQuantity] = [NSNumber numberWithInt:updatedQuantity];
-            NSMutableDictionary<NSString *, NSNumber *> *purchasedDict = listing[kPurchasedDict];
             
-            if ([purchasedDict objectForKey:purchasedByUser.userID]) {
-                int const previousQuantity = [purchasedDict[purchasedByUser.userID] intValue];
-                purchasedDict[purchasedByUser.userID] = [NSNumber numberWithInt:(previousQuantity + amountToPurchase)];
-            } else {
-                [purchasedDict setObject:[NSNumber numberWithInt:amountToPurchase]
-                                  forKey:purchasedByUser.userID];
-            }
+            PFObject *const purchasedObject = [PFObject objectWithClassName:kPurchasedObjs];
+            purchasedObject[kUserID] = purchasedByUser.userID;
+            purchasedObject[kListingID] = maskListingId;
+            purchasedObject[kMaskQuantity] = [NSNumber numberWithInt:amountToPurchase];
             
-            listing[kPurchasedDict] = purchasedDict;
-            [listing saveInBackgroundWithBlock:completion];
+            [purchasedObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                [listing addObject:purchasedObject.objectId forKey:kPurchasedArray];
+                [listing saveInBackgroundWithBlock:completion];
+            }];
         }
     }];
 }
@@ -67,7 +68,7 @@ static NSString *const kPurchasedDict = @"purchasedDict";
     listing[kPrice] = [NSNumber numberWithInt:maskListing.price];
     listing[kMaskQuantity] = [NSNumber numberWithInt:maskListing.maskQuantity];
     listing[kImage] = maskListing.maskImage;
-    listing[kPurchasedDict] = @{};
+    listing[kPurchasedArray] = @[];
     
     [listing saveInBackgroundWithBlock:completion];
 }
