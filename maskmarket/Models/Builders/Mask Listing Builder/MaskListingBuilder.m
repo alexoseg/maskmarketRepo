@@ -7,6 +7,7 @@
 //
 
 #import "MaskListingBuilder.h"
+#import "PurchasedObjBuilder.h"
 
 static NSString *const kDescription = @"description";
 static NSString *const kTitle = @"title";
@@ -17,8 +18,8 @@ static NSString *const kAuthorEmail = @"authorEmail";
 static NSString *const kAuthorID = @"authorID";
 static NSString *const kPrice = @"price";
 static NSString *const kImage = @"image";
-static NSString *const kPurchasedDict = @"purchasedDict";
 static NSString *const kMaskQuantity = @"maskQuantity";
+static NSString *const kPurchasedArray = @"purchasedArray";
 
 @implementation MaskListingBuilder
 
@@ -32,10 +33,10 @@ static NSString *const kMaskQuantity = @"maskQuantity";
     NSString *const state = object[kState];
     NSNumber *const price = object[kPrice];
     NSNumber *const maskQuantity = object[kMaskQuantity];
-    NSDictionary<NSString *, NSNumber *> *const purchasedDict = object[kPurchasedDict];
+    NSArray<NSString *> *const purchasedObjs = object[kPurchasedArray];
+    
     
     PFFileObject *const image = object[kImage];
-    
     User *const author = [UserBuilder buildUserFromUserID:object[kAuthorID]
                                                  username:object[kAuthorUsername]
                                                     email:object[kAuthorEmail]];
@@ -63,7 +64,7 @@ static NSString *const kMaskQuantity = @"maskQuantity";
                                                 author:author
                                                  price:[price intValue]
                                           maskQuantity:[maskQuantity intValue]
-                                         purchasedDict:purchasedDict
+                                        purchasedArray:purchasedObjs
                                              maskImage:image];
 }
 

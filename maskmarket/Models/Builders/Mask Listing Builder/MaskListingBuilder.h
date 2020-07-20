@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber *listingPrice;
 @property (nonatomic, strong) NSNumber *listingMaskQuantity;
 
-+ (nullable MaskListing *)buildMaskListingFromPFObject:(PFObject *)object;
++ (nullable ParseMaskListing *)buildMaskListingFromPFObject:(PFObject *)object;
 
 + (NSArray<ParseMaskListing *> *)buildParseMaskListingsFromArray:(NSArray<PFObject *> *)listings;
 

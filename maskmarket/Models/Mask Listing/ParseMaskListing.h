@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MaskListing.h"
+#import "PurchaseObj.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) NSString *listingId;
 @property (nonatomic, strong, readonly) NSDate *createdAt;
-@property (nonatomic, strong, readonly) NSDictionary<NSString *, NSNumber *> *purchasedDict;
+@property (nonatomic, strong, readonly) NSArray<NSString *> *purchasedArray;
 
 - (instancetype)initWithListingId:(NSString *)listingId
                         createdAt:(NSDate *)createdAt
@@ -26,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
                            author:(User *)author
                             price:(int)price
                      maskQuantity:(int)maskQuantity
-                      purchasedDict:(NSDictionary<NSString *, NSNumber *> *)purchasedDict
+                   purchasedArray:(NSArray<NSString *> *)purchasedArray
                         maskImage:(PFFileObject *)maskImage;
 
 + (instancetype)new NS_UNAVAILABLE;
