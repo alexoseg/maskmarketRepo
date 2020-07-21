@@ -39,6 +39,7 @@
 		0FC67F4124C63FE600852F89 /* BuyingListingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F4024C63FE600852F89 /* BuyingListingCell.m */; };
 		0FC67F4624C7613700852F89 /* BoughtListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F4524C7613700852F89 /* BoughtListing.m */; };
 		0FC67F4A24C7630A00852F89 /* BoughtListingBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F4924C7630A00852F89 /* BoughtListingBuilder.m */; };
+		0FC67F5024C7915400852F89 /* BoughtDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F4F24C7915400852F89 /* BoughtDetailsViewController.m */; };
 		0FFE3C3424C24C930028466A /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFE3C3324C24C930028466A /* PurchaseViewController.m */; };
 		277BD8C0ADE42DC2B1DBD5AC /* Pods_maskmarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A51C4A454F0EBD1743F46C /* Pods_maskmarket.framework */; };
 		3E4FBA7AFE1B5E3BC88841D2 /* Pods_maskmarketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3EB4D5E036F75B76B9CB44 /* Pods_maskmarketTests.framework */; };
@@ -135,6 +136,8 @@
 		0FC67F4524C7613700852F89 /* BoughtListing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoughtListing.m; sourceTree = "<group>"; };
 		0FC67F4824C7630A00852F89 /* BoughtListingBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoughtListingBuilder.h; sourceTree = "<group>"; };
 		0FC67F4924C7630A00852F89 /* BoughtListingBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoughtListingBuilder.m; sourceTree = "<group>"; };
+		0FC67F4E24C7915400852F89 /* BoughtDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoughtDetailsViewController.h; sourceTree = "<group>"; };
+		0FC67F4F24C7915400852F89 /* BoughtDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoughtDetailsViewController.m; sourceTree = "<group>"; };
 		0FFE3C3224C24C930028466A /* PurchaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchaseViewController.h; sourceTree = "<group>"; };
 		0FFE3C3324C24C930028466A /* PurchaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseViewController.m; sourceTree = "<group>"; };
 		1712B4619B99D17884EDEEB5 /* Pods-maskmarketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maskmarketTests.debug.xcconfig"; path = "Target Support Files/Pods-maskmarketTests/Pods-maskmarketTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -480,6 +483,8 @@
 			children = (
 				0F1E850424C0CE1100412F4D /* BuyDetailViewController.h */,
 				0F1E850524C0CE1100412F4D /* BuyDetailViewController.m */,
+				0FC67F4E24C7915400852F89 /* BoughtDetailsViewController.h */,
+				0FC67F4F24C7915400852F89 /* BoughtDetailsViewController.m */,
 			);
 			path = "Details Controllers";
 			sourceTree = "<group>";
@@ -749,6 +754,7 @@
 				0F97CD6024BCCFA300CA7C9E /* AppDelegate.m in Sources */,
 				0F6C4D9D24BD18A800E2E846 /* MaskListingViewController.m in Sources */,
 				0F97CD9B24BCDBFF00CA7C9E /* ParsePoster.m in Sources */,
+				0FC67F5024C7915400852F89 /* BoughtDetailsViewController.m in Sources */,
 				0F9ECFEA24BF89330020B289 /* ParseGetter.m in Sources */,
 				0FC67F3E24C6377400852F89 /* BuyingViewController.m in Sources */,
 				0FC67F3A24C610AE00852F89 /* PurchasedObjBuilder.m in Sources */,

@@ -10,6 +10,7 @@
 #import "BuyingListingCell.h"
 #import "ParseGetter.h"
 #import "UserBuilder.h"
+#import "BoughtDetailsViewController.h"
 
 #pragma mark - Interface
 
@@ -79,6 +80,17 @@ UITableViewDataSource>
  numberOfRowsInSection:(NSInteger)section
 {
     return _maskListings.count;
+}
+
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{
+    BoughtDetailsViewController *const viewController = [segue destinationViewController];
+    UITableViewCell *const tappedCell = sender;
+    NSIndexPath *const indexPath = [self.tableView indexPathForCell:tappedCell];
+    BoughtListing *const boughtListing = _maskListings[indexPath.row];
+    viewController.boughtListing = boughtListing; 
 }
 
 #pragma mark - Setup
