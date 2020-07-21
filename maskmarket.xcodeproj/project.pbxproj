@@ -35,6 +35,10 @@
 		0F9ECFED24BF955A0020B289 /* HomeListingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9ECFEC24BF955A0020B289 /* HomeListingCell.m */; };
 		0FC67F3624C60D0F00852F89 /* PurchaseObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F3524C60D0F00852F89 /* PurchaseObj.m */; };
 		0FC67F3A24C610AE00852F89 /* PurchasedObjBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F3924C610AE00852F89 /* PurchasedObjBuilder.m */; };
+		0FC67F3E24C6377400852F89 /* BuyingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F3D24C6377400852F89 /* BuyingViewController.m */; };
+		0FC67F4124C63FE600852F89 /* BuyingListingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F4024C63FE600852F89 /* BuyingListingCell.m */; };
+		0FC67F4624C7613700852F89 /* BoughtListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F4524C7613700852F89 /* BoughtListing.m */; };
+		0FC67F4A24C7630A00852F89 /* BoughtListingBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F4924C7630A00852F89 /* BoughtListingBuilder.m */; };
 		0FFE3C3424C24C930028466A /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFE3C3324C24C930028466A /* PurchaseViewController.m */; };
 		277BD8C0ADE42DC2B1DBD5AC /* Pods_maskmarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A51C4A454F0EBD1743F46C /* Pods_maskmarket.framework */; };
 		3E4FBA7AFE1B5E3BC88841D2 /* Pods_maskmarketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3EB4D5E036F75B76B9CB44 /* Pods_maskmarketTests.framework */; };
@@ -123,6 +127,14 @@
 		0FC67F3524C60D0F00852F89 /* PurchaseObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseObj.m; sourceTree = "<group>"; };
 		0FC67F3824C610AE00852F89 /* PurchasedObjBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchasedObjBuilder.h; sourceTree = "<group>"; };
 		0FC67F3924C610AE00852F89 /* PurchasedObjBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchasedObjBuilder.m; sourceTree = "<group>"; };
+		0FC67F3C24C6377400852F89 /* BuyingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyingViewController.h; sourceTree = "<group>"; };
+		0FC67F3D24C6377400852F89 /* BuyingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyingViewController.m; sourceTree = "<group>"; };
+		0FC67F3F24C63FE600852F89 /* BuyingListingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyingListingCell.h; sourceTree = "<group>"; };
+		0FC67F4024C63FE600852F89 /* BuyingListingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyingListingCell.m; sourceTree = "<group>"; };
+		0FC67F4424C7613700852F89 /* BoughtListing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoughtListing.h; sourceTree = "<group>"; };
+		0FC67F4524C7613700852F89 /* BoughtListing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoughtListing.m; sourceTree = "<group>"; };
+		0FC67F4824C7630A00852F89 /* BoughtListingBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoughtListingBuilder.h; sourceTree = "<group>"; };
+		0FC67F4924C7630A00852F89 /* BoughtListingBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoughtListingBuilder.m; sourceTree = "<group>"; };
 		0FFE3C3224C24C930028466A /* PurchaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchaseViewController.h; sourceTree = "<group>"; };
 		0FFE3C3324C24C930028466A /* PurchaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseViewController.m; sourceTree = "<group>"; };
 		1712B4619B99D17884EDEEB5 /* Pods-maskmarketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maskmarketTests.debug.xcconfig"; path = "Target Support Files/Pods-maskmarketTests/Pods-maskmarketTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +200,7 @@
 		0F6C4D9E24BD1F6500E2E846 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0FC67F4324C7611B00852F89 /* Bought Listing */,
 				0FC67F3324C60CEB00852F89 /* Purchase Object */,
 				0F9ECFD924BF5C830020B289 /* Users */,
 				0F8B916524BE206700B1FB85 /* Builders */,
@@ -210,6 +223,7 @@
 		0F8B916524BE206700B1FB85 /* Builders */ = {
 			isa = PBXGroup;
 			children = (
+				0FC67F4724C762F200852F89 /* Bought Listing Builder */,
 				0FC67F3724C6108C00852F89 /* Purchased Obj Builder */,
 				0F9ECFDD24BF5FC00020B289 /* User Builder */,
 				0F8B916924BE213B00B1FB85 /* Mask Listing Builder */,
@@ -327,6 +341,7 @@
 		0F97CD9324BCDAE000CA7C9E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0FC67F3B24C636FB00852F89 /* Buying Controllers */,
 				0FFE3C3124C24C7E0028466A /* Purchase Controllers */,
 				0F1E850D24C1081100412F4D /* Selling Controllers */,
 				0FD148D224C0CD060018015E /* Details Controllers */,
@@ -382,6 +397,8 @@
 				0F9ECFEC24BF955A0020B289 /* HomeListingCell.m */,
 				0F1E850A24C1063000412F4D /* SellingListingCell.h */,
 				0F1E850B24C1063000412F4D /* SellingListingCell.m */,
+				0FC67F3F24C63FE600852F89 /* BuyingListingCell.h */,
+				0FC67F4024C63FE600852F89 /* BuyingListingCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -429,6 +446,33 @@
 				0FC67F3924C610AE00852F89 /* PurchasedObjBuilder.m */,
 			);
 			path = "Purchased Obj Builder";
+			sourceTree = "<group>";
+		};
+		0FC67F3B24C636FB00852F89 /* Buying Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0FC67F3C24C6377400852F89 /* BuyingViewController.h */,
+				0FC67F3D24C6377400852F89 /* BuyingViewController.m */,
+			);
+			path = "Buying Controllers";
+			sourceTree = "<group>";
+		};
+		0FC67F4324C7611B00852F89 /* Bought Listing */ = {
+			isa = PBXGroup;
+			children = (
+				0FC67F4424C7613700852F89 /* BoughtListing.h */,
+				0FC67F4524C7613700852F89 /* BoughtListing.m */,
+			);
+			path = "Bought Listing";
+			sourceTree = "<group>";
+		};
+		0FC67F4724C762F200852F89 /* Bought Listing Builder */ = {
+			isa = PBXGroup;
+			children = (
+				0FC67F4824C7630A00852F89 /* BoughtListingBuilder.h */,
+				0FC67F4924C7630A00852F89 /* BoughtListingBuilder.m */,
+			);
+			path = "Bought Listing Builder";
 			sourceTree = "<group>";
 		};
 		0FD148D224C0CD060018015E /* Details Controllers */ = {
@@ -706,9 +750,11 @@
 				0F6C4D9D24BD18A800E2E846 /* MaskListingViewController.m in Sources */,
 				0F97CD9B24BCDBFF00CA7C9E /* ParsePoster.m in Sources */,
 				0F9ECFEA24BF89330020B289 /* ParseGetter.m in Sources */,
+				0FC67F3E24C6377400852F89 /* BuyingViewController.m in Sources */,
 				0FC67F3A24C610AE00852F89 /* PurchasedObjBuilder.m in Sources */,
 				0F97CDBE24BD0C6300CA7C9E /* LoginViewController.m in Sources */,
 				0F9ECFDC24BF5CA70020B289 /* User.m in Sources */,
+				0FC67F4624C7613700852F89 /* BoughtListing.m in Sources */,
 				0F1E850C24C1063000412F4D /* SellingListingCell.m in Sources */,
 				0F97CD7124BCCFA400CA7C9E /* main.m in Sources */,
 				0F1E851024C1082E00412F4D /* SellingViewController.m in Sources */,
@@ -718,8 +764,10 @@
 				0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */,
 				0F8B916824BE208000B1FB85 /* MaskListingBuilder.m in Sources */,
 				0F9ECFE324BF72160020B289 /* ParseMaskListing.m in Sources */,
+				0FC67F4A24C7630A00852F89 /* BoughtListingBuilder.m in Sources */,
 				0F1E850624C0CE1100412F4D /* BuyDetailViewController.m in Sources */,
 				0FC67F3624C60D0F00852F89 /* PurchaseObj.m in Sources */,
+				0FC67F4124C63FE600852F89 /* BuyingListingCell.m in Sources */,
 				0F97CD6324BCCFA300CA7C9E /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
