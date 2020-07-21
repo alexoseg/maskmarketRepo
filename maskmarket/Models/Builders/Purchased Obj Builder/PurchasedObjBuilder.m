@@ -9,29 +9,41 @@
 #import "PurchasedObjBuilder.h"
 
 static NSString *const kUserID = @"userID";
-static NSString *const kMaskID = @"maskID";
+static NSString *const klistingID = @"listingID";
 static NSString *const kMaskQuantity = @"maskQuantity";
 
 @implementation PurchasedObjBuilder
 
-+ (PurchaseObj *)buildPurchasObjWithUserID:(NSString *)userID
-                                 listingID:(NSString *)listingID
-                              maskQuantity:(NSNumber *)maskQuantity
++ (PurchaseObj *)buildPurchaseObjFromPFObject:(PFObject *)object
 {
-    NSString *const userIDString = [userID copy];
-    NSString *const listingIDString = [listingID copy];
-    NSNumber *const maskQuantityCopy = maskQuantity;
-    
+    NSString *const userIDString = object[kUserID];
+    NSString *const listingIDString = object[klistingID];
+    NSNumber *const maskQuantityCopy = object[kMaskQuantity];
+       
     if (userIDString == nil
         || listingIDString == nil
         || maskQuantityCopy == nil)
     {
         return nil;
     }
-    
+       
     return [[PurchaseObj alloc] initWithUserId:userIDString
                                      listingID:listingIDString
                                   maskQuantity:[maskQuantityCopy intValue]];
+}
+
++ (NSArray<PurchaseObj *> *)buildPurchaseObjArrayfromArray:(NSArray<PFObject *> *)objects
+{
+    NSMutableArray<PurchaseObj *> *const arrayOfPurchaseObjs = [NSMutableArray new];
+    for (PFObject *const object in objects) {
+        PurchaseObj *const purchasObj = [self buildPurchaseObjFromPFObject:object];
+        if (purchasObj == nil) {
+            return nil;
+        }
+        [arrayOfPurchaseObjs addObject:purchasObj];
+    }
+    
+    return [arrayOfPurchaseObjs copy];
 }
 
 @end

@@ -14,9 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PurchasedObjBuilder : NSObject
 
-+ (nullable PurchaseObj *)buildPurchasObjWithUserID:(NSString *)userID
-                                          listingID:(NSString *)listingID
-                                       maskQuantity:(NSNumber *)maskQuantity;
++ (nullable PurchaseObj *)buildPurchaseObjFromPFObject:(PFObject *)object;
+
++ (NSArray<PurchaseObj *> *)buildPurchaseObjArrayfromArray:(NSArray<PFObject *> *) objects; 
 
 - (instancetype)init NS_UNAVAILABLE;
 
