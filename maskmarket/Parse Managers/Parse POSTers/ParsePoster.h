@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)purchaseListingWithId:(NSString *)maskListingId
              amountToPurchase:(int)amountToPurchase
+                  amountSpent:(int)amountSpent
                withCompletion:(PFBooleanResultBlock _Nullable)completion;
 
 + (void)createListingFromListing:(MaskListing *)maskListing

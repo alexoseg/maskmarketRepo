@@ -23,11 +23,13 @@ static NSString *const kPurchasedArray = @"purchasedArray";
 static NSString *const kPurchasedObjs = @"PurchasedObjs";
 static NSString *const kUserID = @"userID";
 static NSString *const kListingID = @"listingID";
+static NSString *const kSpent = @"spent";
 
 @implementation ParsePoster
 
 + (void)purchaseListingWithId:(NSString *)maskListingId
-             amountToPurchase:(int)amountToPurchase
+            amountToPurchase:(int)amountToPurchase
+                  amountSpent:(int)amountSpent
                withCompletion:(PFBooleanResultBlock _Nullable)completion
 {
     PFQuery *const query = [PFQuery queryWithClassName:kListings];
@@ -44,6 +46,7 @@ static NSString *const kListingID = @"listingID";
             purchasedObject[kUserID] = purchasedByUser.userID;
             purchasedObject[kListingID] = maskListingId;
             purchasedObject[kMaskQuantity] = [NSNumber numberWithInt:amountToPurchase];
+            purchasedObject[kSpent] = [NSNumber numberWithInt:amountSpent];
             
             [purchasedObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                 [listing addObject:purchasedObject.objectId forKey:kPurchasedArray];
