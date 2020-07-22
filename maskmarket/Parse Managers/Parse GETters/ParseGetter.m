@@ -30,6 +30,7 @@ static NSString *const kPurchasedObjs = @"PurchasedObjs";
 static NSString *const kUserID = @"userID";
 static NSString *const kListingID = @"listingID";
 static NSString *const kObjectID = @"objectId";
+static NSString *const kSpent = @"spent";
 
 + (void)fetchAllListingsWithCompletion:(void (^)(NSArray * _Nullable, NSError * _Nullable))completion
 {
@@ -85,6 +86,8 @@ static NSString *const kObjectID = @"objectId";
     [query includeKey:kListingID];
     [query includeKey:kUserID];
     [query includeKey:kMaskQuantity];
+    [query includeKey:kSpent];
+
     query.limit = 20;
     
     typeof(self) __weak weakSelf = self;
@@ -102,24 +105,28 @@ static NSString *const kObjectID = @"objectId";
         NSArray<PFQuery *> *const queryObjects = [strongSelf buildQueryArrayFromPurchasedArray:purchasedObjs];
         NSDictionary<NSString *, NSArray<PurchaseObj *> *> *const purchaseMap = [strongSelf mapListingsToPurchasedObjs:purchasedObjs];
         
-        PFQuery *const listingsQuery = [PFQuery orQueryWithSubqueries:queryObjects];
-        [listingsQuery findObjectsInBackgroundWithBlock:^(NSArray<PFObject *> * _Nullable maskListings, NSError * _Nullable error) {
-            if(error) {
-                completion(nil, error);
-                return;
-            }
-            NSMutableArray<BoughtListing *> *const boughtListingArray = [NSMutableArray new];
-            for (PFObject *const mask in maskListings) {
-                ParseMaskListing *const maskListing = [MaskListingBuilder buildMaskListingFromPFObject:mask];
-                NSArray<PurchaseObj *> *const purchases = purchaseMap[maskListing.listingId];
-                for (PurchaseObj *const purchased in purchases) {
-                    BoughtListing *const boughtListing = [BoughtListingBuilder buildBoughtListingFromPurchased:purchased
-                                                                                              parseMaskListing:maskListing];
-                    [boughtListingArray addObject:boughtListing];
+        if (queryObjects.count != 0) {
+            PFQuery *const listingsQuery = [PFQuery orQueryWithSubqueries:queryObjects];
+            [listingsQuery findObjectsInBackgroundWithBlock:^(NSArray<PFObject *> * _Nullable maskListings, NSError * _Nullable error) {
+                if(error) {
+                    completion(nil, error);
+                    return;
                 }
-            }
-            completion(boughtListingArray, nil);
-        }];
+                NSMutableArray<BoughtListing *> *const boughtListingArray = [NSMutableArray new];
+                for (PFObject *const mask in maskListings) {
+                    ParseMaskListing *const maskListing = [MaskListingBuilder buildMaskListingFromPFObject:mask];
+                    NSArray<PurchaseObj *> *const purchases = purchaseMap[maskListing.listingId];
+                    for (PurchaseObj *const purchased in purchases) {
+                        BoughtListing *const boughtListing = [BoughtListingBuilder buildBoughtListingFromPurchased:purchased
+                                                                                                  parseMaskListing:maskListing];
+                        [boughtListingArray addObject:boughtListing];
+                    }
+                }
+                completion(boughtListingArray, nil);
+            }];
+        } else {
+            completion([NSArray new], nil);
+        }
     }];
 }
 
