@@ -14,6 +14,7 @@
 #import "ParseGetter.h"
 #import "MaskListingBuilder.h"
 #import "BuyDetailViewController.h"
+#import "LoadingPopupView.h"
 
 #pragma mark - Interface
 
@@ -43,6 +44,8 @@ static int const cellPaddingSize = 15;
 {
     [super viewDidLoad];
     [self setUpViews];
+    [LoadingPopupView showLoadingPopupAddedTo:self.view
+                                  withMessage:@"Loading..."];
     [self fetchListings];
 }
 
@@ -57,6 +60,7 @@ static int const cellPaddingSize = 15;
             return;
         }
         
+        [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
             NSLog(@"%@", error.localizedDescription);
         } else {
@@ -136,13 +140,21 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
 
 - (IBAction)onTapLogout:(id)sender
 {
+    [LoadingPopupView showLoadingPopupAddedTo:self.view
+                                  withMessage:@"Logging Out..."];
+    typeof(self) __weak weakSelf = self;
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
-           SceneDelegate *const sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
-           UIStoryboard *const storyboard = [UIStoryboard storyboardWithName:@"Main"
-                                                                      bundle:nil];
-           UIViewController *const viewController = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
-           sceneDelegate.window.rootViewController = viewController;
-       }];
+        typeof(weakSelf) strongSelf = weakSelf;
+        if (strongSelf == nil) {
+            return;
+        }
+        [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
+        SceneDelegate *const sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+        UIStoryboard *const storyboard = [UIStoryboard storyboardWithName:@"Main"
+                                                                   bundle:nil];
+        UIViewController *const viewController = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
+        sceneDelegate.window.rootViewController = viewController;
+    }];
 }
 
 #pragma mark - Setup

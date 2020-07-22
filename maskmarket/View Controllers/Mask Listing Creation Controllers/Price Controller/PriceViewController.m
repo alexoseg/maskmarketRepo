@@ -9,6 +9,7 @@
 #import "PriceViewController.h"
 #import "ParsePoster.h"
 #import "MaskListing.h"
+#import "LoadingPopupView.h"
 
 #pragma mark - Interface
 
@@ -34,13 +35,22 @@
 
 - (IBAction)onTapPost:(id)sender
 {
+    [self dismissKeyboard];
     NSNumberFormatter *const formatter = [[NSNumberFormatter alloc]init];
     self.builder.listingPrice = [formatter numberFromString:_priceTextField.text];
     self.builder.listingMaskQuantity = [formatter numberFromString:_maskQuantityTextField.text];
     MaskListing *const maskListing = [self.builder buildLocalMaskListing];
     
+    [LoadingPopupView showLoadingPopupAddedTo:self.view
+                                  withMessage:@"Posting"];
+    typeof(self) __weak weakSelf = self;
     [ParsePoster createListingFromListing:maskListing
                            withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        typeof(weakSelf) strongSelf = weakSelf;
+        if (strongSelf == nil) {
+            return;
+        }
+        [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
             NSLog(@"%@", error.localizedDescription);
         } else {

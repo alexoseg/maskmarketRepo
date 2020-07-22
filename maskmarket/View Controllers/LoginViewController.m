@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "ParsePoster.h"
 #import "SceneDelegate.h"
+#import "LoadingPopupView.h"
 
 #pragma mark - Interface
 
@@ -37,15 +38,23 @@
 
 - (IBAction)onLoginTap:(id)sender
 {
+    [self dismissKeyboard];
+    [LoadingPopupView showLoadingPopupAddedTo:self.view
+                                  withMessage:@"Logging In..."];
+    typeof(self) __weak weakSelf = self;
     [ParsePoster loginWithUsername:_usernameTextField.text
                           password:_passwordTextField.text
                     withCompletion:^(PFUser * _Nullable user, NSError * _Nullable error) {
-        
+        typeof(weakSelf) strongSelf = weakSelf;
+        if (strongSelf == nil) {
+            return;
+        }
+        [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
             NSLog(@"%@", error.localizedDescription);
         } else {
             NSLog(@"Successfully logged in!");
-            SceneDelegate *const sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+            SceneDelegate *const sceneDelegate = (SceneDelegate *)strongSelf.view.window.windowScene.delegate;
             UIStoryboard *const storyboard = [UIStoryboard storyboardWithName:@"Main"
                                                                        bundle:nil];
             sceneDelegate.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"homeTabController"];

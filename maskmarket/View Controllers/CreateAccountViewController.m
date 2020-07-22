@@ -9,6 +9,7 @@
 #import "CreateAccountViewController.h"
 #import "ParsePoster.h"
 #import "SceneDelegate.h"
+#import "LoadingPopupView.h"
 
 #pragma mark - Interface
 
@@ -37,11 +38,20 @@
 
 - (IBAction)onTapSignUp:(id)sender
 {
+    [self dismissKeyboard];
+    [LoadingPopupView showLoadingPopupAddedTo:self.view
+                                  withMessage:@"Signing Up..."];
+    typeof(self) __weak weakSelf = self;
     [ParsePoster createAccountWithUsername:_usernameTextField.text
                                      email:_emailTextField.text
                                   password:_passwordTextField.text
                             withCompletion:^(BOOL succeeded, NSError * _Nullable error)
     {
+        typeof(weakSelf) strongSelf = weakSelf;
+        if(strongSelf == nil) {
+            return;
+        }
+        [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
             NSLog(@"%@", error.localizedDescription);
         } else {

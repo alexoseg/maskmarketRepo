@@ -11,6 +11,7 @@
 #import "ParseMaskListing.h"
 #import "ParseGetter.h"
 #import "MaskListingBuilder.h"
+#import "LoadingPopupView.h"
 
 #pragma mark - Interface
 
@@ -35,6 +36,8 @@ UITableViewDataSource>
 {
     [super viewDidLoad];
     [self setUpViews];
+    [LoadingPopupView showLoadingPopupAddedTo:self.view
+                                  withMessage:@"Loading"];
     [self fetchListings];
 }
 
@@ -50,6 +53,7 @@ UITableViewDataSource>
             return;
         }
         
+        [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
             NSLog(@"%@", error.localizedDescription);
         } else {

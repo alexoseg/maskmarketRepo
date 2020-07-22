@@ -8,6 +8,7 @@
 
 #import "PurchaseViewController.h"
 #import "ParsePoster.h"
+#import "LoadingPopupView.h"
 
 #pragma mark - Interface
 
@@ -39,6 +40,8 @@
 
 - (void)performPurchase
 {
+    [LoadingPopupView showLoadingPopupAddedTo:self.view
+                                  withMessage:@"Purchasing"];
     typeof(self) __weak weakSelf = self;
     [ParsePoster purchaseListingWithId:_maskListing.listingId
                       amountToPurchase:[_quantityTextField.text intValue]
@@ -49,6 +52,7 @@
             return;
         }
         
+        [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
             NSLog(@"%@", error.localizedDescription);
         } else {

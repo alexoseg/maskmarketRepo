@@ -11,6 +11,7 @@
 #import "ParseGetter.h"
 #import "UserBuilder.h"
 #import "BoughtDetailsViewController.h"
+#import "LoadingPopupView.h"
 
 #pragma mark - Interface
 
@@ -35,6 +36,8 @@ UITableViewDataSource>
 {
     [super viewDidLoad];
     [self setUpViews];
+    [LoadingPopupView showLoadingPopupAddedTo:self.view
+                                  withMessage:@"Loading..."];
     [self fetchBoughtListings];
 }
 
@@ -52,6 +55,7 @@ UITableViewDataSource>
             return;
         }
         
+        [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
             NSLog(@"%@", error.localizedDescription);
         } else {
