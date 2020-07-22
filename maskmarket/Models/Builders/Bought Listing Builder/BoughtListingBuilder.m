@@ -15,11 +15,15 @@
 {
     NSString *const listingID = purchaseObj.listingID;
     int const maskQuantity = purchaseObj.maskQuantity;
+    int const spent = purchaseObj.spent;
+    NSDate *const purchasedOnDate = purchaseObj.purchasedOnDate;
     NSString *const maskDescription = maskListing.maskDescription;
     NSString *const title = maskListing.title;
     NSString *const city = maskListing.city;
     NSString *const state = maskListing.state;
     PFFileObject *const maskImage = maskListing.maskImage;
+    NSString *const sellerUsername = maskListing.author.username;
+    int const price = maskListing.price;
     
     if (listingID == nil
         || maskDescription == nil
@@ -27,7 +31,9 @@
         || city == nil
         || state == nil
         || maskImage == nil
-        || maskQuantity == 0)
+        || maskQuantity == 0
+        || purchasedOnDate == nil
+        || sellerUsername == nil)
     {
         return nil;
     }
@@ -38,7 +44,11 @@
                                               title:title
                                                city:city
                                               state:state
-                                          maskImage:maskImage]; 
+                                          maskImage:maskImage
+                                              spent:spent
+                                        purchasedOn:purchasedOnDate
+                                     sellerUsername:sellerUsername
+                                              price:price];
 }
 
 @end

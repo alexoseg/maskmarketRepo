@@ -17,6 +17,10 @@
                              city:(NSString *)city
                             state:(NSString *)state
                         maskImage:(PFFileObject *)maskImage
+                            spent:(int)spent
+                      purchasedOn:(NSDate *)purchasedOn
+                     sellerUsername:(nonnull NSString *)sellerUsername
+                            price:(int)price
 {
     self = [super init];
     
@@ -28,6 +32,10 @@
         _city = city;
         _state = state;
         _maskImage = maskImage;
+        _spent = spent;
+        _purchasedOn = purchasedOn;
+        _sellerUsername = sellerUsername;
+        _price = price;
     }
     
     return self;

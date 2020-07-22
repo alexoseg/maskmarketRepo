@@ -20,6 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) NSString *city;
 @property (nonatomic, strong, readonly) NSString *state;
 @property (nonatomic, strong, readonly) PFFileObject *maskImage;
+@property (nonatomic, readonly) int spent;
+@property (nonatomic, strong, readonly) NSDate *purchasedOn;
+@property (nonatomic, strong, readonly) NSString *sellerUsername;
+@property (nonatomic, readonly) int price;
 
 - (instancetype)init NS_UNAVAILABLE;
 
@@ -31,7 +35,11 @@ NS_ASSUME_NONNULL_BEGIN
                             title:(NSString *)title
                              city:(NSString *)city
                             state:(NSString *)state
-                        maskImage:(PFFileObject *)maskImage;
+                        maskImage:(PFFileObject *)maskImage
+                            spent:(int)spent
+                      purchasedOn:(NSDate *)purchasedOn
+                   sellerUsername:(NSString *)sellerUsername
+                            price:(int)price;
 
 @end
 
