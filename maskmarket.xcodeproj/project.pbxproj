@@ -11,6 +11,7 @@
 		0F1E850C24C1063000412F4D /* SellingListingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E850B24C1063000412F4D /* SellingListingCell.m */; };
 		0F1E851024C1082E00412F4D /* SellingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E850F24C1082E00412F4D /* SellingViewController.m */; };
 		0F225C5F24C8A48C0036B57F /* LoadingPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F225C5E24C8A48C0036B57F /* LoadingPopupView.m */; };
+		0F225C6224C8C2F00036B57F /* loadwheel.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F225C6124C8C2F00036B57F /* loadwheel.json */; };
 		0F6C4D9D24BD18A800E2E846 /* MaskListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */; };
 		0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4DA024BD1F8900E2E846 /* MaskListing.m */; };
 		0F8B916824BE208000B1FB85 /* MaskListingBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B916724BE208000B1FB85 /* MaskListingBuilder.m */; };
@@ -74,6 +75,7 @@
 		0F1E850F24C1082E00412F4D /* SellingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellingViewController.m; sourceTree = "<group>"; };
 		0F225C5D24C8A48C0036B57F /* LoadingPopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingPopupView.h; sourceTree = "<group>"; };
 		0F225C5E24C8A48C0036B57F /* LoadingPopupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadingPopupView.m; sourceTree = "<group>"; };
+		0F225C6124C8C2F00036B57F /* loadwheel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loadwheel.json; path = ../../../../Desktop/loadwheel.json; sourceTree = "<group>"; };
 		0F6C4D9B24BD18A800E2E846 /* MaskListingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListingViewController.h; sourceTree = "<group>"; };
 		0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListingViewController.m; sourceTree = "<group>"; };
 		0F6C4D9F24BD1F8900E2E846 /* MaskListing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListing.h; sourceTree = "<group>"; };
@@ -203,6 +205,14 @@
 			path = "Selling Controllers";
 			sourceTree = "<group>";
 		};
+		0F225C6024C8C2D30036B57F /* Animation JSONs */ = {
+			isa = PBXGroup;
+			children = (
+				0F225C6124C8C2F00036B57F /* loadwheel.json */,
+			);
+			path = "Animation JSONs";
+			sourceTree = "<group>";
+		};
 		0F6C4D9E24BD1F6500E2E846 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +318,7 @@
 		0F97CD5D24BCCFA300CA7C9E /* maskmarket */ = {
 			isa = PBXGroup;
 			children = (
+				0F225C6024C8C2D30036B57F /* Animation JSONs */,
 				0F6C4D9E24BD1F6500E2E846 /* Models */,
 				0F97CDB324BCFD2E00CA7C9E /* Views */,
 				0F97CD9C24BCE4DA00CA7C9E /* Fonts */,
@@ -624,6 +635,7 @@
 				0F97CD6E24BCCFA400CA7C9E /* LaunchScreen.storyboard in Resources */,
 				0F97CD6B24BCCFA400CA7C9E /* Assets.xcassets in Resources */,
 				0F97CD6924BCCFA300CA7C9E /* Main.storyboard in Resources */,
+				0F225C6224C8C2F00036B57F /* loadwheel.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

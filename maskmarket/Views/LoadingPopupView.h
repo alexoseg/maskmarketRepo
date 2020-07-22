@@ -12,7 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LoadingPopupView : UIView
 
-+ (void)showPopupAddedTo:(UIView *)parentView; 
++ (void)showLoadingPopupAddedTo:(UIView *)parentView
+                    withMessage:(NSString *)message; 
 
 - (instancetype)init NS_UNAVAILABLE;
 

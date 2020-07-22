@@ -7,10 +7,12 @@
 //
 
 #import "LoadingPopupView.h"
+#import <Lottie/Lottie.h>
 
 @implementation LoadingPopupView
 
-+ (void)showPopupAddedTo:(UIView *)parentView
++ (void)showLoadingPopupAddedTo:(UIView *)parentView
+             withMessage:(NSString *)message
 {
     UIColor *const parentColor = [UIColor colorWithRed:0.5
                                                  green:0.5
@@ -42,6 +44,28 @@
                                         multiplier:0.5].active = YES;
     [modalView.heightAnchor constraintEqualToAnchor:screenView.heightAnchor
                                          multiplier:0.23].active = YES;
+    
+    LOTAnimationView *const animation = [LOTAnimationView animationNamed:@"loadwheel"];
+    animation.loopAnimation = YES;
+    animation.translatesAutoresizingMaskIntoConstraints = NO;
+    [modalView addSubview:animation];
+    [animation.centerXAnchor constraintEqualToAnchor:modalView.centerXAnchor].active = YES;
+    [animation.topAnchor constraintEqualToAnchor:modalView.topAnchor
+                                        constant:0].active = YES;
+    [animation.widthAnchor constraintEqualToConstant:100].active = YES;
+    [animation.heightAnchor constraintEqualToConstant:100].active = YES;
+    [animation play];
+    
+    UILabel *const messageLabel = [UILabel new];
+    messageLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    messageLabel.text = message;
+    messageLabel.textColor = UIColor.whiteColor;
+    messageLabel.font = [UIFont fontWithName:@"Montserrat-SemiBold" size:14.0f];
+    [modalView addSubview:messageLabel];
+    [messageLabel.centerXAnchor constraintEqualToAnchor:modalView.centerXAnchor].active = YES;
+    [messageLabel.topAnchor constraintEqualToAnchor:animation.bottomAnchor
+                                           constant:15].active = YES;
+    
     
     [UIView animateWithDuration:0.3
                      animations:^{
