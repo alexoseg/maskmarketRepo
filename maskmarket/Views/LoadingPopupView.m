@@ -7,12 +7,71 @@
 //
 
 #import "LoadingPopupView.h"
-#import <Lottie/Lottie.h>
+
+#pragma mark - Implementation
 
 @implementation LoadingPopupView
 
+#pragma mark - Initializers
+
+- (instancetype)initWithView:(UIView *)parentView
+                     message:(NSString *)message
+{
+    self = [super initWithFrame:parentView.bounds];
+    if (self) {
+       [self setUpViewsWithMessage:message];
+    }
+    return self;
+}
+
+#pragma mark - Class Methods
+
 + (void)showLoadingPopupAddedTo:(UIView *)parentView
-             withMessage:(NSString *)message
+                    withMessage:(NSString *)message
+{
+    LoadingPopupView *const popUpView = [[LoadingPopupView alloc] initWithView:parentView
+                                                                       message:message];
+    [parentView addSubview:popUpView];
+    [popUpView.widthAnchor constraintEqualToAnchor:parentView.widthAnchor
+                                        multiplier:1.0].active = YES;
+    [popUpView.heightAnchor constraintEqualToAnchor:parentView.heightAnchor
+                                         multiplier:1.0].active = YES;
+}
+
++ (void)hideLoadingPopupAddedTo:(UIView *)parentView
+{
+    LoadingPopupView *const popUpView = [self loadingPopUpInView:parentView];
+    if (popUpView != nil) {
+        [UIView animateWithDuration:0.3
+                         animations:^{
+            popUpView.backgroundColor = [UIColor colorWithRed:0.5
+                                                        green:0.5
+                                                         blue:0.5
+                                                        alpha:0.0];
+            popUpView.modalView.backgroundColor = [UIColor colorWithRed:38.0f/255.0f
+                                                                  green:184.0f/255.0f
+                                                                   blue:153.0f/255.0f
+                                                                  alpha:0];
+        } completion:^(BOOL finished) {
+            [popUpView removeFromSuperview];
+        }];
+    }
+}
+
++ (LoadingPopupView *)loadingPopUpInView:(UIView *)parentView
+{
+    for (UIView *const subview in parentView.subviews) {
+        if ([subview isKindOfClass:self]) {
+            LoadingPopupView *const popUpView = (LoadingPopupView *)subview;
+            return popUpView;
+        }
+    }
+    return nil;
+}
+
+#pragma mark - Set up
+
+- (void)setUpViewsWithMessage:(NSString *)message
 {
     UIColor *const parentColor = [UIColor colorWithRed:0.5
                                                  green:0.5
@@ -22,63 +81,59 @@
                                                 green:184.0f/255.0f
                                                  blue:153.0f/255.0f
                                                 alpha:0];
+    self.backgroundColor = parentColor;
+    self.translatesAutoresizingMaskIntoConstraints = NO;
     
-    UIView *const screenView = [[UIView alloc] initWithFrame:CGRectZero];
-    screenView.backgroundColor = parentColor;
-    screenView.translatesAutoresizingMaskIntoConstraints = NO;
-    [parentView addSubview:screenView];
-    [screenView.widthAnchor constraintEqualToAnchor:parentView.widthAnchor
-                                         multiplier:1.0].active = YES;
-    [screenView.heightAnchor constraintEqualToAnchor:parentView.heightAnchor
-                                          multiplier:1.0].active = YES;
+    self.modalView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.modalView.backgroundColor = modalColor;
+    self.modalView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.modalView.clipsToBounds = YES;
+    self.modalView.layer.cornerRadius = 8;
+    [self addSubview:self.modalView];
+    [self.modalView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
+    [self.modalView.centerYAnchor constraintEqualToAnchor:self.centerYAnchor].active = YES;
+    [self.modalView.widthAnchor constraintEqualToAnchor:self.widthAnchor
+                                             multiplier:0.5].active = YES;
+    [self.modalView.heightAnchor constraintEqualToAnchor:self.heightAnchor
+                                              multiplier:0.23].active = YES;
     
-    UIView *const modalView = [[UIView alloc] initWithFrame:CGRectZero];
-    modalView.backgroundColor = modalColor;
-    modalView.translatesAutoresizingMaskIntoConstraints = NO;
-    modalView.clipsToBounds = YES;
-    modalView.layer.cornerRadius = 8;
-    [screenView addSubview:modalView];
-    [modalView.centerXAnchor constraintEqualToAnchor:screenView.centerXAnchor].active = YES;
-    [modalView.centerYAnchor constraintEqualToAnchor:screenView.centerYAnchor].active = YES;
-    [modalView.widthAnchor constraintEqualToAnchor:screenView.widthAnchor
-                                        multiplier:0.5].active = YES;
-    [modalView.heightAnchor constraintEqualToAnchor:screenView.heightAnchor
-                                         multiplier:0.23].active = YES;
+    self.animation = [LOTAnimationView animationNamed:@"loadwheel"];
+    self.animation.loopAnimation = YES;
+    self.animation.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.modalView addSubview:self.animation];
+    [self.animation.centerXAnchor constraintEqualToAnchor:self.modalView.centerXAnchor].active = YES;
+    [self.animation.topAnchor constraintEqualToAnchor:self.modalView.topAnchor
+                                             constant:0].active = YES;
+    [self.animation.widthAnchor constraintEqualToConstant:100].active = YES;
+    [self.animation.heightAnchor constraintEqualToConstant:100].active = YES;
+    [self.animation play];
     
-    LOTAnimationView *const animation = [LOTAnimationView animationNamed:@"loadwheel"];
-    animation.loopAnimation = YES;
-    animation.translatesAutoresizingMaskIntoConstraints = NO;
-    [modalView addSubview:animation];
-    [animation.centerXAnchor constraintEqualToAnchor:modalView.centerXAnchor].active = YES;
-    [animation.topAnchor constraintEqualToAnchor:modalView.topAnchor
-                                        constant:0].active = YES;
-    [animation.widthAnchor constraintEqualToConstant:100].active = YES;
-    [animation.heightAnchor constraintEqualToConstant:100].active = YES;
-    [animation play];
+    self.messageLabel = [UILabel new];
+    self.messageLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    self.messageLabel.text = message;
+    self.messageLabel.textColor = UIColor.whiteColor;
+    self.messageLabel.font = [UIFont fontWithName:@"Montserrat-SemiBold" size:14.0f];
+    [self.modalView addSubview:self.messageLabel];
+    [self.messageLabel.centerXAnchor constraintEqualToAnchor:self.modalView.centerXAnchor].active = YES;
+    [self.messageLabel.topAnchor constraintEqualToAnchor:self.animation.bottomAnchor
+                                                constant:15].active = YES;
     
-    UILabel *const messageLabel = [UILabel new];
-    messageLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    messageLabel.text = message;
-    messageLabel.textColor = UIColor.whiteColor;
-    messageLabel.font = [UIFont fontWithName:@"Montserrat-SemiBold" size:14.0f];
-    [modalView addSubview:messageLabel];
-    [messageLabel.centerXAnchor constraintEqualToAnchor:modalView.centerXAnchor].active = YES;
-    [messageLabel.topAnchor constraintEqualToAnchor:animation.bottomAnchor
-                                           constant:15].active = YES;
-    
-    
+    typeof(self) __weak weakSelf = self;
     [UIView animateWithDuration:0.3
                      animations:^{
-        screenView.backgroundColor = [UIColor colorWithRed:0.5
+        typeof(weakSelf) strongSelf = weakSelf;
+        if (strongSelf == nil) {
+            return;
+        }
+        strongSelf.backgroundColor = [UIColor colorWithRed:0.5
                                                      green:0.5
                                                       blue:0.5
                                                      alpha:0.5];
-        modalView.backgroundColor = [UIColor colorWithRed:38.0f/255.0f
-                                                    green:184.0f/255.0f
-                                                     blue:153.0f/255.0f
-                                                    alpha:1.0];
+        strongSelf.modalView.backgroundColor = [UIColor colorWithRed:38.0f/255.0f
+                                                               green:184.0f/255.0f
+                                                                blue:153.0f/255.0f
+                                                               alpha:1.0];
     }];
-    
 }
 
 @end
