@@ -21,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UITextField *quantityTextField;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
-@property (weak, nonatomic) IBOutlet UIStepper *stepper;
 @property (weak, nonatomic) IBOutlet UILabel *quantityLabel;
 
 @end
@@ -43,6 +42,7 @@
     typeof(self) __weak weakSelf = self;
     [ParsePoster purchaseListingWithId:_maskListing.listingId
                       amountToPurchase:[_quantityTextField.text intValue]
+                           amountSpent:[_priceLabel.text intValue]
                         withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         typeof(weakSelf) strongSelf = self;
         if (strongSelf == nil) {
@@ -81,10 +81,10 @@ shouldChangeCharactersInRange:(NSRange)range
     
     if (enteredQuantity == 1) {
         textField.text = @"1";
-        _priceLabel.text = [NSString stringWithFormat:@"$%d", _maskListing.price];
+        _priceLabel.text = [NSString stringWithFormat:@"%d", _maskListing.price];
     } else {
         int const priceTotal = enteredQuantity * _maskListing.price;
-        _priceLabel.text = [NSString stringWithFormat:@"$%d", priceTotal];
+        _priceLabel.text = [NSString stringWithFormat:@"%d", priceTotal];
     }
     
     return YES;
@@ -156,7 +156,7 @@ shouldChangeCharactersInRange:(NSRange)range
     }];
     
    
-    _priceLabel.text = [NSString stringWithFormat:@"$%d", _maskListing.price];
+    _priceLabel.text = [NSString stringWithFormat:@"%d", _maskListing.price];
     _locationLabel.text = [NSString stringWithFormat:@"%@, %@", _maskListing.city, _maskListing.state];
     _titleLabel.text = _maskListing.title;
     _usernameLabel.text = _maskListing.author.username;

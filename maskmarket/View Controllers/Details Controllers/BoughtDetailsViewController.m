@@ -58,7 +58,15 @@
         }
     }];
     
+    NSDateFormatter *const formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM d, yyyy"];
+    NSString *const formattedDateString = [formatter stringFromDate:_boughtListing.purchasedOn];
+    _dateLabel.text = [NSString stringWithFormat:@"Posted on %@", formattedDateString];
     
+    _priceLabel.text = [NSString stringWithFormat:@"$%d", _boughtListing.price];
+    _quantityLabel.text = [NSString stringWithFormat:@"%d", _boughtListing.maskQuantity];
+    _amountPaidLabel.text = [NSString stringWithFormat:@"$%d", _boughtListing.spent];
+    _sellerUsernameLabel.text = _boughtListing.sellerUsername;
     _profileImageView.layer.cornerRadius = _profileImageView.frame.size.width / 2;
     _locationLabel.text = [NSString stringWithFormat:@"%@, %@", _boughtListing.city, _boughtListing.state];
     _titleLabel.text = _boughtListing.title;
