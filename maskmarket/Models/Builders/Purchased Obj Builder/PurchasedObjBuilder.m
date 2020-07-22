@@ -11,6 +11,7 @@
 static NSString *const kUserID = @"userID";
 static NSString *const klistingID = @"listingID";
 static NSString *const kMaskQuantity = @"maskQuantity";
+static NSString *const kSpent = @"spent";
 
 @implementation PurchasedObjBuilder
 
@@ -19,17 +20,23 @@ static NSString *const kMaskQuantity = @"maskQuantity";
     NSString *const userIDString = object[kUserID];
     NSString *const listingIDString = object[klistingID];
     NSNumber *const maskQuantityCopy = object[kMaskQuantity];
+    NSNumber *const spent = object[kSpent];
+    NSDate *const purchasedOnDate = object.createdAt;
        
     if (userIDString == nil
         || listingIDString == nil
-        || maskQuantityCopy == nil)
+        || maskQuantityCopy == nil
+        || spent == nil
+        || purchasedOnDate == nil)
     {
         return nil;
     }
        
     return [[PurchaseObj alloc] initWithUserId:userIDString
                                      listingID:listingIDString
-                                  maskQuantity:[maskQuantityCopy intValue]];
+                                  maskQuantity:[maskQuantityCopy intValue]
+                                         spent:[spent intValue]
+                                purchasedOnDate:purchasedOnDate];
 }
 
 + (NSArray<PurchaseObj *> *)buildPurchaseObjArrayfromArray:(NSArray<PFObject *> *)objects

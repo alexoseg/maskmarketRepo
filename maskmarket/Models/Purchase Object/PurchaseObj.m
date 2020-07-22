@@ -13,6 +13,8 @@
 - (instancetype)initWithUserId:(NSString *)userID
                      listingID:(NSString *)listingID
                   maskQuantity:(int)maskQuantity
+                         spent:(int)spent
+               purchasedOnDate:(NSDate *)purchasedOnDate;
 {
     self = [super init];
     
@@ -20,6 +22,8 @@
         _userID = userID;
         _listingID = listingID;
         _maskQuantity = maskQuantity;
+        _spent = spent;
+        _purchasedOnDate = purchasedOnDate;
     }
     
     return self;
