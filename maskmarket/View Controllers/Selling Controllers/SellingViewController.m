@@ -12,6 +12,7 @@
 #import "ParseGetter.h"
 #import "MaskListingBuilder.h"
 #import "LoadingPopupView.h"
+#import "SellingDetailsViewController.h"
 
 #pragma mark - Interface
 
@@ -81,6 +82,18 @@ UITableViewDataSource>
  numberOfRowsInSection:(NSInteger)section
 {
     return _sellingListings.count;
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{
+    SellingDetailsViewController *const viewController = [segue destinationViewController];
+    UITableViewCell *const tappedCell = sender;
+    NSIndexPath *const indexPath = [self.tableView indexPathForCell:tappedCell];
+    ParseMaskListing *const maskListing = _sellingListings[indexPath.row];
+    viewController.maskListing = maskListing;
 }
 
 #pragma mark - Setups

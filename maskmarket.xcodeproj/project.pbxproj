@@ -12,6 +12,8 @@
 		0F1E851024C1082E00412F4D /* SellingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E850F24C1082E00412F4D /* SellingViewController.m */; };
 		0F225C5F24C8A48C0036B57F /* LoadingPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F225C5E24C8A48C0036B57F /* LoadingPopupView.m */; };
 		0F225C6224C8C2F00036B57F /* loadwheel.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F225C6124C8C2F00036B57F /* loadwheel.json */; };
+		0F225C6524CA12E20036B57F /* ViewBuyersButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F225C6424CA12E20036B57F /* ViewBuyersButton.m */; };
+		0F225C6824CA13D10036B57F /* SellingDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F225C6724CA13D10036B57F /* SellingDetailsViewController.m */; };
 		0F6C4D9D24BD18A800E2E846 /* MaskListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */; };
 		0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4DA024BD1F8900E2E846 /* MaskListing.m */; };
 		0F8B916824BE208000B1FB85 /* MaskListingBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B916724BE208000B1FB85 /* MaskListingBuilder.m */; };
@@ -76,6 +78,10 @@
 		0F225C5D24C8A48C0036B57F /* LoadingPopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingPopupView.h; sourceTree = "<group>"; };
 		0F225C5E24C8A48C0036B57F /* LoadingPopupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadingPopupView.m; sourceTree = "<group>"; };
 		0F225C6124C8C2F00036B57F /* loadwheel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loadwheel.json; path = ../../../../Desktop/loadwheel.json; sourceTree = "<group>"; };
+		0F225C6324CA12E20036B57F /* ViewBuyersButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewBuyersButton.h; sourceTree = "<group>"; };
+		0F225C6424CA12E20036B57F /* ViewBuyersButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewBuyersButton.m; sourceTree = "<group>"; };
+		0F225C6624CA13D10036B57F /* SellingDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellingDetailsViewController.h; sourceTree = "<group>"; };
+		0F225C6724CA13D10036B57F /* SellingDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellingDetailsViewController.m; sourceTree = "<group>"; };
 		0F6C4D9B24BD18A800E2E846 /* MaskListingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListingViewController.h; sourceTree = "<group>"; };
 		0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListingViewController.m; sourceTree = "<group>"; };
 		0F6C4D9F24BD1F8900E2E846 /* MaskListing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListing.h; sourceTree = "<group>"; };
@@ -418,6 +424,8 @@
 				0FC67F4024C63FE600852F89 /* BuyingListingCell.m */,
 				0F225C5D24C8A48C0036B57F /* LoadingPopupView.h */,
 				0F225C5E24C8A48C0036B57F /* LoadingPopupView.m */,
+				0F225C6324CA12E20036B57F /* ViewBuyersButton.h */,
+				0F225C6424CA12E20036B57F /* ViewBuyersButton.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -501,6 +509,8 @@
 				0F1E850524C0CE1100412F4D /* BuyDetailViewController.m */,
 				0FC67F4E24C7915400852F89 /* BoughtDetailsViewController.h */,
 				0FC67F4F24C7915400852F89 /* BoughtDetailsViewController.m */,
+				0F225C6624CA13D10036B57F /* SellingDetailsViewController.h */,
+				0F225C6724CA13D10036B57F /* SellingDetailsViewController.m */,
 			);
 			path = "Details Controllers";
 			sourceTree = "<group>";
@@ -764,6 +774,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F8B917624BE53AB00B1FB85 /* PriceViewController.m in Sources */,
+				0F225C6524CA12E20036B57F /* ViewBuyersButton.m in Sources */,
 				0F8B916E24BE487300B1FB85 /* ImageTitleViewController.m in Sources */,
 				0F9ECFE024BF5FD60020B289 /* UserBuilder.m in Sources */,
 				0F97CD9624BCDAFB00CA7C9E /* CreateAccountViewController.m in Sources */,
@@ -774,6 +785,7 @@
 				0FC67F5024C7915400852F89 /* BoughtDetailsViewController.m in Sources */,
 				0F9ECFEA24BF89330020B289 /* ParseGetter.m in Sources */,
 				0FC67F3E24C6377400852F89 /* BuyingViewController.m in Sources */,
+				0F225C6824CA13D10036B57F /* SellingDetailsViewController.m in Sources */,
 				0FC67F3A24C610AE00852F89 /* PurchasedObjBuilder.m in Sources */,
 				0F97CDBE24BD0C6300CA7C9E /* LoginViewController.m in Sources */,
 				0F9ECFDC24BF5CA70020B289 /* User.m in Sources */,
