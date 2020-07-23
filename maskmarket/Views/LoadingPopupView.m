@@ -41,7 +41,7 @@
 + (void)hideLoadingPopupAddedTo:(UIView *)parentView
 {
     LoadingPopupView *const popUpView = [self loadingPopUpInView:parentView];
-    if (popUpView != nil) {
+    if (popUpView == nil) {
         return;
     }
     

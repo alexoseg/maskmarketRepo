@@ -27,6 +27,7 @@ UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSArray<ParseMaskListing *> *listingsArray;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 @end
 
@@ -60,6 +61,7 @@ static int const cellPaddingSize = 15;
             return;
         }
         
+        [strongSelf.refreshControl endRefreshing];
         [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
             NSLog(@"%@", error.localizedDescription);
@@ -163,6 +165,17 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
+    _refreshControl = [[UIRefreshControl alloc] init];
+    [_refreshControl addTarget:self
+                       action:@selector(fetchListings)
+             forControlEvents:UIControlEventValueChanged];
+    _refreshControl.tintColor = [UIColor colorWithRed:38.0f/255.0f
+                                                green:184.0f/255.0f
+                                                 blue:153.0f/255.0f
+                                                alpha:1.0f];
+    _refreshControl.layer.zPosition = -1;
+    [_collectionView insertSubview:_refreshControl
+                           atIndex:0];
 }
 
 @end

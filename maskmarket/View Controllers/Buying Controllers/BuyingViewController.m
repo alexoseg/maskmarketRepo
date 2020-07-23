@@ -23,6 +23,7 @@ UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray<BoughtListing *> *maskListings;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 @end
 
@@ -55,6 +56,7 @@ UITableViewDataSource>
             return;
         }
         
+        [strongSelf.refreshControl endRefreshing];
         [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
             NSLog(@"%@", error.localizedDescription);
@@ -104,6 +106,17 @@ UITableViewDataSource>
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    _refreshControl = [[UIRefreshControl alloc] init];
+    [_refreshControl addTarget:self
+                       action:@selector(fetchBoughtListings)
+             forControlEvents:UIControlEventValueChanged];
+    _refreshControl.tintColor = [UIColor colorWithRed:38.0f/255.0f
+                                                green:184.0f/255.0f
+                                                 blue:153.0f/255.0f
+                                                alpha:1.0f];
+    _refreshControl.layer.zPosition = -1;
+    [_tableView insertSubview:_refreshControl
+                           atIndex:0];
 }
 
 @end
