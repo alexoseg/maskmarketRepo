@@ -14,7 +14,10 @@
                      listingID:(NSString *)listingID
                   maskQuantity:(int)maskQuantity
                          spent:(int)spent
-               purchasedOnDate:(NSDate *)purchasedOnDate;
+               purchasedOnDate:(NSDate *)purchasedOnDate
+                 buyerUsername:(NSString *)buyerUsername
+                trackingNumber:(NSString *)trackingNumber
+                     completed:(BOOL)completed;
 {
     self = [super init];
     
@@ -24,6 +27,9 @@
         _maskQuantity = maskQuantity;
         _spent = spent;
         _purchasedOnDate = purchasedOnDate;
+        _buyerUsername = buyerUsername;
+        _trackingNumber = trackingNumber;
+        _completed = completed;
     }
     
     return self;

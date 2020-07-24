@@ -12,6 +12,9 @@ static NSString *const kUserID = @"userID";
 static NSString *const klistingID = @"listingID";
 static NSString *const kMaskQuantity = @"maskQuantity";
 static NSString *const kSpent = @"spent";
+static NSString *const kBuyerUsername = @"buyerUsername";
+static NSString *const kCompleted = @"completed";
+static NSString *const kTrackingNumber = @"trackingNumber";
 
 @implementation PurchasedObjBuilder
 
@@ -22,12 +25,18 @@ static NSString *const kSpent = @"spent";
     NSNumber *const maskQuantityCopy = object[kMaskQuantity];
     NSNumber *const spent = object[kSpent];
     NSDate *const purchasedOnDate = object.createdAt;
+    NSString *const buyerUsername = object[kBuyerUsername];
+    NSNumber *const completed = object[kCompleted];
+    NSString *const trackingNumber = object[kTrackingNumber];
        
     if (userIDString == nil
         || listingIDString == nil
         || maskQuantityCopy == nil
         || spent == nil
-        || purchasedOnDate == nil)
+        || purchasedOnDate == nil
+        || buyerUsername == nil
+        || completed == nil
+        || trackingNumber == nil)
     {
         return nil;
     }
@@ -36,7 +45,10 @@ static NSString *const kSpent = @"spent";
                                      listingID:listingIDString
                                   maskQuantity:[maskQuantityCopy intValue]
                                          spent:[spent intValue]
-                                purchasedOnDate:purchasedOnDate];
+                                purchasedOnDate:purchasedOnDate
+                                 buyerUsername:buyerUsername
+                                trackingNumber:trackingNumber
+                                     completed:[completed boolValue]];
 }
 
 + (NSArray<PurchaseObj *> *)buildPurchaseObjArrayfromArray:(NSArray<PFObject *> *)objects
