@@ -24,6 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) NSDate *purchasedOn;
 @property (nonatomic, strong, readonly) NSString *sellerUsername;
 @property (nonatomic, readonly) int price;
+@property (nonatomic, strong, readonly) NSString *buyerUsername;
+@property (nonatomic, strong, readonly) NSString *trackingNumber;
+@property (nonatomic, readonly) BOOL completed;
 
 - (instancetype)init NS_UNAVAILABLE;
 
@@ -39,7 +42,10 @@ NS_ASSUME_NONNULL_BEGIN
                             spent:(int)spent
                       purchasedOn:(NSDate *)purchasedOn
                    sellerUsername:(NSString *)sellerUsername
-                            price:(int)price;
+                            price:(int)price
+                    buyerUsername:(NSString *)buyerUsername
+                   trackingNumber:(NSString *)trackingNumber
+                        completed:(BOOL)completed;
 
 @end
 

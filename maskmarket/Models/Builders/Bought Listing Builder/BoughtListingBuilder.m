@@ -17,6 +17,8 @@
     int const maskQuantity = purchaseObj.maskQuantity;
     int const spent = purchaseObj.spent;
     NSDate *const purchasedOnDate = purchaseObj.purchasedOnDate;
+    NSString *const buyerUsername = purchaseObj.buyerUsername;
+    NSString *const trackingNumber = purchaseObj.trackingNumber;
     NSString *const maskDescription = maskListing.maskDescription;
     NSString *const title = maskListing.title;
     NSString *const city = maskListing.city;
@@ -24,6 +26,7 @@
     PFFileObject *const maskImage = maskListing.maskImage;
     NSString *const sellerUsername = maskListing.author.username;
     int const price = maskListing.price;
+    BOOL const completed = purchaseObj.completed;
     
     if (listingID == nil
         || maskDescription == nil
@@ -33,7 +36,9 @@
         || maskImage == nil
         || maskQuantity == 0
         || purchasedOnDate == nil
-        || sellerUsername == nil)
+        || sellerUsername == nil
+        || buyerUsername == nil
+        || trackingNumber == nil)
     {
         return nil;
     }
@@ -48,7 +53,26 @@
                                               spent:spent
                                         purchasedOn:purchasedOnDate
                                      sellerUsername:sellerUsername
-                                              price:price];
+                                              price:price
+                                      buyerUsername:buyerUsername
+                                     trackingNumber:trackingNumber
+                                          completed:completed];
+}
+
++ (NSArray<BoughtListing *> *)buildBoughtListingArrayFromArray:(NSArray<PurchaseObj *> *)purchasedObjs
+                                             associatedListing:(ParseMaskListing *)maskListing
+{
+    NSMutableArray<BoughtListing *> *const boughtListings = [NSMutableArray new];
+    for (PurchaseObj *const purchaseObj in purchasedObjs) {
+        BoughtListing *const boughtListing = [self buildBoughtListingFromPurchased:purchaseObj
+                                                                  parseMaskListing:maskListing];
+        if (boughtListing == nil) {
+            return nil;
+        }
+        [boughtListings addObject:boughtListing];
+    }
+    
+    return [boughtListings copy];
 }
 
 @end

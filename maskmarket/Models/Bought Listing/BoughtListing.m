@@ -19,8 +19,11 @@
                         maskImage:(PFFileObject *)maskImage
                             spent:(int)spent
                       purchasedOn:(NSDate *)purchasedOn
-                     sellerUsername:(nonnull NSString *)sellerUsername
+                   sellerUsername:(NSString *)sellerUsername
                             price:(int)price
+                    buyerUsername:(NSString *)buyerUsername
+                   trackingNumber:(NSString *)trackingNumber
+                        completed:(BOOL)completed
 {
     self = [super init];
     
@@ -36,6 +39,9 @@
         _purchasedOn = purchasedOn;
         _sellerUsername = sellerUsername;
         _price = price;
+        _buyerUsername = buyerUsername;
+        _trackingNumber = trackingNumber;
+        _completed = completed;
     }
     
     return self;

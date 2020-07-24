@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable BoughtListing *)buildBoughtListingFromPurchased:(PurchaseObj *)purchaseObj
                                            parseMaskListing:(ParseMaskListing *)maskListing;
 
++ (nullable NSArray<BoughtListing *> *)buildBoughtListingArrayFromArray:(NSArray<PurchaseObj *> *)purchasedObjs
+                                                      associatedListing:(ParseMaskListing *)maskListing;
+
 - (instancetype)init NS_UNAVAILABLE;
 
 + (instancetype)new NS_UNAVAILABLE;
