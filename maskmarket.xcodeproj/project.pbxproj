@@ -14,6 +14,8 @@
 		0F225C6224C8C2F00036B57F /* loadwheel.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F225C6124C8C2F00036B57F /* loadwheel.json */; };
 		0F225C6524CA12E20036B57F /* ViewBuyersButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F225C6424CA12E20036B57F /* ViewBuyersButton.m */; };
 		0F225C6824CA13D10036B57F /* SellingDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F225C6724CA13D10036B57F /* SellingDetailsViewController.m */; };
+		0F225C6C24CA462C0036B57F /* BuyersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F225C6B24CA462C0036B57F /* BuyersViewController.m */; };
+		0F225C6F24CA4FE10036B57F /* PurchaserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F225C6E24CA4FE10036B57F /* PurchaserCell.m */; };
 		0F6C4D9D24BD18A800E2E846 /* MaskListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */; };
 		0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4DA024BD1F8900E2E846 /* MaskListing.m */; };
 		0F8B916824BE208000B1FB85 /* MaskListingBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B916724BE208000B1FB85 /* MaskListingBuilder.m */; };
@@ -82,6 +84,10 @@
 		0F225C6424CA12E20036B57F /* ViewBuyersButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewBuyersButton.m; sourceTree = "<group>"; };
 		0F225C6624CA13D10036B57F /* SellingDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellingDetailsViewController.h; sourceTree = "<group>"; };
 		0F225C6724CA13D10036B57F /* SellingDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellingDetailsViewController.m; sourceTree = "<group>"; };
+		0F225C6A24CA462C0036B57F /* BuyersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyersViewController.h; sourceTree = "<group>"; };
+		0F225C6B24CA462C0036B57F /* BuyersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyersViewController.m; sourceTree = "<group>"; };
+		0F225C6D24CA4FE10036B57F /* PurchaserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchaserCell.h; sourceTree = "<group>"; };
+		0F225C6E24CA4FE10036B57F /* PurchaserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaserCell.m; sourceTree = "<group>"; };
 		0F6C4D9B24BD18A800E2E846 /* MaskListingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListingViewController.h; sourceTree = "<group>"; };
 		0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListingViewController.m; sourceTree = "<group>"; };
 		0F6C4D9F24BD1F8900E2E846 /* MaskListing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListing.h; sourceTree = "<group>"; };
@@ -217,6 +223,15 @@
 				0F225C6124C8C2F00036B57F /* loadwheel.json */,
 			);
 			path = "Animation JSONs";
+			sourceTree = "<group>";
+		};
+		0F225C6924CA46190036B57F /* Buyers Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F225C6A24CA462C0036B57F /* BuyersViewController.h */,
+				0F225C6B24CA462C0036B57F /* BuyersViewController.m */,
+			);
+			path = "Buyers Controllers";
 			sourceTree = "<group>";
 		};
 		0F6C4D9E24BD1F6500E2E846 /* Models */ = {
@@ -364,6 +379,7 @@
 		0F97CD9324BCDAE000CA7C9E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0F225C6924CA46190036B57F /* Buyers Controllers */,
 				0FC67F3B24C636FB00852F89 /* Buying Controllers */,
 				0FFE3C3124C24C7E0028466A /* Purchase Controllers */,
 				0F1E850D24C1081100412F4D /* Selling Controllers */,
@@ -426,6 +442,8 @@
 				0F225C5E24C8A48C0036B57F /* LoadingPopupView.m */,
 				0F225C6324CA12E20036B57F /* ViewBuyersButton.h */,
 				0F225C6424CA12E20036B57F /* ViewBuyersButton.m */,
+				0F225C6D24CA4FE10036B57F /* PurchaserCell.h */,
+				0F225C6E24CA4FE10036B57F /* PurchaserCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -796,11 +814,13 @@
 				0F8B917224BE4E1F00B1FB85 /* DescLocViewController.m in Sources */,
 				0FFE3C3424C24C930028466A /* PurchaseViewController.m in Sources */,
 				0F9ECFED24BF955A0020B289 /* HomeListingCell.m in Sources */,
+				0F225C6F24CA4FE10036B57F /* PurchaserCell.m in Sources */,
 				0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */,
 				0F8B916824BE208000B1FB85 /* MaskListingBuilder.m in Sources */,
 				0F9ECFE324BF72160020B289 /* ParseMaskListing.m in Sources */,
 				0F225C5F24C8A48C0036B57F /* LoadingPopupView.m in Sources */,
 				0FC67F4A24C7630A00852F89 /* BoughtListingBuilder.m in Sources */,
+				0F225C6C24CA462C0036B57F /* BuyersViewController.m in Sources */,
 				0F1E850624C0CE1100412F4D /* BuyDetailViewController.m in Sources */,
 				0FC67F3624C60D0F00852F89 /* PurchaseObj.m in Sources */,
 				0FC67F4124C63FE600852F89 /* BuyingListingCell.m in Sources */,

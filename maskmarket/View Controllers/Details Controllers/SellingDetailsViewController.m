@@ -7,6 +7,8 @@
 //
 
 #import "SellingDetailsViewController.h"
+#import "BuyersViewController.h"
+#import "PurchaserCell.h"
 
 #pragma mark - Interface
 
@@ -39,6 +41,17 @@
 
 - (IBAction)onTapViewBuyers:(id)sender
 {
+    [self performSegueWithIdentifier:@"buyersSegue"
+                              sender:nil];
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{
+    BuyersViewController *const viewController = [segue destinationViewController];
+    viewController.maskListing = _maskListing;
 }
 
 #pragma mark - Setup
