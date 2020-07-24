@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 #import "BoughtListing.h"
+#import "PurchasedObjBuilder.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)fetchListingsBoughtByUserID:(NSString *)userID
                      withCompletion:(void (^)(NSArray<BoughtListing *> * _Nullable objects, NSError * _Nullable error))completion;
+
++ (void)fetchPurchasedObjectsWithListingID:(NSString *)listingID
+                            withCompletion:(void (^)(NSArray<PurchaseObj *> * _Nullable objects, NSError * _Nullable error))completion;
 
 - (instancetype)init NS_UNAVAILABLE;
 

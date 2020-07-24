@@ -31,6 +31,9 @@ static NSString *const kUserID = @"userID";
 static NSString *const kListingID = @"listingID";
 static NSString *const kObjectID = @"objectId";
 static NSString *const kSpent = @"spent";
+static NSString *const kBuyerUsername = @"buyerUsername";
+static NSString *const kCompleted = @"completed";
+static NSString *const kTrackingNumber = @"trackingNumber";
 
 + (void)fetchAllListingsWithCompletion:(void (^)(NSArray * _Nullable, NSError * _Nullable))completion
 {
@@ -87,6 +90,9 @@ static NSString *const kSpent = @"spent";
     [query includeKey:kUserID];
     [query includeKey:kMaskQuantity];
     [query includeKey:kSpent];
+    [query includeKey:kBuyerUsername];
+    [query includeKey:kCompleted];
+    [query includeKey:kTrackingNumber];
 
     query.limit = 20;
     
@@ -126,6 +132,27 @@ static NSString *const kSpent = @"spent";
             }];
         } else {
             completion([NSArray new], nil);
+        }
+    }];
+}
+
++ (void)fetchPurchasedObjectsWithListingID:(NSString *)listingID
+                            withCompletion:(void (^)(NSArray<PurchaseObj *> * _Nullable, NSError * _Nullable))completion
+{
+    PFQuery *const query = [PFQuery queryWithClassName:kPurchasedObjs];
+    [query whereKey:kListingID equalTo:listingID];
+    [query includeKey:kListingID];
+    [query includeKey:kUserID];
+    [query includeKey:kMaskQuantity];
+    [query includeKey:kSpent];
+    
+    query.limit = 20;
+    [query findObjectsInBackgroundWithBlock:^(NSArray<PFObject *> * _Nullable objects, NSError * _Nullable error) {
+        if (error) {
+            completion(nil, error);
+        } else {
+            NSArray<PurchaseObj *> *const purchaseObjs = [PurchasedObjBuilder buildPurchaseObjArrayfromArray:objects];
+            completion(purchaseObjs, nil);
         }
     }];
 }

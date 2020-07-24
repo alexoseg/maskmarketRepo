@@ -24,6 +24,9 @@ static NSString *const kPurchasedObjs = @"PurchasedObjs";
 static NSString *const kUserID = @"userID";
 static NSString *const kListingID = @"listingID";
 static NSString *const kSpent = @"spent";
+static NSString *const kBuyerUsername = @"buyerUsername";
+static NSString *const kCompleted = @"completed";
+static NSString *const kTrackingNumber = @"trackingNumber";
 
 @implementation ParsePoster
 
@@ -44,6 +47,9 @@ static NSString *const kSpent = @"spent";
             
             PFObject *const purchasedObject = [PFObject objectWithClassName:kPurchasedObjs];
             purchasedObject[kUserID] = purchasedByUser.userID;
+            purchasedObject[kBuyerUsername] = purchasedByUser.username;
+            purchasedObject[kCompleted] = @NO;
+            purchasedObject[kTrackingNumber] = @"";
             purchasedObject[kListingID] = maskListingId;
             purchasedObject[kMaskQuantity] = [NSNumber numberWithInt:amountToPurchase];
             purchasedObject[kSpent] = [NSNumber numberWithInt:amountSpent];
