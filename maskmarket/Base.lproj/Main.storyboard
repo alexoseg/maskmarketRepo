@@ -316,11 +316,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7qt-WQ-JhQ" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="611"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wdf-Um-kqz">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wdf-Um-kqz">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="t2K-FP-iSg"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="vRV-0P-3xb" appends="YES" id="QrO-dY-29g"/>
+                                                </connections>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a sample title for this mask" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXe-Lz-ZYS">
                                                 <rect key="frame" x="15" y="215" width="278.66666666666669" height="19.666666666666657"/>
@@ -470,11 +474,44 @@
                         <outlet property="profileImageView" destination="lp9-zh-sBm" id="kC9-pZ-n3s"/>
                         <outlet property="titleLabel" destination="GXe-Lz-ZYS" id="rhG-WA-EFk"/>
                         <outlet property="usernameLabel" destination="7jE-hE-1iK" id="ebV-5k-hBN"/>
+                        <segue destination="7rS-5A-1d9" kind="presentation" id="7GT-Od-RM2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jF6-AJ-wC1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vRV-0P-3xb"/>
             </objects>
             <point key="canvasLocation" x="1414" y="1697"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="YFL-Rc-VD3">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="7rS-5A-1d9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c35-GL-AK9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-image" translatesAutoresizingMaskIntoConstraints="NO" id="VPa-yF-Y6g">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="hbU-fr-9Oe" appends="YES" id="3ai-ub-lfW"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VPa-yF-Y6g" firstAttribute="trailing" secondItem="II4-9O-OND" secondAttribute="trailing" id="0G7-QZ-dLW"/>
+                            <constraint firstItem="VPa-yF-Y6g" firstAttribute="leading" secondItem="II4-9O-OND" secondAttribute="leading" id="3S4-oF-YDl"/>
+                            <constraint firstItem="VPa-yF-Y6g" firstAttribute="top" secondItem="II4-9O-OND" secondAttribute="top" id="C6y-bE-7ni"/>
+                            <constraint firstItem="VPa-yF-Y6g" firstAttribute="bottom" secondItem="II4-9O-OND" secondAttribute="bottom" id="sfe-5Z-cLf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="II4-9O-OND"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UPd-AP-duD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="hbU-fr-9Oe"/>
+            </objects>
+            <point key="canvasLocation" x="944.92753623188412" y="2492.934782608696"/>
         </scene>
         <!--Purchase View Controller-->
         <scene sceneID="8zZ-j4-8vC">
@@ -622,7 +659,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z7R-WZ-zm9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1413" y="2493"/>
+            <point key="canvasLocation" x="1936" y="2493"/>
         </scene>
         <!--Buyers-->
         <scene sceneID="xzQ-96-4it">
