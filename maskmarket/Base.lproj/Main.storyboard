@@ -110,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="58" y="107"/>
+            <point key="canvasLocation" x="2132" y="75"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ocD-LW-pmO">
@@ -131,7 +131,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uPB-gH-6Eh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3341" y="-609"/>
+            <point key="canvasLocation" x="2793" y="998"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DNo-eE-xvD">
@@ -153,7 +153,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R7G-Qu-pw9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1417" y="152"/>
+            <point key="canvasLocation" x="-899" y="1758"/>
         </scene>
         <!--Home-->
         <scene sceneID="UxO-eY-Vca">
@@ -266,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c0Y-To-iqa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1414.4927536231885" y="932.60869565217399"/>
+            <point key="canvasLocation" x="-899" y="2539"/>
         </scene>
         <!--Mask-->
         <scene sceneID="DHB-Jl-yZR">
@@ -484,7 +484,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1414" y="1697"/>
+            <point key="canvasLocation" x="-901" y="3303"/>
         </scene>
         <!--Full Image View Controller-->
         <scene sceneID="YFL-Rc-VD3">
@@ -536,7 +536,7 @@
                     </connections>
                 </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="945" y="2493"/>
+            <point key="canvasLocation" x="-1370" y="4101"/>
         </scene>
         <!--Purchase View Controller-->
         <scene sceneID="8zZ-j4-8vC">
@@ -684,7 +684,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z7R-WZ-zm9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1936" y="2493"/>
+            <point key="canvasLocation" x="-378" y="4101"/>
         </scene>
         <!--Buyers-->
         <scene sceneID="xzQ-96-4it">
@@ -792,7 +792,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VhY-Rd-UqD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2680" y="2493"/>
+            <point key="canvasLocation" x="2622" y="4101"/>
         </scene>
         <!--Sale Completion View Controller-->
         <scene sceneID="4gC-eO-t0f">
@@ -914,7 +914,7 @@ Menlo Park, CA 94025</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOO-fN-HXV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2679.7101449275365" y="3275.54347826087"/>
+            <point key="canvasLocation" x="2622" y="4882"/>
         </scene>
         <!--Selling-->
         <scene sceneID="5Mg-xv-wof">
@@ -1010,7 +1010,7 @@ Menlo Park, CA 94025</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Va9-Pn-8lY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3342" y="933"/>
+            <point key="canvasLocation" x="2793" y="2540"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hr8-lM-bqo">
@@ -1031,7 +1031,7 @@ Menlo Park, CA 94025</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vfx-CR-IZE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4080" y="1696"/>
+            <point key="canvasLocation" x="3532" y="3303"/>
         </scene>
         <!--Post a Mask-->
         <scene sceneID="7lp-4d-qUf">
@@ -1114,7 +1114,7 @@ Menlo Park, CA 94025</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4093" y="2493"/>
+            <point key="canvasLocation" x="3545" y="4101"/>
         </scene>
         <!--Description and Location-->
         <scene sceneID="u5q-Qs-JnK">
@@ -1224,7 +1224,7 @@ Menlo Park, CA 94025</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6b-uD-fPX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4093" y="3276"/>
+            <point key="canvasLocation" x="3545" y="4883"/>
         </scene>
         <!--Pricing-->
         <scene sceneID="m3y-Jx-1Oh">
@@ -1297,7 +1297,7 @@ Menlo Park, CA 94025</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwK-s8-TEv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4093" y="4068"/>
+            <point key="canvasLocation" x="3545" y="5676"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="lRx-bb-ul0">
@@ -1381,7 +1381,7 @@ Menlo Park, CA 94025</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZ6-HP-euI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="58" y="-629"/>
+            <point key="canvasLocation" x="3545" y="75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MV4-He-1LL">
@@ -1403,7 +1403,7 @@ Menlo Park, CA 94025</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqO-mm-URl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3341" y="152"/>
+            <point key="canvasLocation" x="2793" y="1759"/>
         </scene>
         <!--Item-->
         <scene sceneID="icL-ep-nXv">
@@ -1425,7 +1425,7 @@ Menlo Park, CA 94025</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JJl-V8-S8d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5116" y="152"/>
+            <point key="canvasLocation" x="4568" y="1759"/>
         </scene>
         <!--Buying-->
         <scene sceneID="QY4-JW-Ozc">
@@ -1514,7 +1514,7 @@ Menlo Park, CA 94025</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pXF-e0-5uC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5116" y="933"/>
+            <point key="canvasLocation" x="4568" y="2540"/>
         </scene>
         <!--Details-->
         <scene sceneID="waM-1D-sAF">
@@ -1720,12 +1720,12 @@ Menlo Park, CA 94025</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dls-W9-Trb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5116" y="1696"/>
+            <point key="canvasLocation" x="4568" y="3303"/>
         </scene>
         <!--Mask-->
         <scene sceneID="DH0-Bz-4v4">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="Zk1-7B-Jqe" customClass="SellingDetailsViewController" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" hidesBottomBarWhenPushed="YES" id="Zk1-7B-Jqe" customClass="SellingDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Thz-Qg-OTy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1736,11 +1736,15 @@ Menlo Park, CA 94025</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EYu-bU-9OB" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6fj-N7-zYt">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6fj-N7-zYt">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="Cj1-XX-dWJ"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="52w-be-efA" appends="YES" id="WXk-qC-igy"/>
+                                                </connections>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a sample title for this mask" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSw-RF-fa1">
                                                 <rect key="frame" x="15" y="215" width="278.66666666666669" height="19.666666666666657"/>
@@ -1899,11 +1903,69 @@ Menlo Park, CA 94025</string>
                         <outlet property="titleLabel" destination="CSw-RF-fa1" id="1CG-6O-cse"/>
                         <outlet property="usernameLabel" destination="7wj-e0-rJs" id="N7V-am-Cww"/>
                         <segue destination="AT1-Qq-fWu" kind="show" identifier="buyersSegue" id="ePg-il-iar"/>
+                        <segue destination="kHj-sJ-vP2" kind="presentation" identifier="fullImageSegue" id="Ep3-8J-x7x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WDk-eO-ZS3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="52w-be-efA">
+                    <connections>
+                        <action selector="onTapImage:" destination="Zk1-7B-Jqe" id="d1L-42-WnQ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2680" y="1696"/>
+            <point key="canvasLocation" x="2132" y="3303"/>
+        </scene>
+        <!--Full Image View Controller-->
+        <scene sceneID="tHH-bR-bfj">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="kHj-sJ-vP2" customClass="FullImageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WSZ-a1-X0I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-image" translatesAutoresizingMaskIntoConstraints="NO" id="0GW-Xb-bK8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="BQE-Ul-glh" appends="YES" id="CGH-8m-1O8"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIV-XB-jqu">
+                                <rect key="frame" x="20" y="20" width="49" height="34"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPressClose:" destination="kHj-sJ-vP2" eventType="touchUpInside" id="Mcu-UO-4GR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0GW-Xb-bK8" firstAttribute="top" secondItem="vnm-SD-Ab5" secondAttribute="top" id="147-0o-ljA"/>
+                            <constraint firstItem="cIV-XB-jqu" firstAttribute="top" secondItem="vnm-SD-Ab5" secondAttribute="top" constant="20" id="2fh-0a-jE3"/>
+                            <constraint firstItem="0GW-Xb-bK8" firstAttribute="trailing" secondItem="vnm-SD-Ab5" secondAttribute="trailing" id="BmN-zz-WF9"/>
+                            <constraint firstItem="cIV-XB-jqu" firstAttribute="leading" secondItem="vnm-SD-Ab5" secondAttribute="leading" constant="20" id="VYD-aB-ncB"/>
+                            <constraint firstItem="0GW-Xb-bK8" firstAttribute="leading" secondItem="vnm-SD-Ab5" secondAttribute="leading" id="WJy-oS-A4K"/>
+                            <constraint firstItem="vnm-SD-Ab5" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cIV-XB-jqu" secondAttribute="trailing" constant="15" id="WXM-39-2gU"/>
+                            <constraint firstItem="0GW-Xb-bK8" firstAttribute="bottom" secondItem="vnm-SD-Ab5" secondAttribute="bottom" id="zU9-NO-6qL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vnm-SD-Ab5"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="cIV-XB-jqu" id="Ju4-V7-Bfh"/>
+                        <outlet property="maskImageView" destination="0GW-Xb-bK8" id="dSP-V3-Md6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1bC-5Z-GHm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="BQE-Ul-glh">
+                    <connections>
+                        <action selector="onPinchImage:" destination="kHj-sJ-vP2" id="FWC-iR-3GQ"/>
+                    </connections>
+                </pinchGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1641" y="4101"/>
         </scene>
     </scenes>
     <resources>

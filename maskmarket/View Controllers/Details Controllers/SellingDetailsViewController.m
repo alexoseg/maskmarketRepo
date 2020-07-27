@@ -9,6 +9,7 @@
 #import "SellingDetailsViewController.h"
 #import "BuyersViewController.h"
 #import "PurchaserCell.h"
+#import "FullImageViewController.h"
 
 #pragma mark - Interface
 
@@ -45,13 +46,24 @@
                               sender:nil];
 }
 
+- (IBAction)onTapImage:(id)sender
+{
+    [self performSegueWithIdentifier:@"fullImageSegue"
+                              sender:nil];
+}
+
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender
 {
-    BuyersViewController *const viewController = [segue destinationViewController];
-    viewController.maskListing = _maskListing;
+    if ([segue.identifier isEqualToString:@"buyersSegue"]) {
+        BuyersViewController *const viewController = [segue destinationViewController];
+        viewController.maskListing = _maskListing;
+    } else if ([segue.identifier isEqualToString:@"fullImageSegue"]) {
+        FullImageViewController *const destinationViewController = [segue destinationViewController];
+        destinationViewController.maskImage = _maskImageView.image;
+    }
 }
 
 #pragma mark - Setup
