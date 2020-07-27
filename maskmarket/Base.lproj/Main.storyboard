@@ -296,7 +296,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="oT2-9s-bSX" kind="presentation" id="9LW-dR-xuW"/>
+                                            <segue destination="oT2-9s-bSX" kind="presentation" identifier="purchaseSegue" id="9LW-dR-xuW"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -474,7 +474,7 @@
                         <outlet property="profileImageView" destination="lp9-zh-sBm" id="kC9-pZ-n3s"/>
                         <outlet property="titleLabel" destination="GXe-Lz-ZYS" id="rhG-WA-EFk"/>
                         <outlet property="usernameLabel" destination="7jE-hE-1iK" id="ebV-5k-hBN"/>
-                        <segue destination="7rS-5A-1d9" kind="presentation" id="7GT-Od-RM2"/>
+                        <segue destination="7rS-5A-1d9" kind="presentation" identifier="fullImageSegue" id="7GT-Od-RM2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jF6-AJ-wC1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
