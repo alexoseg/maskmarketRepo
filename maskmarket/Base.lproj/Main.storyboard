@@ -511,6 +511,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="II4-9O-OND"/>
                     </view>
+                    <connections>
+                        <outlet property="maskImageView" destination="VPa-yF-Y6g" id="YzI-7g-T3p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UPd-AP-duD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <pinchGestureRecognizer id="hbU-fr-9Oe"/>
