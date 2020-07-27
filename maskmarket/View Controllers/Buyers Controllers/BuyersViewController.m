@@ -10,6 +10,7 @@
 #import "ParseGetter.h"
 #import "BoughtListingBuilder.h"
 #import "PurchaserCell.h"
+#import "SaleCompletionViewController.h"
 
 #pragma mark - Interface
 
@@ -21,6 +22,7 @@ UITableViewDataSource>
 
 @property (nonatomic, strong) NSArray<BoughtListing *> *listings;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 @end
 
@@ -54,7 +56,20 @@ UITableViewDataSource>
                                                  associatedListing:strongSelf.maskListing];
             [strongSelf.tableView reloadData];
         }
+        [strongSelf.refreshControl endRefreshing];
     }];
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{
+    SaleCompletionViewController *const viewController = [segue destinationViewController];
+    UITableViewCell *const tappedCell = sender;
+    NSIndexPath *const indexPath = [_tableView indexPathForCell:tappedCell];
+    BoughtListing *const boughtListing = _listings[indexPath.row];
+    viewController.boughListing = boughtListing;
 }
 
 #pragma mark - Setup
@@ -63,7 +78,21 @@ UITableViewDataSource>
 {
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    
+    _refreshControl = [[UIRefreshControl alloc] init];
+    [_refreshControl addTarget:self
+                       action:@selector(fetchPurchasers)
+             forControlEvents:UIControlEventValueChanged];
+    _refreshControl.tintColor = [UIColor colorWithRed:38.0f/255.0f
+                                                green:184.0f/255.0f
+                                                 blue:153.0f/255.0f
+                                                alpha:1.0f];
+    _refreshControl.layer.zPosition = -1;
+    [_tableView insertSubview:_refreshControl
+                           atIndex:0];
 }
+
+#pragma mark - Tableview Code
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView
                  cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
