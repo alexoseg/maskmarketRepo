@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FullImageViewController : UIViewController
 
+@property (strong, nonatomic) UIImage *maskImage;
+
 @end
 
 NS_ASSUME_NONNULL_END
