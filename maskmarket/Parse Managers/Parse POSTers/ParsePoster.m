@@ -30,6 +30,19 @@ static NSString *const kTrackingNumber = @"trackingNumber";
 
 @implementation ParsePoster
 
++ (void)setPurchaseCompleteWithID:(NSString *)purhcaseListingID
+                   trackingNumber:(NSString *)trackingNumber
+                   withCompletion:(PFBooleanResultBlock)completion
+{
+    PFQuery *const query = [PFQuery queryWithClassName:kPurchasedObjs];
+    [query getObjectInBackgroundWithId:purhcaseListingID
+                                 block:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        object[kCompleted] = @YES;
+        object[kTrackingNumber] = trackingNumber;
+        [object saveInBackgroundWithBlock:completion]; 
+    }];
+}
+
 + (void)purchaseListingWithId:(NSString *)maskListingId
             amountToPurchase:(int)amountToPurchase
                   amountSpent:(int)amountSpent
