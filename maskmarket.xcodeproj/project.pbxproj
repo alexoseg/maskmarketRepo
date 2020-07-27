@@ -96,6 +96,7 @@
 		0F6C4DA024BD1F8900E2E846 /* MaskListing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListing.m; sourceTree = "<group>"; };
 		0F892AC724CF774800B7A3EB /* FullImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FullImageViewController.h; sourceTree = "<group>"; };
 		0F892AC824CF774800B7A3EB /* FullImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullImageViewController.m; sourceTree = "<group>"; };
+		0F892ACA24CF8F4F00B7A3EB /* maskmarket.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = maskmarket.entitlements; sourceTree = "<group>"; };
 		0F8B916624BE208000B1FB85 /* MaskListingBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListingBuilder.h; sourceTree = "<group>"; };
 		0F8B916724BE208000B1FB85 /* MaskListingBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListingBuilder.m; sourceTree = "<group>"; };
 		0F8B916C24BE487300B1FB85 /* ImageTitleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageTitleViewController.h; sourceTree = "<group>"; };
@@ -354,6 +355,7 @@
 		0F97CD5D24BCCFA300CA7C9E /* maskmarket */ = {
 			isa = PBXGroup;
 			children = (
+				0F892ACA24CF8F4F00B7A3EB /* maskmarket.entitlements */,
 				0F225C6024C8C2D30036B57F /* Animation JSONs */,
 				0F6C4D9E24BD1F6500E2E846 /* Models */,
 				0F97CDB324BCFD2E00CA7C9E /* Views */,
@@ -1022,14 +1024,15 @@
 			baseConfigurationReference = 9A3C6B35A1F6DF5AC75D1006 /* Pods-maskmarket.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = maskmarket/maskmarket.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D747K95Y55;
+				DEVELOPMENT_TEAM = 26T4R38Z73;
 				INFOPLIST_FILE = maskmarket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alexoseg.maskmarket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexoseg.maskmarket2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1040,14 +1043,15 @@
 			baseConfigurationReference = 8EDA954822EBDBFF48ECD59F /* Pods-maskmarket.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = maskmarket/maskmarket.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D747K95Y55;
+				DEVELOPMENT_TEAM = 26T4R38Z73;
 				INFOPLIST_FILE = maskmarket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alexoseg.maskmarket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexoseg.maskmarket2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
