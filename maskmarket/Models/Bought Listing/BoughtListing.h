@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BoughtListing : NSObject
 
 @property (nonatomic, strong, readonly) NSString *listingID;
+@property (nonatomic, strong, readonly) NSString *purchaseObjID;
 @property (nonatomic, readonly) int maskQuantity;
 @property (nonatomic, strong, readonly) NSString *maskDescription;
 @property (nonatomic, strong, readonly) NSString *title;
@@ -33,6 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)new NS_UNAVAILABLE;
 
 - (instancetype)initWithListingID:(NSString *)listingID
+                    purchaseObjID:(NSString *)purchaseObjID
                      maskQuantity:(int)maskQuantity
                   maskDescription:(NSString *)maskDescription
                             title:(NSString *)title
