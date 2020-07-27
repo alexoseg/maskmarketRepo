@@ -18,6 +18,7 @@
 		0F225C6F24CA4FE10036B57F /* PurchaserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F225C6E24CA4FE10036B57F /* PurchaserCell.m */; };
 		0F6C4D9D24BD18A800E2E846 /* MaskListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */; };
 		0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4DA024BD1F8900E2E846 /* MaskListing.m */; };
+		0F892AC924CF774800B7A3EB /* FullImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F892AC824CF774800B7A3EB /* FullImageViewController.m */; };
 		0F8B916824BE208000B1FB85 /* MaskListingBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B916724BE208000B1FB85 /* MaskListingBuilder.m */; };
 		0F8B916E24BE487300B1FB85 /* ImageTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B916D24BE487300B1FB85 /* ImageTitleViewController.m */; };
 		0F8B917224BE4E1F00B1FB85 /* DescLocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B917124BE4E1F00B1FB85 /* DescLocViewController.m */; };
@@ -93,6 +94,8 @@
 		0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListingViewController.m; sourceTree = "<group>"; };
 		0F6C4D9F24BD1F8900E2E846 /* MaskListing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListing.h; sourceTree = "<group>"; };
 		0F6C4DA024BD1F8900E2E846 /* MaskListing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListing.m; sourceTree = "<group>"; };
+		0F892AC724CF774800B7A3EB /* FullImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FullImageViewController.h; sourceTree = "<group>"; };
+		0F892AC824CF774800B7A3EB /* FullImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullImageViewController.m; sourceTree = "<group>"; };
 		0F8B916624BE208000B1FB85 /* MaskListingBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListingBuilder.h; sourceTree = "<group>"; };
 		0F8B916724BE208000B1FB85 /* MaskListingBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListingBuilder.m; sourceTree = "<group>"; };
 		0F8B916C24BE487300B1FB85 /* ImageTitleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageTitleViewController.h; sourceTree = "<group>"; };
@@ -260,6 +263,15 @@
 			path = "Mask Listing";
 			sourceTree = "<group>";
 		};
+		0F892AC624CF773500B7A3EB /* Full Image Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F892AC724CF774800B7A3EB /* FullImageViewController.h */,
+				0F892AC824CF774800B7A3EB /* FullImageViewController.m */,
+			);
+			path = "Full Image Controllers";
+			sourceTree = "<group>";
+		};
 		0F8B916524BE206700B1FB85 /* Builders */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,6 +394,7 @@
 		0F97CD9324BCDAE000CA7C9E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0F892AC624CF773500B7A3EB /* Full Image Controllers */,
 				0FB73B7324CB652D00C0C860 /* Sale Completion Controllers */,
 				0F225C6924CA46190036B57F /* Buyers Controllers */,
 				0FC67F3B24C636FB00852F89 /* Buying Controllers */,
@@ -813,6 +826,7 @@
 				0F97CD6024BCCFA300CA7C9E /* AppDelegate.m in Sources */,
 				0F6C4D9D24BD18A800E2E846 /* MaskListingViewController.m in Sources */,
 				0F97CD9B24BCDBFF00CA7C9E /* ParsePoster.m in Sources */,
+				0F892AC924CF774800B7A3EB /* FullImageViewController.m in Sources */,
 				0FC67F5024C7915400852F89 /* BoughtDetailsViewController.m in Sources */,
 				0F9ECFEA24BF89330020B289 /* ParseGetter.m in Sources */,
 				0FC67F3E24C6377400852F89 /* BuyingViewController.m in Sources */,

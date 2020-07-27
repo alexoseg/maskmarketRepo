@@ -482,10 +482,10 @@
             </objects>
             <point key="canvasLocation" x="1414" y="1697"/>
         </scene>
-        <!--View Controller-->
+        <!--Full Image View Controller-->
         <scene sceneID="YFL-Rc-VD3">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="7rS-5A-1d9" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="7rS-5A-1d9" customClass="FullImageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c35-GL-AK9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
