@@ -16,6 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ParsePoster : NSObject
 
++ (void)setPurchaseCompleteWithID:(NSString *)purhcaseListingID
+                   trackingNumber:(NSString *)trackingNumber
+                   withCompletion:(PFBooleanResultBlock _Nullable)completion;
+
 + (void)purchaseListingWithId:(NSString *)maskListingId
              amountToPurchase:(int)amountToPurchase
                   amountSpent:(int)amountSpent
@@ -30,8 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
                    withCompletion:(PFBooleanResultBlock _Nullable)completion;
 
 + (void)loginWithUsername:(NSString *)username
-              password:(NSString *)password
-        withCompletion:(void (^)(PFUser * _Nullable, NSError * _Nullable))completion;
+                 password:(NSString *)password
+           withCompletion:(void (^)(PFUser * _Nullable, NSError * _Nullable))completion;
 
 + (instancetype)new NS_UNAVAILABLE;
 
