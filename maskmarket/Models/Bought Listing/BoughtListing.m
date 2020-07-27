@@ -11,6 +11,7 @@
 @implementation BoughtListing
 
 - (instancetype)initWithListingID:(NSString *)listingID
+                    purchaseObjID:(NSString *)purchaseObjID
                      maskQuantity:(int)maskQuantity
                   maskDescription:(NSString *)maskDescription
                             title:(NSString *)title
@@ -29,6 +30,7 @@
     
     if (self) {
         _listingID = listingID;
+        _purchaseObjID = purchaseObjID;
         _maskQuantity = maskQuantity;
         _maskDescription = maskDescription;
         _title = title;
