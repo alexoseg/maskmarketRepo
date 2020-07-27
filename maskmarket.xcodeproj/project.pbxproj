@@ -19,6 +19,7 @@
 		0F6C4D9D24BD18A800E2E846 /* MaskListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */; };
 		0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4DA024BD1F8900E2E846 /* MaskListing.m */; };
 		0F892AC924CF774800B7A3EB /* FullImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F892AC824CF774800B7A3EB /* FullImageViewController.m */; };
+		0F892ACC24CF960100B7A3EB /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F892ACB24CF960100B7A3EB /* PassKit.framework */; };
 		0F8B916824BE208000B1FB85 /* MaskListingBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B916724BE208000B1FB85 /* MaskListingBuilder.m */; };
 		0F8B916E24BE487300B1FB85 /* ImageTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B916D24BE487300B1FB85 /* ImageTitleViewController.m */; };
 		0F8B917224BE4E1F00B1FB85 /* DescLocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B917124BE4E1F00B1FB85 /* DescLocViewController.m */; };
@@ -97,6 +98,7 @@
 		0F892AC724CF774800B7A3EB /* FullImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FullImageViewController.h; sourceTree = "<group>"; };
 		0F892AC824CF774800B7A3EB /* FullImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullImageViewController.m; sourceTree = "<group>"; };
 		0F892ACA24CF8F4F00B7A3EB /* maskmarket.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = maskmarket.entitlements; sourceTree = "<group>"; };
+		0F892ACB24CF960100B7A3EB /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		0F8B916624BE208000B1FB85 /* MaskListingBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListingBuilder.h; sourceTree = "<group>"; };
 		0F8B916724BE208000B1FB85 /* MaskListingBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListingBuilder.m; sourceTree = "<group>"; };
 		0F8B916C24BE487300B1FB85 /* ImageTitleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageTitleViewController.h; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F892ACC24CF960100B7A3EB /* PassKit.framework in Frameworks */,
 				277BD8C0ADE42DC2B1DBD5AC /* Pods_maskmarket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,6 +576,7 @@
 		8CD8BBC855CDDF70575E4124 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0F892ACB24CF960100B7A3EB /* PassKit.framework */,
 				91A51C4A454F0EBD1743F46C /* Pods_maskmarket.framework */,
 				50A1DFF2771C130099606633 /* Pods_maskmarket_maskmarketUITests.framework */,
 				AF3EB4D5E036F75B76B9CB44 /* Pods_maskmarketTests.framework */,
