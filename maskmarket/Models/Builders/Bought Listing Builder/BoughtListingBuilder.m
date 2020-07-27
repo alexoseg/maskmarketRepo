@@ -14,6 +14,7 @@
                                              parseMaskListing:(ParseMaskListing *)maskListing
 {
     NSString *const listingID = purchaseObj.listingID;
+    NSString *const purchaseObjID = purchaseObj.purchaseObjID;
     int const maskQuantity = purchaseObj.maskQuantity;
     int const spent = purchaseObj.spent;
     NSDate *const purchasedOnDate = purchaseObj.purchasedOnDate;
@@ -29,6 +30,7 @@
     BOOL const completed = purchaseObj.completed;
     
     if (listingID == nil
+        || purchaseObjID == nil
         || maskDescription == nil
         || title == nil
         || city == nil
@@ -44,6 +46,7 @@
     }
     
     return [[BoughtListing alloc] initWithListingID:listingID
+                                      purchaseObjID:purchaseObjID
                                        maskQuantity:maskQuantity
                                     maskDescription:maskDescription
                                               title:title
