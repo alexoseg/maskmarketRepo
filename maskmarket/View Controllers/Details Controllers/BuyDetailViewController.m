@@ -9,6 +9,7 @@
 #import "BuyDetailViewController.h"
 #import "ParsePoster.h"
 #import "PurchaseViewController.h"
+#import "FullImageViewController.h"
 
 #pragma mark - Interface
 
@@ -37,6 +38,14 @@
 {
     [super viewDidLoad];
     [self setUpViews];
+}
+
+#pragma mark - Gesture Recognizers
+
+- (IBAction)onTapImage:(id)sender
+{
+    [self performSegueWithIdentifier:@"fullImageSegue"
+                              sender:nil];
 }
 
 #pragma mark - Setup Views
@@ -76,8 +85,13 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender
 {
-    PurchaseViewController *const destinationViewController = [segue destinationViewController];
-    destinationViewController.maskListing = self.maskListing;
+    if ([segue.identifier isEqualToString:@"purchaseSegue"]) {
+        PurchaseViewController *const destinationViewController = [segue destinationViewController];
+        destinationViewController.maskListing = self.maskListing;
+    } else if ([segue.identifier isEqualToString:@"fullImageSegue"]) {
+        FullImageViewController *const destinationViewController = [segue destinationViewController];
+        destinationViewController.maskImage = _maskImageView.image;
+    }
 }
 
 @end
