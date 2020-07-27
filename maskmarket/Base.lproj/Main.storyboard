@@ -919,7 +919,7 @@ Menlo Park, CA 94025</string>
                                             <outlet property="locationLabel" destination="tKd-5v-YOG" id="i4I-Od-ZH6"/>
                                             <outlet property="maskImageView" destination="xg5-e1-W0v" id="FPc-LZ-MLU"/>
                                             <outlet property="titleLabel" destination="iKC-l9-r5F" id="5Xq-9g-mNb"/>
-                                            <segue destination="Zk1-7B-Jqe" kind="show" id="7H1-SA-Rnt"/>
+                                            <segue destination="Zk1-7B-Jqe" kind="show" identifier="sellerDetailsSegue" id="7H1-SA-Rnt"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -938,7 +938,7 @@ Menlo Park, CA 94025</string>
                         <barButtonItem key="rightBarButtonItem" title="New" id="XNH-wV-7jw">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="3qd-fj-CAk" kind="presentation" id="Bbx-dT-ome"/>
+                                <segue destination="3qd-fj-CAk" kind="presentation" identifier="newMaskSegue" id="Bbx-dT-ome"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

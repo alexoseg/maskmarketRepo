@@ -89,11 +89,13 @@ UITableViewDataSource>
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender
 {
-    SellingDetailsViewController *const viewController = [segue destinationViewController];
-    UITableViewCell *const tappedCell = sender;
-    NSIndexPath *const indexPath = [self.tableView indexPathForCell:tappedCell];
-    ParseMaskListing *const maskListing = _sellingListings[indexPath.row];
-    viewController.maskListing = maskListing;
+    if ([segue.identifier isEqualToString:@"sellerDetailsSegue"]) {
+        SellingDetailsViewController *const viewController = [segue destinationViewController];
+        UITableViewCell *const tappedCell = sender;
+        NSIndexPath *const indexPath = [self.tableView indexPathForCell:tappedCell];
+        ParseMaskListing *const maskListing = _sellingListings[indexPath.row];
+        viewController.maskListing = maskListing;
+    }
 }
 
 #pragma mark - Setups
