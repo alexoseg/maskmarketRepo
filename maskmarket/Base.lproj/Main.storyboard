@@ -516,9 +516,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UPd-AP-duD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <pinchGestureRecognizer id="hbU-fr-9Oe"/>
+                <pinchGestureRecognizer id="hbU-fr-9Oe">
+                    <connections>
+                        <action selector="onPinchImage:" destination="7rS-5A-1d9" id="gA0-vl-gZp"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="944.92753623188412" y="2492.934782608696"/>
+            <point key="canvasLocation" x="945" y="2493"/>
         </scene>
         <!--Purchase View Controller-->
         <scene sceneID="8zZ-j4-8vC">
