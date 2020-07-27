@@ -32,34 +32,31 @@
 
 #pragma mark - Gesture Recognizers
 
-- (IBAction)onPinchImage:(UIPinchGestureRecognizer *)sender
+- (IBAction)onPinchImage:(UIPinchGestureRecognizer *)pinch
 {
-    if (sender.state == UIGestureRecognizerStateBegan
-        || sender.state == UIGestureRecognizerStateChanged )
+    if (pinch.state == UIGestureRecognizerStateBegan
+        || pinch.state == UIGestureRecognizerStateChanged )
     {
-        CGFloat const currentScale = self.maskImageView.frame.size.width / self.maskImageView.bounds.size.width;
-        CGFloat newScale = currentScale * sender.scale;
         
-        if (newScale < 1.0) {
-            newScale = 1.0;
-        }
+        UIView *const pinchView = pinch.view;
+        CGRect const bounds = pinchView.bounds;
+        CGPoint pinchCenter = [pinch locationInView:pinchView];
         
-        if (newScale > 2.0) {
-            newScale = 2.0;
-        }
+        pinchCenter.x -= CGRectGetMidX(bounds);
+        pinchCenter.y -= CGRectGetMidY(bounds);
+        CGAffineTransform transform = pinchView.transform;
+        transform = CGAffineTransformTranslate(transform, pinchCenter.x, pinchCenter.y);
         
-        self.maskImageView.transform = CGAffineTransformMakeScale(newScale, newScale);
-        sender.scale = 1;
-    } else if (sender.state == UIGestureRecognizerStateEnded) {
-        typeof(self) __weak weakSelf = self;
+        CGFloat const scale = pinch.scale;
+        transform = CGAffineTransformScale(transform, scale, scale);
+        transform = CGAffineTransformTranslate(transform, -pinchCenter.x, -pinchCenter.y);
+        pinchView.transform = transform;
+        pinch.scale = 1.0;
+
+    } else if (pinch.state == UIGestureRecognizerStateEnded) {
         [UIView animateWithDuration:0.3
                          animations:^{
-            typeof(weakSelf) strongSelf = weakSelf;
-            if (weakSelf == nil) {
-                return;
-            }
-            
-            strongSelf.maskImageView.transform = CGAffineTransformIdentity;
+            pinch.view.transform = CGAffineTransformIdentity;
         }];
     }
 }
