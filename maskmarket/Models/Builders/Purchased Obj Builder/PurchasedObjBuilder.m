@@ -20,6 +20,7 @@ static NSString *const kTrackingNumber = @"trackingNumber";
 
 + (PurchaseObj *)buildPurchaseObjFromPFObject:(PFObject *)object
 {
+    NSString *const purchaseObjID = object.objectId;
     NSString *const userIDString = object[kUserID];
     NSString *const listingIDString = object[klistingID];
     NSNumber *const maskQuantityCopy = object[kMaskQuantity];
@@ -30,6 +31,7 @@ static NSString *const kTrackingNumber = @"trackingNumber";
     NSString *const trackingNumber = object[kTrackingNumber];
        
     if (userIDString == nil
+        || purchaseObjID == nil
         || listingIDString == nil
         || maskQuantityCopy == nil
         || spent == nil
@@ -42,6 +44,7 @@ static NSString *const kTrackingNumber = @"trackingNumber";
     }
        
     return [[PurchaseObj alloc] initWithUserId:userIDString
+                                 purchaseObjID:purchaseObjID
                                      listingID:listingIDString
                                   maskQuantity:[maskQuantityCopy intValue]
                                          spent:[spent intValue]
