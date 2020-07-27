@@ -39,6 +39,7 @@
 		0F9ECFE324BF72160020B289 /* ParseMaskListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9ECFE224BF72150020B289 /* ParseMaskListing.m */; };
 		0F9ECFEA24BF89330020B289 /* ParseGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9ECFE924BF89330020B289 /* ParseGetter.m */; };
 		0F9ECFED24BF955A0020B289 /* HomeListingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9ECFEC24BF955A0020B289 /* HomeListingCell.m */; };
+		0FB73B7624CB655900C0C860 /* SaleCompletionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB73B7524CB655900C0C860 /* SaleCompletionViewController.m */; };
 		0FC67F3624C60D0F00852F89 /* PurchaseObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F3524C60D0F00852F89 /* PurchaseObj.m */; };
 		0FC67F3A24C610AE00852F89 /* PurchasedObjBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F3924C610AE00852F89 /* PurchasedObjBuilder.m */; };
 		0FC67F3E24C6377400852F89 /* BuyingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F3D24C6377400852F89 /* BuyingViewController.m */; };
@@ -141,6 +142,8 @@
 		0F9ECFE924BF89330020B289 /* ParseGetter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParseGetter.m; sourceTree = "<group>"; };
 		0F9ECFEB24BF955A0020B289 /* HomeListingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeListingCell.h; sourceTree = "<group>"; };
 		0F9ECFEC24BF955A0020B289 /* HomeListingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeListingCell.m; sourceTree = "<group>"; };
+		0FB73B7424CB655900C0C860 /* SaleCompletionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaleCompletionViewController.h; sourceTree = "<group>"; };
+		0FB73B7524CB655900C0C860 /* SaleCompletionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaleCompletionViewController.m; sourceTree = "<group>"; };
 		0FC67F3424C60D0F00852F89 /* PurchaseObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchaseObj.h; sourceTree = "<group>"; };
 		0FC67F3524C60D0F00852F89 /* PurchaseObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseObj.m; sourceTree = "<group>"; };
 		0FC67F3824C610AE00852F89 /* PurchasedObjBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchasedObjBuilder.h; sourceTree = "<group>"; };
@@ -379,6 +382,7 @@
 		0F97CD9324BCDAE000CA7C9E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0FB73B7324CB652D00C0C860 /* Sale Completion Controllers */,
 				0F225C6924CA46190036B57F /* Buyers Controllers */,
 				0FC67F3B24C636FB00852F89 /* Buying Controllers */,
 				0FFE3C3124C24C7E0028466A /* Purchase Controllers */,
@@ -473,6 +477,15 @@
 				0F9ECFE924BF89330020B289 /* ParseGetter.m */,
 			);
 			path = "Parse GETters";
+			sourceTree = "<group>";
+		};
+		0FB73B7324CB652D00C0C860 /* Sale Completion Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0FB73B7424CB655900C0C860 /* SaleCompletionViewController.h */,
+				0FB73B7524CB655900C0C860 /* SaleCompletionViewController.m */,
+			);
+			path = "Sale Completion Controllers";
 			sourceTree = "<group>";
 		};
 		0FC67F3324C60CEB00852F89 /* Purchase Object */ = {
@@ -824,6 +837,7 @@
 				0F1E850624C0CE1100412F4D /* BuyDetailViewController.m in Sources */,
 				0FC67F3624C60D0F00852F89 /* PurchaseObj.m in Sources */,
 				0FC67F4124C63FE600852F89 /* BuyingListingCell.m in Sources */,
+				0FB73B7624CB655900C0C860 /* SaleCompletionViewController.m in Sources */,
 				0F97CD6324BCCFA300CA7C9E /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
