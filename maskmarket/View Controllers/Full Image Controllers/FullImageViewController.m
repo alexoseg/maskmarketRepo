@@ -15,6 +15,7 @@
 #pragma mark - Properties
 
 @property (weak, nonatomic) IBOutlet UIImageView *maskImageView;
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
 
 @end
 
@@ -31,6 +32,12 @@
 }
 
 #pragma mark - Gesture Recognizers
+
+- (IBAction)onPressClose:(id)sender
+{
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
+}
 
 - (IBAction)onPinchImage:(UIPinchGestureRecognizer *)pinch
 {
@@ -67,6 +74,7 @@
 - (void)setUpViews
 {
     [_maskImageView setImage:_maskImage];
+    _closeButton.layer.zPosition = -1;
 }
 
 @end
