@@ -10,6 +10,7 @@
 #import "ParsePoster.h"
 #import "MaskListing.h"
 #import "LoadingPopupView.h"
+#import "ErrorPopupViewController.h"
 
 #pragma mark - Interface
 
@@ -21,6 +22,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *maskQuantityTextField;
 
 @end
+
+#pragma mark - Constants
+
+static NSString *const kErrorSegue = @"errorPopUpSegue";
 
 #pragma mark - Implementation
 
@@ -36,6 +41,15 @@
 - (IBAction)onTapPost:(id)sender
 {
     [self dismissKeyboard];
+    
+    if (_priceTextField.text.length == 0
+        || _maskQuantityTextField.text.length == 0)
+    {
+        [self performSegueWithIdentifier:kErrorSegue
+                                  sender:@"Make sure to fill in all fields before continuing."];
+        return;
+    }
+    
     NSNumberFormatter *const formatter = [[NSNumberFormatter alloc]init];
     self.builder.listingPrice = [formatter numberFromString:_priceTextField.text];
     self.builder.listingMaskQuantity = [formatter numberFromString:_maskQuantityTextField.text];
@@ -52,7 +66,8 @@
         }
         [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
-            NSLog(@"%@", error.localizedDescription);
+            [strongSelf performSegueWithIdentifier:kErrorSegue
+                                            sender:error.localizedDescription];
         } else {
             NSLog(@"Successfully created a listing!");
         }
@@ -79,6 +94,17 @@
 {
     [_priceTextField resignFirstResponder];
     return YES;
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:kErrorSegue]) {
+        ErrorPopupViewController *const destinationViewController = [segue destinationViewController];
+        destinationViewController.popUpMessage = (NSString *)sender;
+    }
 }
 
 #pragma mark - Setup
