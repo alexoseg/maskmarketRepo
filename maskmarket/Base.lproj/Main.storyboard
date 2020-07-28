@@ -27,7 +27,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rTo-tL-zDG">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rTo-tL-zDG" userLabel="Pop Up View">
                                 <rect key="frame" x="82" y="243" width="250" height="250"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warning" translatesAutoresizingMaskIntoConstraints="NO" id="DKA-gH-KXt">
@@ -52,6 +52,9 @@
                                         <state key="normal" title="Try Again">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onTapTryAgain:" destination="spa-vR-37n" eventType="touchUpInside" id="nrq-gZ-RZM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.14901960780000001" green="0.72156862749999995" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -65,6 +68,7 @@
                                     <constraint firstItem="YFl-iD-iRg" firstAttribute="top" secondItem="DKA-gH-KXt" secondAttribute="bottom" constant="30" id="lcP-1C-bc9"/>
                                     <constraint firstItem="y9G-kg-af9" firstAttribute="leading" secondItem="rTo-tL-zDG" secondAttribute="leading" id="mGk-Ef-vPk"/>
                                     <constraint firstItem="DKA-gH-KXt" firstAttribute="top" secondItem="rTo-tL-zDG" secondAttribute="top" constant="15" id="pyk-F0-MmB"/>
+                                    <constraint firstItem="y9G-kg-af9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="YFl-iD-iRg" secondAttribute="bottom" constant="15" id="uNg-oL-oas"/>
                                     <constraint firstAttribute="trailing" secondItem="YFl-iD-iRg" secondAttribute="trailing" constant="15" id="vWT-pn-qxL"/>
                                 </constraints>
                             </view>
@@ -76,6 +80,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DaM-k0-9wJ"/>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="YFl-iD-iRg" id="BLM-UV-3hv"/>
+                        <outlet property="popUpView" destination="rTo-tL-zDG" id="AfP-ev-o6A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTU-Px-uVK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
