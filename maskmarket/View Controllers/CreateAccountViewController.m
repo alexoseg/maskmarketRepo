@@ -29,10 +29,13 @@
 
 @implementation CreateAccountViewController
 
+#pragma mark - Lifecycle
+
 -(void)viewDidLoad
 {
     [super viewDidLoad];
     [self setupViews];
+    [self registerForKeyboardNotifications];
 }
 
 #pragma mark - Notification Registration
@@ -59,6 +62,30 @@
                                                   object:nil];
 }
 
+#pragma mark - Notification Actions
+
+- (void)keyboardWasShown:(NSNotification *)aNotification
+{
+    NSDictionary *const info = [aNotification userInfo];
+    CGSize const keyboardSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+    
+    UIEdgeInsets const contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height + 10.0, 0.0);
+    _scrollView.contentInset = contentInsets;
+    
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= keyboardSize.height;
+    if (!CGRectContainsPoint(aRect, _passwordTextField.frame.origin)) {
+        [_scrollView scrollRectToVisible:_passwordTextField.frame
+                                animated:YES];
+    }
+}
+
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    _scrollView.contentInset = contentInsets;
+    _scrollView.scrollIndicatorInsets = contentInsets;
+}
 
 #pragma mark - Gesture Handlers
 
