@@ -145,15 +145,7 @@ shouldChangeCharactersInRange:(NSRange)range
 
 - (IBAction)onTapBuy:(id)sender
 {
-    NSString *const alertMessage = [NSString stringWithFormat:@"Purchase %@?", _maskListing.title];
-    UIAlertAction *const confirmAction = [UIAlertAction actionWithTitle:@"Confirm"
-                                                                style:UIAlertActionStyleDefault
-                                                              handler:^(UIAlertAction * _Nonnull action) {
-           [self performPurchase];
-    }];
-    [self displayAlertWithMessage:alertMessage
-                     titleMessage:@"Confirm Purchase?"
-                           action:confirmAction];
+    [self performPurchase];
 }
 
 - (void)dismissKeyboard
