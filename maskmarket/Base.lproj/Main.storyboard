@@ -19,10 +19,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Error Popup View Controller-->
         <scene sceneID="41a-7X-3hx">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="spa-vR-37n" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="spa-vR-37n" customClass="ErrorPopupViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pra-4p-fN3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
