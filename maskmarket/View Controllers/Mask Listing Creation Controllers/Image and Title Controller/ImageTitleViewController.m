@@ -9,6 +9,7 @@
 #import "ImageTitleViewController.h"
 #import "DescLocViewController.h"
 #import "MaskListingBuilder.h"
+#import "ErrorPopupViewController.h"
 
 #pragma mark - Interface
 
@@ -22,12 +23,14 @@ UITextFieldDelegate>
 @property (strong, nonatomic) UIImagePickerController *imagePickerVC;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *maskImageView;
+@property (nonatomic) BOOL imageSet;
 
 @end
 
 #pragma mark - Constants
 
 static NSString *const kDescLocSegue = @"descLocSegue";
+static NSString *const kErrorSegue = @"errorPopUpSegue";
 
 #pragma mark - Implementation
 
@@ -46,6 +49,7 @@ static NSString *const kDescLocSegue = @"descLocSegue";
 - (void) imagePickerController:(UIImagePickerController *)picker
  didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info
 {
+    _imageSet = YES;
     UIImage *const originalImage = info[UIImagePickerControllerOriginalImage];
     [self.maskImageView setImage:originalImage];
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -97,6 +101,14 @@ static NSString *const kDescLocSegue = @"descLocSegue";
 
 - (IBAction)onTapNext:(id)sender
 {
+    if (_titleTextField.text.length == 0
+        || !_imageSet)
+    {
+        [self performSegueWithIdentifier:kErrorSegue
+                                  sender:@"Make sure to add a picture and a title before moving on."];
+        return;
+    }
+    
     [self performSegueWithIdentifier:kDescLocSegue
                               sender:nil];
 }
@@ -125,6 +137,9 @@ static NSString *const kDescLocSegue = @"descLocSegue";
 
         DescLocViewController *const viewControlller = [segue destinationViewController];
         viewControlller.builder = builder;
+    } else if ([segue.identifier isEqualToString:kErrorSegue]) {
+        ErrorPopupViewController *const destinationViewController = [segue destinationViewController];
+        destinationViewController.popUpMessage = (NSString *)sender;
     }
 }
 
@@ -135,6 +150,7 @@ static NSString *const kDescLocSegue = @"descLocSegue";
     _imagePickerVC = [UIImagePickerController new];
     _imagePickerVC.delegate = self;
     _imagePickerVC.allowsEditing = self;
+    _imageSet = NO;
     
     UITapGestureRecognizer *const screenTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                       action:@selector(dismissKeyboard)];
