@@ -9,6 +9,7 @@
 #import "DescLocViewController.h"
 #import "PriceViewController.h"
 #import "UIColor+AppColors.h"
+#import "ErrorPopupViewController.h"
 
 #pragma mark - Interface
 
@@ -25,6 +26,7 @@
 #pragma mark - Constants
 
 static NSString *const kPricingSegue = @"pricingSegue";
+static NSString *const kErrorSegue = @"errorPopUpSegue";
 
 #pragma mark - Implementation
 
@@ -56,6 +58,14 @@ static NSString *const kPricingSegue = @"pricingSegue";
 
 - (IBAction)onTapNext:(id)sender
 {
+    if (_cityTextField.text.length == 0
+        || _stateTextField.text.length == 0
+        || _descriptionTextView.text.length == 0)
+    {
+        [self performSegueWithIdentifier:kErrorSegue
+                                  sender:@"Make sure to fill in all fields before continuing."];
+        return;
+    }
     [self performSegueWithIdentifier:kPricingSegue
                               sender:nil];
 }
@@ -72,6 +82,9 @@ static NSString *const kPricingSegue = @"pricingSegue";
         
         PriceViewController *const viewController = [segue destinationViewController];
         viewController.builder = self.builder;
+    } else if ([segue.identifier isEqualToString:kErrorSegue]) {
+        ErrorPopupViewController *const destinationViewController = [segue destinationViewController];
+        destinationViewController.popUpMessage = (NSString *)sender;
     }
 }
 
