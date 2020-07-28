@@ -38,6 +38,12 @@
     [self registerForKeyboardNotifications];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self deregisterForKeyboardNotifications];
+}
+
 #pragma mark - Notification Registration
 
 - (void)registerForKeyboardNotifications
