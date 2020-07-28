@@ -19,6 +19,68 @@
         </array>
     </customFonts>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="41a-7X-3hx">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="spa-vR-37n" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pra-4p-fN3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rTo-tL-zDG">
+                                <rect key="frame" x="82" y="243" width="250" height="250"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warning" translatesAutoresizingMaskIntoConstraints="NO" id="DKA-gH-KXt">
+                                        <rect key="frame" x="85" y="15" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="6pj-Wc-5gF"/>
+                                            <constraint firstAttribute="height" constant="80" id="AKC-ng-Nje"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seems like there was a problem. Let's try that again!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFl-iD-iRg">
+                                        <rect key="frame" x="15" y="125.00000000000001" width="220" height="40.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9G-kg-af9">
+                                        <rect key="frame" x="0.0" y="210" width="250" height="40"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="39a-Ws-1YO"/>
+                                        </constraints>
+                                        <state key="normal" title="Try Again">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.14901960780000001" green="0.72156862749999995" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="D0S-oL-0Zv"/>
+                                    <constraint firstAttribute="height" constant="250" id="DED-65-rFc"/>
+                                    <constraint firstItem="DKA-gH-KXt" firstAttribute="centerX" secondItem="rTo-tL-zDG" secondAttribute="centerX" id="UOt-rO-rul"/>
+                                    <constraint firstItem="YFl-iD-iRg" firstAttribute="leading" secondItem="rTo-tL-zDG" secondAttribute="leading" constant="15" id="UPa-B9-dqa"/>
+                                    <constraint firstAttribute="bottom" secondItem="y9G-kg-af9" secondAttribute="bottom" id="UjV-IQ-nbC"/>
+                                    <constraint firstAttribute="trailing" secondItem="y9G-kg-af9" secondAttribute="trailing" id="WQD-Kt-Bi5"/>
+                                    <constraint firstItem="YFl-iD-iRg" firstAttribute="top" secondItem="DKA-gH-KXt" secondAttribute="bottom" constant="30" id="lcP-1C-bc9"/>
+                                    <constraint firstItem="y9G-kg-af9" firstAttribute="leading" secondItem="rTo-tL-zDG" secondAttribute="leading" id="mGk-Ef-vPk"/>
+                                    <constraint firstItem="DKA-gH-KXt" firstAttribute="top" secondItem="rTo-tL-zDG" secondAttribute="top" constant="15" id="pyk-F0-MmB"/>
+                                    <constraint firstAttribute="trailing" secondItem="YFl-iD-iRg" secondAttribute="trailing" constant="15" id="vWT-pn-qxL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="rTo-tL-zDG" firstAttribute="centerY" secondItem="Pra-4p-fN3" secondAttribute="centerY" id="Bqz-y1-3cw"/>
+                            <constraint firstItem="rTo-tL-zDG" firstAttribute="centerX" secondItem="Pra-4p-fN3" secondAttribute="centerX" id="Ymy-Nw-VNe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DaM-k0-9wJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dTU-Px-uVK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1198.5507246376812" y="75"/>
+        </scene>
         <!--Create Account View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -135,6 +197,7 @@
                         <outlet property="passwordTextField" destination="xRE-nK-xTC" id="za9-zL-3cG"/>
                         <outlet property="scrollView" destination="HKe-pr-2SP" id="5aS-x4-bAy"/>
                         <outlet property="usernameTextField" destination="hQa-iA-Qfl" id="gGS-hh-JXo"/>
+                        <segue destination="spa-vR-37n" kind="presentation" identifier="errorPopUpSegue" id="Ama-Bi-UKi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -2065,5 +2128,6 @@ Menlo Park, CA 94025</string>
         <image name="home_tab" width="32" height="32"/>
         <image name="mask_icon" width="512" height="512"/>
         <image name="sale" width="32" height="32"/>
+        <image name="warning" width="512" height="512"/>
     </resources>
 </document>
