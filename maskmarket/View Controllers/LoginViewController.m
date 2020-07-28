@@ -10,6 +10,7 @@
 #import "ParsePoster.h"
 #import "SceneDelegate.h"
 #import "LoadingPopupView.h"
+#import "ErrorPopupViewController.h"
 
 #pragma mark - Interface
 
@@ -21,6 +22,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 @end
+
+#pragma mark - Implementation
+
+static NSString *const kErrorSegue = @"errorPopUpSegue";
 
 #pragma mark - Implementation
 
@@ -39,6 +44,15 @@
 - (IBAction)onLoginTap:(id)sender
 {
     [self dismissKeyboard];
+    
+    if (_usernameTextField.text.length == 0
+        || _passwordTextField.text.length == 0)
+    {
+        [self performSegueWithIdentifier:kErrorSegue
+                                  sender:@"Oops! You have to fill in all the fields in order to create an account."];
+        return;
+    }
+    
     [LoadingPopupView showLoadingPopupAddedTo:self.view
                                   withMessage:@"Logging In..."];
     typeof(self) __weak weakSelf = self;
@@ -51,9 +65,9 @@
         }
         [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
-            NSLog(@"%@", error.localizedDescription);
+            [strongSelf performSegueWithIdentifier:kErrorSegue
+                                            sender:error.localizedDescription];
         } else {
-            NSLog(@"Successfully logged in!");
             SceneDelegate *const sceneDelegate = (SceneDelegate *)strongSelf.view.window.windowScene.delegate;
             UIStoryboard *const storyboard = [UIStoryboard storyboardWithName:@"Main"
                                                                        bundle:nil];
@@ -74,6 +88,16 @@
                                                to:nil
                                              from:nil
                                          forEvent:nil];
+}
+
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:kErrorSegue]) {
+        ErrorPopupViewController *const destinationViewController = [segue destinationViewController];
+        destinationViewController.popUpMessage = (NSString *)sender;
+    }
 }
 
 #pragma mark - Setup
