@@ -19,6 +19,12 @@ NS_ASSUME_NONNULL_BEGIN
                        includingKeys:(NSArray<NSString *> *)keys
                                limit:(NSInteger)limit;
 
++ (nullable PFQuery *)buildQueryWithClassName:(NSString *)className
+                                     whereKey:(NSString *)key
+                                      equalTo:(id)object
+                                includingKeys:(NSArray<NSString *> *)keys
+                                        limit:(NSInteger)limit;
+
 - (instancetype)init NS_UNAVAILABLE;
 
 + (instancetype)new NS_UNAVAILABLE;
