@@ -133,6 +133,7 @@
                         <outlet property="emailTextField" destination="hEg-jI-gr0" id="LUk-zh-XZx"/>
                         <outlet property="nextButton" destination="2X7-LN-hTo" id="fOt-bY-cCj"/>
                         <outlet property="passwordTextField" destination="xRE-nK-xTC" id="za9-zL-3cG"/>
+                        <outlet property="scrollView" destination="HKe-pr-2SP" id="5aS-x4-bAy"/>
                         <outlet property="usernameTextField" destination="hQa-iA-Qfl" id="gGS-hh-JXo"/>
                     </connections>
                 </viewController>
