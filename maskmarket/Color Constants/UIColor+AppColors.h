@@ -12,6 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIColor (AppColors)
 
++ (UIColor *)primaryAppColor;
+
++ (UIColor *)primaryAppColorAlpha0;
+
++ (UIColor *)popUpViewBackgroundAlpha0;
+
++ (UIColor *)popUpViewBackgroundAlphaHalf;
+
 @end
 
 NS_ASSUME_NONNULL_END

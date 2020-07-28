@@ -10,4 +10,64 @@
 
 @implementation UIColor (AppColors)
 
++ (UIColor *)primaryAppColor
+{
+    static UIColor *color = nil;
+    static dispatch_once_t token;
+    
+    dispatch_once(&token, ^{
+        color = [UIColor colorWithRed:38.0f/255.0f
+                                green:184.0f/255.0f
+                                 blue:153.0f/255.0f
+                                alpha:1.0f];
+    });
+    
+    return color;
+}
+
++ (UIColor *)primaryAppColorAlpha0
+{
+    static UIColor *color = nil;
+    static dispatch_once_t token;
+    
+    dispatch_once(&token, ^{
+        color = [UIColor colorWithRed:38.0f/255.0f
+                                green:184.0f/255.0f
+                                 blue:153.0f/255.0f
+                                alpha:0.0f];
+    });
+    
+    return color;
+}
+
++ (UIColor *)popUpViewBackgroundAlpha0
+{
+    static UIColor *color = nil;
+    static dispatch_once_t token;
+    
+    dispatch_once(&token, ^{
+        color = [UIColor colorWithRed:0.5
+                                green:0.5
+                                 blue:0.5
+                                alpha:0.0];
+    });
+    
+    return color;
+}
+
++ (UIColor *)popUpViewBackgroundAlphaHalf
+{
+    static UIColor *color = nil;
+    static dispatch_once_t token;
+    
+    dispatch_once(&token, ^{
+        color = [UIColor colorWithRed:0.5
+                                green:0.5
+                                 blue:0.5
+                                alpha:0.5];
+    });
+    
+    return color;
+}
+
 @end
