@@ -78,10 +78,21 @@
                              completion:nil];
 }
 
+#pragma mark - Textfield Delegate Methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 #pragma mark - Setup
 
 - (void)setupViews
 {
+    _usernameTextField.delegate = self;
+    _emailTextField.delegate = self;
+    _passwordTextField.delegate = self;
     UITapGestureRecognizer *const screenTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                       action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:screenTap];
