@@ -11,6 +11,7 @@
 		0F1E850C24C1063000412F4D /* SellingListingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E850B24C1063000412F4D /* SellingListingCell.m */; };
 		0F1E851024C1082E00412F4D /* SellingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E850F24C1082E00412F4D /* SellingViewController.m */; };
 		0F2181B724CFB13E008F07BE /* QueryBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2181B624CFB13E008F07BE /* QueryBuilder.m */; };
+		0F2181BB24CFC287008F07BE /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2181BA24CFC287008F07BE /* UIColor+AppColors.m */; };
 		0F225C5F24C8A48C0036B57F /* LoadingPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F225C5E24C8A48C0036B57F /* LoadingPopupView.m */; };
 		0F225C6224C8C2F00036B57F /* loadwheel.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F225C6124C8C2F00036B57F /* loadwheel.json */; };
 		0F225C6524CA12E20036B57F /* ViewBuyersButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F225C6424CA12E20036B57F /* ViewBuyersButton.m */; };
@@ -83,6 +84,8 @@
 		0F1E850F24C1082E00412F4D /* SellingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellingViewController.m; sourceTree = "<group>"; };
 		0F2181B524CFB13E008F07BE /* QueryBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QueryBuilder.h; sourceTree = "<group>"; };
 		0F2181B624CFB13E008F07BE /* QueryBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QueryBuilder.m; sourceTree = "<group>"; };
+		0F2181B924CFC287008F07BE /* UIColor+AppColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppColors.h"; sourceTree = "<group>"; };
+		0F2181BA24CFC287008F07BE /* UIColor+AppColors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppColors.m"; sourceTree = "<group>"; };
 		0F225C5D24C8A48C0036B57F /* LoadingPopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingPopupView.h; sourceTree = "<group>"; };
 		0F225C5E24C8A48C0036B57F /* LoadingPopupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadingPopupView.m; sourceTree = "<group>"; };
 		0F225C6124C8C2F00036B57F /* loadwheel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loadwheel.json; path = ../../../../Desktop/loadwheel.json; sourceTree = "<group>"; };
@@ -239,6 +242,15 @@
 			path = "Query Builder";
 			sourceTree = "<group>";
 		};
+		0F2181B824CFC1DE008F07BE /* Color Constants */ = {
+			isa = PBXGroup;
+			children = (
+				0F2181B924CFC287008F07BE /* UIColor+AppColors.h */,
+				0F2181BA24CFC287008F07BE /* UIColor+AppColors.m */,
+			);
+			path = "Color Constants";
+			sourceTree = "<group>";
+		};
 		0F225C6024C8C2D30036B57F /* Animation JSONs */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +382,7 @@
 		0F97CD5D24BCCFA300CA7C9E /* maskmarket */ = {
 			isa = PBXGroup;
 			children = (
+				0F2181B824CFC1DE008F07BE /* Color Constants */,
 				0F892ACA24CF8F4F00B7A3EB /* maskmarket.entitlements */,
 				0F225C6024C8C2D30036B57F /* Animation JSONs */,
 				0F6C4D9E24BD1F6500E2E846 /* Models */,
@@ -867,6 +880,7 @@
 				0F9ECFE324BF72160020B289 /* ParseMaskListing.m in Sources */,
 				0F225C5F24C8A48C0036B57F /* LoadingPopupView.m in Sources */,
 				0FC67F4A24C7630A00852F89 /* BoughtListingBuilder.m in Sources */,
+				0F2181BB24CFC287008F07BE /* UIColor+AppColors.m in Sources */,
 				0F225C6C24CA462C0036B57F /* BuyersViewController.m in Sources */,
 				0F1E850624C0CE1100412F4D /* BuyDetailViewController.m in Sources */,
 				0FC67F3624C60D0F00852F89 /* PurchaseObj.m in Sources */,
