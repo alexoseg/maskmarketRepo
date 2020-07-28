@@ -25,6 +25,10 @@ UITextFieldDelegate>
 
 @end
 
+#pragma mark - Constants
+
+static NSString *const kDescLocSegue = @"descLocSegue";
+
 #pragma mark - Implementation
 
 @implementation ImageTitleViewController
@@ -91,6 +95,13 @@ UITextFieldDelegate>
                                          forEvent:nil];
 }
 
+- (IBAction)onTapNext:(id)sender
+{
+    [self performSegueWithIdentifier:kDescLocSegue
+                              sender:nil];
+}
+
+
 #pragma mark - Text Field Delegate Methods
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -104,15 +115,17 @@ UITextFieldDelegate>
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender
 {
-    MaskListingBuilder *const builder = [[MaskListingBuilder alloc] init];
-    builder.listingTitle = _titleTextField.text;
-    
-    UIImage *const resizedImage = [self resizeImage:self.maskImageView.image
-                                           withSize:CGSizeMake(500, 500)];
-    builder.listingImage = resizedImage;
+    if ([segue.identifier isEqualToString:kDescLocSegue]) {
+        MaskListingBuilder *const builder = [[MaskListingBuilder alloc] init];
+        builder.listingTitle = _titleTextField.text;
+        
+        UIImage *const resizedImage = [self resizeImage:self.maskImageView.image
+                                               withSize:CGSizeMake(500, 500)];
+        builder.listingImage = resizedImage;
 
-    DescLocViewController *const viewControlller = [segue destinationViewController];
-    viewControlller.builder = builder;
+        DescLocViewController *const viewControlller = [segue destinationViewController];
+        viewControlller.builder = builder;
+    }
 }
 
 #pragma mark - Setup
