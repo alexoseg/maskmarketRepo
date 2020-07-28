@@ -1282,7 +1282,7 @@ Menlo Park, CA 94025</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7Pp-5W-vIi" kind="show" id="g6C-gr-gHS"/>
+                                    <action selector="onTapNext:" destination="ZHq-fQ-zw9" eventType="touchUpInside" id="N1o-BW-pHK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1323,6 +1323,7 @@ Menlo Park, CA 94025</string>
                         <outlet property="cityTextField" destination="dFD-lp-CuP" id="NiH-F7-bGV"/>
                         <outlet property="descriptionTextView" destination="H5G-Ga-i29" id="y6J-bq-Itc"/>
                         <outlet property="stateTextField" destination="LvH-gp-9pV" id="udM-Fn-gev"/>
+                        <segue destination="7Pp-5W-vIi" kind="show" identifier="pricingSegue" id="p5N-9d-WPE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6b-uD-fPX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
