@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import "PurchasedObjBuilder.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -24,6 +25,10 @@ NS_ASSUME_NONNULL_BEGIN
                                       equalTo:(id)object
                                 includingKeys:(NSArray<NSString *> *)keys
                                         limit:(NSInteger)limit;
+
++ (NSArray<PFQuery *> *)buildQueryArrayFromPurchasedArray:(NSArray<PurchaseObj *> *)purchasedObjs
+                                            withClassName:(NSString *)className
+                                                 queryKey:(NSString *)key;
 
 - (instancetype)init NS_UNAVAILABLE;
 

@@ -76,4 +76,32 @@
     
     return query;
 }
+
++ (NSArray<PFQuery *> *)buildQueryArrayFromPurchasedArray:(NSArray<PurchaseObj *> *)purchasedObjs
+                                            withClassName:(NSString *)className
+                                                 queryKey:(NSString *)key
+
+{
+    if (purchasedObjs == nil
+        || className == nil
+        || key == nil)
+    {
+        return nil;
+    }
+    
+    NSArray<PurchaseObj *> *const purchaseObjsCopy = [purchasedObjs copy];
+    NSString *const classNameCopy = [className copy];
+    NSString *const keyCopy = [key copy];
+    
+    NSMutableArray<PFQuery *> *const queryObjects = [NSMutableArray new];
+    
+    for (PurchaseObj *const purchasedObj in purchaseObjsCopy) {
+        PFQuery *const subQuery = [PFQuery queryWithClassName:classNameCopy];
+        [subQuery whereKey:keyCopy equalTo:purchasedObj.listingID];
+        [queryObjects addObject:subQuery];
+    }
+    
+    return [queryObjects copy];
+}
+
 @end
