@@ -11,6 +11,7 @@
 #import "PurchasedObjBuilder.h"
 #import "MaskListingBuilder.h"
 #import "BoughtListingBuilder.h"
+#import "QueryBuilder.h"
 
 @implementation ParseGetter
 
@@ -37,64 +38,37 @@ static NSString *const kTrackingNumber = @"trackingNumber";
 
 + (void)fetchAllListingsWithCompletion:(void (^)(NSArray * _Nullable, NSError * _Nullable))completion
 {
-    PFQuery *const query = [PFQuery queryWithClassName:kListings];
-    [query whereKey:kMaskQuantity greaterThan:@(0)];
-    
-    [query includeKey:kDescription];
-    [query includeKey:kTitle];
-    [query includeKey:kCity];
-    [query includeKey:kState];
-    [query includeKey:kAuthorUsername];
-    [query includeKey:kAuthorEmail];
-    [query includeKey:kAuthorID];
-    [query includeKey:kPrice];
-    [query includeKey:kPurchasedArray];
-    [query includeKey:kMaskQuantity];
-    [query includeKey:kImage];
-    
-    query.limit = 20;
+    NSArray<NSString *> *const keyArray = @[kDescription, kTitle, kCity, kState, kAuthorUsername, kAuthorEmail, kAuthorID, kPrice, kPurchasedArray, kMaskQuantity, kImage];
+    PFQuery *const query = [QueryBuilder buildQueryWithClassName:kListings
+                                                        whereKey:kMaskQuantity
+                                                     greaterThan:@0
+                                                   includingKeys:keyArray
+                                                           limit:20];
     
     [query findObjectsInBackgroundWithBlock:completion];
 }
 
 + (void)fetchCurrentUserSellingsWithCompletion:(void (^)(NSArray * _Nullable, NSError * _Nullable))completion
 {
-    PFQuery *const query = [PFQuery queryWithClassName:kListings];
     User *const currentUser = [UserBuilder buildUserfromPFUser:[PFUser currentUser]];
-    
-    [query whereKey:kAuthorID equalTo:currentUser.userID];
-    
-    [query includeKey:kDescription];
-    [query includeKey:kTitle];
-    [query includeKey:kCity];
-    [query includeKey:kState];
-    [query includeKey:kAuthorUsername];
-    [query includeKey:kAuthorEmail];
-    [query includeKey:kAuthorID];
-    [query includeKey:kPrice];
-    [query includeKey:kPurchasedArray];
-    [query includeKey:kMaskQuantity];
-    [query includeKey:kImage];
-    
-    query.limit = 20;
-    
+    NSArray<NSString *> *const keyArray = @[kDescription, kTitle, kCity, kState, kAuthorUsername, kAuthorEmail, kAuthorID, kPrice, kPurchasedArray, kMaskQuantity, kImage];
+    PFQuery *const query = [QueryBuilder buildQueryWithClassName:kListings
+                                                        whereKey:kAuthorID
+                                                         equalTo:currentUser.userID
+                                                   includingKeys:keyArray
+                                                           limit:20];
     [query findObjectsInBackgroundWithBlock:completion];
 }
 
 + (void)fetchListingsBoughtByUserID:(NSString *)userID
                      withCompletion:(void (^)(NSArray<BoughtListing *> * _Nullable objects, NSError * _Nullable error))completion
 {
-    PFQuery *const query = [PFQuery queryWithClassName:kPurchasedObjs];
-    [query whereKey:kUserID equalTo:userID];
-    [query includeKey:kListingID];
-    [query includeKey:kUserID];
-    [query includeKey:kMaskQuantity];
-    [query includeKey:kSpent];
-    [query includeKey:kBuyerUsername];
-    [query includeKey:kCompleted];
-    [query includeKey:kTrackingNumber];
-
-    query.limit = 20;
+    NSArray<NSString *> *const keyArray = @[kListingID, kUserID, kMaskQuantity, kSpent, kBuyerUsername, kCompleted, kTrackingNumber];
+    PFQuery *const query = [QueryBuilder buildQueryWithClassName:kPurchasedObjs
+                                                        whereKey:kUserID
+                                                         equalTo:userID
+                                                   includingKeys:keyArray
+                                                           limit:20];
     
     typeof(self) __weak weakSelf = self;
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
@@ -108,7 +82,9 @@ static NSString *const kTrackingNumber = @"trackingNumber";
         }
         
         NSArray<PurchaseObj *> *const purchasedObjs = [PurchasedObjBuilder buildPurchaseObjArrayfromArray:objects];
-        NSArray<PFQuery *> *const queryObjects = [strongSelf buildQueryArrayFromPurchasedArray:purchasedObjs];
+        NSArray<PFQuery *> *const queryObjects = [QueryBuilder buildQueryArrayFromPurchasedArray:purchasedObjs
+                                                                                   withClassName:kListings
+                                                                                        queryKey:kObjectID];
         NSDictionary<NSString *, NSArray<PurchaseObj *> *> *const purchaseMap = [strongSelf mapListingsToPurchasedObjs:purchasedObjs];
         
         if (queryObjects.count != 0) {
@@ -139,14 +115,12 @@ static NSString *const kTrackingNumber = @"trackingNumber";
 + (void)fetchPurchasedObjectsWithListingID:(NSString *)listingID
                             withCompletion:(void (^)(NSArray<PurchaseObj *> * _Nullable, NSError * _Nullable))completion
 {
-    PFQuery *const query = [PFQuery queryWithClassName:kPurchasedObjs];
-    [query whereKey:kListingID equalTo:listingID];
-    [query includeKey:kListingID];
-    [query includeKey:kUserID];
-    [query includeKey:kMaskQuantity];
-    [query includeKey:kSpent];
-    
-    query.limit = 20;
+    NSArray<NSString *> *const keyArray = @[kListingID, kUserID, kMaskQuantity, kSpent];
+    PFQuery *const query = [QueryBuilder buildQueryWithClassName:kPurchasedObjs
+                                                        whereKey:kListingID
+                                                         equalTo:listingID
+                                                   includingKeys:keyArray
+                                                           limit:20];
     [query findObjectsInBackgroundWithBlock:^(NSArray<PFObject *> * _Nullable objects, NSError * _Nullable error) {
         if (error) {
             completion(nil, error);
@@ -155,19 +129,6 @@ static NSString *const kTrackingNumber = @"trackingNumber";
             completion(purchaseObjs, nil);
         }
     }];
-}
-
-+ (NSArray<PFQuery *> *)buildQueryArrayFromPurchasedArray:(NSArray<PurchaseObj *> *)purchasedObjs
-{
-    NSMutableArray<PFQuery *> *const queryObjects = [NSMutableArray new];
-    
-    for (PurchaseObj *const purchasedObj in purchasedObjs) {
-        PFQuery *const subQuery = [PFQuery queryWithClassName:kListings];
-        [subQuery whereKey:kObjectID equalTo:purchasedObj.listingID];
-        [queryObjects addObject:subQuery];
-    }
-    
-    return [queryObjects copy];
 }
 
 + (NSDictionary<NSString *, NSArray<PurchaseObj *> *> *)mapListingsToPurchasedObjs:(NSArray<PurchaseObj *> *)purchasedObjs
