@@ -1398,6 +1398,7 @@ Menlo Park, CA 94025</string>
                     <connections>
                         <outlet property="maskQuantityTextField" destination="E1w-V1-2bP" id="7dl-TX-E5L"/>
                         <outlet property="priceTextField" destination="NOG-9V-EJy" id="h0L-36-eYh"/>
+                        <segue destination="xWJ-y4-pPe" kind="presentation" identifier="errorPopUpSegue" id="0et-Cw-qof"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwK-s8-TEv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2344,6 +2345,76 @@ Menlo Park, CA 94025</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5t3-5W-t7p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4383" y="4882"/>
+        </scene>
+        <!--Error Popup View Controller-->
+        <scene sceneID="tto-11-xa7">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="xWJ-y4-pPe" customClass="ErrorPopupViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i5R-Wh-NaD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Svb-bG-DRl" userLabel="Pop Up View">
+                                <rect key="frame" x="82" y="243" width="250" height="250"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warning" translatesAutoresizingMaskIntoConstraints="NO" id="ij6-0b-GBQ">
+                                        <rect key="frame" x="85" y="15" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="Oow-99-PhG"/>
+                                            <constraint firstAttribute="height" constant="80" id="nJx-8L-q7p"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seems like there was a problem. Let's try that again!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVJ-dV-cZG">
+                                        <rect key="frame" x="15" y="125.00000000000001" width="220" height="40.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oth-kk-rgk">
+                                        <rect key="frame" x="0.0" y="210" width="250" height="40"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="vHu-nF-EoC"/>
+                                        </constraints>
+                                        <state key="normal" title="Try Again">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTapTryAgain:" destination="xWJ-y4-pPe" eventType="touchUpInside" id="CVG-l1-iYv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.14901960780000001" green="0.72156862749999995" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ij6-0b-GBQ" firstAttribute="top" secondItem="Svb-bG-DRl" secondAttribute="top" constant="15" id="07F-aF-GIv"/>
+                                    <constraint firstAttribute="width" constant="250" id="0XS-6u-yHC"/>
+                                    <constraint firstItem="oth-kk-rgk" firstAttribute="leading" secondItem="Svb-bG-DRl" secondAttribute="leading" id="3Vc-tV-eAU"/>
+                                    <constraint firstItem="lVJ-dV-cZG" firstAttribute="top" secondItem="ij6-0b-GBQ" secondAttribute="bottom" constant="30" id="A5V-kh-qXh"/>
+                                    <constraint firstAttribute="trailing" secondItem="oth-kk-rgk" secondAttribute="trailing" id="H7y-u2-yi0"/>
+                                    <constraint firstItem="lVJ-dV-cZG" firstAttribute="leading" secondItem="Svb-bG-DRl" secondAttribute="leading" constant="15" id="M2z-Fz-0fg"/>
+                                    <constraint firstAttribute="height" constant="250" id="RFv-mR-3PL"/>
+                                    <constraint firstItem="oth-kk-rgk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="lVJ-dV-cZG" secondAttribute="bottom" constant="15" id="S7y-z1-7qp"/>
+                                    <constraint firstAttribute="bottom" secondItem="oth-kk-rgk" secondAttribute="bottom" id="eia-YZ-L1b"/>
+                                    <constraint firstAttribute="trailing" secondItem="lVJ-dV-cZG" secondAttribute="trailing" constant="15" id="fS0-yZ-TKH"/>
+                                    <constraint firstItem="ij6-0b-GBQ" firstAttribute="centerX" secondItem="Svb-bG-DRl" secondAttribute="centerX" id="tK8-Hm-cTo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Svb-bG-DRl" firstAttribute="centerY" secondItem="i5R-Wh-NaD" secondAttribute="centerY" id="CQj-on-Qb4"/>
+                            <constraint firstItem="Svb-bG-DRl" firstAttribute="centerX" secondItem="i5R-Wh-NaD" secondAttribute="centerX" id="Z4R-lH-mtd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JU6-Q6-p9M"/>
+                    </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="lVJ-dV-cZG" id="xTW-kt-Se5"/>
+                        <outlet property="popUpView" destination="Svb-bG-DRl" id="gFb-xJ-RJp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pVK-aa-XkB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4383" y="5676"/>
         </scene>
     </scenes>
     <resources>
