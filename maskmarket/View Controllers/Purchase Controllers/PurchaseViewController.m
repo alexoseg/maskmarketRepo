@@ -9,10 +9,13 @@
 #import "PurchaseViewController.h"
 #import "ParsePoster.h"
 #import "LoadingPopupView.h"
+#import <PassKit/PassKit.h>
 
 #pragma mark - Interface
 
-@interface PurchaseViewController () <UITextFieldDelegate>
+@interface PurchaseViewController ()
+<UITextFieldDelegate,
+PKPaymentAuthorizationViewControllerDelegate>
 
 #pragma mark - Properties
 
@@ -25,6 +28,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *quantityLabel;
 
 @end
+
+#pragma mark - Constants
+
+static NSString *const kCurrencyCode = @"USD";
+static NSString *const kCountryCode = @"US";
+static NSString *const kMerchantIdentifier = @"merchant.com.alexoseg.maskmarket2";
 
 #pragma mark - Implementation
 
@@ -40,27 +49,36 @@
 
 - (void)performPurchase
 {
-    [LoadingPopupView showLoadingPopupAddedTo:self.view
-                                  withMessage:@"Purchasing"];
-    typeof(self) __weak weakSelf = self;
-    [ParsePoster purchaseListingWithId:_maskListing.listingId
-                      amountToPurchase:[_quantityTextField.text intValue]
-                           amountSpent:[_priceLabel.text intValue]
-                        withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-        typeof(weakSelf) strongSelf = self;
-        if (strongSelf == nil) {
-            return;
-        }
-        
-        [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        } else {
-            NSLog(@"Successful purchase!");
-            [self dismissViewControllerAnimated:YES
-                                     completion:nil];
-        }
-    }];
+    NSString *const summaryLabel = _maskListing.title;
+    NSDecimalNumber *const amount = [NSDecimalNumber decimalNumberWithString:_priceLabel.text];
+    PKPaymentSummaryItem *const paymentItem = [PKPaymentSummaryItem summaryItemWithLabel:summaryLabel
+                                                                                  amount:amount];
+    NSArray<PKPaymentNetwork> *const paymentNetworks = @[PKPaymentNetworkAmex, PKPaymentNetworkVisa];
+    
+    if (![PKPaymentAuthorizationViewController canMakePaymentsUsingNetworks:paymentNetworks]) {
+        NSLog(@"Error: Unable to make Apple Pay Transaction");
+        return;
+    }
+    
+    PKPaymentRequest *const paymentRequest = [PKPaymentRequest new];
+    paymentRequest.currencyCode = kCurrencyCode;
+    paymentRequest.countryCode = kCountryCode;
+    paymentRequest.merchantIdentifier = kMerchantIdentifier;
+    paymentRequest.merchantCapabilities = PKMerchantCapability3DS;
+    paymentRequest.supportedNetworks = paymentNetworks;
+    paymentRequest.paymentSummaryItems = @[paymentItem];
+    
+    PKPaymentAuthorizationViewController *const paymentViewController = [[PKPaymentAuthorizationViewController alloc] initWithPaymentRequest:paymentRequest];
+    
+    if (paymentViewController == nil) {
+        NSLog(@"Error: Could not display apple pay view controller");
+        return;
+    }
+    
+    paymentViewController.delegate = self;
+    [self presentViewController:paymentViewController
+                       animated:YES
+                     completion:nil];
 }
 
 #pragma mark - Text Field Code
@@ -167,4 +185,45 @@ shouldChangeCharactersInRange:(NSRange)range
     _quantityLabel.text = [NSString stringWithFormat:@"%d", _maskListing.maskQuantity];
 }
 
+#pragma mark - Apple Pay Delegate Code
+
+- (void)paymentAuthorizationViewControllerDidFinish:(nonnull PKPaymentAuthorizationViewController *)controller {
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
+}
+
+- (void)paymentAuthorizationViewController:(PKPaymentAuthorizationViewController *)controller
+                       didAuthorizePayment:(PKPayment *)payment
+                                   handler:(void (^)(PKPaymentAuthorizationResult * _Nonnull))completion
+{
+    typeof(self) __weak weakSelf = self;
+    [self dismissViewControllerAnimated:YES
+                             completion:^{
+        typeof(weakSelf) strongSelf = self;
+        if (strongSelf == nil) {
+            return;
+        }
+        [LoadingPopupView showLoadingPopupAddedTo:strongSelf.view
+                                      withMessage:@"Purchasing"];
+        
+        NSString *const purchaseListID = strongSelf.maskListing.listingId;
+        int const amountToPurchase = [strongSelf.quantityTextField.text intValue];
+        int const amountSpent = [strongSelf.priceLabel.text intValue];
+        
+        [ParsePoster purchaseListingWithId:purchaseListID
+                          amountToPurchase:amountToPurchase
+                               amountSpent:amountSpent
+                            withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+            
+            [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
+            if (error) {
+                NSLog(@"%@", error.localizedDescription);
+            } else {
+                NSLog(@"Successful purchase!");
+                [self dismissViewControllerAnimated:YES
+                                         completion:nil];
+            }
+        }];
+    }];
+}
 @end
