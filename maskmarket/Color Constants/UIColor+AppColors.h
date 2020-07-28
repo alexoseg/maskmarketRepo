@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIColor *)popUpViewBackgroundAlphaHalf;
 
++ (UIColor *)borderColorGrey;
+
 @end
 
 NS_ASSUME_NONNULL_END

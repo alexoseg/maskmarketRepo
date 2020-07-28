@@ -70,4 +70,19 @@
     return color;
 }
 
++ (UIColor *)borderColorGrey
+{
+    static UIColor *color = nil;
+    static dispatch_once_t token;
+    
+    dispatch_once(&token, ^{
+        color = [UIColor colorWithRed:0.85
+                                green:0.85
+                                 blue:0.85
+                                alpha:1.0];
+    });
+    
+    return color;
+}
+
 @end
