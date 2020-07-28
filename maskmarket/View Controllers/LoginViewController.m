@@ -14,7 +14,7 @@
 
 #pragma mark - Interface
 
-@interface LoginViewController ()
+@interface LoginViewController () <UITextFieldDelegate>
 
 #pragma mark - Properties
 
@@ -90,6 +90,14 @@ static NSString *const kErrorSegue = @"errorPopUpSegue";
                                          forEvent:nil];
 }
 
+#pragma mark - Textfield Delegate Methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender
@@ -104,6 +112,8 @@ static NSString *const kErrorSegue = @"errorPopUpSegue";
 
 - (void)setupViews
 {
+    _usernameTextField.delegate = self;
+    _passwordTextField.delegate = self;
     UITapGestureRecognizer *const screenTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                       action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:screenTap];
