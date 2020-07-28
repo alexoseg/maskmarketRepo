@@ -22,6 +22,10 @@
 
 @end
 
+#pragma mark - Constants
+
+static NSString *const kPricingSegue = @"pricingSegue";
+
 #pragma mark - Implementation
 
 @implementation DescLocViewController
@@ -50,18 +54,25 @@
                                          forEvent:nil];
 }
 
+- (IBAction)onTapNext:(id)sender
+{
+    [self performSegueWithIdentifier:kPricingSegue
+                              sender:nil];
+}
 
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender
 {
-    self.builder.listingCity = _cityTextField.text;
-    self.builder.listingState = _stateTextField.text;
-    self.builder.listingDescription = _descriptionTextView.text;
-    
-    PriceViewController *const viewController = [segue destinationViewController];
-    viewController.builder = self.builder;
+    if ([segue.identifier isEqualToString:kPricingSegue]) {
+        _builder.listingCity = _cityTextField.text;
+        _builder.listingState = _stateTextField.text;
+        _builder.listingDescription = _descriptionTextView.text;
+        
+        PriceViewController *const viewController = [segue destinationViewController];
+        viewController.builder = self.builder;
+    }
 }
 
 #pragma mark - Text Field Code
