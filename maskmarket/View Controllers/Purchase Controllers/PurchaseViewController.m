@@ -56,7 +56,12 @@ static NSString *const kMerchantIdentifier = @"merchant.com.alexoseg.maskmarket2
     NSArray<PKPaymentNetwork> *const paymentNetworks = @[PKPaymentNetworkAmex, PKPaymentNetworkVisa];
     
     if (![PKPaymentAuthorizationViewController canMakePaymentsUsingNetworks:paymentNetworks]) {
-        NSLog(@"Error: Unable to make Apple Pay Transaction");
+        UIAlertAction *const alertAction = [UIAlertAction actionWithTitle:@"Dismiss"
+                                                                    style:UIAlertActionStyleDefault
+                                                                  handler:nil];
+        [self displayAlertWithMessage:@"Unable to make Apple Pay Transaction"
+                         titleMessage:@"Error:"
+                               action:alertAction];
         return;
     }
     
@@ -71,7 +76,12 @@ static NSString *const kMerchantIdentifier = @"merchant.com.alexoseg.maskmarket2
     PKPaymentAuthorizationViewController *const paymentViewController = [[PKPaymentAuthorizationViewController alloc] initWithPaymentRequest:paymentRequest];
     
     if (paymentViewController == nil) {
-        NSLog(@"Error: Could not display apple pay view controller");
+        UIAlertAction *const alertAction = [UIAlertAction actionWithTitle:@"Dismiss"
+                                                                    style:UIAlertActionStyleDefault
+                                                                  handler:nil];
+        [self displayAlertWithMessage:@"Could not display Apple Pay View Controller"
+                         titleMessage:@"Error"
+                               action:alertAction];
         return;
     }
     
@@ -115,21 +125,17 @@ shouldChangeCharactersInRange:(NSRange)range
 #pragma mark - Alert Code
 
 - (void) displayAlertWithMessage:(NSString *)alertMessage
+                    titleMessage:(NSString *)titleMessage
+                          action:(UIAlertAction *)action
 {
-    NSString *const titleMessage = @"Confirm Purchase?";
     UIAlertController *const alert = [UIAlertController alertControllerWithTitle:titleMessage
                                                                          message:alertMessage
                                                                   preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *const confirmAction = [UIAlertAction actionWithTitle:@"Confirm"
-                                                             style:UIAlertActionStyleDefault
-                                                           handler:^(UIAlertAction * _Nonnull action) {
-        [self performPurchase];
-    }];
     UIAlertAction *const cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
                                                                 style:UIAlertActionStyleDefault
                                                                handler:nil];
     [alert addAction:cancelAction];
-    [alert addAction:confirmAction];
+    [alert addAction:action];
     [self presentViewController:alert
                        animated:YES
                      completion:nil];
@@ -140,7 +146,14 @@ shouldChangeCharactersInRange:(NSRange)range
 - (IBAction)onTapBuy:(id)sender
 {
     NSString *const alertMessage = [NSString stringWithFormat:@"Purchase %@?", _maskListing.title];
-    [self displayAlertWithMessage:alertMessage];
+    UIAlertAction *const confirmAction = [UIAlertAction actionWithTitle:@"Confirm"
+                                                                style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * _Nonnull action) {
+           [self performPurchase];
+    }];
+    [self displayAlertWithMessage:alertMessage
+                     titleMessage:@"Confirm Purchase?"
+                           action:confirmAction];
 }
 
 - (void)dismissKeyboard
