@@ -10,6 +10,7 @@
 #import "ParsePoster.h"
 #import "SceneDelegate.h"
 #import "LoadingPopupView.h"
+#import "ErrorPopupViewController.h"
 
 #pragma mark - Interface
 
@@ -98,6 +99,16 @@
 - (IBAction)onTapSignUp:(id)sender
 {
     [self dismissKeyboard];
+    
+    if (_usernameTextField.text.length == 0
+        || _emailTextField.text.length == 0
+        || _passwordTextField.text.length == 0)
+    {
+        [self performSegueWithIdentifier:@"errorPopUpSegue"
+                                  sender:@"Oops! You have to fill in all the fields in order to create an account"];
+        return;
+    }
+    
     [LoadingPopupView showLoadingPopupAddedTo:self.view
                                   withMessage:@"Signing Up..."];
     typeof(self) __weak weakSelf = self;
@@ -143,6 +154,17 @@
 {
     [textField resignFirstResponder];
     return YES;
+}
+
+#pragma mark - Navigation
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue
+                sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"errorPopUpSegue"]) {
+        ErrorPopupViewController *const destinationViewController = [segue destinationViewController];
+        destinationViewController.popUpMessage = (NSString *)sender;
+    }
 }
 
 #pragma mark - Setup
