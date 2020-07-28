@@ -26,6 +26,10 @@
 
 @end
 
+#pragma mark - Constants
+
+static NSString *const kErrorSegue = @"errorPopUpSegue";
+
 #pragma mark - Implementation
 
 @implementation CreateAccountViewController
@@ -104,7 +108,7 @@
         || _emailTextField.text.length == 0
         || _passwordTextField.text.length == 0)
     {
-        [self performSegueWithIdentifier:@"errorPopUpSegue"
+        [self performSegueWithIdentifier:kErrorSegue
                                   sender:@"Oops! You have to fill in all the fields in order to create an account"];
         return;
     }
@@ -123,9 +127,9 @@
         }
         [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
-            NSLog(@"%@", error.localizedDescription);
+            [strongSelf performSegueWithIdentifier:kErrorSegue
+                                            sender:error.localizedDescription];
         } else {
-            NSLog(@"Create Account Successful!");
             SceneDelegate *const sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
             UIStoryboard *const storyboard = [UIStoryboard storyboardWithName:@"Main"
                                                                        bundle:nil];
@@ -161,7 +165,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue
                 sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"errorPopUpSegue"]) {
+    if ([segue.identifier isEqualToString:kErrorSegue]) {
         ErrorPopupViewController *const destinationViewController = [segue destinationViewController];
         destinationViewController.popUpMessage = (NSString *)sender;
     }
