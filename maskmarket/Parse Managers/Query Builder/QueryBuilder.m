@@ -10,4 +10,37 @@
 
 @implementation QueryBuilder
 
++ (PFQuery *)buildQueryWithClassName:(NSString *)className
+                            whereKey:(NSString *)key
+                         greaterThan:(id)object
+                       includingKeys:(NSArray<NSString *> *)keys
+                               limit:(NSInteger)limit
+{
+    NSString *const classNameCopy = [className copy];
+    NSString *const keyCopy = [key copy];
+    NSArray <NSString *> *const keysCopy = [keys copy];
+    id const objectCopy = [object copy];
+    
+    if ( classNameCopy == nil
+        || keyCopy == nil
+        || objectCopy == nil
+        || keysCopy == nil)
+    {
+        return nil;
+    }
+    
+    PFQuery *const query = [PFQuery queryWithClassName:className];
+    [query whereKey:keyCopy
+        greaterThan:object];
+    
+    for (NSString *const key in keysCopy) {
+        NSString *const stringToInclude = [key copy];
+        [query includeKey:stringToInclude];
+    }
+    
+    query.limit = limit;
+    
+    return query;
+}
+
 @end

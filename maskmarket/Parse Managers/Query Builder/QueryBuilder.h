@@ -7,10 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface QueryBuilder : NSObject
+
++ (nullable PFQuery *)buildQueryWithClassName:(NSString *)className
+                            whereKey:(NSString *)key
+                         greaterThan:(id)object
+                       includingKeys:(NSArray<NSString *> *)keys
+                               limit:(NSInteger)limit;
 
 - (instancetype)init NS_UNAVAILABLE;
 
