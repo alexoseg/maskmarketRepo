@@ -9,6 +9,7 @@
 #import "SaleCompletionViewController.h"
 #import "ParsePoster.h"
 #import "LoadingPopupView.h"
+#import "UIColor+AppColors.h"
 
 #pragma mark - Interface
 
@@ -88,10 +89,7 @@
     if (_boughListing.completed == NO) {
         _completePurchaseButton = [[UIButton alloc] initWithFrame:CGRectZero];
         _completePurchaseButton.translatesAutoresizingMaskIntoConstraints = NO;
-        _completePurchaseButton.backgroundColor = [UIColor colorWithRed:38.0f/255.0f
-                                                                  green:184.0f/255.0f
-                                                                   blue:153.0f/255.0f
-                                                                  alpha:1.0f];;
+        _completePurchaseButton.backgroundColor = [UIColor primaryAppColor];;
         _completePurchaseButton.layer.cornerRadius = 5;
         [_completePurchaseButton setTitle:@"Complete Purchase"
                                  forState:UIControlStateNormal];

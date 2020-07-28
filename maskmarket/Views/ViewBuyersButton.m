@@ -7,6 +7,7 @@
 //
 
 #import "ViewBuyersButton.h"
+#import "UIColor+AppColors.h"
 
 @implementation ViewBuyersButton
 
@@ -25,10 +26,7 @@
     self.layer.cornerRadius = 5;
     self.contentEdgeInsets = UIEdgeInsetsMake(5.0f, 5.0f, 5.0f, 5.0f);
     [self.layer setBorderWidth:1.0f];
-    [self.layer setBorderColor:[UIColor colorWithRed:38.0f/255.0f
-                                               green:184.0f/255.0f
-                                                blue:153.0f/255.0f
-                                               alpha:1.0f].CGColor];
+    [self.layer setBorderColor:[UIColor primaryAppColor].CGColor];
 }
 
 @end

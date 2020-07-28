@@ -8,6 +8,7 @@
 
 #import "DescLocViewController.h"
 #import "PriceViewController.h"
+#import "UIColor+AppColors.h"
 
 #pragma mark - Interface
 
@@ -86,11 +87,7 @@
     
     self.descriptionTextView.layer.borderWidth = 1.25;
     self.descriptionTextView.layer.cornerRadius = 5.0;
-    UIColor *const borderColor = [UIColor colorWithRed:0.85
-                                     green:0.85
-                                      blue:0.85
-                                     alpha:1.0];
-    self.descriptionTextView.layer.borderColor = borderColor.CGColor;
+    self.descriptionTextView.layer.borderColor = [UIColor borderColorGrey].CGColor;
 }
 
 @end

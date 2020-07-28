@@ -7,6 +7,7 @@
 //
 
 #import "LoadingPopupView.h"
+#import "UIColor+AppColors.h"
 
 #pragma mark - Implementation
 
@@ -47,14 +48,8 @@
     
     [UIView animateWithDuration:0.3
                      animations:^{
-        popUpView.backgroundColor = [UIColor colorWithRed:0.5
-                                                    green:0.5
-                                                     blue:0.5
-                                                    alpha:0.0];
-        popUpView.modalView.backgroundColor = [UIColor colorWithRed:38.0f/255.0f
-                                                              green:184.0f/255.0f
-                                                               blue:153.0f/255.0f
-                                                              alpha:0];
+        popUpView.backgroundColor = [UIColor popUpViewBackgroundAlpha0];
+        popUpView.modalView.backgroundColor = [UIColor primaryAppColorAlpha0];
     } completion:^(BOOL finished) {
         [popUpView removeFromSuperview];
     }];
@@ -75,14 +70,8 @@
 
 - (void)setUpViewsWithMessage:(NSString *)message
 {
-    UIColor *const parentColor = [UIColor colorWithRed:0.5
-                                                 green:0.5
-                                                  blue:0.5
-                                                 alpha:0];
-    UIColor *const modalColor = [UIColor colorWithRed:38.0f/255.0f
-                                                green:184.0f/255.0f
-                                                 blue:153.0f/255.0f
-                                                alpha:0];
+    UIColor *const parentColor = [UIColor popUpViewBackgroundAlpha0];
+    UIColor *const modalColor = [UIColor primaryAppColorAlpha0];
     self.backgroundColor = parentColor;
     self.translatesAutoresizingMaskIntoConstraints = NO;
     
@@ -127,14 +116,8 @@
         if (strongSelf == nil) {
             return;
         }
-        strongSelf.backgroundColor = [UIColor colorWithRed:0.5
-                                                     green:0.5
-                                                      blue:0.5
-                                                     alpha:0.5];
-        strongSelf.modalView.backgroundColor = [UIColor colorWithRed:38.0f/255.0f
-                                                               green:184.0f/255.0f
-                                                                blue:153.0f/255.0f
-                                                               alpha:1.0];
+        strongSelf.backgroundColor = [UIColor popUpViewBackgroundAlphaHalf];
+        strongSelf.modalView.backgroundColor = [UIColor primaryAppColor];
     }];
 }
 

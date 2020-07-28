@@ -15,6 +15,7 @@
 #import "MaskListingBuilder.h"
 #import "BuyDetailViewController.h"
 #import "LoadingPopupView.h"
+#import "UIColor+AppColors.h"
 
 #pragma mark - Interface
 
@@ -169,10 +170,7 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
     [_refreshControl addTarget:self
                        action:@selector(fetchListings)
              forControlEvents:UIControlEventValueChanged];
-    _refreshControl.tintColor = [UIColor colorWithRed:38.0f/255.0f
-                                                green:184.0f/255.0f
-                                                 blue:153.0f/255.0f
-                                                alpha:1.0f];
+    _refreshControl.tintColor = [UIColor primaryAppColor];
     _refreshControl.layer.zPosition = -1;
     [_collectionView insertSubview:_refreshControl
                            atIndex:0];

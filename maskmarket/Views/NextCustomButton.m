@@ -7,6 +7,7 @@
 //
 
 #import "NextCustomButton.h"
+#import "UIColor+AppColors.h"
 
 #pragma mark - Implementation
 
@@ -25,10 +26,7 @@
 - (void)setUpButton
 {
     self.layer.cornerRadius = self.frame.size.width / 2;
-    self.backgroundColor = [UIColor colorWithRed:38.0f/255.0f
-                                              green:184.0f/255.0f
-                                               blue:153.0f/255.0f
-                                              alpha:1.0f];
+    self.backgroundColor = [UIColor primaryAppColor];
     UIImage *const nextImage = [UIImage imageNamed:@"next.png"];
     [self setImage:nextImage forState:UIControlStateNormal];
     self.imageEdgeInsets = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f);
