@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ErrorPopupViewController : UIViewController
 
+@property (strong, nonatomic) NSString *popUpMessage; 
+
 @end
 
 NS_ASSUME_NONNULL_END

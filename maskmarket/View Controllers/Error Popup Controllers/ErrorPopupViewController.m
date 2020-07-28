@@ -15,6 +15,7 @@
 #pragma mark - Properties
 
 @property (weak, nonatomic) IBOutlet UIView *popUpView;
+@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 
 @end
 
@@ -42,7 +43,8 @@
 
 - (void)setUpViews
 {
-    _popUpView.layer.cornerRadius = 5.0;
+    _popUpView.layer.cornerRadius = 10.0;
+    _messageLabel.text = _popUpMessage;
 }
 
 @end
