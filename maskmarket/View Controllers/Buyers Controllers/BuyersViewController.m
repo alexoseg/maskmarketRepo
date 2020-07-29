@@ -57,9 +57,13 @@ ErrorPopupViewControllerDelegate>
         
         [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
-            NSLog(@"%@", error.localizedDescription);
+            ErrorPopupViewController *const errorPopupViewController = [[ErrorPopupViewController alloc] initWithMessage:error.localizedDescription
+                                                                                                               addCancel:YES];
+            errorPopupViewController.delegate = strongSelf;
+            [strongSelf presentViewController:errorPopupViewController
+                                     animated:YES
+                                   completion:nil];
         } else {
-            NSLog(@"Fetched Data");
             strongSelf.listings = [BoughtListingBuilder buildBoughtListingArrayFromArray:objects
                                                  associatedListing:strongSelf.maskListing];
             [strongSelf.tableView reloadData];
