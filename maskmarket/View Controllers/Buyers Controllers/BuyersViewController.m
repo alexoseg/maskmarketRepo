@@ -128,4 +128,11 @@ ErrorPopupViewControllerDelegate>
     return _listings.count;
 }
 
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath
+                             animated:YES];
+}
+
 @end
