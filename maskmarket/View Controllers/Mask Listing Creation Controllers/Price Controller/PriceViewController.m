@@ -10,7 +10,7 @@
 #import "ParsePoster.h"
 #import "MaskListing.h"
 #import "LoadingPopupView.h"
-#import "ErrorPopupViewController.h"
+#import "ErrorPopupViewController2.h"
 
 #pragma mark - Interface
 
@@ -22,10 +22,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *maskQuantityTextField;
 
 @end
-
-#pragma mark - Constants
-
-static NSString *const kErrorSegue = @"errorPopUpSegue";
 
 #pragma mark - Implementation
 
@@ -45,8 +41,10 @@ static NSString *const kErrorSegue = @"errorPopUpSegue";
     if (_priceTextField.text.length == 0
         || _maskQuantityTextField.text.length == 0)
     {
-        [self performSegueWithIdentifier:kErrorSegue
-                                  sender:@"Make sure to fill in all fields before continuing."];
+        ErrorPopupViewController2 *const errorPopupViewController = [[ErrorPopupViewController2 alloc] initWithMessage:@"Make sure to fill in all fields before continuing."];
+        [self presentViewController:errorPopupViewController
+                           animated:YES
+                         completion:nil];
         return;
     }
     
@@ -66,8 +64,10 @@ static NSString *const kErrorSegue = @"errorPopUpSegue";
         }
         [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
-            [strongSelf performSegueWithIdentifier:kErrorSegue
-                                            sender:error.localizedDescription];
+            ErrorPopupViewController2 *const errorPopupViewController = [[ErrorPopupViewController2 alloc] initWithMessage:error.localizedDescription];
+            [strongSelf presentViewController:errorPopupViewController
+                                     animated:YES
+                                   completion:nil];
         } else {
             NSLog(@"Successfully created a listing!");
         }
@@ -94,17 +94,6 @@ static NSString *const kErrorSegue = @"errorPopUpSegue";
 {
     [_priceTextField resignFirstResponder];
     return YES;
-}
-
-#pragma mark - Navigation
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue
-                 sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:kErrorSegue]) {
-        ErrorPopupViewController *const destinationViewController = [segue destinationViewController];
-        destinationViewController.popUpMessage = (NSString *)sender;
-    }
 }
 
 #pragma mark - Setup

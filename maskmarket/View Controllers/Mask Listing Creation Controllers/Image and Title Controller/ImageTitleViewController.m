@@ -9,7 +9,7 @@
 #import "ImageTitleViewController.h"
 #import "DescLocViewController.h"
 #import "MaskListingBuilder.h"
-#import "ErrorPopupViewController.h"
+#import "ErrorPopupViewController2.h"
 
 #pragma mark - Interface
 
@@ -30,7 +30,6 @@ UITextFieldDelegate>
 #pragma mark - Constants
 
 static NSString *const kDescLocSegue = @"descLocSegue";
-static NSString *const kErrorSegue = @"errorPopUpSegue";
 
 #pragma mark - Implementation
 
@@ -104,8 +103,10 @@ static NSString *const kErrorSegue = @"errorPopUpSegue";
     if (_titleTextField.text.length == 0
         || !_imageSet)
     {
-        [self performSegueWithIdentifier:kErrorSegue
-                                  sender:@"Make sure to add a picture and a title before moving on."];
+        ErrorPopupViewController2 *const popupViewController = [[ErrorPopupViewController2 alloc] initWithMessage:@"Make sure to add a picture and a title before moving on."];
+        [self presentViewController:popupViewController
+                           animated:YES
+                         completion:nil];
         return;
     }
     
@@ -137,9 +138,6 @@ static NSString *const kErrorSegue = @"errorPopUpSegue";
 
         DescLocViewController *const viewControlller = [segue destinationViewController];
         viewControlller.builder = builder;
-    } else if ([segue.identifier isEqualToString:kErrorSegue]) {
-        ErrorPopupViewController *const destinationViewController = [segue destinationViewController];
-        destinationViewController.popUpMessage = (NSString *)sender;
     }
 }
 
