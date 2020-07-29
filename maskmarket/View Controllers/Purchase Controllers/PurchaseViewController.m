@@ -10,6 +10,7 @@
 #import "ParsePoster.h"
 #import "LoadingPopupView.h"
 #import <PassKit/PassKit.h>
+#import "ErrorPopupViewController.h"
 
 #pragma mark - Interface
 
@@ -56,12 +57,11 @@ static NSString *const kMerchantIdentifier = @"merchant.com.alexoseg.maskmarket2
     NSArray<PKPaymentNetwork> *const paymentNetworks = @[PKPaymentNetworkAmex, PKPaymentNetworkVisa];
     
     if (![PKPaymentAuthorizationViewController canMakePaymentsUsingNetworks:paymentNetworks]) {
-        UIAlertAction *const alertAction = [UIAlertAction actionWithTitle:@"Dismiss"
-                                                                    style:UIAlertActionStyleDefault
-                                                                  handler:nil];
-        [self displayAlertWithMessage:@"Unable to make Apple Pay Transaction"
-                         titleMessage:@"Error:"
-                               action:alertAction];
+        ErrorPopupViewController *const errorPopupViewController = [[ErrorPopupViewController alloc] initWithMessage:@"Unable to make Apple Pay transaction"
+                                                                                                           addCancel:NO];
+        [self presentViewController:errorPopupViewController
+                                 animated:YES
+                               completion:nil];
         return;
     }
     
@@ -76,12 +76,11 @@ static NSString *const kMerchantIdentifier = @"merchant.com.alexoseg.maskmarket2
     PKPaymentAuthorizationViewController *const paymentViewController = [[PKPaymentAuthorizationViewController alloc] initWithPaymentRequest:paymentRequest];
     
     if (paymentViewController == nil) {
-        UIAlertAction *const alertAction = [UIAlertAction actionWithTitle:@"Dismiss"
-                                                                    style:UIAlertActionStyleDefault
-                                                                  handler:nil];
-        [self displayAlertWithMessage:@"Could not display Apple Pay View Controller"
-                         titleMessage:@"Error"
-                               action:alertAction];
+        ErrorPopupViewController *const errorPopupViewController = [[ErrorPopupViewController alloc] initWithMessage:@"Could not display Apple Pay View Controller"
+                                                                                                           addCancel:NO];
+        [self presentViewController:errorPopupViewController
+                                 animated:YES
+                               completion:nil];
         return;
     }
     
@@ -120,25 +119,6 @@ shouldChangeCharactersInRange:(NSRange)range
     }
     
     return YES;
-}
-
-#pragma mark - Alert Code
-
-- (void) displayAlertWithMessage:(NSString *)alertMessage
-                    titleMessage:(NSString *)titleMessage
-                          action:(UIAlertAction *)action
-{
-    UIAlertController *const alert = [UIAlertController alertControllerWithTitle:titleMessage
-                                                                         message:alertMessage
-                                                                  preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *const cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
-                                                                style:UIAlertActionStyleDefault
-                                                               handler:nil];
-    [alert addAction:cancelAction];
-    [alert addAction:action];
-    [self presentViewController:alert
-                       animated:YES
-                     completion:nil];
 }
 
 #pragma mark - Gesture Recognizers
@@ -222,12 +202,14 @@ shouldChangeCharactersInRange:(NSRange)range
             
             [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
             if (error) {
-                NSLog(@"%@", error.localizedDescription);
-            } else {
-                NSLog(@"Successful purchase!");
-                [self dismissViewControllerAnimated:YES
-                                         completion:nil];
+                ErrorPopupViewController *const errorPopupViewController = [[ErrorPopupViewController alloc] initWithMessage:error.localizedDescription
+                                                                                                                   addCancel:NO];
+                [strongSelf presentViewController:errorPopupViewController
+                                         animated:YES
+                                       completion:nil];
             }
+            [self dismissViewControllerAnimated:YES
+                                    completion:nil];
         }];
     }];
 }
