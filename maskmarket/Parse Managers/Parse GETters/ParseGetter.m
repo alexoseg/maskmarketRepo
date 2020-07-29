@@ -45,6 +45,9 @@ static NSString *const kTrackingNumber = @"trackingNumber";
                                                    includingKeys:keyArray
                                                            limit:20];
     
+    User *const currentUser = [UserBuilder buildUserfromPFUser:[PFUser currentUser]];
+    [query whereKey:kAuthorID notEqualTo:currentUser.userID];
+    
     [query findObjectsInBackgroundWithBlock:completion];
 }
 
