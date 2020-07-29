@@ -62,13 +62,16 @@ ErrorPopupViewControllerDelegate>
         [strongSelf.refreshControl endRefreshing];
         [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
-            NSLog(@"%@", error.localizedDescription);
+            ErrorPopupViewController *const errorPopupViewController = [[ErrorPopupViewController alloc] initWithMessage:error.localizedDescription
+                                                                                                               addCancel:YES];
+            errorPopupViewController.delegate = strongSelf;
+            [strongSelf presentViewController:errorPopupViewController
+                                     animated:YES
+                                   completion:nil];
         } else {
-            NSLog(@"Successfully retrieved bought listings");
+            strongSelf.maskListings = objects;
+            [strongSelf.tableView reloadData];
         }
-        
-        strongSelf.maskListings = objects;
-        [strongSelf.tableView reloadData];
     }];
 }
 
