@@ -13,12 +13,14 @@
 #import "BoughtDetailsViewController.h"
 #import "LoadingPopupView.h"
 #import "UIColor+AppColors.h"
+#import "ErrorPopupViewController.h"
 
 #pragma mark - Interface
 
 @interface BuyingViewController ()
 <UITableViewDelegate,
-UITableViewDataSource>
+UITableViewDataSource,
+ErrorPopupViewControllerDelegate>
 
 #pragma mark - Properties
 
@@ -70,6 +72,14 @@ UITableViewDataSource>
     }];
 }
 
+#pragma mark - Error Popup Delegate Methods
+
+- (void)tryAgainAction
+{
+    [LoadingPopupView showLoadingPopupAddedTo:self.view
+                                  withMessage:@"Loading..."];
+    [self fetchBoughtListings];
+}
 
 #pragma mark - Tableview code
 
