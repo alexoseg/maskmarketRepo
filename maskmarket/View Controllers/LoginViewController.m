@@ -44,7 +44,7 @@
     if (_usernameTextField.text.length == 0
         || _passwordTextField.text.length == 0)
     {
-        ErrorPopupViewController2 *const errorViewController = [[ErrorPopupViewController2 alloc] initWithMessage:@"Oops! You have to fill in all the fields in order to create an account."];
+        ErrorPopupViewController2 *const errorViewController = [[ErrorPopupViewController2 alloc] initWithMessage:@"Oops! You have to fill in all the fields in order to login."];
         [self presentViewController:errorViewController
                            animated:YES
                          completion:nil];
