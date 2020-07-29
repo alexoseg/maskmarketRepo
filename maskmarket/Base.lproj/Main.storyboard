@@ -1015,13 +1015,23 @@ Menlo Park, CA 94025</string>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRF-Ve-S3o" customClass="FloatingActionButton">
+                                <rect key="frame" x="338" y="611" width="56" height="56"/>
+                                <color key="backgroundColor" red="0.14901960780000001" green="0.72156862749999995" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="7Qx-eB-5Lm"/>
+                                    <constraint firstAttribute="width" constant="56" id="C23-fz-G9O"/>
+                                </constraints>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ari-cw-RWX" firstAttribute="bottom" secondItem="cAZ-24-15u" secondAttribute="bottom" id="8k6-f0-IFb"/>
                             <constraint firstItem="ari-cw-RWX" firstAttribute="top" secondItem="cAZ-24-15u" secondAttribute="top" id="Nlu-EW-Mze"/>
+                            <constraint firstItem="cAZ-24-15u" firstAttribute="bottom" secondItem="nRF-Ve-S3o" secondAttribute="bottom" constant="20" id="YCR-IR-yNC"/>
                             <constraint firstItem="ari-cw-RWX" firstAttribute="trailing" secondItem="cAZ-24-15u" secondAttribute="trailing" id="hcr-mM-ltT"/>
                             <constraint firstItem="ari-cw-RWX" firstAttribute="leading" secondItem="cAZ-24-15u" secondAttribute="leading" id="qla-0q-lBF"/>
+                            <constraint firstItem="cAZ-24-15u" firstAttribute="trailing" secondItem="nRF-Ve-S3o" secondAttribute="trailing" constant="20" id="uq0-ak-yg8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cAZ-24-15u"/>
                     </view>
