@@ -11,6 +11,7 @@
 #import "LoadingPopupView.h"
 #import <PassKit/PassKit.h>
 #import "ErrorPopupViewController.h"
+#import "SceneDelegate.h"
 
 #pragma mark - Interface
 
@@ -207,9 +208,13 @@ shouldChangeCharactersInRange:(NSRange)range
                 [strongSelf presentViewController:errorPopupViewController
                                          animated:YES
                                        completion:nil];
+            } else {
+                SceneDelegate *const sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+                UIStoryboard *const storyboard = [UIStoryboard storyboardWithName:@"Main"
+                                                                           bundle:nil];
+                UINavigationController *const navigationController = [storyboard instantiateViewControllerWithIdentifier:@"homeTabController"];
+                sceneDelegate.window.rootViewController = navigationController;
             }
-            [self dismissViewControllerAnimated:YES
-                                    completion:nil];
         }];
     }];
 }
