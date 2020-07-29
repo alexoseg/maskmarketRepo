@@ -12,12 +12,15 @@
 #import "PurchaserCell.h"
 #import "SaleCompletionViewController.h"
 #import "UIColor+AppColors.h"
+#import "ErrorPopupViewController.h"
+#import "LoadingPopupView.h"
 
 #pragma mark - Interface
 
 @interface BuyersViewController ()
 <UITableViewDelegate,
-UITableViewDataSource>
+UITableViewDataSource,
+ErrorPopupViewControllerDelegate>
 
 #pragma mark - Properties
 
@@ -35,6 +38,8 @@ UITableViewDataSource>
 {
     [super viewDidLoad];
     [self setUpViews];
+    [LoadingPopupView showLoadingPopupAddedTo:self.view
+                                  withMessage:@"Loading..."];
     [self fetchPurchasers];
 }
 
@@ -49,6 +54,8 @@ UITableViewDataSource>
         if (strongSelf == nil) {
             return;
         }
+        
+        [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
             NSLog(@"%@", error.localizedDescription);
         } else {
@@ -59,6 +66,15 @@ UITableViewDataSource>
         }
         [strongSelf.refreshControl endRefreshing];
     }];
+}
+
+#pragma mark - Error Popup Delegate Methods
+
+- (void)tryAgainAction
+{
+    [LoadingPopupView showLoadingPopupAddedTo:self.view
+                                  withMessage:@"Loading..."];
+    [self fetchPurchasers];
 }
 
 #pragma mark - Navigation
