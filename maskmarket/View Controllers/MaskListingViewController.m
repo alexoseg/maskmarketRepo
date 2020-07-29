@@ -16,13 +16,15 @@
 #import "BuyDetailViewController.h"
 #import "LoadingPopupView.h"
 #import "UIColor+AppColors.h"
+#import "ErrorPopupViewController.h"
 
 #pragma mark - Interface
 
 @interface MaskListingViewController ()
 <UICollectionViewDelegate,
 UICollectionViewDataSource,
-UICollectionViewDelegateFlowLayout>
+UICollectionViewDelegateFlowLayout,
+ErrorPopupViewControllerDelegate>
 
 #pragma mark - Properties
 
@@ -72,6 +74,14 @@ static int const cellPaddingSize = 15;
             [strongSelf.collectionView reloadData];
         }
     }];
+}
+
+#pragma mark - Error Popup delegate methods
+
+- (void)tryAgainAction {
+    [LoadingPopupView showLoadingPopupAddedTo:self.view
+                                  withMessage:@"Loading..."];
+    [self fetchListings];
 }
 
 #pragma mark - Collection View Code
