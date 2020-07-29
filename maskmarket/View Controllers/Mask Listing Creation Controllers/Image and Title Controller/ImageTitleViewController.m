@@ -103,7 +103,8 @@ static NSString *const kDescLocSegue = @"descLocSegue";
     if (_titleTextField.text.length == 0
         || !_imageSet)
     {
-        ErrorPopupViewController *const popupViewController = [[ErrorPopupViewController alloc] initWithMessage:@"Make sure to add a picture and a title before moving on."];
+        ErrorPopupViewController *const popupViewController = [[ErrorPopupViewController alloc] initWithMessage:@"Make sure to add a picture and a title before moving on."
+                                                                                                      addCancel:NO];
         [self presentViewController:popupViewController
                            animated:YES
                          completion:nil];

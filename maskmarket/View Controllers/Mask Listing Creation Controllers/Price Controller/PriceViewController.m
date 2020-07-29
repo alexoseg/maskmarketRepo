@@ -41,7 +41,8 @@
     if (_priceTextField.text.length == 0
         || _maskQuantityTextField.text.length == 0)
     {
-        ErrorPopupViewController *const errorPopupViewController = [[ErrorPopupViewController alloc] initWithMessage:@"Make sure to fill in all fields before continuing."];
+        ErrorPopupViewController *const errorPopupViewController = [[ErrorPopupViewController alloc] initWithMessage:@"Make sure to fill in all fields before continuing."
+                                                                                                           addCancel:NO];
         [self presentViewController:errorPopupViewController
                            animated:YES
                          completion:nil];
@@ -64,7 +65,8 @@
         }
         [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
-            ErrorPopupViewController *const errorPopupViewController = [[ErrorPopupViewController alloc] initWithMessage:error.localizedDescription];
+            ErrorPopupViewController *const errorPopupViewController = [[ErrorPopupViewController alloc] initWithMessage:error.localizedDescription
+                                                                                                               addCancel:NO];
             [strongSelf presentViewController:errorPopupViewController
                                      animated:YES
                                    completion:nil];

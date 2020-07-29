@@ -61,7 +61,8 @@ static NSString *const kPricingSegue = @"pricingSegue";
         || _stateTextField.text.length == 0
         || _descriptionTextView.text.length == 0)
     {
-        ErrorPopupViewController *const popUpViewController = [[ErrorPopupViewController alloc] initWithMessage:@"Make sure to fill in all fields before continuing."];
+        ErrorPopupViewController *const popUpViewController = [[ErrorPopupViewController alloc] initWithMessage:@"Make sure to fill in all fields before continuing."
+                                                                                                      addCancel:NO];
         [self presentViewController:popUpViewController
                            animated:YES
                          completion:nil];

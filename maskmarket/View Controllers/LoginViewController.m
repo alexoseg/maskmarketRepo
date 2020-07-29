@@ -44,7 +44,8 @@
     if (_usernameTextField.text.length == 0
         || _passwordTextField.text.length == 0)
     {
-        ErrorPopupViewController *const errorViewController = [[ErrorPopupViewController alloc] initWithMessage:@"Oops! You have to fill in all the fields in order to login."];
+        ErrorPopupViewController *const errorViewController = [[ErrorPopupViewController alloc] initWithMessage:@"Oops! You have to fill in all the fields in order to login."
+                                                                                                      addCancel:NO];
         [self presentViewController:errorViewController
                            animated:YES
                          completion:nil];
@@ -63,7 +64,8 @@
         }
         [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
-            ErrorPopupViewController *const errorViewController = [[ErrorPopupViewController alloc] initWithMessage:error.localizedDescription];
+            ErrorPopupViewController *const errorViewController = [[ErrorPopupViewController alloc] initWithMessage:error.localizedDescription
+                                                                                                          addCancel:NO];
             [strongSelf presentViewController:errorViewController
                                animated:YES
                              completion:nil];
