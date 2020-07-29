@@ -22,6 +22,17 @@
     return self;
 }
 
+- (instancetype)initSuccessPopupWithMessage:(NSString *)message
+{
+    self = [super initWithFrame:CGRectMake(0, 0, 250.0f, 250.0f)];
+    if (self) {
+        [self setUpGeneralViewsWithMessage:message];
+        [self setUpSuccessView];
+    }
+    
+    return self;
+}
+
 - (void)setUpGeneralViewsWithMessage:(NSString *)message
 {
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -119,6 +130,32 @@
     [_leftButton addSubview:topLeftBorderLine];
 }
 
+- (void)setUpSuccessView
+{
+    _iconImageView.image = [UIImage imageNamed:@"tick"];
+    
+    _rightButton = [UIButton new];
+    _rightButton.translatesAutoresizingMaskIntoConstraints = NO;
+    _rightButton.backgroundColor = [UIColor popUpViewBackgroundAlphaHalf];
+    [_rightButton setTitle:@"Okay!"
+                     forState:UIControlStateNormal];
+    [_rightButton setTitleColor:UIColor.whiteColor
+                          forState:UIControlStateNormal];
+    _rightButton.titleLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:14.0f];
+    _rightButton.userInteractionEnabled = YES;
+    [self addSubview:_rightButton];
+    
+    [_rightButton.heightAnchor constraintEqualToConstant:40].active = YES;
+    [_rightButton.topAnchor constraintGreaterThanOrEqualToAnchor:_messageLabel.bottomAnchor
+                                                           constant:15].active = YES;
+    [_rightButton.bottomAnchor constraintEqualToAnchor:self.bottomAnchor].active = YES;
+    [_rightButton.trailingAnchor constraintEqualToAnchor:self.trailingAnchor].active = YES;
+    
+    [_rightButton.leadingAnchor constraintEqualToAnchor:self.leadingAnchor].active = YES;
+    UIView *const topBorderLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 1.0f)];
+    topBorderLine.backgroundColor = [UIColor popUpViewBackgroundAlphaHalf];
+    [_rightButton addSubview:topBorderLine];
+}
 
 
 @end
