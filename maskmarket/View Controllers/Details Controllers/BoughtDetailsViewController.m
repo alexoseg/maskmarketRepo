@@ -63,6 +63,7 @@
 
 - (void)setUpViews
 {
+    _maskImageView.userInteractionEnabled = NO;
     typeof(self) __weak weakSelf = self;
     [self.boughtListing.maskImage getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         typeof(weakSelf) strongSelf = weakSelf;
@@ -75,6 +76,7 @@
         } else {
             UIImage *const image = [UIImage imageWithData:data];
             [strongSelf.maskImageView setImage:image];
+            strongSelf.maskImageView.userInteractionEnabled = YES;
         }
     }];
     
