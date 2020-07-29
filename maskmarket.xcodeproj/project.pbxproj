@@ -53,6 +53,7 @@
 		0FC67F4624C7613700852F89 /* BoughtListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F4524C7613700852F89 /* BoughtListing.m */; };
 		0FC67F4A24C7630A00852F89 /* BoughtListingBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F4924C7630A00852F89 /* BoughtListingBuilder.m */; };
 		0FC67F5024C7915400852F89 /* BoughtDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F4F24C7915400852F89 /* BoughtDetailsViewController.m */; };
+		0FDF96BA24D21F27008CA3F0 /* SuccessPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDF96B924D21F27008CA3F0 /* SuccessPopupViewController.m */; };
 		0FFE3C3424C24C930028466A /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFE3C3324C24C930028466A /* PurchaseViewController.m */; };
 		277BD8C0ADE42DC2B1DBD5AC /* Pods_maskmarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A51C4A454F0EBD1743F46C /* Pods_maskmarket.framework */; };
 		3E4FBA7AFE1B5E3BC88841D2 /* Pods_maskmarketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3EB4D5E036F75B76B9CB44 /* Pods_maskmarketTests.framework */; };
@@ -176,6 +177,8 @@
 		0FC67F4924C7630A00852F89 /* BoughtListingBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoughtListingBuilder.m; sourceTree = "<group>"; };
 		0FC67F4E24C7915400852F89 /* BoughtDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoughtDetailsViewController.h; sourceTree = "<group>"; };
 		0FC67F4F24C7915400852F89 /* BoughtDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoughtDetailsViewController.m; sourceTree = "<group>"; };
+		0FDF96B824D21F27008CA3F0 /* SuccessPopupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuccessPopupViewController.h; sourceTree = "<group>"; };
+		0FDF96B924D21F27008CA3F0 /* SuccessPopupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuccessPopupViewController.m; sourceTree = "<group>"; };
 		0FFE3C3224C24C930028466A /* PurchaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchaseViewController.h; sourceTree = "<group>"; };
 		0FFE3C3324C24C930028466A /* PurchaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseViewController.m; sourceTree = "<group>"; };
 		1712B4619B99D17884EDEEB5 /* Pods-maskmarketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maskmarketTests.debug.xcconfig"; path = "Target Support Files/Pods-maskmarketTests/Pods-maskmarketTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -448,6 +451,7 @@
 		0F97CD9324BCDAE000CA7C9E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0FDF96B724D21F10008CA3F0 /* Success Popup Controllers */,
 				0F2066B124D0C4AD00A1E33E /* Error Popup Controllers */,
 				0F892AC624CF773500B7A3EB /* Full Image Controllers */,
 				0FB73B7324CB652D00C0C860 /* Sale Completion Controllers */,
@@ -614,6 +618,15 @@
 				0F225C6724CA13D10036B57F /* SellingDetailsViewController.m */,
 			);
 			path = "Details Controllers";
+			sourceTree = "<group>";
+		};
+		0FDF96B724D21F10008CA3F0 /* Success Popup Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0FDF96B824D21F27008CA3F0 /* SuccessPopupViewController.h */,
+				0FDF96B924D21F27008CA3F0 /* SuccessPopupViewController.m */,
+			);
+			path = "Success Popup Controllers";
 			sourceTree = "<group>";
 		};
 		0FFE3C3124C24C7E0028466A /* Purchase Controllers */ = {
@@ -888,6 +901,7 @@
 				0FC67F5024C7915400852F89 /* BoughtDetailsViewController.m in Sources */,
 				0F9ECFEA24BF89330020B289 /* ParseGetter.m in Sources */,
 				0F2181B724CFB13E008F07BE /* QueryBuilder.m in Sources */,
+				0FDF96BA24D21F27008CA3F0 /* SuccessPopupViewController.m in Sources */,
 				0FC67F3E24C6377400852F89 /* BuyingViewController.m in Sources */,
 				0F225C6824CA13D10036B57F /* SellingDetailsViewController.m in Sources */,
 				0FC67F3A24C610AE00852F89 /* PurchasedObjBuilder.m in Sources */,
