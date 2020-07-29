@@ -61,9 +61,14 @@ ErrorPopupViewControllerDelegate>
         [strongSelf.refreshControl endRefreshing];
         [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
-            NSLog(@"%@", error.localizedDescription);
+            ErrorPopupViewController *const errorPopupViewController = [[ErrorPopupViewController
+                                                                         alloc] initWithMessage:error.localizedDescription
+                                                                        addCancel:YES];
+            errorPopupViewController.delegate = strongSelf;
+            [strongSelf presentViewController:errorPopupViewController
+                                     animated:YES
+                                   completion:nil];
         } else {
-            NSLog(@"Fetched Selling Listings!");
             strongSelf.sellingListings = [MaskListingBuilder buildParseMaskListingsFromArray:objects];
             [strongSelf.tableView reloadData];
         }
@@ -76,7 +81,7 @@ ErrorPopupViewControllerDelegate>
 {
     [LoadingPopupView showLoadingPopupAddedTo:self.view
                                   withMessage:@"Loading..."];
-    [self fetchListings]; 
+    [self fetchListings];
 }
 
 #pragma mark - Tableview Code
