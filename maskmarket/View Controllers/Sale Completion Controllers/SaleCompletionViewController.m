@@ -10,6 +10,7 @@
 #import "ParsePoster.h"
 #import "LoadingPopupView.h"
 #import "UIColor+AppColors.h"
+#import "ErrorPopupViewController.h"
 
 #pragma mark - Interface
 
@@ -43,7 +44,11 @@
 - (void)onCompletePurchase
 {
     if (_trackingTextField.text.length == 0) {
-        NSLog(@"Please enter a tracking number");
+        ErrorPopupViewController *const errorPopupViewController = [[ErrorPopupViewController alloc] initWithMessage:@"Please enter a tracking number."
+                                                                                                           addCancel:NO];
+        [self presentViewController:errorPopupViewController
+                                 animated:YES
+                               completion:nil];
         return;
     }
     
@@ -63,9 +68,12 @@
         
         [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
-            NSLog(@"%@", error.localizedDescription);
+            ErrorPopupViewController *const errorPopupViewController = [[ErrorPopupViewController alloc] initWithMessage:error.localizedDescription
+                                                                                                               addCancel:NO];
+            [strongSelf presentViewController:errorPopupViewController
+                                     animated:YES
+                                   completion:nil];
         } else {
-            NSLog(@"Successful Completion");
             [strongSelf.navigationController popViewControllerAnimated:YES];
         }
     }];
