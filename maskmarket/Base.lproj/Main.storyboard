@@ -1022,6 +1022,9 @@ Menlo Park, CA 94025</string>
                                     <constraint firstAttribute="height" constant="56" id="7Qx-eB-5Lm"/>
                                     <constraint firstAttribute="width" constant="56" id="C23-fz-G9O"/>
                                 </constraints>
+                                <connections>
+                                    <segue destination="3qd-fj-CAk" kind="presentation" id="ttJ-UM-eHG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1035,14 +1038,7 @@ Menlo Park, CA 94025</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cAZ-24-15u"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Selling" id="03J-1P-EVy">
-                        <barButtonItem key="rightBarButtonItem" title="New" id="XNH-wV-7jw">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <segue destination="3qd-fj-CAk" kind="presentation" identifier="newMaskSegue" id="Bbx-dT-ome"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Selling" id="03J-1P-EVy"/>
                     <connections>
                         <outlet property="tableView" destination="ari-cw-RWX" id="jNl-kJ-0sk"/>
                     </connections>
