@@ -17,6 +17,7 @@
 #pragma mark - Properties
 
 @property (nonatomic, strong) NSString *popUpMessage;
+@property (nonatomic) BOOL addCancel;
 
 @end
 
@@ -27,10 +28,12 @@
 #pragma mark - Initializers
 
 - (instancetype)initWithMessage:(NSString *)message
+                      addCancel:(BOOL)addCancel
 {
     self = [super init];
     if (self) {
         _popUpMessage = [message copy];
+        _addCancel = addCancel;
         self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         self.modalPresentationStyle = UIModalPresentationOverFullScreen;
     }
@@ -57,6 +60,12 @@
     }
 }
 
+- (void)onTapCancel
+{
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
+}
+
 #pragma mark - Delegate Methods
 
 - (void)performTryAgainAction
@@ -69,7 +78,7 @@
 - (void)setUpViews
 {
     self.view.backgroundColor = [UIColor popUpViewBackgroundAlphaHalf];
-    ErrorPopupView *const popupView = [[ErrorPopupView alloc] initWithMessage:_popUpMessage];
+    ErrorPopupView *const popupView = [[ErrorPopupView alloc] initWithMessage:_popUpMessage addCancel:_addCancel];
     [self.view addSubview:popupView];
     
     [popupView.heightAnchor constraintEqualToConstant:250].active = YES;
@@ -79,6 +88,11 @@
     [popupView.tryAgainButton addTarget:self
                                  action:@selector(onTapTryAgain)
                        forControlEvents:UIControlEventTouchUpInside];
+    if (_addCancel) {
+        [popupView.cancelButton addTarget:self
+                                   action:@selector(onTapCancel)
+                         forControlEvents:UIControlEventTouchUpInside];
+    }
 }
 
 @end
