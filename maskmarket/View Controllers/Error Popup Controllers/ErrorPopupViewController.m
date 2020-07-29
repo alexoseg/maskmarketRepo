@@ -8,7 +8,7 @@
 
 #import "ErrorPopupViewController.h"
 #import "UIColor+AppColors.h"
-#import "ErrorPopupView.h"
+#import "GeneralPopupView.h"
 
 #pragma mark - Interface
 
@@ -78,7 +78,7 @@
 - (void)setUpViews
 {
     self.view.backgroundColor = [UIColor popUpViewBackgroundAlphaHalf];
-    ErrorPopupView *const popupView = [[ErrorPopupView alloc] initWithMessage:_popUpMessage addCancel:_addCancel];
+    GeneralPopupView *const popupView = [[GeneralPopupView alloc] initWithMessage:_popUpMessage addCancel:_addCancel];
     [self.view addSubview:popupView];
     
     [popupView.heightAnchor constraintEqualToConstant:250].active = YES;

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ErrorPopupView : UIView
+@interface GeneralPopupView : UIView
 
 @property (strong, nonatomic) UIButton *tryAgainButton;
 @property (strong, nonatomic) UIButton *cancelButton;

@@ -10,7 +10,7 @@
 		0F1E850624C0CE1100412F4D /* BuyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E850524C0CE1100412F4D /* BuyDetailViewController.m */; };
 		0F1E850C24C1063000412F4D /* SellingListingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E850B24C1063000412F4D /* SellingListingCell.m */; };
 		0F1E851024C1082E00412F4D /* SellingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E850F24C1082E00412F4D /* SellingViewController.m */; };
-		0F2066B824D0F3D600A1E33E /* ErrorPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2066B724D0F3D600A1E33E /* ErrorPopupView.m */; };
+		0F2066B824D0F3D600A1E33E /* GeneralPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2066B724D0F3D600A1E33E /* GeneralPopupView.m */; };
 		0F2066BB24D0FAA400A1E33E /* ErrorPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2066BA24D0FAA400A1E33E /* ErrorPopupViewController.m */; };
 		0F2181B724CFB13E008F07BE /* QueryBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2181B624CFB13E008F07BE /* QueryBuilder.m */; };
 		0F2181BB24CFC287008F07BE /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2181BA24CFC287008F07BE /* UIColor+AppColors.m */; };
@@ -84,8 +84,8 @@
 		0F1E850B24C1063000412F4D /* SellingListingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellingListingCell.m; sourceTree = "<group>"; };
 		0F1E850E24C1082E00412F4D /* SellingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellingViewController.h; sourceTree = "<group>"; };
 		0F1E850F24C1082E00412F4D /* SellingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellingViewController.m; sourceTree = "<group>"; };
-		0F2066B624D0F3D600A1E33E /* ErrorPopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorPopupView.h; sourceTree = "<group>"; };
-		0F2066B724D0F3D600A1E33E /* ErrorPopupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ErrorPopupView.m; sourceTree = "<group>"; };
+		0F2066B624D0F3D600A1E33E /* GeneralPopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneralPopupView.h; sourceTree = "<group>"; };
+		0F2066B724D0F3D600A1E33E /* GeneralPopupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneralPopupView.m; sourceTree = "<group>"; };
 		0F2066B924D0FAA400A1E33E /* ErrorPopupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorPopupViewController.h; sourceTree = "<group>"; };
 		0F2066BA24D0FAA400A1E33E /* ErrorPopupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ErrorPopupViewController.m; sourceTree = "<group>"; };
 		0F2181B524CFB13E008F07BE /* QueryBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QueryBuilder.h; sourceTree = "<group>"; };
@@ -248,13 +248,13 @@
 			path = "Error Popup Controllers";
 			sourceTree = "<group>";
 		};
-		0F2066B524D0F39E00A1E33E /* Error Popup View */ = {
+		0F2066B524D0F39E00A1E33E /* General Popup VIew */ = {
 			isa = PBXGroup;
 			children = (
-				0F2066B624D0F3D600A1E33E /* ErrorPopupView.h */,
-				0F2066B724D0F3D600A1E33E /* ErrorPopupView.m */,
+				0F2066B624D0F3D600A1E33E /* GeneralPopupView.h */,
+				0F2066B724D0F3D600A1E33E /* GeneralPopupView.m */,
 			);
-			path = "Error Popup View";
+			path = "General Popup VIew";
 			sourceTree = "<group>";
 		};
 		0F2181B424CFB127008F07BE /* Query Builder */ = {
@@ -503,7 +503,7 @@
 		0F97CDB324BCFD2E00CA7C9E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0F2066B524D0F39E00A1E33E /* Error Popup View */,
+				0F2066B524D0F39E00A1E33E /* General Popup VIew */,
 				0F97CDB624BCFEDE00CA7C9E /* NextCustomButton.h */,
 				0F97CDB724BCFEDE00CA7C9E /* NextCustomButton.m */,
 				0F9ECFEB24BF955A0020B289 /* HomeListingCell.h */,
@@ -912,7 +912,7 @@
 				0FC67F3624C60D0F00852F89 /* PurchaseObj.m in Sources */,
 				0FC67F4124C63FE600852F89 /* BuyingListingCell.m in Sources */,
 				0F2066BB24D0FAA400A1E33E /* ErrorPopupViewController.m in Sources */,
-				0F2066B824D0F3D600A1E33E /* ErrorPopupView.m in Sources */,
+				0F2066B824D0F3D600A1E33E /* GeneralPopupView.m in Sources */,
 				0FB73B7624CB655900C0C860 /* SaleCompletionViewController.m in Sources */,
 				0F97CD6324BCCFA300CA7C9E /* SceneDelegate.m in Sources */,
 			);

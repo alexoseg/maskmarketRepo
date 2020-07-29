@@ -6,10 +6,10 @@
 //  Copyright © 2020 Alex Oseguera. All rights reserved.
 //
 
-#import "ErrorPopupView.h"
+#import "GeneralPopupView.h"
 #import "UIColor+AppColors.h"
 
-@implementation ErrorPopupView
+@implementation GeneralPopupView
 
 - (instancetype)initWithMessage:(NSString *)message
                       addCancel:(BOOL)addCancel
