@@ -67,9 +67,13 @@ static int const cellPaddingSize = 15;
         [strongSelf.refreshControl endRefreshing];
         [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
-            NSLog(@"%@", error.localizedDescription);
+            ErrorPopupViewController *const errorPopupViewController = [[ErrorPopupViewController alloc] initWithMessage:error.localizedDescription
+                                                                                                               addCancel:YES];
+            errorPopupViewController.delegate = strongSelf; 
+            [strongSelf presentViewController:errorPopupViewController
+                                     animated:YES
+                                   completion:nil];
         } else {
-            NSLog(@"Fetched Listings!");
             strongSelf.listingsArray = [MaskListingBuilder buildParseMaskListingsFromArray:objects];
             [strongSelf.collectionView reloadData];
         }
