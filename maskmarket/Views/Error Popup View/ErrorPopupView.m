@@ -48,15 +48,16 @@
     messageLabel.numberOfLines = 0;
     messageLabel.text = message;
     messageLabel.textColor = UIColor.whiteColor;
+    messageLabel.textAlignment = NSTextAlignmentCenter;
     messageLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:14.0f];
     [self addSubview:messageLabel];
     
     [messageLabel.topAnchor constraintEqualToAnchor:iconImageView.bottomAnchor
-                                           constant:30].active = YES;
+                                           constant:25].active = YES;
     [messageLabel.leadingAnchor constraintEqualToAnchor:self.leadingAnchor
                                                constant:15].active = YES;
-    [messageLabel.trailingAnchor constraintEqualToAnchor:self.trailingAnchor
-                                                constant:15].active = YES;
+    [self.trailingAnchor constraintEqualToAnchor:messageLabel.trailingAnchor
+                                        constant:15].active = YES;
     
     _tryAgainButton = [UIButton new];
     _tryAgainButton.translatesAutoresizingMaskIntoConstraints = NO;
