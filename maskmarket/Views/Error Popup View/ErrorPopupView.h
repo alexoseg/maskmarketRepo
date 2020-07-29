@@ -13,8 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ErrorPopupView : UIView
 
 @property (strong, nonatomic) UIButton *tryAgainButton;
+@property (strong, nonatomic) UIButton *cancelButton;
 
-- (instancetype)initWithMessage:(NSString *)message;
+- (instancetype)initWithMessage:(NSString *)message
+                      addCancel:(BOOL)addCancel;
 
 - (instancetype)init NS_UNAVAILABLE;
 
