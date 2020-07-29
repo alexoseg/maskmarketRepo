@@ -12,12 +12,14 @@
 #import <PassKit/PassKit.h>
 #import "ErrorPopupViewController.h"
 #import "SceneDelegate.h"
+#import "SuccessPopupViewController.h"
 
 #pragma mark - Interface
 
 @interface PurchaseViewController ()
 <UITextFieldDelegate,
-PKPaymentAuthorizationViewControllerDelegate>
+PKPaymentAuthorizationViewControllerDelegate,
+SuccessPopupDelegate>
 
 #pragma mark - Properties
 
@@ -209,13 +211,26 @@ shouldChangeCharactersInRange:(NSRange)range
                                          animated:YES
                                        completion:nil];
             } else {
-                SceneDelegate *const sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
-                UIStoryboard *const storyboard = [UIStoryboard storyboardWithName:@"Main"
-                                                                           bundle:nil];
-                UINavigationController *const navigationController = [storyboard instantiateViewControllerWithIdentifier:@"homeTabController"];
-                sceneDelegate.window.rootViewController = navigationController;
+                SuccessPopupViewController *const successPopupViewController = [[SuccessPopupViewController alloc] initWithMessage:@"Your purchase was successful! Let's navigate back to the home screen."];
+                successPopupViewController.delegate = strongSelf;
+                [strongSelf presentViewController:successPopupViewController
+                                         animated:YES
+                                       completion:nil];
             }
         }];
     }];
 }
+
+#pragma mark - Success Popup Delegate Methods
+
+- (void)okayAction
+{
+    SceneDelegate *const sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+    UIStoryboard *const storyboard = [UIStoryboard storyboardWithName:@"Main"
+                                                               bundle:nil];
+    UINavigationController *const navigationController = [storyboard instantiateViewControllerWithIdentifier:@"homeTabController"];
+    sceneDelegate.window.rootViewController = navigationController;
+}
+
+
 @end
