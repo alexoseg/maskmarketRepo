@@ -78,18 +78,18 @@
 - (void)setUpViews
 {
     self.view.backgroundColor = [UIColor popUpViewBackgroundAlphaHalf];
-    GeneralPopupView *const popupView = [[GeneralPopupView alloc] initWithMessage:_popUpMessage addCancel:_addCancel];
+    GeneralPopupView *const popupView = [[GeneralPopupView alloc] initErrorPopupWithMessage:_popUpMessage addCancel:_addCancel];
     [self.view addSubview:popupView];
     
     [popupView.heightAnchor constraintEqualToConstant:250].active = YES;
     [popupView.widthAnchor constraintEqualToConstant:250].active = YES;
     [popupView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
     [popupView.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor].active = YES;
-    [popupView.tryAgainButton addTarget:self
+    [popupView.rightButton addTarget:self
                                  action:@selector(onTapTryAgain)
                        forControlEvents:UIControlEventTouchUpInside];
     if (_addCancel) {
-        [popupView.cancelButton addTarget:self
+        [popupView.leftButton addTarget:self
                                    action:@selector(onTapCancel)
                          forControlEvents:UIControlEventTouchUpInside];
     }

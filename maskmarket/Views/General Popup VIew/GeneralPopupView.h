@@ -12,11 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GeneralPopupView : UIView
 
-@property (strong, nonatomic) UIButton *tryAgainButton;
-@property (strong, nonatomic) UIButton *cancelButton;
+@property (strong, nonatomic) UIButton *rightButton;
+@property (strong, nonatomic) UIButton *leftButton;
+@property (strong, nonatomic, readonly) UIImageView *iconImageView;
+@property (strong, nonatomic, readonly) UILabel *messageLabel;
 
-- (instancetype)initWithMessage:(NSString *)message
-                      addCancel:(BOOL)addCancel;
+- (instancetype)initErrorPopupWithMessage:(NSString *)message
+                                addCancel:(BOOL)addCancel;
 
 - (instancetype)init NS_UNAVAILABLE;
 

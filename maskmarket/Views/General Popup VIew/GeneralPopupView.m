@@ -11,109 +11,114 @@
 
 @implementation GeneralPopupView
 
-- (instancetype)initWithMessage:(NSString *)message
-                      addCancel:(BOOL)addCancel
+- (instancetype)initErrorPopupWithMessage:(NSString *)message
+                                addCancel:(BOOL)addCancel
 {
     self = [super initWithFrame:CGRectMake(0, 0, 250.0f, 250.0f)];
     if (self) {
-        [self setUpViewsWithMessage:message
-                          addCancel:addCancel];
+        [self setUpGeneralViewsWithMessage:message];
+        [self setUpErrorViewWithCancel:addCancel];
     }
     return self;
 }
-                   
-- (void)setUpViewsWithMessage:(NSString *)message
-                    addCancel:(BOOL)addCancel
+
+- (void)setUpGeneralViewsWithMessage:(NSString *)message
 {
     self.translatesAutoresizingMaskIntoConstraints = NO;
     self.backgroundColor = [UIColor primaryAppColor];
     self.layer.cornerRadius = 10.0;
     self.clipsToBounds = YES;
     
-    UIImageView *const iconImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-    iconImageView.contentMode = UIViewContentModeScaleAspectFill;
-    iconImageView.clipsToBounds = YES;
-    iconImageView.image = [UIImage imageNamed:@"warning"];
-    iconImageView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self addSubview:iconImageView];
+    _iconImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    _iconImageView.contentMode = UIViewContentModeScaleAspectFill;
+    _iconImageView.clipsToBounds = YES;
+    _iconImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addSubview:_iconImageView];
     
-    [iconImageView.heightAnchor constraintEqualToConstant:80].active = YES;
-    [iconImageView.widthAnchor constraintEqualToConstant:80].active = YES;
-    [iconImageView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
-    [iconImageView.topAnchor constraintEqualToAnchor:self.topAnchor
+    [_iconImageView.heightAnchor constraintEqualToConstant:80].active = YES;
+    [_iconImageView.widthAnchor constraintEqualToConstant:80].active = YES;
+    [_iconImageView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
+    [_iconImageView.topAnchor constraintEqualToAnchor:self.topAnchor
                                             constant:15].active = YES;
     
-    UILabel *const messageLabel = [UILabel new];
-    messageLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    messageLabel.numberOfLines = 0;
-    messageLabel.text = message;
-    messageLabel.textColor = UIColor.whiteColor;
-    messageLabel.textAlignment = NSTextAlignmentCenter;
-    messageLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:14.0f];
-    [self addSubview:messageLabel];
+    _messageLabel = [UILabel new];
+    _messageLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    _messageLabel.numberOfLines = 0;
+    _messageLabel.text = message;
+    _messageLabel.textColor = UIColor.whiteColor;
+    _messageLabel.textAlignment = NSTextAlignmentCenter;
+    _messageLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:14.0f];
+    [self addSubview:_messageLabel];
     
-    [messageLabel.topAnchor constraintEqualToAnchor:iconImageView.bottomAnchor
+    [_messageLabel.topAnchor constraintEqualToAnchor:_iconImageView.bottomAnchor
                                            constant:25].active = YES;
-    [messageLabel.leadingAnchor constraintEqualToAnchor:self.leadingAnchor
+    [_messageLabel.leadingAnchor constraintEqualToAnchor:self.leadingAnchor
                                                constant:15].active = YES;
-    [self.trailingAnchor constraintEqualToAnchor:messageLabel.trailingAnchor
+    [self.trailingAnchor constraintEqualToAnchor:_messageLabel.trailingAnchor
                                         constant:15].active = YES;
+}
+                   
+- (void)setUpErrorViewWithCancel:(BOOL)cancel
+{
+    _iconImageView.image = [UIImage imageNamed:@"warning"];
     
-    _tryAgainButton = [UIButton new];
-    _tryAgainButton.translatesAutoresizingMaskIntoConstraints = NO;
-    _tryAgainButton.backgroundColor = [UIColor popUpViewBackgroundAlphaHalf];
-    [_tryAgainButton setTitle:@"Try Again"
+    _rightButton = [UIButton new];
+    _rightButton.translatesAutoresizingMaskIntoConstraints = NO;
+    _rightButton.backgroundColor = [UIColor popUpViewBackgroundAlphaHalf];
+    [_rightButton setTitle:@"Try Again"
                      forState:UIControlStateNormal];
-    [_tryAgainButton setTitleColor:UIColor.whiteColor
+    [_rightButton setTitleColor:UIColor.whiteColor
                           forState:UIControlStateNormal];
-    _tryAgainButton.titleLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:14.0f];
-    _tryAgainButton.userInteractionEnabled = YES;
-    [self addSubview:_tryAgainButton];
+    _rightButton.titleLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:14.0f];
+    _rightButton.userInteractionEnabled = YES;
+    [self addSubview:_rightButton];
     
-    [_tryAgainButton.heightAnchor constraintEqualToConstant:40].active = YES;
-    [_tryAgainButton.topAnchor constraintGreaterThanOrEqualToAnchor:messageLabel.bottomAnchor
-                                                          constant:15].active = YES;
-    [_tryAgainButton.bottomAnchor constraintEqualToAnchor:self.bottomAnchor].active = YES;
-    [_tryAgainButton.trailingAnchor constraintEqualToAnchor:self.trailingAnchor].active = YES;
+    [_rightButton.heightAnchor constraintEqualToConstant:40].active = YES;
+    [_rightButton.topAnchor constraintGreaterThanOrEqualToAnchor:_messageLabel.bottomAnchor
+                                                           constant:15].active = YES;
+    [_rightButton.bottomAnchor constraintEqualToAnchor:self.bottomAnchor].active = YES;
+    [_rightButton.trailingAnchor constraintEqualToAnchor:self.trailingAnchor].active = YES;
     
-    if (!addCancel) {
-        [_tryAgainButton.leadingAnchor constraintEqualToAnchor:self.leadingAnchor].active = YES;
+    if (!cancel) {
+        [_rightButton.leadingAnchor constraintEqualToAnchor:self.leadingAnchor].active = YES;
         UIView *const topBorderLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 1.0f)];
         topBorderLine.backgroundColor = [UIColor popUpViewBackgroundAlphaHalf];
-        [_tryAgainButton addSubview:topBorderLine];
+        [_rightButton addSubview:topBorderLine];
         return;
     }
     
-    _cancelButton = [UIButton new];
-    _cancelButton.translatesAutoresizingMaskIntoConstraints = NO;
-    _cancelButton.backgroundColor = [UIColor popUpViewBackgroundAlphaHalf];
-    [_cancelButton setTitle:@"Cancel"
+    _leftButton = [UIButton new];
+    _leftButton.translatesAutoresizingMaskIntoConstraints = NO;
+    _leftButton.backgroundColor = [UIColor popUpViewBackgroundAlphaHalf];
+    [_leftButton setTitle:@"Cancel"
                    forState:UIControlStateNormal];
-    [_cancelButton setTitleColor:UIColor.whiteColor
+    [_leftButton setTitleColor:UIColor.whiteColor
                         forState:UIControlStateNormal];
-    _cancelButton.titleLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:14.0f];
-    _cancelButton.userInteractionEnabled = YES;
-    [self addSubview:_cancelButton];
+    _leftButton.titleLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:14.0f];
+    _leftButton.userInteractionEnabled = YES;
+    [self addSubview:_leftButton];
     
-    [_cancelButton.leadingAnchor constraintEqualToAnchor:self.leadingAnchor].active = YES;
-    [_cancelButton.bottomAnchor constraintEqualToAnchor:self.bottomAnchor].active = YES;
-    [_cancelButton.heightAnchor constraintEqualToConstant:40].active = YES;
-    [_cancelButton.trailingAnchor constraintEqualToAnchor:_tryAgainButton.leadingAnchor
+    [_leftButton.leadingAnchor constraintEqualToAnchor:self.leadingAnchor].active = YES;
+    [_leftButton.bottomAnchor constraintEqualToAnchor:self.bottomAnchor].active = YES;
+    [_leftButton.heightAnchor constraintEqualToConstant:40].active = YES;
+    [_leftButton.trailingAnchor constraintEqualToAnchor:_rightButton.leadingAnchor
                                                  constant:0].active = YES;
-    [_cancelButton.widthAnchor constraintEqualToAnchor:self.widthAnchor
+    [_leftButton.widthAnchor constraintEqualToAnchor:self.widthAnchor
                                             multiplier:0.5].active = YES;
 
     UIView *const centerBorderLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1.0f, 40.0f)];
     centerBorderLine.backgroundColor = [UIColor popUpViewBackgroundAlphaHalf];
-    [_tryAgainButton addSubview:centerBorderLine];
+    [_rightButton addSubview:centerBorderLine];
     
     UIView *const topRightBorderLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width / 2, 1.0f)];
     topRightBorderLine.backgroundColor = [UIColor popUpViewBackgroundAlphaHalf];
-    [_tryAgainButton addSubview:topRightBorderLine];
+    [_rightButton addSubview:topRightBorderLine];
 
     UIView *const topLeftBorderLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width / 2, 1.0f)];
     topLeftBorderLine.backgroundColor = [UIColor popUpViewBackgroundAlphaHalf];
-    [_cancelButton addSubview:topLeftBorderLine];
+    [_leftButton addSubview:topLeftBorderLine];
 }
+
+
 
 @end
