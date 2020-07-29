@@ -14,12 +14,14 @@
 #import "LoadingPopupView.h"
 #import "SellingDetailsViewController.h"
 #import "UIColor+AppColors.h"
+#import "ErrorPopupViewController.h"
 
 #pragma mark - Interface
 
 @interface SellingViewController ()
 <UITableViewDelegate,
-UITableViewDataSource>
+UITableViewDataSource,
+ErrorPopupViewControllerDelegate>
 
 #pragma mark - Properties
 
@@ -66,6 +68,15 @@ UITableViewDataSource>
             [strongSelf.tableView reloadData];
         }
     }];
+}
+
+#pragma mark - Error Popup Delegate Methods
+
+- (void)tryAgainAction
+{
+    [LoadingPopupView showLoadingPopupAddedTo:self.view
+                                  withMessage:@"Loading..."];
+    [self fetchListings]; 
 }
 
 #pragma mark - Tableview Code
