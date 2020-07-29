@@ -1,5 +1,5 @@
 //
-//  ErrorPopupViewController.h
+//  ErrorPopupCViewController2.h
 //  maskmarket
 //
 //  Created by Alex Oseguera on 7/28/20.
@@ -10,9 +10,23 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol ErrorPopupViewControllerDelegate;
+
 @interface ErrorPopupViewController : UIViewController
 
-@property (strong, nonatomic) NSString *popUpMessage; 
+@property (nonatomic, weak) id<ErrorPopupViewControllerDelegate> delegate;
+
++ (instancetype)new NS_UNAVAILABLE;
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithMessage:(NSString *)message;
+
+@end
+
+@protocol ErrorPopupViewControllerDelegate
+
+- (void)tryAgainAction;
 
 @end
 

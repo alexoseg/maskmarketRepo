@@ -9,7 +9,7 @@
 #import "DescLocViewController.h"
 #import "PriceViewController.h"
 #import "UIColor+AppColors.h"
-#import "ErrorPopupViewController2.h"
+#import "ErrorPopupViewController.h"
 
 #pragma mark - Interface
 
@@ -61,7 +61,7 @@ static NSString *const kPricingSegue = @"pricingSegue";
         || _stateTextField.text.length == 0
         || _descriptionTextView.text.length == 0)
     {
-        ErrorPopupViewController2 *const popUpViewController = [[ErrorPopupViewController2 alloc] initWithMessage:@"Make sure to fill in all fields before continuing."];
+        ErrorPopupViewController *const popUpViewController = [[ErrorPopupViewController alloc] initWithMessage:@"Make sure to fill in all fields before continuing."];
         [self presentViewController:popUpViewController
                            animated:YES
                          completion:nil];

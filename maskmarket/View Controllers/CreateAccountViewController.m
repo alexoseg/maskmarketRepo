@@ -10,7 +10,7 @@
 #import "ParsePoster.h"
 #import "SceneDelegate.h"
 #import "LoadingPopupView.h"
-#import "ErrorPopupViewController2.h"
+#import "ErrorPopupViewController.h"
 
 #pragma mark - Interface
 
@@ -104,7 +104,7 @@
         || _emailTextField.text.length == 0
         || _passwordTextField.text.length == 0)
     {
-        ErrorPopupViewController2 *const errorViewController = [[ErrorPopupViewController2 alloc] initWithMessage:@"Oops! You have to fill in all the fields in order to create an account."];
+        ErrorPopupViewController *const errorViewController = [[ErrorPopupViewController alloc] initWithMessage:@"Oops! You have to fill in all the fields in order to create an account."];
         [self presentViewController:errorViewController
                            animated:YES
                          completion:nil];
@@ -125,7 +125,7 @@
         }
         [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
-            ErrorPopupViewController2 *const errorViewController = [[ErrorPopupViewController2 alloc] initWithMessage:error.localizedDescription];
+            ErrorPopupViewController *const errorViewController = [[ErrorPopupViewController alloc] initWithMessage:error.localizedDescription];
             [strongSelf presentViewController:errorViewController
                                      animated:YES
                                    completion:nil];

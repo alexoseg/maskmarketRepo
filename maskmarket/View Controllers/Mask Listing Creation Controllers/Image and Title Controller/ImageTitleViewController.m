@@ -9,7 +9,7 @@
 #import "ImageTitleViewController.h"
 #import "DescLocViewController.h"
 #import "MaskListingBuilder.h"
-#import "ErrorPopupViewController2.h"
+#import "ErrorPopupViewController.h"
 
 #pragma mark - Interface
 
@@ -103,7 +103,7 @@ static NSString *const kDescLocSegue = @"descLocSegue";
     if (_titleTextField.text.length == 0
         || !_imageSet)
     {
-        ErrorPopupViewController2 *const popupViewController = [[ErrorPopupViewController2 alloc] initWithMessage:@"Make sure to add a picture and a title before moving on."];
+        ErrorPopupViewController *const popupViewController = [[ErrorPopupViewController alloc] initWithMessage:@"Make sure to add a picture and a title before moving on."];
         [self presentViewController:popupViewController
                            animated:YES
                          completion:nil];

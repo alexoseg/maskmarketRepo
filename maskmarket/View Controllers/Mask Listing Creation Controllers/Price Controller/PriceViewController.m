@@ -10,7 +10,7 @@
 #import "ParsePoster.h"
 #import "MaskListing.h"
 #import "LoadingPopupView.h"
-#import "ErrorPopupViewController2.h"
+#import "ErrorPopupViewController.h"
 
 #pragma mark - Interface
 
@@ -41,7 +41,7 @@
     if (_priceTextField.text.length == 0
         || _maskQuantityTextField.text.length == 0)
     {
-        ErrorPopupViewController2 *const errorPopupViewController = [[ErrorPopupViewController2 alloc] initWithMessage:@"Make sure to fill in all fields before continuing."];
+        ErrorPopupViewController *const errorPopupViewController = [[ErrorPopupViewController alloc] initWithMessage:@"Make sure to fill in all fields before continuing."];
         [self presentViewController:errorPopupViewController
                            animated:YES
                          completion:nil];
@@ -64,7 +64,7 @@
         }
         [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
         if (error) {
-            ErrorPopupViewController2 *const errorPopupViewController = [[ErrorPopupViewController2 alloc] initWithMessage:error.localizedDescription];
+            ErrorPopupViewController *const errorPopupViewController = [[ErrorPopupViewController alloc] initWithMessage:error.localizedDescription];
             [strongSelf presentViewController:errorPopupViewController
                                      animated:YES
                                    completion:nil];

@@ -1,5 +1,5 @@
 //
-//  ErrorPopupViewController.m
+//  ErrorPopupCViewController2.m
 //  maskmarket
 //
 //  Created by Alex Oseguera on 7/28/20.
@@ -7,6 +7,8 @@
 //
 
 #import "ErrorPopupViewController.h"
+#import "UIColor+AppColors.h"
+#import "ErrorPopupView.h"
 
 #pragma mark - Interface
 
@@ -14,8 +16,7 @@
 
 #pragma mark - Properties
 
-@property (weak, nonatomic) IBOutlet UIView *popUpView;
-@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+@property (nonatomic, strong) NSString *popUpMessage;
 
 @end
 
@@ -23,7 +24,21 @@
 
 @implementation ErrorPopupViewController
 
-#pragma mark - Lifecylce
+#pragma mark - Initializers
+
+- (instancetype)initWithMessage:(NSString *)message
+{
+    self = [super init];
+    if (self) {
+        _popUpMessage = [message copy];
+        self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        self.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    }
+    
+    return self;
+}
+
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad
 {
@@ -31,20 +46,39 @@
     [self setUpViews];
 }
 
-#pragma mark - Gesture Recognizers
+#pragma mark - Gesture Actions
 
-- (IBAction)onTapTryAgain:(id)sender
+- (void)onTapTryAgain
 {
     [self dismissViewControllerAnimated:YES
                              completion:nil];
+    if (self.delegate != nil) {
+        [self performTryAgainAction];
+    }
+}
+
+#pragma mark - Delegate Methods
+
+- (void)performTryAgainAction
+{
+    [self.delegate tryAgainAction];
 }
 
 #pragma mark - Setup
 
 - (void)setUpViews
 {
-    _popUpView.layer.cornerRadius = 10.0;
-    _messageLabel.text = _popUpMessage;
+    self.view.backgroundColor = [UIColor popUpViewBackgroundAlphaHalf];
+    ErrorPopupView *const popupView = [[ErrorPopupView alloc] initWithMessage:_popUpMessage];
+    [self.view addSubview:popupView];
+    
+    [popupView.heightAnchor constraintEqualToConstant:250].active = YES;
+    [popupView.widthAnchor constraintEqualToConstant:250].active = YES;
+    [popupView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+    [popupView.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor].active = YES;
+    [popupView.tryAgainButton addTarget:self
+                                 action:@selector(onTapTryAgain)
+                       forControlEvents:UIControlEventTouchUpInside];
 }
 
 @end
