@@ -11,9 +11,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol PriceViewControllerDelegate;
+
 @interface PriceViewController : UIViewController
 
 @property (nonatomic, strong) MaskListingBuilder *builder;
+@property (nonatomic, weak) id<PriceViewControllerDelegate> delegate;
+
+@end
+
+@protocol PriceViewControllerDelegate
+
+- (void)didCreateListing;
 
 @end
 
