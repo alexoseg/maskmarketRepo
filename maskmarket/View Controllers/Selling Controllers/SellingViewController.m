@@ -15,6 +15,7 @@
 #import "SellingDetailsViewController.h"
 #import "UIColor+AppColors.h"
 #import "ErrorPopupViewController.h"
+#import "EmptyBackgroundView.h"
 
 #pragma mark - Interface
 
@@ -70,6 +71,19 @@ ErrorPopupViewControllerDelegate>
                                    completion:nil];
         } else {
             strongSelf.sellingListings = [MaskListingBuilder buildParseMaskListingsFromArray:objects];
+            if (strongSelf.sellingListings.count == 0) {
+                EmptyBackgroundView *const emptyView = [[EmptyBackgroundView alloc] initWithImageName:@"mask_icon"
+                                                                                                title:@"You aren't selling anything!" message:@"Once you create a mask listing, the listing itself will appear here."];
+                strongSelf.tableView.backgroundView = emptyView;
+                [emptyView.topAnchor constraintEqualToAnchor:strongSelf.tableView.topAnchor].active = YES;
+                [emptyView.leadingAnchor constraintEqualToAnchor:strongSelf.tableView.leadingAnchor].active = YES;
+                [emptyView.bottomAnchor constraintEqualToAnchor:strongSelf.tableView.bottomAnchor].active = YES;
+                [emptyView.trailingAnchor constraintEqualToAnchor:strongSelf.tableView.trailingAnchor].active = YES;
+                strongSelf.tableView.scrollEnabled = NO;
+            } else {
+                [strongSelf.tableView setBackgroundView:nil];
+                strongSelf.tableView.scrollEnabled = YES;
+            }
             [strongSelf.tableView reloadData];
         }
     }];
