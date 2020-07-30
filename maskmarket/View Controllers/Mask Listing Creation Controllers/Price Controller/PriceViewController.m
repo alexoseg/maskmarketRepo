@@ -11,10 +11,13 @@
 #import "MaskListing.h"
 #import "LoadingPopupView.h"
 #import "ErrorPopupViewController.h"
+#import "SuccessPopupViewController.h"
 
 #pragma mark - Interface
 
-@interface PriceViewController () <UITextFieldDelegate>
+@interface PriceViewController ()
+<UITextFieldDelegate,
+SuccessPopupDelegate>
 
 #pragma mark - Properties
 
@@ -89,6 +92,15 @@
     [self dismissViewControllerAnimated:YES
                              completion:nil];
 }
+
+#pragma mark - Success Popup Delegate Methods
+
+- (void)okayAction
+{
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
+}
+
 
 #pragma mark - Text Field Methods
 
