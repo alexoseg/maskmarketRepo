@@ -1023,7 +1023,7 @@ Menlo Park, CA 94025</string>
                                     <constraint firstAttribute="width" constant="56" id="C23-fz-G9O"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="3qd-fj-CAk" kind="presentation" id="ttJ-UM-eHG"/>
+                                    <action selector="onTapCreate:" destination="XDz-Qo-ABh" eventType="touchUpInside" id="zMb-Bd-1RH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1041,6 +1041,7 @@ Menlo Park, CA 94025</string>
                     <navigationItem key="navigationItem" title="Selling" id="03J-1P-EVy"/>
                     <connections>
                         <outlet property="tableView" destination="ari-cw-RWX" id="jNl-kJ-0sk"/>
+                        <segue destination="3qd-fj-CAk" kind="presentation" identifier="creationSegue" id="K1H-dR-hiP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Va9-Pn-8lY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
