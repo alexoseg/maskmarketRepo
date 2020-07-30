@@ -46,6 +46,7 @@
 		0F9ECFEA24BF89330020B289 /* ParseGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9ECFE924BF89330020B289 /* ParseGetter.m */; };
 		0F9ECFED24BF955A0020B289 /* HomeListingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9ECFEC24BF955A0020B289 /* HomeListingCell.m */; };
 		0FB73B7624CB655900C0C860 /* SaleCompletionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB73B7524CB655900C0C860 /* SaleCompletionViewController.m */; };
+		0FB829CF24D34722007F65A5 /* EmptyBacklgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB829CE24D34722007F65A5 /* EmptyBacklgroundView.m */; };
 		0FC67F3624C60D0F00852F89 /* PurchaseObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F3524C60D0F00852F89 /* PurchaseObj.m */; };
 		0FC67F3A24C610AE00852F89 /* PurchasedObjBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F3924C610AE00852F89 /* PurchasedObjBuilder.m */; };
 		0FC67F3E24C6377400852F89 /* BuyingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F3D24C6377400852F89 /* BuyingViewController.m */; };
@@ -164,6 +165,8 @@
 		0F9ECFEC24BF955A0020B289 /* HomeListingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeListingCell.m; sourceTree = "<group>"; };
 		0FB73B7424CB655900C0C860 /* SaleCompletionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaleCompletionViewController.h; sourceTree = "<group>"; };
 		0FB73B7524CB655900C0C860 /* SaleCompletionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaleCompletionViewController.m; sourceTree = "<group>"; };
+		0FB829CD24D34722007F65A5 /* EmptyBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyBackgroundView.h; sourceTree = "<group>"; };
+		0FB829CE24D34722007F65A5 /* EmptyBacklgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyBacklgroundView.m; sourceTree = "<group>"; };
 		0FC67F3424C60D0F00852F89 /* PurchaseObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchaseObj.h; sourceTree = "<group>"; };
 		0FC67F3524C60D0F00852F89 /* PurchaseObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseObj.m; sourceTree = "<group>"; };
 		0FC67F3824C610AE00852F89 /* PurchasedObjBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchasedObjBuilder.h; sourceTree = "<group>"; };
@@ -510,6 +513,7 @@
 		0F97CDB324BCFD2E00CA7C9E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0FB829CC24D346C1007F65A5 /* Empty Background VIew */,
 				0FDF96BB24D231A6008CA3F0 /* Floating Action Button */,
 				0F2066B524D0F39E00A1E33E /* General Popup VIew */,
 				0F97CDB624BCFEDE00CA7C9E /* NextCustomButton.h */,
@@ -564,6 +568,15 @@
 				0FB73B7524CB655900C0C860 /* SaleCompletionViewController.m */,
 			);
 			path = "Sale Completion Controllers";
+			sourceTree = "<group>";
+		};
+		0FB829CC24D346C1007F65A5 /* Empty Background VIew */ = {
+			isa = PBXGroup;
+			children = (
+				0FB829CD24D34722007F65A5 /* EmptyBackgroundView.h */,
+				0FB829CE24D34722007F65A5 /* EmptyBacklgroundView.m */,
+			);
+			path = "Empty Background VIew";
 			sourceTree = "<group>";
 		};
 		0FC67F3324C60CEB00852F89 /* Purchase Object */ = {
@@ -902,6 +915,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F8B917624BE53AB00B1FB85 /* PriceViewController.m in Sources */,
+				0FB829CF24D34722007F65A5 /* EmptyBacklgroundView.m in Sources */,
 				0F225C6524CA12E20036B57F /* ViewBuyersButton.m in Sources */,
 				0F8B916E24BE487300B1FB85 /* ImageTitleViewController.m in Sources */,
 				0F9ECFE024BF5FD60020B289 /* UserBuilder.m in Sources */,
