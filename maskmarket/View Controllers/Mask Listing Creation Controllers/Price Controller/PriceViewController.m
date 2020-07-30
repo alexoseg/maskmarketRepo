@@ -74,7 +74,11 @@ SuccessPopupDelegate>
                                      animated:YES
                                    completion:nil];
         } else {
-            NSLog(@"Successfully created a listing!");
+            SuccessPopupViewController *const successPopupViewController = [[SuccessPopupViewController alloc] initWithMessage:@"You successfully created a new mask listing! You can now view your listing."];
+            successPopupViewController.delegate = strongSelf;
+            [strongSelf presentViewController:successPopupViewController
+                                     animated:YES
+                                   completion:nil];
         }
     }];
 }
