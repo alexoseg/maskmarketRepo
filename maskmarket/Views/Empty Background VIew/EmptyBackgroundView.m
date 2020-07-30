@@ -62,7 +62,7 @@
     
     UILabel *const messageLabel = [UILabel new];
     messageLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    messageLabel.numberOfLines = 1;
+    messageLabel.numberOfLines = 0;
     messageLabel.text = message;
     messageLabel.textColor = UIColor.blackColor;
     messageLabel.textAlignment = NSTextAlignmentCenter;
