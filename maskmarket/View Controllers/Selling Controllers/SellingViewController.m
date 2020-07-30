@@ -32,6 +32,10 @@ ErrorPopupViewControllerDelegate>
 
 @end
 
+#pragma mark - Constants
+
+static NSString *const kCreationSegue = @"creationSegue";
+
 #pragma mark - Implementation
 
 @implementation SellingViewController
@@ -88,6 +92,15 @@ ErrorPopupViewControllerDelegate>
         }
     }];
 }
+
+#pragma mark - Gesture Recognizers
+
+- (IBAction)onTapCreate:(id)sender
+{
+    [self performSegueWithIdentifier:kCreationSegue
+                              sender:nil];
+}
+
 
 #pragma mark - Error Popup Delegate Methods
 
