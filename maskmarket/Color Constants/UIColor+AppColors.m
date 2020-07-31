@@ -85,4 +85,65 @@
     return color;
 }
 
++ (UIColor *)orangeViewBackgroundColor
+{
+    static UIColor *color = nil;
+    static dispatch_once_t token;
+    
+    dispatch_once(&token, ^{
+        color = [UIColor colorWithRed:255.0f/255.0f
+                                green:204.0f/255.0f
+                                 blue:153.0f/255.0f
+                                alpha:1.0];
+    });
+    
+    return color;
+}
+
++ (UIColor *)orangeLabelColor
+{
+    static UIColor *color = nil;
+    static dispatch_once_t token;
+    
+    dispatch_once(&token, ^{
+        color = [UIColor colorWithRed:255.0f/255.0f
+                                green:102.0f/255.0f
+                                 blue:0.0f/255.0f
+                                alpha:1.0];
+    });
+    
+    return color;
+}
+
++ (UIColor *)greenViewBackgroundColor
+{
+    
+    static UIColor *color = nil;
+    static dispatch_once_t token;
+    
+    dispatch_once(&token, ^{
+        color = [UIColor colorWithRed:200.0f/255.0f
+                                green:255.0f/255.0f
+                                 blue:200.0f/255.0f
+                                alpha:1.0];
+    });
+    
+    return color;
+}
+
++ (UIColor *)greenLabelColor
+{
+    static UIColor *color = nil;
+    static dispatch_once_t token;
+    
+    dispatch_once(&token, ^{
+        color = [UIColor colorWithRed:0.0f/255.0f
+                                green:153.0f/255.0f
+                                 blue:51.0f/255.0f
+                                alpha:1.0];
+    });
+    
+    return color;
+}
+
 @end

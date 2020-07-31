@@ -22,6 +22,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIColor *)borderColorGrey;
 
++ (UIColor *)orangeViewBackgroundColor;
+
++ (UIColor *)orangeLabelColor;
+
++ (UIColor *)greenViewBackgroundColor;
+
++ (UIColor *)greenLabelColor;
+
 @end
 
 NS_ASSUME_NONNULL_END
