@@ -16,13 +16,16 @@
 #import "UIColor+AppColors.h"
 #import "ErrorPopupViewController.h"
 #import "EmptyBackgroundView.h"
+#import "PriceViewController.h"
+#import "ImageTitleViewController.h"
 
 #pragma mark - Interface
 
 @interface SellingViewController ()
 <UITableViewDelegate,
 UITableViewDataSource,
-ErrorPopupViewControllerDelegate>
+ErrorPopupViewControllerDelegate,
+PriceViewControllerDelegate>
 
 #pragma mark - Properties
 
@@ -133,6 +136,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath
                              animated:YES];
+}
+
+#pragma mark - PriceViewController Delegate Methods
+
+- (void)didCreateListing
+{
+    [self fetchListings];
 }
 
 #pragma mark - Navigation
