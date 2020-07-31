@@ -8,6 +8,7 @@
 
 #import "BoughtCustomCell.h"
 #import "UIColor+AppColors.h"
+#import "DateTools.h"
 
 @implementation BoughtCustomCell
 
@@ -29,10 +30,7 @@
     _titleLabel.text = boughtListing.title;
     _priceLabel.text = [NSString stringWithFormat:@"$%d", boughtListing.price];
     _usernameLabel.text = boughtListing.sellerUsername;
-    NSDateFormatter *const formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"MMM d, yyyy"];
-    NSString *const formattedDateString = [formatter stringFromDate:boughtListing.purchasedOn];
-    _dateLabel.text = [NSString stringWithFormat:@"Bought on %@", formattedDateString];
+    _dateLabel.text = [NSDate shortTimeAgoSinceDate:boughtListing.purchasedOn];
     
     if (boughtListing.completed) {
         _statusView.backgroundColor = [UIColor greenViewBackgroundColor];
