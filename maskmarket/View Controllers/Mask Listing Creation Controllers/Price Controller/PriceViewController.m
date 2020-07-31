@@ -12,6 +12,7 @@
 #import "LoadingPopupView.h"
 #import "ErrorPopupViewController.h"
 #import "SuccessPopupViewController.h"
+#import "SellingViewController.h"
 
 #pragma mark - Interface
 
@@ -103,6 +104,7 @@ SuccessPopupDelegate>
 {
     [self dismissViewControllerAnimated:YES
                              completion:nil];
+    [self.delegate didCreateListing]; 
 }
 
 
@@ -118,6 +120,10 @@ SuccessPopupDelegate>
 
 - (void)setUpViews
 {
+    UITabBarController *const tabBarController = (UITabBarController *)self.presentingViewController;
+    UINavigationController *const sellingNavController = tabBarController.viewControllers[1];
+    SellingViewController *const sellingViewController = (SellingViewController *)sellingNavController.topViewController;
+    self.delegate = (id<PriceViewControllerDelegate>)sellingViewController;
     _priceTextField.delegate = self;
     _priceTextField.adjustsFontSizeToFitWidth = NO;
     UITapGestureRecognizer *const screenTap = [[UITapGestureRecognizer alloc] initWithTarget:self
