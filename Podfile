@@ -8,6 +8,7 @@ target 'maskmarket' do
   # Pods for maskmarket
 	pod 'Parse'
 	pod 'lottie-ios', '2.5.3'
+	pod 'DateTools'
 
   target 'maskmarketTests' do
     inherit! :search_paths
