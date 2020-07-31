@@ -49,8 +49,6 @@
 		0FB829CF24D34722007F65A5 /* EmptyBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB829CE24D34722007F65A5 /* EmptyBackgroundView.m */; };
 		0FC67F3624C60D0F00852F89 /* PurchaseObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F3524C60D0F00852F89 /* PurchaseObj.m */; };
 		0FC67F3A24C610AE00852F89 /* PurchasedObjBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F3924C610AE00852F89 /* PurchasedObjBuilder.m */; };
-		0FC67F3E24C6377400852F89 /* BuyingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F3D24C6377400852F89 /* BuyingViewController.m */; };
-		0FC67F4124C63FE600852F89 /* BuyingListingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F4024C63FE600852F89 /* BuyingListingCell.m */; };
 		0FC67F4624C7613700852F89 /* BoughtListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F4524C7613700852F89 /* BoughtListing.m */; };
 		0FC67F4A24C7630A00852F89 /* BoughtListingBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F4924C7630A00852F89 /* BoughtListingBuilder.m */; };
 		0FC67F5024C7915400852F89 /* BoughtDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F4F24C7915400852F89 /* BoughtDetailsViewController.m */; };
@@ -173,10 +171,6 @@
 		0FC67F3524C60D0F00852F89 /* PurchaseObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseObj.m; sourceTree = "<group>"; };
 		0FC67F3824C610AE00852F89 /* PurchasedObjBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchasedObjBuilder.h; sourceTree = "<group>"; };
 		0FC67F3924C610AE00852F89 /* PurchasedObjBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchasedObjBuilder.m; sourceTree = "<group>"; };
-		0FC67F3C24C6377400852F89 /* BuyingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyingViewController.h; sourceTree = "<group>"; };
-		0FC67F3D24C6377400852F89 /* BuyingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyingViewController.m; sourceTree = "<group>"; };
-		0FC67F3F24C63FE600852F89 /* BuyingListingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyingListingCell.h; sourceTree = "<group>"; };
-		0FC67F4024C63FE600852F89 /* BuyingListingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyingListingCell.m; sourceTree = "<group>"; };
 		0FC67F4424C7613700852F89 /* BoughtListing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoughtListing.h; sourceTree = "<group>"; };
 		0FC67F4524C7613700852F89 /* BoughtListing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoughtListing.m; sourceTree = "<group>"; };
 		0FC67F4824C7630A00852F89 /* BoughtListingBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoughtListingBuilder.h; sourceTree = "<group>"; };
@@ -469,7 +463,6 @@
 				0F892AC624CF773500B7A3EB /* Full Image Controllers */,
 				0FB73B7324CB652D00C0C860 /* Sale Completion Controllers */,
 				0F225C6924CA46190036B57F /* Buyers Controllers */,
-				0FC67F3B24C636FB00852F89 /* Buying Controllers */,
 				0FFE3C3124C24C7E0028466A /* Purchase Controllers */,
 				0F1E850D24C1081100412F4D /* Selling Controllers */,
 				0FD148D224C0CD060018015E /* Details Controllers */,
@@ -530,8 +523,6 @@
 				0F9ECFEC24BF955A0020B289 /* HomeListingCell.m */,
 				0F1E850A24C1063000412F4D /* SellingListingCell.h */,
 				0F1E850B24C1063000412F4D /* SellingListingCell.m */,
-				0FC67F3F24C63FE600852F89 /* BuyingListingCell.h */,
-				0FC67F4024C63FE600852F89 /* BuyingListingCell.m */,
 				0F225C5D24C8A48C0036B57F /* LoadingPopupView.h */,
 				0F225C5E24C8A48C0036B57F /* LoadingPopupView.m */,
 				0F225C6324CA12E20036B57F /* ViewBuyersButton.h */,
@@ -603,15 +594,6 @@
 				0FC67F3924C610AE00852F89 /* PurchasedObjBuilder.m */,
 			);
 			path = "Purchased Obj Builder";
-			sourceTree = "<group>";
-		};
-		0FC67F3B24C636FB00852F89 /* Buying Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				0FC67F3C24C6377400852F89 /* BuyingViewController.h */,
-				0FC67F3D24C6377400852F89 /* BuyingViewController.m */,
-			);
-			path = "Buying Controllers";
 			sourceTree = "<group>";
 		};
 		0FC67F4324C7611B00852F89 /* Bought Listing */ = {
@@ -956,7 +938,6 @@
 				0F9ECFEA24BF89330020B289 /* ParseGetter.m in Sources */,
 				0F2181B724CFB13E008F07BE /* QueryBuilder.m in Sources */,
 				0FDF96BA24D21F27008CA3F0 /* SuccessPopupViewController.m in Sources */,
-				0FC67F3E24C6377400852F89 /* BuyingViewController.m in Sources */,
 				0F225C6824CA13D10036B57F /* SellingDetailsViewController.m in Sources */,
 				0FC67F3A24C610AE00852F89 /* PurchasedObjBuilder.m in Sources */,
 				0F97CDBE24BD0C6300CA7C9E /* LoginViewController.m in Sources */,
@@ -979,7 +960,6 @@
 				0F225C6C24CA462C0036B57F /* BuyersViewController.m in Sources */,
 				0F1E850624C0CE1100412F4D /* BuyDetailViewController.m in Sources */,
 				0FC67F3624C60D0F00852F89 /* PurchaseObj.m in Sources */,
-				0FC67F4124C63FE600852F89 /* BuyingListingCell.m in Sources */,
 				0F2066BB24D0FAA400A1E33E /* ErrorPopupViewController.m in Sources */,
 				0F2066B824D0F3D600A1E33E /* GeneralPopupView.m in Sources */,
 				0FF9F8CD24D3A0D400AE2DA5 /* BoughtCustomCell.m in Sources */,
