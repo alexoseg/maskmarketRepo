@@ -14,6 +14,7 @@
 #import "ParseGetter.h"
 #import "BoughtCustomCell.h"
 #import "BoughtDetailsViewController.h"
+#import "UIColor+AppColors.h"
 
 #pragma mark - Interface
 
@@ -149,6 +150,15 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
+    
+    _refreshControl = [[UIRefreshControl alloc] init];
+    [_refreshControl addTarget:self
+                        action:@selector(fetchBoughtListings)
+              forControlEvents:UIControlEventValueChanged];
+    _refreshControl.tintColor = [UIColor primaryAppColor];
+    _refreshControl.layer.zPosition = -1;
+    [_collectionView insertSubview:_refreshControl
+                      atIndex:0];
 }
 
 @end
