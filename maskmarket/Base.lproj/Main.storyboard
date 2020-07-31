@@ -316,9 +316,10 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaL-sa-gBv">
-                                        <rect key="frame" x="90" y="10" width="234" height="40"/>
+                                        <rect key="frame" x="107" y="10" width="200" height="40"/>
                                         <color key="backgroundColor" red="0.14901960780000001" green="0.72156862749999995" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="6l3-63-iOI"/>
                                             <constraint firstAttribute="height" constant="40" id="M0a-VA-xCH"/>
                                         </constraints>
                                         <state key="normal" title="Buy">
@@ -332,11 +333,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="WwS-n5-nku" secondAttribute="trailing" id="N8b-yC-xCa"/>
+                                    <constraint firstItem="KaL-sa-gBv" firstAttribute="centerX" secondItem="0Cy-cL-oU0" secondAttribute="centerX" id="NcM-q1-ndm"/>
                                     <constraint firstItem="WwS-n5-nku" firstAttribute="top" secondItem="0Cy-cL-oU0" secondAttribute="top" id="QpZ-jj-4V9"/>
                                     <constraint firstItem="KaL-sa-gBv" firstAttribute="top" secondItem="WwS-n5-nku" secondAttribute="bottom" constant="8" id="fYC-fC-eZN"/>
                                     <constraint firstItem="WwS-n5-nku" firstAttribute="leading" secondItem="0Cy-cL-oU0" secondAttribute="leading" id="kZx-Db-rmU"/>
-                                    <constraint firstItem="KaL-sa-gBv" firstAttribute="leading" secondItem="0Cy-cL-oU0" secondAttribute="leading" constant="90" id="kuf-b1-mwk"/>
-                                    <constraint firstAttribute="trailing" secondItem="KaL-sa-gBv" secondAttribute="trailing" constant="90" id="tib-Gu-q1Y"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WJh-dX-BsP">
@@ -914,6 +914,7 @@ Menlo Park, CA 94025</string>
                                     <constraint firstItem="kOy-cp-3Tc" firstAttribute="top" secondItem="6FV-iy-eZS" secondAttribute="bottom" constant="8" id="OpG-ep-EWL"/>
                                     <constraint firstItem="6FV-iy-eZS" firstAttribute="leading" secondItem="Hv4-og-VEK" secondAttribute="leading" constant="15" id="Q0r-NS-cEo"/>
                                     <constraint firstItem="kOy-cp-3Tc" firstAttribute="leading" secondItem="6FV-iy-eZS" secondAttribute="leading" id="Qcs-Od-dGg"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6FV-iy-eZS" secondAttribute="trailing" constant="15" id="Z3G-za-NQs"/>
                                     <constraint firstAttribute="bottom" secondItem="kOy-cp-3Tc" secondAttribute="bottom" constant="15" id="v8j-JD-nCV"/>
                                 </constraints>
                             </view>
@@ -1398,9 +1399,11 @@ Menlo Park, CA 94025</string>
                             <constraint firstItem="uAl-Ff-dhH" firstAttribute="top" secondItem="I3b-8G-9ag" secondAttribute="bottom" constant="25" id="VTS-4V-lwt"/>
                             <constraint firstItem="Iz8-7h-0xx" firstAttribute="leading" secondItem="aI1-iz-sOD" secondAttribute="leading" constant="35" id="WMn-tG-klQ"/>
                             <constraint firstItem="q6B-xp-h5f" firstAttribute="top" secondItem="Iz8-7h-0xx" secondAttribute="bottom" constant="25" id="bin-vb-qRj"/>
+                            <constraint firstItem="aI1-iz-sOD" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uAl-Ff-dhH" secondAttribute="trailing" constant="15" id="ek8-F7-gRc"/>
                             <constraint firstItem="uAl-Ff-dhH" firstAttribute="leading" secondItem="Iz8-7h-0xx" secondAttribute="leading" id="hzJ-Bf-cA3"/>
                             <constraint firstItem="q6B-xp-h5f" firstAttribute="leading" secondItem="aI1-iz-sOD" secondAttribute="leading" constant="35" id="kVo-1Z-FKH"/>
                             <constraint firstItem="aI1-iz-sOD" firstAttribute="trailing" secondItem="q6B-xp-h5f" secondAttribute="trailing" constant="35" id="lVU-cY-OCf"/>
+                            <constraint firstItem="ipF-6K-Gkx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="I3b-8G-9ag" secondAttribute="trailing" constant="15" id="mXo-Lp-drW"/>
                             <constraint firstItem="I3b-8G-9ag" firstAttribute="leading" secondItem="Iz8-7h-0xx" secondAttribute="leading" id="nqj-Pf-SH3"/>
                             <constraint firstItem="aI1-iz-sOD" firstAttribute="trailing" secondItem="Iz8-7h-0xx" secondAttribute="trailing" constant="35" id="quk-Gz-WcY"/>
                             <constraint firstItem="L67-FC-wZ2" firstAttribute="top" secondItem="aI1-iz-sOD" secondAttribute="top" constant="110" id="t3t-AD-vlW"/>
