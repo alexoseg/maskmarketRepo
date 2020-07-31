@@ -56,6 +56,8 @@
 		0FC67F5024C7915400852F89 /* BoughtDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC67F4F24C7915400852F89 /* BoughtDetailsViewController.m */; };
 		0FDF96BA24D21F27008CA3F0 /* SuccessPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDF96B924D21F27008CA3F0 /* SuccessPopupViewController.m */; };
 		0FDF96BE24D231C4008CA3F0 /* FloatingActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDF96BD24D231C4008CA3F0 /* FloatingActionButton.m */; };
+		0FF9F8CD24D3A0D400AE2DA5 /* BoughtCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF9F8CC24D3A0D400AE2DA5 /* BoughtCustomCell.m */; };
+		0FF9F8D124D3AE4200AE2DA5 /* BoughtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF9F8D024D3AE4200AE2DA5 /* BoughtViewController.m */; };
 		0FFE3C3424C24C930028466A /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFE3C3324C24C930028466A /* PurchaseViewController.m */; };
 		277BD8C0ADE42DC2B1DBD5AC /* Pods_maskmarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A51C4A454F0EBD1743F46C /* Pods_maskmarket.framework */; };
 		3E4FBA7AFE1B5E3BC88841D2 /* Pods_maskmarketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3EB4D5E036F75B76B9CB44 /* Pods_maskmarketTests.framework */; };
@@ -185,6 +187,10 @@
 		0FDF96B924D21F27008CA3F0 /* SuccessPopupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuccessPopupViewController.m; sourceTree = "<group>"; };
 		0FDF96BC24D231C4008CA3F0 /* FloatingActionButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FloatingActionButton.h; sourceTree = "<group>"; };
 		0FDF96BD24D231C4008CA3F0 /* FloatingActionButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FloatingActionButton.m; sourceTree = "<group>"; };
+		0FF9F8CB24D3A0D400AE2DA5 /* BoughtCustomCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoughtCustomCell.h; sourceTree = "<group>"; };
+		0FF9F8CC24D3A0D400AE2DA5 /* BoughtCustomCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoughtCustomCell.m; sourceTree = "<group>"; };
+		0FF9F8CF24D3AE4200AE2DA5 /* BoughtViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoughtViewController.h; sourceTree = "<group>"; };
+		0FF9F8D024D3AE4200AE2DA5 /* BoughtViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoughtViewController.m; sourceTree = "<group>"; };
 		0FFE3C3224C24C930028466A /* PurchaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchaseViewController.h; sourceTree = "<group>"; };
 		0FFE3C3324C24C930028466A /* PurchaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseViewController.m; sourceTree = "<group>"; };
 		1712B4619B99D17884EDEEB5 /* Pods-maskmarketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maskmarketTests.debug.xcconfig"; path = "Target Support Files/Pods-maskmarketTests/Pods-maskmarketTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -457,6 +463,7 @@
 		0F97CD9324BCDAE000CA7C9E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0FF9F8CE24D3AE1900AE2DA5 /* Bought Controllers */,
 				0FDF96B724D21F10008CA3F0 /* Success Popup Controllers */,
 				0F2066B124D0C4AD00A1E33E /* Error Popup Controllers */,
 				0F892AC624CF773500B7A3EB /* Full Image Controllers */,
@@ -513,6 +520,7 @@
 		0F97CDB324BCFD2E00CA7C9E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0FF9F8CA24D3A09D00AE2DA5 /* Bought Custom Cell */,
 				0FB829CC24D346C1007F65A5 /* Empty Background VIew */,
 				0FDF96BB24D231A6008CA3F0 /* Floating Action Button */,
 				0F2066B524D0F39E00A1E33E /* General Popup VIew */,
@@ -653,6 +661,24 @@
 				0FDF96BD24D231C4008CA3F0 /* FloatingActionButton.m */,
 			);
 			path = "Floating Action Button";
+			sourceTree = "<group>";
+		};
+		0FF9F8CA24D3A09D00AE2DA5 /* Bought Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0FF9F8CB24D3A0D400AE2DA5 /* BoughtCustomCell.h */,
+				0FF9F8CC24D3A0D400AE2DA5 /* BoughtCustomCell.m */,
+			);
+			path = "Bought Custom Cell";
+			sourceTree = "<group>";
+		};
+		0FF9F8CE24D3AE1900AE2DA5 /* Bought Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0FF9F8CF24D3AE4200AE2DA5 /* BoughtViewController.h */,
+				0FF9F8D024D3AE4200AE2DA5 /* BoughtViewController.m */,
+			);
+			path = "Bought Controllers";
 			sourceTree = "<group>";
 		};
 		0FFE3C3124C24C7E0028466A /* Purchase Controllers */ = {
@@ -918,6 +944,7 @@
 				0FB829CF24D34722007F65A5 /* EmptyBackgroundView.m in Sources */,
 				0F225C6524CA12E20036B57F /* ViewBuyersButton.m in Sources */,
 				0F8B916E24BE487300B1FB85 /* ImageTitleViewController.m in Sources */,
+				0FF9F8D124D3AE4200AE2DA5 /* BoughtViewController.m in Sources */,
 				0F9ECFE024BF5FD60020B289 /* UserBuilder.m in Sources */,
 				0F97CD9624BCDAFB00CA7C9E /* CreateAccountViewController.m in Sources */,
 				0F97CDB824BCFEDE00CA7C9E /* NextCustomButton.m in Sources */,
@@ -955,6 +982,7 @@
 				0FC67F4124C63FE600852F89 /* BuyingListingCell.m in Sources */,
 				0F2066BB24D0FAA400A1E33E /* ErrorPopupViewController.m in Sources */,
 				0F2066B824D0F3D600A1E33E /* GeneralPopupView.m in Sources */,
+				0FF9F8CD24D3A0D400AE2DA5 /* BoughtCustomCell.m in Sources */,
 				0FB73B7624CB655900C0C860 /* SaleCompletionViewController.m in Sources */,
 				0F97CD6324BCCFA300CA7C9E /* SceneDelegate.m in Sources */,
 			);
