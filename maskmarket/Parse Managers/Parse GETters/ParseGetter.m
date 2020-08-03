@@ -24,7 +24,7 @@ static NSString *const kAuthorEmail = @"authorEmail";
 static NSString *const kAuthorID = @"authorID";
 static NSString *const kPrice = @"price";
 static NSString *const kImage = @"image";
-static NSString *const kPurchasedArray = @"purchasedArray";
+static NSString *const kPurchasedDict = @"purchasedDict";
 static NSString *const kMaskQuantity = @"maskQuantity";
 static NSString *const kListings = @"Listings";
 static NSString *const kPurchasedObjs = @"PurchasedObjs";
@@ -38,7 +38,7 @@ static NSString *const kTrackingNumber = @"trackingNumber";
 
 + (void)fetchAllListingsWithCompletion:(void (^)(NSArray * _Nullable, NSError * _Nullable))completion
 {
-    NSArray<NSString *> *const keyArray = @[kDescription, kTitle, kCity, kState, kAuthorUsername, kAuthorEmail, kAuthorID, kPrice, kPurchasedArray, kMaskQuantity, kImage];
+    NSArray<NSString *> *const keyArray = @[kDescription, kTitle, kCity, kState, kAuthorUsername, kAuthorEmail, kAuthorID, kPrice, kPurchasedDict, kMaskQuantity, kImage];
     PFQuery *const query = [QueryBuilder buildQueryWithClassName:kListings
                                                         whereKey:kMaskQuantity
                                                      greaterThan:@0
@@ -54,7 +54,7 @@ static NSString *const kTrackingNumber = @"trackingNumber";
 + (void)fetchCurrentUserSellingsWithCompletion:(void (^)(NSArray * _Nullable, NSError * _Nullable))completion
 {
     User *const currentUser = [UserBuilder buildUserfromPFUser:[PFUser currentUser]];
-    NSArray<NSString *> *const keyArray = @[kDescription, kTitle, kCity, kState, kAuthorUsername, kAuthorEmail, kAuthorID, kPrice, kPurchasedArray, kMaskQuantity, kImage];
+    NSArray<NSString *> *const keyArray = @[kDescription, kTitle, kCity, kState, kAuthorUsername, kAuthorEmail, kAuthorID, kPrice, kPurchasedDict, kMaskQuantity, kImage];
     PFQuery *const query = [QueryBuilder buildQueryWithClassName:kListings
                                                         whereKey:kAuthorID
                                                          equalTo:currentUser.userID

@@ -19,7 +19,7 @@ static NSString *const kPrice = @"price";
 static NSString *const kMaskQuantity = @"maskQuantity";
 static NSString *const kImage = @"image";
 static NSString *const kListings = @"Listings";
-static NSString *const kPurchasedArray = @"purchasedArray";
+static NSString *const kPurchasedDict = @"purchasedDict";
 static NSString *const kPurchasedObjs = @"PurchasedObjs";
 static NSString *const kUserID = @"userID";
 static NSString *const kListingID = @"listingID";
@@ -52,7 +52,7 @@ static NSString *const kTrackingNumber = @"trackingNumber";
     [query getObjectInBackgroundWithId:maskListingId
                                  block:^(PFObject * _Nullable listing, NSError * _Nullable error) {
         if (error) {
-            NSLog(@"%@", error.localizedDescription);
+            completion(NO, error);
         } else {
             User *const purchasedByUser = [UserBuilder buildUserfromPFUser:[PFUser currentUser]];
             int const updatedQuantity = [listing[kMaskQuantity] intValue] - amountToPurchase;
@@ -68,7 +68,9 @@ static NSString *const kTrackingNumber = @"trackingNumber";
             purchasedObject[kSpent] = [NSNumber numberWithInt:amountSpent];
             
             [purchasedObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-                [listing addObject:purchasedObject.objectId forKey:kPurchasedArray];
+                NSMutableDictionary<NSString *, NSNumber *> *const purchasedDict = listing[kPurchasedDict];
+                purchasedDict[purchasedObject.objectId] = @NO;
+                listing[kPurchasedDict] = [purchasedDict copy];
                 [listing saveInBackgroundWithBlock:completion];
             }];
         }
@@ -90,7 +92,7 @@ static NSString *const kTrackingNumber = @"trackingNumber";
     listing[kPrice] = [NSNumber numberWithInt:maskListing.price];
     listing[kMaskQuantity] = [NSNumber numberWithInt:maskListing.maskQuantity];
     listing[kImage] = maskListing.maskImage;
-    listing[kPurchasedArray] = @[];
+    listing[kPurchasedDict] = @{};
     
     [listing saveInBackgroundWithBlock:completion];
 }
