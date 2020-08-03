@@ -19,8 +19,8 @@
                            author:(User *)author
                             price:(int)price
                      maskQuantity:(int)maskQuantity
-                   purchasedArray:(NSArray<NSString *> *)purchasedArray
-                        maskImage:(nonnull PFFileObject *)maskImage
+                    purchasedDict:(NSDictionary<NSString *, NSNumber *> *)purchasedDict
+                        maskImage:(PFFileObject *)maskImage;
 {
     self = [super initWithMaskDescription:maskDescription
                                     title:title
@@ -34,7 +34,7 @@
     if (self) {
         _listingId = listingId;
         _createdAt = createdAt;
-        _purchasedArray = purchasedArray; 
+        _purchasedDict = purchasedDict;
     }
     
     return self;

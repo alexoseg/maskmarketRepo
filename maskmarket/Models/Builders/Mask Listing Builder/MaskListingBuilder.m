@@ -19,7 +19,7 @@ static NSString *const kAuthorID = @"authorID";
 static NSString *const kPrice = @"price";
 static NSString *const kImage = @"image";
 static NSString *const kMaskQuantity = @"maskQuantity";
-static NSString *const kPurchasedArray = @"purchasedArray";
+static NSString *const kPurchasedDict = @"purchasedDict";
 
 @implementation MaskListingBuilder
 
@@ -33,7 +33,7 @@ static NSString *const kPurchasedArray = @"purchasedArray";
     NSString *const state = object[kState];
     NSNumber *const price = object[kPrice];
     NSNumber *const maskQuantity = object[kMaskQuantity];
-    NSArray<NSString *> *const purchasedObjs = object[kPurchasedArray];
+    NSDictionary<NSString *, NSNumber *> *const purchasedObjs = object[kPurchasedDict];
     
     
     PFFileObject *const image = object[kImage];
@@ -64,7 +64,7 @@ static NSString *const kPurchasedArray = @"purchasedArray";
                                                 author:author
                                                  price:[price intValue]
                                           maskQuantity:[maskQuantity intValue]
-                                        purchasedArray:purchasedObjs
+                                        purchasedDict:purchasedObjs
                                              maskImage:image];
 }
 
