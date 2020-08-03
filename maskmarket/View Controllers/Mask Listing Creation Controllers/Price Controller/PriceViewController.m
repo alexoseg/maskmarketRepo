@@ -13,6 +13,7 @@
 #import "ErrorPopupViewController.h"
 #import "SuccessPopupViewController.h"
 #import "SellingViewController.h"
+#import "SellingViewController2.h"
 
 #pragma mark - Interface
 
@@ -122,7 +123,7 @@ SuccessPopupDelegate>
 {
     UITabBarController *const tabBarController = (UITabBarController *)self.presentingViewController;
     UINavigationController *const sellingNavController = tabBarController.viewControllers[1];
-    SellingViewController *const sellingViewController = (SellingViewController *)sellingNavController.topViewController;
+    SellingViewController2 *const sellingViewController = (SellingViewController2 *)sellingNavController.topViewController;
     self.delegate = (id<PriceViewControllerDelegate>)sellingViewController;
     _priceTextField.delegate = self;
     _priceTextField.adjustsFontSizeToFitWidth = NO;
