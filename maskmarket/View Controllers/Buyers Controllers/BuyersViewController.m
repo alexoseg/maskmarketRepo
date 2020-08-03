@@ -14,13 +14,15 @@
 #import "UIColor+AppColors.h"
 #import "ErrorPopupViewController.h"
 #import "LoadingPopupView.h"
+#import "SaleCompletionViewController.h"
 
 #pragma mark - Interface
 
 @interface BuyersViewController ()
 <UITableViewDelegate,
 UITableViewDataSource,
-ErrorPopupViewControllerDelegate>
+ErrorPopupViewControllerDelegate,
+SaleCompletionDelegate>
 
 #pragma mark - Properties
 
@@ -81,6 +83,13 @@ ErrorPopupViewControllerDelegate>
     [self fetchPurchasers];
 }
 
+#pragma mark - Sale Completion Delegate
+
+- (void)didCompleteSale
+{
+    [self fetchPurchasers];
+}
+
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
@@ -91,6 +100,7 @@ ErrorPopupViewControllerDelegate>
     NSIndexPath *const indexPath = [_tableView indexPathForCell:tappedCell];
     BoughtListing *const boughtListing = _listings[indexPath.row];
     viewController.boughListing = boughtListing;
+    viewController.delegate = self; 
 }
 
 #pragma mark - Setup
