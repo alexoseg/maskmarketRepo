@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0F1E850624C0CE1100412F4D /* BuyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E850524C0CE1100412F4D /* BuyDetailViewController.m */; };
-		0F1E850C24C1063000412F4D /* SellingListingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E850B24C1063000412F4D /* SellingListingCell.m */; };
-		0F1E851024C1082E00412F4D /* SellingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E850F24C1082E00412F4D /* SellingViewController.m */; };
 		0F2066B824D0F3D600A1E33E /* GeneralPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2066B724D0F3D600A1E33E /* GeneralPopupView.m */; };
 		0F2066BB24D0FAA400A1E33E /* ErrorPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2066BA24D0FAA400A1E33E /* ErrorPopupViewController.m */; };
 		0F2181B724CFB13E008F07BE /* QueryBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2181B624CFB13E008F07BE /* QueryBuilder.m */; };
@@ -21,7 +19,7 @@
 		0F225C6C24CA462C0036B57F /* BuyersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F225C6B24CA462C0036B57F /* BuyersViewController.m */; };
 		0F225C6F24CA4FE10036B57F /* PurchaserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F225C6E24CA4FE10036B57F /* PurchaserCell.m */; };
 		0F69E9D524D4B2050083D0F8 /* SellingCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F69E9D424D4B2050083D0F8 /* SellingCustomCell.m */; };
-		0F69E9D924D4C1F30083D0F8 /* SellingViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F69E9D824D4C1F30083D0F8 /* SellingViewController2.m */; };
+		0F69E9D924D4C1F30083D0F8 /* SellingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F69E9D824D4C1F30083D0F8 /* SellingViewController.m */; };
 		0F6C4D9D24BD18A800E2E846 /* MaskListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */; };
 		0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4DA024BD1F8900E2E846 /* MaskListing.m */; };
 		0F892AC924CF774800B7A3EB /* FullImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F892AC824CF774800B7A3EB /* FullImageViewController.m */; };
@@ -85,10 +83,6 @@
 		03FC078581BDA3D064BC0629 /* Pods-maskmarket-maskmarketUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maskmarket-maskmarketUITests.debug.xcconfig"; path = "Target Support Files/Pods-maskmarket-maskmarketUITests/Pods-maskmarket-maskmarketUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0F1E850424C0CE1100412F4D /* BuyDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyDetailViewController.h; sourceTree = "<group>"; };
 		0F1E850524C0CE1100412F4D /* BuyDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyDetailViewController.m; sourceTree = "<group>"; };
-		0F1E850A24C1063000412F4D /* SellingListingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellingListingCell.h; sourceTree = "<group>"; };
-		0F1E850B24C1063000412F4D /* SellingListingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellingListingCell.m; sourceTree = "<group>"; };
-		0F1E850E24C1082E00412F4D /* SellingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellingViewController.h; sourceTree = "<group>"; };
-		0F1E850F24C1082E00412F4D /* SellingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellingViewController.m; sourceTree = "<group>"; };
 		0F2066B624D0F3D600A1E33E /* GeneralPopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneralPopupView.h; sourceTree = "<group>"; };
 		0F2066B724D0F3D600A1E33E /* GeneralPopupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneralPopupView.m; sourceTree = "<group>"; };
 		0F2066B924D0FAA400A1E33E /* ErrorPopupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorPopupViewController.h; sourceTree = "<group>"; };
@@ -110,8 +104,8 @@
 		0F225C6E24CA4FE10036B57F /* PurchaserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaserCell.m; sourceTree = "<group>"; };
 		0F69E9D324D4B2050083D0F8 /* SellingCustomCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellingCustomCell.h; sourceTree = "<group>"; };
 		0F69E9D424D4B2050083D0F8 /* SellingCustomCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellingCustomCell.m; sourceTree = "<group>"; };
-		0F69E9D724D4C1F30083D0F8 /* SellingViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellingViewController2.h; sourceTree = "<group>"; };
-		0F69E9D824D4C1F30083D0F8 /* SellingViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellingViewController2.m; sourceTree = "<group>"; };
+		0F69E9D724D4C1F30083D0F8 /* SellingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellingViewController.h; sourceTree = "<group>"; };
+		0F69E9D824D4C1F30083D0F8 /* SellingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellingViewController.m; sourceTree = "<group>"; };
 		0F6C4D9B24BD18A800E2E846 /* MaskListingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListingViewController.h; sourceTree = "<group>"; };
 		0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListingViewController.m; sourceTree = "<group>"; };
 		0F6C4D9F24BD1F8900E2E846 /* MaskListing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListing.h; sourceTree = "<group>"; };
@@ -245,15 +239,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		0F1E850D24C1081100412F4D /* Selling Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				0F1E850E24C1082E00412F4D /* SellingViewController.h */,
-				0F1E850F24C1082E00412F4D /* SellingViewController.m */,
-			);
-			path = "Selling Controllers";
-			sourceTree = "<group>";
-		};
 		0F2066B124D0C4AD00A1E33E /* Error Popup Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,13 +301,13 @@
 			path = "Selling Custom Cell";
 			sourceTree = "<group>";
 		};
-		0F69E9D624D4C1D80083D0F8 /* Selling Controllers 2 */ = {
+		0F69E9D624D4C1D80083D0F8 /* Selling Controllers  */ = {
 			isa = PBXGroup;
 			children = (
-				0F69E9D724D4C1F30083D0F8 /* SellingViewController2.h */,
-				0F69E9D824D4C1F30083D0F8 /* SellingViewController2.m */,
+				0F69E9D724D4C1F30083D0F8 /* SellingViewController.h */,
+				0F69E9D824D4C1F30083D0F8 /* SellingViewController.m */,
 			);
-			path = "Selling Controllers 2";
+			path = "Selling Controllers ";
 			sourceTree = "<group>";
 		};
 		0F6C4D9E24BD1F6500E2E846 /* Models */ = {
@@ -481,7 +466,7 @@
 		0F97CD9324BCDAE000CA7C9E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0F69E9D624D4C1D80083D0F8 /* Selling Controllers 2 */,
+				0F69E9D624D4C1D80083D0F8 /* Selling Controllers  */,
 				0FF9F8CE24D3AE1900AE2DA5 /* Bought Controllers */,
 				0FDF96B724D21F10008CA3F0 /* Success Popup Controllers */,
 				0F2066B124D0C4AD00A1E33E /* Error Popup Controllers */,
@@ -489,7 +474,6 @@
 				0FB73B7324CB652D00C0C860 /* Sale Completion Controllers */,
 				0F225C6924CA46190036B57F /* Buyers Controllers */,
 				0FFE3C3124C24C7E0028466A /* Purchase Controllers */,
-				0F1E850D24C1081100412F4D /* Selling Controllers */,
 				0FD148D224C0CD060018015E /* Details Controllers */,
 				0F8B916A24BE483600B1FB85 /* Mask Listing Creation Controllers */,
 				0F97CD9424BCDAFB00CA7C9E /* CreateAccountViewController.h */,
@@ -547,8 +531,6 @@
 				0F97CDB724BCFEDE00CA7C9E /* NextCustomButton.m */,
 				0F9ECFEB24BF955A0020B289 /* HomeListingCell.h */,
 				0F9ECFEC24BF955A0020B289 /* HomeListingCell.m */,
-				0F1E850A24C1063000412F4D /* SellingListingCell.h */,
-				0F1E850B24C1063000412F4D /* SellingListingCell.m */,
 				0F225C5D24C8A48C0036B57F /* LoadingPopupView.h */,
 				0F225C5E24C8A48C0036B57F /* LoadingPopupView.m */,
 				0F225C6324CA12E20036B57F /* ViewBuyersButton.h */,
@@ -951,7 +933,7 @@
 				0F8B917624BE53AB00B1FB85 /* PriceViewController.m in Sources */,
 				0FB829CF24D34722007F65A5 /* EmptyBackgroundView.m in Sources */,
 				0F225C6524CA12E20036B57F /* ViewBuyersButton.m in Sources */,
-				0F69E9D924D4C1F30083D0F8 /* SellingViewController2.m in Sources */,
+				0F69E9D924D4C1F30083D0F8 /* SellingViewController.m in Sources */,
 				0F69E9D524D4B2050083D0F8 /* SellingCustomCell.m in Sources */,
 				0F8B916E24BE487300B1FB85 /* ImageTitleViewController.m in Sources */,
 				0FF9F8D124D3AE4200AE2DA5 /* BoughtViewController.m in Sources */,
@@ -971,9 +953,7 @@
 				0F97CDBE24BD0C6300CA7C9E /* LoginViewController.m in Sources */,
 				0F9ECFDC24BF5CA70020B289 /* User.m in Sources */,
 				0FC67F4624C7613700852F89 /* BoughtListing.m in Sources */,
-				0F1E850C24C1063000412F4D /* SellingListingCell.m in Sources */,
 				0F97CD7124BCCFA400CA7C9E /* main.m in Sources */,
-				0F1E851024C1082E00412F4D /* SellingViewController.m in Sources */,
 				0F8B917224BE4E1F00B1FB85 /* DescLocViewController.m in Sources */,
 				0FFE3C3424C24C930028466A /* PurchaseViewController.m in Sources */,
 				0F9ECFED24BF955A0020B289 /* HomeListingCell.m in Sources */,

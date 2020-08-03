@@ -1628,7 +1628,7 @@ Menlo Park, CA 94025</string>
         <!--Selling-->
         <scene sceneID="5O0-Zu-vyV">
             <objects>
-                <viewController id="yjs-D2-0mI" customClass="SellingViewController2" sceneMemberID="viewController">
+                <viewController id="yjs-D2-0mI" customClass="SellingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="625-zy-vnQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

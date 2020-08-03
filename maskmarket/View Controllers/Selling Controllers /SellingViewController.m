@@ -6,7 +6,7 @@
 //  Copyright © 2020 Alex Oseguera. All rights reserved.
 //
 
-#import "SellingViewController2.h"
+#import "SellingViewController.h"
 #import "SellingCustomCell.h"
 #import "ParseMaskListing.h"
 #import "ParseGetter.h"
@@ -21,7 +21,7 @@
 
 #pragma mark - Interface
 
-@interface SellingViewController2 ()
+@interface SellingViewController ()
 <UICollectionViewDelegate,
 UICollectionViewDataSource,
 UICollectionViewDelegateFlowLayout,
@@ -46,7 +46,7 @@ static NSString *const kCreationSegue = @"creationSegue";
 
 #pragma mark - Implementation
 
-@implementation SellingViewController2
+@implementation SellingViewController
 
 #pragma mark - Lifecycle
 
