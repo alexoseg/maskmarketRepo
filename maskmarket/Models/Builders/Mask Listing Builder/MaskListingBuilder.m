@@ -55,6 +55,15 @@ static NSString *const kPurchasedDict = @"purchasedDict";
         return nil;
     }
     
+    BOOL actionRequired = NO;
+    for (NSString *const listingID in purchasedObjs) {
+        BOOL value = [purchasedObjs[listingID] boolValue];
+        if (value == NO) {
+            actionRequired = YES;
+            break;
+        }
+    }
+    
     return [[ParseMaskListing alloc] initWithListingId:objectId
                                              createdAt:createdAt
                                        maskDescription:description
@@ -65,7 +74,8 @@ static NSString *const kPurchasedDict = @"purchasedDict";
                                                  price:[price intValue]
                                           maskQuantity:[maskQuantity intValue]
                                         purchasedDict:purchasedObjs
-                                             maskImage:image];
+                                             maskImage:image
+                                        actionRequired:actionRequired];
 }
 
 - (MaskListing *)buildLocalMaskListing

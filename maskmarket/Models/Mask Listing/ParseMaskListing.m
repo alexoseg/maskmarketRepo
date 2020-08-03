@@ -20,7 +20,8 @@
                             price:(int)price
                      maskQuantity:(int)maskQuantity
                     purchasedDict:(NSDictionary<NSString *, NSNumber *> *)purchasedDict
-                        maskImage:(PFFileObject *)maskImage;
+                        maskImage:(PFFileObject *)maskImage
+                   actionRequired:(BOOL)actionRequired;
 {
     self = [super initWithMaskDescription:maskDescription
                                     title:title
@@ -35,6 +36,7 @@
         _listingId = listingId;
         _createdAt = createdAt;
         _purchasedDict = purchasedDict;
+        _actionRequired = actionRequired; 
     }
     
     return self;

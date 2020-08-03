@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) NSString *listingId;
 @property (nonatomic, strong, readonly) NSDate *createdAt;
 @property (nonatomic, strong, readonly) NSDictionary<NSString *, NSNumber *> *purchasedDict;
+@property (nonatomic, readonly) BOOL actionRequired;
 
 - (instancetype)initWithListingId:(NSString *)listingId
                         createdAt:(NSDate *)createdAt
@@ -28,7 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
                             price:(int)price
                      maskQuantity:(int)maskQuantity
                    purchasedDict:(NSDictionary<NSString *, NSNumber *> *)purchasedDict
-                        maskImage:(PFFileObject *)maskImage;
+                        maskImage:(PFFileObject *)maskImage
+                   actionRequired:(BOOL)actionRequired;
 
 + (instancetype)new NS_UNAVAILABLE;
 
