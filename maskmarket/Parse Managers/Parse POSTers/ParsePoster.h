@@ -17,8 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ParsePoster : NSObject
 
 + (void)setPurchaseCompleteWithID:(NSString *)purhcaseListingID
+                    maskListingID:(NSString *)maskListingID
                    trackingNumber:(NSString *)trackingNumber
-                   withCompletion:(PFBooleanResultBlock _Nullable)completion;
+                   withCompletion:(PFBooleanResultBlock)completion;
 
 + (void)purchaseListingWithId:(NSString *)maskListingId
              amountToPurchase:(int)amountToPurchase

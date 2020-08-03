@@ -53,12 +53,14 @@
     }
     
     NSString *const purchaseObjID = _boughListing.purchaseObjID;
+    NSString *const maskListingID = _boughListing.listingID;
     NSString *const trackingNumber = _trackingTextField.text;
     
     typeof(self) __weak weakSelf = self;
     [LoadingPopupView showLoadingPopupAddedTo:self.view
                                   withMessage:@"Completing Purchase..."];
     [ParsePoster setPurchaseCompleteWithID:purchaseObjID
+                             maskListingID:maskListingID
                             trackingNumber:trackingNumber
                             withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         typeof(weakSelf) strongSelf = weakSelf;

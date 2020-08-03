@@ -30,16 +30,41 @@ static NSString *const kTrackingNumber = @"trackingNumber";
 
 @implementation ParsePoster
 
-+ (void)setPurchaseCompleteWithID:(NSString *)purhcaseListingID
++ (void)setPurchaseCompleteWithID:(NSString *)purchaseListingID
+                    maskListingID:(NSString *)maskListingID
                    trackingNumber:(NSString *)trackingNumber
                    withCompletion:(PFBooleanResultBlock)completion
 {
     PFQuery *const query = [PFQuery queryWithClassName:kPurchasedObjs];
-    [query getObjectInBackgroundWithId:purhcaseListingID
+    [query getObjectInBackgroundWithId:purchaseListingID
                                  block:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        if (error) {
+            completion(NO, error);
+            return;
+        }
+        
         object[kCompleted] = @YES;
         object[kTrackingNumber] = trackingNumber;
-        [object saveInBackgroundWithBlock:completion]; 
+        
+        [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (error) {
+                completion(NO, error);
+                return;
+            }
+            
+            PFQuery *const listingQuery = [PFQuery queryWithClassName:kListings];
+            [listingQuery getObjectInBackgroundWithId:maskListingID
+                                         block:^(PFObject * _Nullable listing, NSError * _Nullable error) {
+                if (error) {
+                    completion(NO, error);
+                    return;
+                }
+                NSMutableDictionary<NSString *, NSNumber *> *const purchasedDict = listing[kPurchasedDict];
+                purchasedDict[purchaseListingID] = @YES;
+                listing[kPurchasedDict] = [purchasedDict copy];
+                [listing saveInBackgroundWithBlock:completion];
+            }];
+        }];
     }];
 }
 
