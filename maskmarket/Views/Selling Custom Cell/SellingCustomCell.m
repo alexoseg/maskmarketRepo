@@ -31,10 +31,24 @@
     _priceLabel.text = [NSString stringWithFormat:@"$%d", maskListing.price];
     _maskQuantityLabel.text = [NSString stringWithFormat:@"%d masks", maskListing.maskQuantity];
 
-    NSDateFormatter *const formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"MMM d, yyyy"];
-    NSString *const formattedDateString = [formatter stringFromDate:maskListing.createdAt];
-    _thirdLabel.text = [NSString stringWithFormat:@"%@", formattedDateString];
+    if (maskListing.actionRequired) {
+        _thirdContainerView.backgroundColor = [UIColor colorWithRed:219.0f/255.0f
+                                              green:22.0f/255.0f
+                                               blue:47.0f/255.0f
+                                              alpha:0.2];
+        _thirdLabel.text = @"Action Required";
+        _thirdLabel.textColor = [UIColor colorWithRed:219.0f/255.0f
+                                                green:22.0f/255.0f
+                                                 blue:47.0f/255.0f
+                                                alpha:1.0];
+    } else {
+        NSDateFormatter *const formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MMM d, yyyy"];
+        NSString *const formattedDateString = [formatter stringFromDate:maskListing.createdAt];
+        _thirdLabel.text = [NSString stringWithFormat:@"%@", formattedDateString];
+        _thirdContainerView.backgroundColor = [UIColor systemGray5Color];
+        _thirdLabel.textColor = [UIColor blackColor]; 
+    }
     
     typeof(self) __weak weakSelf = self;
     [maskListing.maskImage getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
