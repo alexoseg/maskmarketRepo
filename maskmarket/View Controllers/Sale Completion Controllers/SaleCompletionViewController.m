@@ -11,10 +11,11 @@
 #import "LoadingPopupView.h"
 #import "UIColor+AppColors.h"
 #import "ErrorPopupViewController.h"
+#import "SuccessPopupViewController.h"
 
 #pragma mark - Interface
 
-@interface SaleCompletionViewController ()
+@interface SaleCompletionViewController () <SuccessPopupDelegate>
 
 #pragma mark - Properties
 
@@ -76,9 +77,19 @@
                                      animated:YES
                                    completion:nil];
         } else {
-            [strongSelf.navigationController popViewControllerAnimated:YES];
+            SuccessPopupViewController *const successPopupViewController = [[SuccessPopupViewController alloc] initWithMessage:@"You succcessfully completed this purchase! Go back and take care of any others."];
+            [strongSelf presentViewController:successPopupViewController
+                                     animated:YES
+                                   completion:nil];
+            successPopupViewController.delegate = self;
         }
     }];
+}
+
+#pragma mark - Success Popup Delegate methods
+- (void)okayAction
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Setup
