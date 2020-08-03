@@ -77,7 +77,7 @@
                                      animated:YES
                                    completion:nil];
         } else {
-            SuccessPopupViewController *const successPopupViewController = [[SuccessPopupViewController alloc] initWithMessage:@"You succcessfully completed this purchase! Go back and take care of any others."];
+            SuccessPopupViewController *const successPopupViewController = [[SuccessPopupViewController alloc] initWithMessage:@"Success! Go back and take care of any others."];
             [strongSelf presentViewController:successPopupViewController
                                      animated:YES
                                    completion:nil];
@@ -90,6 +90,7 @@
 - (void)okayAction
 {
     [self.navigationController popViewControllerAnimated:YES];
+    [self.delegate didCompleteSale];
 }
 
 #pragma mark - Setup

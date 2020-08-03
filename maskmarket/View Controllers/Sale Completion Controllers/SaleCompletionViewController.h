@@ -11,9 +11,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol SaleCompletionDelegate
+
+- (void)didCompleteSale;
+
+@end
+
 @interface SaleCompletionViewController : UIViewController
 
 @property (nonatomic, strong) BoughtListing *boughListing;
+@property (nonatomic, weak) id<SaleCompletionDelegate> delegate;
 
 @end
 
