@@ -169,7 +169,7 @@
         <scene sceneID="DNo-eE-xvD">
             <objects>
                 <navigationController id="Mki-kJ-gUK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="home_tab" id="2Yv-5F-Qrt"/>
+                    <tabBarItem key="tabBarItem" title="" image="shop" id="2Yv-5F-Qrt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iLn-nl-4UL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1097,107 +1097,6 @@ Menlo Park, CA 94025</string>
             </objects>
             <point key="canvasLocation" x="2622" y="4882"/>
         </scene>
-        <!--Selling-->
-        <scene sceneID="5Mg-xv-wof">
-            <objects>
-                <viewController id="XDz-Qo-ABh" customClass="SellingViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TzY-QA-NgM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ari-cw-RWX">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SellingCell" rowHeight="121" id="aO7-UP-fv2" customClass="SellingListingCell">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="121"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aO7-UP-fv2" id="g66-FH-Rjo">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="121"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xg5-e1-W0v">
-                                                    <rect key="frame" x="15" y="20.666666666666671" width="80" height="80"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="80" id="20F-t5-i51"/>
-                                                        <constraint firstAttribute="width" constant="80" id="emd-x8-1DH"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKC-l9-r5F">
-                                                    <rect key="frame" x="103" y="20.666666666666668" width="35.666666666666657" height="19.000000000000004"/>
-                                                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Posted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyA-xW-7Dp">
-                                                    <rect key="frame" x="103" y="86.666666666666671" width="74" height="14"/>
-                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKd-5v-YOG">
-                                                    <rect key="frame" x="102.99999999999999" y="53.666666666666664" width="52.333333333333329" height="13.999999999999993"/>
-                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iKC-l9-r5F" secondAttribute="trailing" constant="15" id="2Vn-sk-hrQ"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hyA-xW-7Dp" secondAttribute="bottom" constant="15" id="AwU-zX-aOo"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tKd-5v-YOG" secondAttribute="trailing" constant="15" id="HD6-di-kVR"/>
-                                                <constraint firstItem="xg5-e1-W0v" firstAttribute="leading" secondItem="g66-FH-Rjo" secondAttribute="leading" constant="15" id="KaC-iC-5YI"/>
-                                                <constraint firstItem="hyA-xW-7Dp" firstAttribute="leading" secondItem="iKC-l9-r5F" secondAttribute="leading" id="NsQ-J5-Vvu"/>
-                                                <constraint firstItem="tKd-5v-YOG" firstAttribute="centerY" secondItem="xg5-e1-W0v" secondAttribute="centerY" id="SNa-r7-ge5"/>
-                                                <constraint firstItem="xg5-e1-W0v" firstAttribute="centerY" secondItem="g66-FH-Rjo" secondAttribute="centerY" id="TM3-Np-OwA"/>
-                                                <constraint firstItem="iKC-l9-r5F" firstAttribute="leading" secondItem="xg5-e1-W0v" secondAttribute="trailing" constant="8" id="Wy2-oS-89K"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hyA-xW-7Dp" secondAttribute="trailing" constant="15" id="ZPf-bY-biN"/>
-                                                <constraint firstItem="iKC-l9-r5F" firstAttribute="top" secondItem="xg5-e1-W0v" secondAttribute="top" id="e9k-KT-BPa"/>
-                                                <constraint firstItem="tKd-5v-YOG" firstAttribute="leading" secondItem="iKC-l9-r5F" secondAttribute="leading" id="ovu-4w-cSW"/>
-                                                <constraint firstItem="hyA-xW-7Dp" firstAttribute="bottom" secondItem="xg5-e1-W0v" secondAttribute="bottom" id="yCe-bD-MXv"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="dateLabel" destination="hyA-xW-7Dp" id="aNr-zR-1ry"/>
-                                            <outlet property="locationLabel" destination="tKd-5v-YOG" id="i4I-Od-ZH6"/>
-                                            <outlet property="maskImageView" destination="xg5-e1-W0v" id="FPc-LZ-MLU"/>
-                                            <outlet property="titleLabel" destination="iKC-l9-r5F" id="5Xq-9g-mNb"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRF-Ve-S3o" customClass="FloatingActionButton">
-                                <rect key="frame" x="338" y="660" width="56" height="56"/>
-                                <color key="backgroundColor" red="0.14901960780000001" green="0.72156862749999995" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="7Qx-eB-5Lm"/>
-                                    <constraint firstAttribute="width" constant="56" id="C23-fz-G9O"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="onTapCreate:" destination="XDz-Qo-ABh" eventType="touchUpInside" id="zMb-Bd-1RH"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="ari-cw-RWX" firstAttribute="bottom" secondItem="cAZ-24-15u" secondAttribute="bottom" id="8k6-f0-IFb"/>
-                            <constraint firstItem="ari-cw-RWX" firstAttribute="top" secondItem="cAZ-24-15u" secondAttribute="top" id="Nlu-EW-Mze"/>
-                            <constraint firstItem="cAZ-24-15u" firstAttribute="bottom" secondItem="nRF-Ve-S3o" secondAttribute="bottom" constant="20" id="YCR-IR-yNC"/>
-                            <constraint firstItem="ari-cw-RWX" firstAttribute="trailing" secondItem="cAZ-24-15u" secondAttribute="trailing" id="hcr-mM-ltT"/>
-                            <constraint firstItem="ari-cw-RWX" firstAttribute="leading" secondItem="cAZ-24-15u" secondAttribute="leading" id="qla-0q-lBF"/>
-                            <constraint firstItem="cAZ-24-15u" firstAttribute="trailing" secondItem="nRF-Ve-S3o" secondAttribute="trailing" constant="20" id="uq0-ak-yg8"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="cAZ-24-15u"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Selling" id="03J-1P-EVy"/>
-                    <connections>
-                        <outlet property="tableView" destination="ari-cw-RWX" id="jNl-kJ-0sk"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Va9-Pn-8lY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1248" y="2539"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="hr8-lM-bqo">
             <objects>
@@ -1926,7 +1825,6 @@ Menlo Park, CA 94025</string>
                                 </constraints>
                                 <connections>
                                     <action selector="onTapCreate:" destination="yjs-D2-0mI" eventType="touchUpInside" id="KCF-lK-CG0"/>
-                                    <action selector="onTapCreate:" destination="XDz-Qo-ABh" eventType="touchUpInside" id="Xgm-yC-zsa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2469,12 +2367,12 @@ Menlo Park, CA 94025</string>
         <image name="calendar" width="512" height="512"/>
         <image name="default-image" width="720" height="405"/>
         <image name="default-profile" width="600" height="600"/>
-        <image name="home_tab" width="32" height="32"/>
         <image name="mask_icon" width="512" height="512"/>
         <image name="minusgreen" width="512" height="512"/>
         <image name="pin" width="256" height="256"/>
         <image name="plusgreen" width="512" height="512"/>
         <image name="sale" width="32" height="32"/>
         <image name="sell (1)" width="32" height="32"/>
+        <image name="shop" width="32" height="32"/>
     </resources>
 </document>
