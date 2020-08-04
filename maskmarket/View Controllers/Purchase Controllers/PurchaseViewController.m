@@ -145,6 +145,12 @@ static NSString *const kMerchantIdentifier = @"merchant.com.alexoseg.maskmarket2
     _totalLabel.text = [NSString stringWithFormat:@"$%.2ld", newTotal];
 }
 
+- (IBAction)onPressCancel:(id)sender
+{
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
+}
+
 #pragma mark - Set Up
 
 - (void)setUpViews
