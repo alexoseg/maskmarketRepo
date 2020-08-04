@@ -17,19 +17,25 @@
 #pragma mark - Interface
 
 @interface PurchaseViewController ()
-<UITextFieldDelegate,
-PKPaymentAuthorizationViewControllerDelegate,
+<PKPaymentAuthorizationViewControllerDelegate,
 SuccessPopupDelegate>
 
 #pragma mark - Properties
 
+@property (weak, nonatomic) IBOutlet UIView *itemContainerView;
+@property (weak, nonatomic) IBOutlet UIView *deliveryContainerView;
+@property (weak, nonatomic) IBOutlet UIView *costContainerView;
 @property (weak, nonatomic) IBOutlet UIImageView *maskImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
-@property (weak, nonatomic) IBOutlet UITextField *quantityTextField;
-@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *quantityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subTotalLabel;
+@property (weak, nonatomic) IBOutlet UILabel *taxesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalLabel;
+@property (weak, nonatomic) IBOutlet UILabel *quantityInputLabel;
+@property (weak, nonatomic) IBOutlet UIButton *plusButton;
+@property (weak, nonatomic) IBOutlet UIButton *minusButton;
+@property (weak, nonatomic) IBOutlet UIButton *buyButtone;
 
 @end
 
@@ -54,7 +60,9 @@ static NSString *const kMerchantIdentifier = @"merchant.com.alexoseg.maskmarket2
 - (void)performPurchase
 {
     NSString *const summaryLabel = _maskListing.title;
-    NSDecimalNumber *const amount = [NSDecimalNumber decimalNumberWithString:_priceLabel.text];
+    NSString *const extractedTotal = [_totalLabel.text stringByReplacingOccurrencesOfString:@"$"
+                                                                                 withString:@""];
+    NSDecimalNumber *const amount = [NSDecimalNumber decimalNumberWithString:extractedTotal];
     PKPaymentSummaryItem *const paymentItem = [PKPaymentSummaryItem summaryItemWithLabel:summaryLabel
                                                                                   amount:amount];
     NSArray<PKPaymentNetwork> *const paymentNetworks = @[PKPaymentNetworkAmex, PKPaymentNetworkVisa];
@@ -93,37 +101,6 @@ static NSString *const kMerchantIdentifier = @"merchant.com.alexoseg.maskmarket2
                      completion:nil];
 }
 
-#pragma mark - Text Field Code
-
-- (BOOL)textField:(UITextField *)textField
-shouldChangeCharactersInRange:(NSRange)range
-            replacementString:(NSString *)string
-{
-    if (textField.text.length != range.location
-        && range.length == 0) {
-        return NO;
-    }
-    
-    NSNumberFormatter *const formatter = [[NSNumberFormatter alloc]init];
-    NSString *const newString = [NSString stringWithFormat:@"%@%@", textField.text, string];
-    int const enteredQuantity = [[formatter numberFromString:newString] intValue];
-    int const quantity = _maskListing.maskQuantity;
-    
-    if (enteredQuantity > quantity) {
-        return NO;
-    }
-    
-    if (enteredQuantity == 1) {
-        textField.text = @"1";
-        _priceLabel.text = [NSString stringWithFormat:@"%d", _maskListing.price];
-    } else {
-        int const priceTotal = enteredQuantity * _maskListing.price;
-        _priceLabel.text = [NSString stringWithFormat:@"%d", priceTotal];
-    }
-    
-    return YES;
-}
-
 #pragma mark - Gesture Recognizers
 
 - (IBAction)onTapBuy:(id)sender
@@ -131,25 +108,80 @@ shouldChangeCharactersInRange:(NSRange)range
     [self performPurchase];
 }
 
-- (void)dismissKeyboard
+- (IBAction)onTapPlus:(id)sender
 {
-    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder)
-                                               to:nil
-                                             from:nil
-                                         forEvent:nil];
+    NSInteger const maskPrice = _maskListing.price;
+    NSInteger const maskQuantityAvailable = _maskListing.maskQuantity;
+    
+    NSInteger const previousQuantity = [_quantityInputLabel.text intValue];
+    if (previousQuantity + 1 > maskQuantityAvailable) {
+        return;
+    }
+    
+    NSInteger const newSubtotal = (previousQuantity + 1) * maskPrice;
+    NSInteger const newTotal = newSubtotal + 2;
+    NSInteger const newQuantity = previousQuantity + 1;
+    
+    _quantityInputLabel.text = [NSString stringWithFormat:@"%ld", newQuantity];
+    _subTotalLabel.text = [NSString stringWithFormat:@"$%.2ld", newSubtotal];
+    _totalLabel.text = [NSString stringWithFormat:@"$%.2ld", newTotal];
+}
+
+- (IBAction)onTapMinus:(id)sender
+{
+    NSInteger const maskPrice = _maskListing.price;
+       
+    NSInteger const previousQuantity = [_quantityInputLabel.text intValue];
+    if (previousQuantity - 1 == 0) {
+        return;
+    }
+       
+    NSInteger const newSubtotal = (previousQuantity - 1) * maskPrice;
+    NSInteger const newTotal = newSubtotal + 2;
+    NSInteger const newQuantity = previousQuantity - 1;
+       
+    _quantityInputLabel.text = [NSString stringWithFormat:@"%ld", newQuantity];
+    _subTotalLabel.text = [NSString stringWithFormat:@"$%.2ld", newSubtotal];
+    _totalLabel.text = [NSString stringWithFormat:@"$%.2ld", newTotal];
 }
 
 #pragma mark - Set Up
 
 - (void)setUpViews
 {
-    UITapGestureRecognizer *const screenTap = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                         action:@selector(dismissKeyboard)];
-       [self.view addGestureRecognizer:screenTap];
+    _itemContainerView.layer.cornerRadius = 5.0;
+    _itemContainerView.layer.shadowColor = [UIColor blackColor].CGColor;
+    _itemContainerView.layer.shadowOffset = CGSizeMake(0, 4);
+    _itemContainerView.layer.shadowRadius = 5;
+    _itemContainerView.layer.shadowOpacity = 0.25;
     
-    _quantityTextField.delegate = self;
+    _deliveryContainerView.layer.cornerRadius = 5.0;
+    _deliveryContainerView.layer.shadowColor = [UIColor blackColor].CGColor;
+    _deliveryContainerView.layer.shadowOffset = CGSizeMake(0, 4);
+    _deliveryContainerView.layer.shadowRadius = 5;
+    _deliveryContainerView.layer.shadowOpacity = 0.25;
+    
+    _costContainerView.layer.cornerRadius = 5.0;
+    _costContainerView.layer.shadowColor = [UIColor blackColor].CGColor;
+    _costContainerView.layer.shadowOffset = CGSizeMake(0, 4);
+    _costContainerView.layer.shadowRadius = 5;
+    _costContainerView.layer.shadowOpacity = 0.25;
+    
+    _plusButton.layer.cornerRadius = _plusButton.frame.size.width / 2;
+    _plusButton.layer.shadowColor = [UIColor blackColor].CGColor;
+    _plusButton.layer.shadowOffset = CGSizeMake(0, 4);
+    _plusButton.layer.shadowRadius = 4;
+    _plusButton.layer.shadowOpacity = 0.25;
+    
+    _minusButton.layer.cornerRadius = _minusButton.frame.size.width / 2;
+    _minusButton.layer.shadowColor = [UIColor blackColor].CGColor;
+    _minusButton.layer.shadowOffset = CGSizeMake(0, 4);
+    _minusButton.layer.shadowRadius = 4;
+    _minusButton.layer.shadowOpacity = 0.25;
     
     _maskImageView.layer.cornerRadius = 5.0;
+    _buyButtone.layer.cornerRadius = 8;
+    
     typeof(self) __weak weakSelf = self;
     [self.maskListing.maskImage getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         typeof(weakSelf) strongSelf = weakSelf;
@@ -165,12 +197,14 @@ shouldChangeCharactersInRange:(NSRange)range
         }
     }];
     
-   
-    _priceLabel.text = [NSString stringWithFormat:@"%d", _maskListing.price];
-    _locationLabel.text = [NSString stringWithFormat:@"%@, %@", _maskListing.city, _maskListing.state];
     _titleLabel.text = _maskListing.title;
-    _usernameLabel.text = _maskListing.author.username;
+    _descriptionLabel.text = _maskListing.maskDescription;
     _quantityLabel.text = [NSString stringWithFormat:@"%d", _maskListing.maskQuantity];
+    _subTotalLabel.text = [NSString stringWithFormat:@"$%.2d", _maskListing.price];
+    _taxesLabel.text = @"$2.00";
+    
+    NSInteger const total = _maskListing.price + 2;
+    _totalLabel.text = [NSString stringWithFormat:@"$%.2ld", total];
 }
 
 #pragma mark - Apple Pay Delegate Code
@@ -195,8 +229,8 @@ shouldChangeCharactersInRange:(NSRange)range
                                       withMessage:@"Purchasing"];
         
         NSString *const purchaseListID = strongSelf.maskListing.listingId;
-        int const amountToPurchase = [strongSelf.quantityTextField.text intValue];
-        int const amountSpent = [strongSelf.priceLabel.text intValue];
+        int const amountToPurchase = [strongSelf.quantityInputLabel.text intValue];
+        int const amountSpent = [[strongSelf.totalLabel.text stringByReplacingOccurrencesOfString:@"$" withString:@""] intValue];
         
         [ParsePoster purchaseListingWithId:purchaseListID
                           amountToPurchase:amountToPurchase
