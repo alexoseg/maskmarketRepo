@@ -141,7 +141,7 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
     return cellPaddingSize;
 }
 
-#pragma mark - Gesture Recognizers
+#pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender
@@ -166,10 +166,10 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
             return;
         }
         [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
-        SceneDelegate *const sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+        SceneDelegate *const sceneDelegate = (SceneDelegate *)strongSelf.view.window.windowScene.delegate;
         UIStoryboard *const storyboard = [UIStoryboard storyboardWithName:@"Main"
                                                                    bundle:nil];
-        UIViewController *const viewController = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
+        UINavigationController *const viewController = [storyboard instantiateViewControllerWithIdentifier:@"loginNavigationController"];
         sceneDelegate.window.rootViewController = viewController;
     }];
 }

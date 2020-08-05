@@ -48,7 +48,6 @@
 		0F97CD7124BCCFA400CA7C9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CD7024BCCFA400CA7C9E /* main.m */; };
 		0F97CD7B24BCCFA400CA7C9E /* maskmarketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CD7A24BCCFA400CA7C9E /* maskmarketTests.m */; };
 		0F97CD8624BCCFA400CA7C9E /* maskmarketUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CD8524BCCFA400CA7C9E /* maskmarketUITests.m */; };
-		0F97CD9624BCDAFB00CA7C9E /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CD9524BCDAFB00CA7C9E /* CreateAccountViewController.m */; };
 		0F97CD9B24BCDBFF00CA7C9E /* ParsePoster.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CD9A24BCDBFF00CA7C9E /* ParsePoster.m */; };
 		0F97CDB824BCFEDE00CA7C9E /* NextCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CDB724BCFEDE00CA7C9E /* NextCustomButton.m */; };
 		0F97CDBE24BD0C6300CA7C9E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CDBD24BD0C6300CA7C9E /* LoginViewController.m */; };
@@ -167,8 +166,6 @@
 		0F97CD8124BCCFA400CA7C9E /* maskmarketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = maskmarketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F97CD8524BCCFA400CA7C9E /* maskmarketUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = maskmarketUITests.m; sourceTree = "<group>"; };
 		0F97CD8724BCCFA400CA7C9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0F97CD9424BCDAFB00CA7C9E /* CreateAccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateAccountViewController.h; sourceTree = "<group>"; };
-		0F97CD9524BCDAFB00CA7C9E /* CreateAccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateAccountViewController.m; sourceTree = "<group>"; };
 		0F97CD9924BCDBFF00CA7C9E /* ParsePoster.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParsePoster.h; sourceTree = "<group>"; };
 		0F97CD9A24BCDBFF00CA7C9E /* ParsePoster.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParsePoster.m; sourceTree = "<group>"; };
 		0F97CDB624BCFEDE00CA7C9E /* NextCustomButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NextCustomButton.h; sourceTree = "<group>"; };
@@ -314,6 +311,15 @@
 			path = "Buyers Controllers";
 			sourceTree = "<group>";
 		};
+		0F39C0F724DB4FFE0027BA23 /* Login Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F97CDBC24BD0C6300CA7C9E /* LoginViewController.h */,
+				0F97CDBD24BD0C6300CA7C9E /* LoginViewController.m */,
+			);
+			path = "Login Controllers";
+			sourceTree = "<group>";
+		};
 		0F69E9D224D4B1EC0083D0F8 /* Selling Custom Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -424,6 +430,7 @@
 		0F92F5CC24DA219A00E95B03 /* Login and Create Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0F39C0F724DB4FFE0027BA23 /* Login Controllers */,
 				0F92F5D924DA356C00E95B03 /* Address Creation Controller */,
 				0F92F5D524DA2BEE00E95B03 /* Password Creation Controller */,
 				0F92F5D124DA23D200E95B03 /* Username Creation Controller */,
@@ -546,10 +553,6 @@
 				0FFE3C3124C24C7E0028466A /* Purchase Controllers */,
 				0FD148D224C0CD060018015E /* Details Controllers */,
 				0F8B916A24BE483600B1FB85 /* Mask Listing Creation Controllers */,
-				0F97CD9424BCDAFB00CA7C9E /* CreateAccountViewController.h */,
-				0F97CD9524BCDAFB00CA7C9E /* CreateAccountViewController.m */,
-				0F97CDBC24BD0C6300CA7C9E /* LoginViewController.h */,
-				0F97CDBD24BD0C6300CA7C9E /* LoginViewController.m */,
 				0F6C4D9B24BD18A800E2E846 /* MaskListingViewController.h */,
 				0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */,
 			);
@@ -1019,7 +1022,6 @@
 				0F8B916E24BE487300B1FB85 /* ImageTitleViewController.m in Sources */,
 				0FF9F8D124D3AE4200AE2DA5 /* BoughtViewController.m in Sources */,
 				0F9ECFE024BF5FD60020B289 /* UserBuilder.m in Sources */,
-				0F97CD9624BCDAFB00CA7C9E /* CreateAccountViewController.m in Sources */,
 				0F97CDB824BCFEDE00CA7C9E /* NextCustomButton.m in Sources */,
 				0F97CD6024BCCFA300CA7C9E /* AppDelegate.m in Sources */,
 				0F6C4D9D24BD18A800E2E846 /* MaskListingViewController.m in Sources */,
