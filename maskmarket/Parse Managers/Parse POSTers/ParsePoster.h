@@ -32,6 +32,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)createAccountWithUsername:(NSString *)username
                             email:(NSString *)email
                          password:(NSString *)password
+            shippingStreetAddress:(NSString *)shippingStreetAddress
+                     shippingCity:(NSString *)shippingCity
+                    shippingState:(NSString *)shippingState
+                  shippingZipCode:(NSString *)shippingZipCode
                    withCompletion:(PFBooleanResultBlock _Nullable)completion;
 
 + (void)loginWithUsername:(NSString *)username

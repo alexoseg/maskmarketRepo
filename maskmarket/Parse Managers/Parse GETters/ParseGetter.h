@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)fetchPurchasedObjectsWithListingID:(NSString *)listingID
                             withCompletion:(void (^)(NSArray<PurchaseObj *> * _Nullable objects, NSError * _Nullable error))completion;
 
++ (nullable PFUser *)fetchUserWithID:(NSString *)userID;
+
 - (instancetype)init NS_UNAVAILABLE;
 
 + (instancetype)new NS_UNAVAILABLE; 
