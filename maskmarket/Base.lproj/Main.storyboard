@@ -889,6 +889,7 @@
                     </view>
                     <connections>
                         <outlet property="buyButtone" destination="U0f-Iy-Xef" id="gb9-Bi-26p"/>
+                        <outlet property="cityStateZipLabel" destination="ls4-UA-gMR" id="Oyv-qX-mtx"/>
                         <outlet property="costContainerView" destination="bYR-VI-IfF" id="5qq-oY-NLK"/>
                         <outlet property="deliveryContainerView" destination="Z2q-Q8-fg7" id="0lv-Tq-CAn"/>
                         <outlet property="descriptionLabel" destination="pf8-2Y-lwi" id="TSN-jO-XOC"/>
@@ -898,6 +899,7 @@
                         <outlet property="plusButton" destination="WaJ-gu-UE3" id="3cI-4H-cZn"/>
                         <outlet property="quantityInputLabel" destination="6Ie-P0-3bi" id="GsT-dR-XmZ"/>
                         <outlet property="quantityLabel" destination="Yhi-eW-b0q" id="mNS-7p-9WT"/>
+                        <outlet property="streetAddressLabel" destination="KFF-vp-Gwp" id="jGT-0I-eMl"/>
                         <outlet property="subTotalLabel" destination="CAf-pa-5Gy" id="Nm7-SO-3RO"/>
                         <outlet property="taxesLabel" destination="Oym-IB-4Ds" id="qxI-Qp-Mhm"/>
                         <outlet property="titleLabel" destination="dEB-6y-J63" id="Ylv-28-w4m"/>

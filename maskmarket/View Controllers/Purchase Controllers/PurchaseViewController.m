@@ -13,6 +13,8 @@
 #import "ErrorPopupViewController.h"
 #import "SceneDelegate.h"
 #import "SuccessPopupViewController.h"
+#import "LoadingPopupView.h"
+#import "ParseGetter.h"
 
 #pragma mark - Interface
 
@@ -36,6 +38,8 @@ SuccessPopupDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *plusButton;
 @property (weak, nonatomic) IBOutlet UIButton *minusButton;
 @property (weak, nonatomic) IBOutlet UIButton *buyButtone;
+@property (weak, nonatomic) IBOutlet UILabel *streetAddressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cityStateZipLabel;
 
 @end
 
@@ -44,6 +48,10 @@ SuccessPopupDelegate>
 static NSString *const kCurrencyCode = @"USD";
 static NSString *const kCountryCode = @"US";
 static NSString *const kMerchantIdentifier = @"merchant.com.alexoseg.maskmarket2";
+static NSString *const kShippingStreetAddress = @"shippingStreetAddress";
+static NSString *const kShippingZipCode = @"shippingZipCode";
+static NSString *const kShippingCity = @"shippingCity";
+static NSString *const kShippingState = @"shippingState";
 
 #pragma mark - Implementation
 
@@ -56,6 +64,28 @@ static NSString *const kMerchantIdentifier = @"merchant.com.alexoseg.maskmarket2
 }
 
 #pragma mark - Networking
+
+- (void)fetchShippingInfo
+{
+    ParseUser *const currentUser = [UserBuilder buildUserfromPFUser:[PFUser currentUser]];
+    [LoadingPopupView showLoadingPopupAddedTo:self.view
+                                  withMessage:@"Loading..."];
+    typeof(self) __weak weakSelf = self;
+    [ParseGetter fetchUserWithID:currentUser.userID
+                  withCompletion:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        typeof(weakSelf) strongSelf = weakSelf;
+        if (strongSelf == nil) {
+            return;
+        }
+        
+        [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
+        strongSelf.streetAddressLabel.text = object[kShippingStreetAddress];
+        NSString *const city = object[kShippingCity];
+        NSString *const state = object[kShippingState];
+        NSString *const zipCode = object[kShippingZipCode];
+        strongSelf.cityStateZipLabel.text = [NSString stringWithFormat:@"%@, %@ %@", city, state, zipCode];
+    }];
+}
 
 - (void)performPurchase
 {
@@ -155,6 +185,7 @@ static NSString *const kMerchantIdentifier = @"merchant.com.alexoseg.maskmarket2
 
 - (void)setUpViews
 {
+    [self fetchShippingInfo];
     _itemContainerView.layer.cornerRadius = 5.0;
     _itemContainerView.layer.shadowColor = [UIColor blackColor].CGColor;
     _itemContainerView.layer.shadowOffset = CGSizeMake(0, 4);
