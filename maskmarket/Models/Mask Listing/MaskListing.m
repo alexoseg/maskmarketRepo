@@ -14,7 +14,7 @@
                                   title:(NSString *)title
                                    city:(NSString *)city
                                   state:(NSString *)state
-                                 author:(ParseUser *)author
+                                 author:(User *)author
                                   price:(int)price
                            maskQuantity:(int)maskQuantity
                               maskImage:(PFFileObject *)maskImage
@@ -26,7 +26,7 @@
         _title = title;
         _city = city;
         _state = state;
-        _author = author; 
+        _author = author;
         _price = price;
         _maskQuantity = maskQuantity;
         _maskImage = maskImage;

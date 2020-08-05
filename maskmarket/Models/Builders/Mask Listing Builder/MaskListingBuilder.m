@@ -8,7 +8,6 @@
 
 #import "MaskListingBuilder.h"
 #import "PurchasedObjBuilder.h"
-#import "ParseGetter.h"
 
 static NSString *const kDescription = @"description";
 static NSString *const kTitle = @"title";
@@ -38,8 +37,9 @@ static NSString *const kPurchasedDict = @"purchasedDict";
     
     
     PFFileObject *const image = object[kImage];
-    PFUser *const user = [ParseGetter fetchUserWithID:object[kAuthorID]];
-    ParseUser *const author = [UserBuilder buildUserfromPFUser:user];
+    User *const author = [UserBuilder buildUserFromUserID:object[kAuthorID]
+                                                 username:object[kAuthorUsername]
+                                                    email:object[kAuthorEmail]];
   
     if ( objectId == nil
         || createdAt == nil
@@ -91,7 +91,7 @@ static NSString *const kPurchasedDict = @"purchasedDict";
         return nil;
     }
     
-    ParseUser *const currentUser = [UserBuilder buildUserfromPFUser:[PFUser currentUser]];
+    User *const currentUser = [UserBuilder buildUserfromPFUser:[PFUser currentUser]];
     
     NSData *const imageData = UIImagePNGRepresentation(self.listingImage);
     PFFileObject *const fileObject = [PFFileObject fileObjectWithName:@"image.png" data:imageData];

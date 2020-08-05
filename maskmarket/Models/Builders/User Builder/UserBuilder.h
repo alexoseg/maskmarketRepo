@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 #import "User.h"
-#import "ParseUser.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,9 +22,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *const shippingState;
 @property (nonatomic, strong) NSString *const shippingZipCode;
 
-+ (nullable ParseUser *)buildUserfromPFUser:(PFUser *)user;
++ (nullable User *)buildUserfromPFUser:(PFUser *)user;
 
-- (nullable User *)buildLocalUser; 
++ (nullable User *)buildUserFromUserID:(NSString *)userID
+                        username:(NSString *)username
+                           email:(NSString *)email;
 
 + (instancetype)new NS_UNAVAILABLE;
 

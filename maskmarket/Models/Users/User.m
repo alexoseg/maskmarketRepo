@@ -10,22 +10,16 @@
 
 @implementation User
 
-- (instancetype)initWithUsername:(NSString *)username
-                           email:(NSString *)email
-           shippingStreetAddress:(NSString *)shippingStreetAddress
-                    shippingCity:(NSString *)shippingCity
-                   shippingState:(NSString *)shippingState
-                 shippingZipCode:(NSString *)shippingZipCode
+- (instancetype)initWithUserID:(NSString *)userID
+                      username:(NSString *)username
+                         email:(NSString *)email
 {
     self = [super init];
     
     if (self) {
+        _userID = userID;
         _username = username;
         _email = email;
-        _shippingStreeetAddress = shippingStreetAddress;
-        _shippingCity = shippingCity;
-        _shippingState = shippingState;
-        _shippingZipCode = shippingZipCode;
     }
     
     return self;

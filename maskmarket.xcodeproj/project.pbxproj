@@ -21,7 +21,6 @@
 		0F69E9D924D4C1F30083D0F8 /* SellingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F69E9D824D4C1F30083D0F8 /* SellingViewController.m */; };
 		0F6C4D9D24BD18A800E2E846 /* MaskListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */; };
 		0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4DA024BD1F8900E2E846 /* MaskListing.m */; };
-<<<<<<< Updated upstream
 		0F71A28924DB249F00169B66 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F71A28224DB249D00169B66 /* Montserrat-Black.ttf */; };
 		0F71A28A24DB249F00169B66 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F71A28324DB249E00169B66 /* Montserrat-SemiBold.ttf */; };
 		0F71A28B24DB249F00169B66 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F71A28424DB249E00169B66 /* Montserrat-Thin.ttf */; };
@@ -30,9 +29,6 @@
 		0F71A28E24DB249F00169B66 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F71A28724DB249E00169B66 /* Montserrat-Light.ttf */; };
 		0F71A28F24DB249F00169B66 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F71A28824DB249F00169B66 /* Montserrat-Medium.ttf */; };
 		0F71A29124DB251C00169B66 /* loadwheel.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F71A29024DB251C00169B66 /* loadwheel.json */; };
-=======
-		0F71A29424DB2B6A00169B66 /* ParseUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F71A29324DB2B6A00169B66 /* ParseUser.m */; };
->>>>>>> Stashed changes
 		0F892AC924CF774800B7A3EB /* FullImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F892AC824CF774800B7A3EB /* FullImageViewController.m */; };
 		0F892ACC24CF960100B7A3EB /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F892ACB24CF960100B7A3EB /* PassKit.framework */; };
 		0F8B916824BE208000B1FB85 /* MaskListingBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B916724BE208000B1FB85 /* MaskListingBuilder.m */; };
@@ -124,7 +120,6 @@
 		0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListingViewController.m; sourceTree = "<group>"; };
 		0F6C4D9F24BD1F8900E2E846 /* MaskListing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskListing.h; sourceTree = "<group>"; };
 		0F6C4DA024BD1F8900E2E846 /* MaskListing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskListing.m; sourceTree = "<group>"; };
-<<<<<<< Updated upstream
 		0F71A28224DB249D00169B66 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
 		0F71A28324DB249E00169B66 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		0F71A28424DB249E00169B66 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
@@ -133,10 +128,6 @@
 		0F71A28724DB249E00169B66 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		0F71A28824DB249F00169B66 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		0F71A29024DB251C00169B66 /* loadwheel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadwheel.json; sourceTree = "<group>"; };
-=======
-		0F71A29224DB2B6A00169B66 /* ParseUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParseUser.h; sourceTree = "<group>"; };
-		0F71A29324DB2B6A00169B66 /* ParseUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParseUser.m; sourceTree = "<group>"; };
->>>>>>> Stashed changes
 		0F892AC724CF774800B7A3EB /* FullImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FullImageViewController.h; sourceTree = "<group>"; };
 		0F892AC824CF774800B7A3EB /* FullImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullImageViewController.m; sourceTree = "<group>"; };
 		0F892ACA24CF8F4F00B7A3EB /* maskmarket.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = maskmarket.entitlements; sourceTree = "<group>"; };
@@ -622,8 +613,6 @@
 			children = (
 				0F9ECFDA24BF5CA70020B289 /* User.h */,
 				0F9ECFDB24BF5CA70020B289 /* User.m */,
-				0F71A29224DB2B6A00169B66 /* ParseUser.h */,
-				0F71A29324DB2B6A00169B66 /* ParseUser.m */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -1031,7 +1020,6 @@
 				0F6C4D9D24BD18A800E2E846 /* MaskListingViewController.m in Sources */,
 				0F97CD9B24BCDBFF00CA7C9E /* ParsePoster.m in Sources */,
 				0F892AC924CF774800B7A3EB /* FullImageViewController.m in Sources */,
-				0F71A29424DB2B6A00169B66 /* ParseUser.m in Sources */,
 				0FC67F5024C7915400852F89 /* BoughtDetailsViewController.m in Sources */,
 				0F9ECFEA24BF89330020B289 /* ParseGetter.m in Sources */,
 				0F2181B724CFB13E008F07BE /* QueryBuilder.m in Sources */,

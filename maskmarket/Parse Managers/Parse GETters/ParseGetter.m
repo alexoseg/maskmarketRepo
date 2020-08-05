@@ -45,7 +45,7 @@ static NSString *const kTrackingNumber = @"trackingNumber";
                                                    includingKeys:keyArray
                                                            limit:20];
     
-    ParseUser *const currentUser = [UserBuilder buildUserfromPFUser:[PFUser currentUser]];
+    User *const currentUser = [UserBuilder buildUserfromPFUser:[PFUser currentUser]];
     [query whereKey:kAuthorID notEqualTo:currentUser.userID];
     
     [query findObjectsInBackgroundWithBlock:completion];
@@ -53,7 +53,7 @@ static NSString *const kTrackingNumber = @"trackingNumber";
 
 + (void)fetchCurrentUserSellingsWithCompletion:(void (^)(NSArray * _Nullable, NSError * _Nullable))completion
 {
-    ParseUser *const currentUser = [UserBuilder buildUserfromPFUser:[PFUser currentUser]];
+    User *const currentUser = [UserBuilder buildUserfromPFUser:[PFUser currentUser]];
     NSArray<NSString *> *const keyArray = @[kDescription, kTitle, kCity, kState, kAuthorUsername, kAuthorEmail, kAuthorID, kPrice, kPurchasedDict, kMaskQuantity, kImage];
     PFQuery *const query = [QueryBuilder buildQueryWithClassName:kListings
                                                         whereKey:kAuthorID
@@ -149,17 +149,6 @@ static NSString *const kTrackingNumber = @"trackingNumber";
     }
     
     return [purchaseMap copy];
-}
-
-+ (nullable PFUser *)fetchUserWithID:(NSString *)userID
-{
-    PFQuery *query = [PFUser query];
-    [query whereKey:kObjectID
-            equalTo:userID];
-    query.limit = 1;
-    
-    PFUser *const user = [query getObjectWithId:userID];
-    return user; 
 }
 
 @end

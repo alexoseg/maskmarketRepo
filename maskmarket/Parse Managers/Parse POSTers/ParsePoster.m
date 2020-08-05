@@ -27,10 +27,6 @@ static NSString *const kSpent = @"spent";
 static NSString *const kBuyerUsername = @"buyerUsername";
 static NSString *const kCompleted = @"completed";
 static NSString *const kTrackingNumber = @"trackingNumber";
-static NSString *const kShippingStreetAddress = @"shippingStreetAddress";
-static NSString *const kShippingZipCode = @"shippingZipCode";
-static NSString *const kShippingCity = @"shippingCity";
-static NSString *const kShippingState = @"shippingState";
 
 @implementation ParsePoster
 
@@ -83,7 +79,7 @@ static NSString *const kShippingState = @"shippingState";
         if (error) {
             completion(NO, error);
         } else {
-            ParseUser *const purchasedByUser = [UserBuilder buildUserfromPFUser:[PFUser currentUser]];
+            User *const purchasedByUser = [UserBuilder buildUserfromPFUser:[PFUser currentUser]];
             int const updatedQuantity = [listing[kMaskQuantity] intValue] - amountToPurchase;
             listing[kMaskQuantity] = [NSNumber numberWithInt:updatedQuantity];
             
@@ -129,21 +125,12 @@ static NSString *const kShippingState = @"shippingState";
 + (void)createAccountWithUsername:(NSString *)username
                             email:(NSString *)email
                          password:(NSString *)password
-            shippingStreetAddress:(NSString *)shippingStreetAddress
-                     shippingCity:(NSString *)shippingCity
-                    shippingState:(NSString *)shippingState
-                  shippingZipCode:(NSString *)shippingZipCode
-                   withCompletion:(PFBooleanResultBlock _Nullable)completion
+                   withCompletion:(PFBooleanResultBlock)completion
 {
     PFUser *const user = [PFUser user];
     user.username = [username copy];
     user.email = [email copy];
     user.password = [password copy];
-    
-    user[kShippingStreetAddress] = [shippingStreetAddress copy];
-    user[kShippingCity] = [shippingCity copy];
-    user[kShippingState] = [shippingState copy];
-    user[kShippingZipCode] = [shippingZipCode copy];
     
     [user signUpInBackgroundWithBlock:completion];
 }

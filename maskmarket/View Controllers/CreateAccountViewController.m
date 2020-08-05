@@ -114,30 +114,30 @@
     
     [LoadingPopupView showLoadingPopupAddedTo:self.view
                                   withMessage:@"Signing Up..."];
-//    typeof(self) __weak weakSelf = self;
-//    [ParsePoster createAccountWithUsername:_usernameTextField.text
-//                                     email:_emailTextField.text
-//                                  password:_passwordTextField.text
-//                            withCompletion:^(BOOL succeeded, NSError * _Nullable error)
-//    {
-//        typeof(weakSelf) strongSelf = weakSelf;
-//        if(strongSelf == nil) {
-//            return;
-//        }
-//        [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
-//        if (error) {
-//            ErrorPopupViewController *const errorViewController = [[ErrorPopupViewController alloc] initWithMessage:error.localizedDescription
-//                                                                                                          addCancel:NO];
-//            [strongSelf presentViewController:errorViewController
-//                                     animated:YES
-//                                   completion:nil];
-//        } else {
-//            SceneDelegate *const sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
-//            UIStoryboard *const storyboard = [UIStoryboard storyboardWithName:@"Main"
-//                                                                       bundle:nil];
-//            sceneDelegate.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"homeTabController"];
-//        }
-//    }];
+    typeof(self) __weak weakSelf = self;
+    [ParsePoster createAccountWithUsername:_usernameTextField.text
+                                     email:_emailTextField.text
+                                  password:_passwordTextField.text
+                            withCompletion:^(BOOL succeeded, NSError * _Nullable error)
+    {
+        typeof(weakSelf) strongSelf = weakSelf;
+        if(strongSelf == nil) {
+            return;
+        }
+        [LoadingPopupView hideLoadingPopupAddedTo:strongSelf.view];
+        if (error) {
+            ErrorPopupViewController *const errorViewController = [[ErrorPopupViewController alloc] initWithMessage:error.localizedDescription
+                                                                                                          addCancel:NO];
+            [strongSelf presentViewController:errorViewController
+                                     animated:YES
+                                   completion:nil];
+        } else {
+            SceneDelegate *const sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+            UIStoryboard *const storyboard = [UIStoryboard storyboardWithName:@"Main"
+                                                                       bundle:nil];
+            sceneDelegate.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"homeTabController"];
+        }
+    }];
 }
 
 - (void)dismissKeyboard

@@ -16,7 +16,7 @@
                             title:(NSString *)title
                              city:(NSString *)city
                             state:(NSString *)state
-                           author:(ParseUser *)author
+                           author:(User *)author
                             price:(int)price
                      maskQuantity:(int)maskQuantity
                     purchasedDict:(NSDictionary<NSString *, NSNumber *> *)purchasedDict

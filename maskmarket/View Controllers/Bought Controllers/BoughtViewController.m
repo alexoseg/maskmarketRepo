@@ -54,7 +54,7 @@ static NSInteger const kLeftRightCellPadding = 15;
 
 - (void)fetchBoughtListings
 {
-    ParseUser *const currentUser = [UserBuilder buildUserfromPFUser:[PFUser currentUser]];
+    User *const currentUser = [UserBuilder buildUserfromPFUser:[PFUser currentUser]];
     
     typeof(self) __weak weakSelf = self;
     [ParseGetter fetchListingsBoughtByUserID:currentUser.userID
