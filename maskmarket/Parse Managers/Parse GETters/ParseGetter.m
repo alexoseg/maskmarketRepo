@@ -151,4 +151,15 @@ static NSString *const kTrackingNumber = @"trackingNumber";
     return [purchaseMap copy];
 }
 
++ (void)fetchUserWithID:(NSString *)userID
+         withCompletion:(void (^)(PFObject * _Nullable object, NSError * _Nullable error))completion
+{
+    PFQuery *query = [PFUser query];
+    [query whereKey:kObjectID
+            equalTo:userID];
+    
+     [query getObjectInBackgroundWithId:userID
+                                  block:completion];
+}
+
 @end
