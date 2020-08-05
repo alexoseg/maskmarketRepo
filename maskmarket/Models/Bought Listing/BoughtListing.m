@@ -25,6 +25,7 @@
                     buyerUsername:(NSString *)buyerUsername
                    trackingNumber:(NSString *)trackingNumber
                         completed:(BOOL)completed
+                          buyerID:(NSString *)buyerID
 {
     self = [super init];
     
@@ -44,6 +45,7 @@
         _buyerUsername = buyerUsername;
         _trackingNumber = trackingNumber;
         _completed = completed;
+        _buyerID = buyerID; 
     }
     
     return self;

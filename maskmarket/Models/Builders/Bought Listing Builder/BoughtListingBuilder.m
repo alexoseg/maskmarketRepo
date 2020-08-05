@@ -20,6 +20,7 @@
     NSDate *const purchasedOnDate = purchaseObj.purchasedOnDate;
     NSString *const buyerUsername = purchaseObj.buyerUsername;
     NSString *const trackingNumber = purchaseObj.trackingNumber;
+    NSString *const buyerID = purchaseObj.userID;
     NSString *const maskDescription = maskListing.maskDescription;
     NSString *const title = maskListing.title;
     NSString *const city = maskListing.city;
@@ -40,7 +41,8 @@
         || purchasedOnDate == nil
         || sellerUsername == nil
         || buyerUsername == nil
-        || trackingNumber == nil)
+        || trackingNumber == nil
+        || buyerID == nil)
     {
         return nil;
     }
@@ -59,7 +61,8 @@
                                               price:price
                                       buyerUsername:buyerUsername
                                      trackingNumber:trackingNumber
-                                          completed:completed];
+                                          completed:completed
+                                            buyerID:buyerID];
 }
 
 + (NSArray<BoughtListing *> *)buildBoughtListingArrayFromArray:(NSArray<PurchaseObj *> *)purchasedObjs
