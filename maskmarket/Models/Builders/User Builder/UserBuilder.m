@@ -10,31 +10,62 @@
 
 @implementation UserBuilder
 
-+ (User *)buildUserfromPFUser:(PFUser *)user
++ (ParseUser *)builderParseUserFromID:(NSString *)userID
+                             username:(NSString *)username
+                                email:(NSString *)email
 {
-    if (user == nil) {
+    NSString *const userIDCopy = [userID copy];
+    NSString *const usernameCopy = [username copy];
+    NSString *const emailCopy = [email copy];
+    
+    if (userIDCopy == nil
+        || usernameCopy == nil
+        || emailCopy == nil) {
         return nil;
     }
     
-    return [[User alloc] initWithUserID:user.objectId
-                               username:user.username
-                                  email:user.email];
+    return [[ParseUser alloc] initWithUserID:userIDCopy
+                                    username:usernameCopy
+                                       email:emailCopy];
 }
 
-+ (User *)buildUserFromUserID:(NSString *)userID
-               username:(NSString *)username
-                  email:(NSString *)email
++ (ParseUser *)buildUserfromPFUser:(PFUser *)user
 {
-    if ([userID length] == 0
-        || [username length] == 0
-        || [username length] == 0) {
-        
+    NSString *const username = user.username;
+    NSString *const userID = user.objectId;
+    NSString *const email = user.email;
+
+    if (user == nil
+        || username == nil
+        || userID == nil
+        || email == nil) {
+        return nil;
+    }
+
+    return [[ParseUser alloc] initWithUserID:userID
+                                    username:username
+                                       email:email];
+}
+
+
+- (User *)buildLocalUser
+{
+    if  (self.email == nil
+         || self.username == nil
+         || self.password == nil
+         || self.shippingStreetAddress == nil
+         || self.shippingCity == nil
+         || self.shippingState == nil
+         || self.shippingZipCode == nil) {
         return nil;
     }
     
-    return [[User alloc] initWithUserID:userID
-                               username:username
-                                  email:email];
+    return [[User alloc] initWithUsername:self.username
+                                    email:self.email
+                    shippingStreetAddress:self.shippingStreetAddress
+                             shippingCity:self.shippingCity
+                            shippingState:self.shippingState
+                          shippingZipCode:self.shippingZipCode];
 }
 
 @end

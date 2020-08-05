@@ -17,6 +17,7 @@
 		0F225C6824CA13D10036B57F /* SellingDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F225C6724CA13D10036B57F /* SellingDetailsViewController.m */; };
 		0F225C6C24CA462C0036B57F /* BuyersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F225C6B24CA462C0036B57F /* BuyersViewController.m */; };
 		0F225C6F24CA4FE10036B57F /* PurchaserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F225C6E24CA4FE10036B57F /* PurchaserCell.m */; };
+		0F39C0F624DB3A6B0027BA23 /* ParseUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F39C0F524DB3A6B0027BA23 /* ParseUser.m */; };
 		0F69E9D524D4B2050083D0F8 /* SellingCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F69E9D424D4B2050083D0F8 /* SellingCustomCell.m */; };
 		0F69E9D924D4C1F30083D0F8 /* SellingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F69E9D824D4C1F30083D0F8 /* SellingViewController.m */; };
 		0F6C4D9D24BD18A800E2E846 /* MaskListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C4D9C24BD18A800E2E846 /* MaskListingViewController.m */; };
@@ -112,6 +113,8 @@
 		0F225C6B24CA462C0036B57F /* BuyersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyersViewController.m; sourceTree = "<group>"; };
 		0F225C6D24CA4FE10036B57F /* PurchaserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchaserCell.h; sourceTree = "<group>"; };
 		0F225C6E24CA4FE10036B57F /* PurchaserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaserCell.m; sourceTree = "<group>"; };
+		0F39C0F424DB3A6B0027BA23 /* ParseUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParseUser.h; sourceTree = "<group>"; };
+		0F39C0F524DB3A6B0027BA23 /* ParseUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParseUser.m; sourceTree = "<group>"; };
 		0F69E9D324D4B2050083D0F8 /* SellingCustomCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellingCustomCell.h; sourceTree = "<group>"; };
 		0F69E9D424D4B2050083D0F8 /* SellingCustomCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellingCustomCell.m; sourceTree = "<group>"; };
 		0F69E9D724D4C1F30083D0F8 /* SellingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellingViewController.h; sourceTree = "<group>"; };
@@ -613,6 +616,8 @@
 			children = (
 				0F9ECFDA24BF5CA70020B289 /* User.h */,
 				0F9ECFDB24BF5CA70020B289 /* User.m */,
+				0F39C0F424DB3A6B0027BA23 /* ParseUser.h */,
+				0F39C0F524DB3A6B0027BA23 /* ParseUser.m */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -1020,6 +1025,7 @@
 				0F6C4D9D24BD18A800E2E846 /* MaskListingViewController.m in Sources */,
 				0F97CD9B24BCDBFF00CA7C9E /* ParsePoster.m in Sources */,
 				0F892AC924CF774800B7A3EB /* FullImageViewController.m in Sources */,
+				0F39C0F624DB3A6B0027BA23 /* ParseUser.m in Sources */,
 				0FC67F5024C7915400852F89 /* BoughtDetailsViewController.m in Sources */,
 				0F9ECFEA24BF89330020B289 /* ParseGetter.m in Sources */,
 				0F2181B724CFB13E008F07BE /* QueryBuilder.m in Sources */,

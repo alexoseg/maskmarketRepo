@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
-#import "User.h"
+#import "ParseUser.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) NSString *title;
 @property (nonatomic, strong, readonly) NSString *city;
 @property (nonatomic, strong, readonly) NSString *state;
-@property (nonatomic, strong, readonly) User *author;
+@property (nonatomic, strong, readonly) ParseUser *author;
 @property (nonatomic, readonly) int price;
 @property (nonatomic, readonly) int maskQuantity;
 @property (nonatomic, strong, readonly) PFFileObject *maskImage;
@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
                                   title:(NSString *)title
                                    city:(NSString *)city
                                   state:(NSString *)state
-                                 author:(User *)author
+                                 author:(ParseUser *)author
                                   price:(int)price
                               maskQuantity:(int)maskQuantity
                               maskImage:(PFFileObject *)maskImage;
