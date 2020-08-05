@@ -35,6 +35,10 @@
 		0F8B916E24BE487300B1FB85 /* ImageTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B916D24BE487300B1FB85 /* ImageTitleViewController.m */; };
 		0F8B917224BE4E1F00B1FB85 /* DescLocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B917124BE4E1F00B1FB85 /* DescLocViewController.m */; };
 		0F8B917624BE53AB00B1FB85 /* PriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B917524BE53AB00B1FB85 /* PriceViewController.m */; };
+		0F92F5D024DA21CB00E95B03 /* EmailCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F92F5CF24DA21CB00E95B03 /* EmailCreationViewController.m */; };
+		0F92F5D424DA23E600E95B03 /* UsernameCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F92F5D324DA23E600E95B03 /* UsernameCreationViewController.m */; };
+		0F92F5D824DA2C0400E95B03 /* PasswordCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F92F5D724DA2C0400E95B03 /* PasswordCreationViewController.m */; };
+		0F92F5DC24DA358800E95B03 /* AddressCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F92F5DB24DA358800E95B03 /* AddressCreationViewController.m */; };
 		0F97CD6024BCCFA300CA7C9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CD5F24BCCFA300CA7C9E /* AppDelegate.m */; };
 		0F97CD6324BCCFA300CA7C9E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CD6224BCCFA300CA7C9E /* SceneDelegate.m */; };
 		0F97CD6924BCCFA300CA7C9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F97CD6724BCCFA300CA7C9E /* Main.storyboard */; };
@@ -129,6 +133,14 @@
 		0F8B917124BE4E1F00B1FB85 /* DescLocViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DescLocViewController.m; sourceTree = "<group>"; };
 		0F8B917424BE53AB00B1FB85 /* PriceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PriceViewController.h; sourceTree = "<group>"; };
 		0F8B917524BE53AB00B1FB85 /* PriceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PriceViewController.m; sourceTree = "<group>"; };
+		0F92F5CE24DA21CB00E95B03 /* EmailCreationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmailCreationViewController.h; sourceTree = "<group>"; };
+		0F92F5CF24DA21CB00E95B03 /* EmailCreationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmailCreationViewController.m; sourceTree = "<group>"; };
+		0F92F5D224DA23E600E95B03 /* UsernameCreationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UsernameCreationViewController.h; sourceTree = "<group>"; };
+		0F92F5D324DA23E600E95B03 /* UsernameCreationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UsernameCreationViewController.m; sourceTree = "<group>"; };
+		0F92F5D624DA2C0400E95B03 /* PasswordCreationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordCreationViewController.h; sourceTree = "<group>"; };
+		0F92F5D724DA2C0400E95B03 /* PasswordCreationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordCreationViewController.m; sourceTree = "<group>"; };
+		0F92F5DA24DA358800E95B03 /* AddressCreationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressCreationViewController.h; sourceTree = "<group>"; };
+		0F92F5DB24DA358800E95B03 /* AddressCreationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressCreationViewController.m; sourceTree = "<group>"; };
 		0F97CD5B24BCCFA300CA7C9E /* maskmarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = maskmarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F97CD5E24BCCFA300CA7C9E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0F97CD5F24BCCFA300CA7C9E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -406,6 +418,53 @@
 			path = "Price Controller";
 			sourceTree = "<group>";
 		};
+		0F92F5CC24DA219A00E95B03 /* Login and Create Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F92F5D924DA356C00E95B03 /* Address Creation Controller */,
+				0F92F5D524DA2BEE00E95B03 /* Password Creation Controller */,
+				0F92F5D124DA23D200E95B03 /* Username Creation Controller */,
+				0F92F5CD24DA21AA00E95B03 /* Email Creation Controller */,
+			);
+			path = "Login and Create Controllers";
+			sourceTree = "<group>";
+		};
+		0F92F5CD24DA21AA00E95B03 /* Email Creation Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0F92F5CE24DA21CB00E95B03 /* EmailCreationViewController.h */,
+				0F92F5CF24DA21CB00E95B03 /* EmailCreationViewController.m */,
+			);
+			path = "Email Creation Controller";
+			sourceTree = "<group>";
+		};
+		0F92F5D124DA23D200E95B03 /* Username Creation Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0F92F5D224DA23E600E95B03 /* UsernameCreationViewController.h */,
+				0F92F5D324DA23E600E95B03 /* UsernameCreationViewController.m */,
+			);
+			path = "Username Creation Controller";
+			sourceTree = "<group>";
+		};
+		0F92F5D524DA2BEE00E95B03 /* Password Creation Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0F92F5D624DA2C0400E95B03 /* PasswordCreationViewController.h */,
+				0F92F5D724DA2C0400E95B03 /* PasswordCreationViewController.m */,
+			);
+			path = "Password Creation Controller";
+			sourceTree = "<group>";
+		};
+		0F92F5D924DA356C00E95B03 /* Address Creation Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0F92F5DA24DA358800E95B03 /* AddressCreationViewController.h */,
+				0F92F5DB24DA358800E95B03 /* AddressCreationViewController.m */,
+			);
+			path = "Address Creation Controller";
+			sourceTree = "<group>";
+		};
 		0F97CD5224BCCFA300CA7C9E = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +532,7 @@
 		0F97CD9324BCDAE000CA7C9E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0F92F5CC24DA219A00E95B03 /* Login and Create Controllers */,
 				0F69E9D624D4C1D80083D0F8 /* Selling Controllers  */,
 				0FF9F8CE24D3AE1900AE2DA5 /* Bought Controllers */,
 				0FDF96B724D21F10008CA3F0 /* Success Popup Controllers */,
@@ -944,6 +1004,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F92F5D824DA2C0400E95B03 /* PasswordCreationViewController.m in Sources */,
+				0F92F5D024DA21CB00E95B03 /* EmailCreationViewController.m in Sources */,
 				0F8B917624BE53AB00B1FB85 /* PriceViewController.m in Sources */,
 				0FB829CF24D34722007F65A5 /* EmptyBackgroundView.m in Sources */,
 				0F225C6524CA12E20036B57F /* ViewBuyersButton.m in Sources */,
@@ -970,10 +1032,12 @@
 				0F97CD7124BCCFA400CA7C9E /* main.m in Sources */,
 				0F8B917224BE4E1F00B1FB85 /* DescLocViewController.m in Sources */,
 				0FFE3C3424C24C930028466A /* PurchaseViewController.m in Sources */,
+				0F92F5D424DA23E600E95B03 /* UsernameCreationViewController.m in Sources */,
 				0F9ECFED24BF955A0020B289 /* HomeListingCell.m in Sources */,
 				0F225C6F24CA4FE10036B57F /* PurchaserCell.m in Sources */,
 				0FDF96BE24D231C4008CA3F0 /* FloatingActionButton.m in Sources */,
 				0F6C4DA124BD1F8900E2E846 /* MaskListing.m in Sources */,
+				0F92F5DC24DA358800E95B03 /* AddressCreationViewController.m in Sources */,
 				0F8B916824BE208000B1FB85 /* MaskListingBuilder.m in Sources */,
 				0F9ECFE324BF72160020B289 /* ParseMaskListing.m in Sources */,
 				0F225C5F24C8A48C0036B57F /* LoadingPopupView.m in Sources */,
