@@ -889,7 +889,6 @@
                     </view>
                     <connections>
                         <outlet property="buyButtone" destination="U0f-Iy-Xef" id="gb9-Bi-26p"/>
-                        <outlet property="cityStateZipLabel" destination="ls4-UA-gMR" id="Oyv-qX-mtx"/>
                         <outlet property="costContainerView" destination="bYR-VI-IfF" id="5qq-oY-NLK"/>
                         <outlet property="deliveryContainerView" destination="Z2q-Q8-fg7" id="0lv-Tq-CAn"/>
                         <outlet property="descriptionLabel" destination="pf8-2Y-lwi" id="TSN-jO-XOC"/>
@@ -899,7 +898,6 @@
                         <outlet property="plusButton" destination="WaJ-gu-UE3" id="3cI-4H-cZn"/>
                         <outlet property="quantityInputLabel" destination="6Ie-P0-3bi" id="GsT-dR-XmZ"/>
                         <outlet property="quantityLabel" destination="Yhi-eW-b0q" id="mNS-7p-9WT"/>
-                        <outlet property="streetAddressLabel" destination="KFF-vp-Gwp" id="jGT-0I-eMl"/>
                         <outlet property="subTotalLabel" destination="CAf-pa-5Gy" id="Nm7-SO-3RO"/>
                         <outlet property="taxesLabel" destination="Oym-IB-4Ds" id="qxI-Qp-Mhm"/>
                         <outlet property="titleLabel" destination="dEB-6y-J63" id="Ylv-28-w4m"/>
@@ -1027,7 +1025,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7YU-WP-dAF">
-                                <rect key="frame" x="15" y="112.66666666666667" width="384" height="141.33333333333331"/>
+                                <rect key="frame" x="15" y="112.66666666666667" width="384" height="150.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ship To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAE-L2-IUO">
                                         <rect key="frame" x="15.000000000000004" y="14.999999999999998" width="54.333333333333343" height="17.333333333333329"/>
@@ -1035,29 +1033,33 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Opl-ED-hdl">
-                                        <rect key="frame" x="15" y="34.333333333333329" width="157.66666666666666" height="34.333333333333329"/>
-                                        <string key="text">1 Hacker Way
-Menlo Park, CA 94025</string>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Hacker Way" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZd-WO-ODS">
+                                        <rect key="frame" x="15" y="37.333333333333329" width="96" height="18"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity to Ship:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TbF-JX-Hch">
-                                        <rect key="frame" x="15.000000000000007" y="89.666666666666671" width="117.66666666666669" height="17.333333333333329"/>
+                                        <rect key="frame" x="15.000000000000007" y="98.666666666666671" width="117.66666666666669" height="17.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xA0-Ls-bYY">
-                                        <rect key="frame" x="15" y="78.666666666666671" width="354" height="1"/>
+                                        <rect key="frame" x="15" y="87.666666666666671" width="354" height="1"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Mvt-ag-P3C"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4NP-Cb-1nL">
-                                        <rect key="frame" x="15.000000000000004" y="108.99999999999999" width="63.333333333333343" height="17.333333333333329"/>
+                                        <rect key="frame" x="15.000000000000004" y="117.99999999999999" width="63.333333333333343" height="17.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menlo Park, CA 94025" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Opl-ED-hdl">
+                                        <rect key="frame" x="15" y="60.333333333333336" width="157.66666666666666" height="17.333333333333336"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1073,13 +1075,16 @@ Menlo Park, CA 94025</string>
                                     <constraint firstItem="xA0-Ls-bYY" firstAttribute="leading" secondItem="iAE-L2-IUO" secondAttribute="leading" id="Ogn-jm-v4w"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4NP-Cb-1nL" secondAttribute="trailing" constant="15" id="Pht-lf-X0j"/>
                                     <constraint firstItem="4NP-Cb-1nL" firstAttribute="leading" secondItem="TbF-JX-Hch" secondAttribute="leading" id="Q9R-bi-3wx"/>
+                                    <constraint firstItem="Opl-ED-hdl" firstAttribute="top" secondItem="yZd-WO-ODS" secondAttribute="bottom" constant="5" id="RJR-aI-fnd"/>
+                                    <constraint firstItem="yZd-WO-ODS" firstAttribute="leading" secondItem="iAE-L2-IUO" secondAttribute="leading" id="SEX-Gm-HvN"/>
                                     <constraint firstItem="iAE-L2-IUO" firstAttribute="leading" secondItem="7YU-WP-dAF" secondAttribute="leading" constant="15" id="SJw-0u-MXw"/>
                                     <constraint firstAttribute="bottom" secondItem="4NP-Cb-1nL" secondAttribute="bottom" constant="15" id="Zcm-YB-ZVM"/>
-                                    <constraint firstItem="Opl-ED-hdl" firstAttribute="top" secondItem="iAE-L2-IUO" secondAttribute="bottom" constant="2" id="bme-P6-4Nt"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iAE-L2-IUO" secondAttribute="trailing" constant="15" id="fnH-no-jrj"/>
                                     <constraint firstItem="TbF-JX-Hch" firstAttribute="leading" secondItem="iAE-L2-IUO" secondAttribute="leading" id="pPK-y4-gCH"/>
                                     <constraint firstItem="4NP-Cb-1nL" firstAttribute="top" secondItem="TbF-JX-Hch" secondAttribute="bottom" constant="2" id="qBb-XK-tvk"/>
+                                    <constraint firstItem="yZd-WO-ODS" firstAttribute="top" secondItem="iAE-L2-IUO" secondAttribute="bottom" constant="5" id="qs3-uL-DOe"/>
                                     <constraint firstItem="TbF-JX-Hch" firstAttribute="top" secondItem="xA0-Ls-bYY" secondAttribute="bottom" constant="10" id="uD1-G4-d0m"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yZd-WO-ODS" secondAttribute="trailing" constant="15" id="vfj-91-Um1"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mask Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zR-Pd-BrN">
@@ -1089,7 +1094,7 @@ Menlo Park, CA 94025</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hv4-og-VEK">
-                                <rect key="frame" x="15" y="279" width="384" height="89.333333333333314"/>
+                                <rect key="frame" x="15" y="288" width="384" height="89.333333333333314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracking Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FV-iy-eZS">
                                         <rect key="frame" x="15.000000000000007" y="14.999999999999998" width="126.66666666666669" height="17.333333333333329"/>
@@ -1130,9 +1135,11 @@ Menlo Park, CA 94025</string>
                     </view>
                     <navigationItem key="navigationItem" id="yQC-dg-HSN"/>
                     <connections>
+                        <outlet property="cityStateZipLabel" destination="Opl-ED-hdl" id="k49-tH-3pH"/>
                         <outlet property="infoContainerView" destination="7YU-WP-dAF" id="fB0-qW-rdt"/>
                         <outlet property="maskTitleLabel" destination="6zR-Pd-BrN" id="aYd-dN-ZhZ"/>
                         <outlet property="quantityLabel" destination="4NP-Cb-1nL" id="hHN-t2-iqC"/>
+                        <outlet property="streetAddressLabel" destination="yZd-WO-ODS" id="tEH-nB-HzF"/>
                         <outlet property="trackingContainerView" destination="Hv4-og-VEK" id="Pfr-ZU-EGR"/>
                         <outlet property="trackingTextField" destination="kOy-cp-3Tc" id="KBo-Jt-klZ"/>
                     </connections>
