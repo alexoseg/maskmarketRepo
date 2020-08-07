@@ -18,7 +18,8 @@
 
 @interface PriceViewController ()
 <UITextFieldDelegate,
-SuccessPopupDelegate>
+SuccessPopupDelegate,
+UITextFieldDelegate>
 
 #pragma mark - Properties
 
@@ -116,10 +117,34 @@ SuccessPopupDelegate>
     return YES;
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if (textField.text.length == 0) {
+        UITextPosition *const position = textField.endOfDocument;
+        textField.selectedTextRange = [textField textRangeFromPosition:position
+                                                            toPosition:position];
+        textField.text = @"$";
+    }
+}
+
+- (BOOL)textField:(UITextField *)textField
+shouldChangeCharactersInRange:(NSRange)range
+replacementString:(NSString *)string
+{
+    NSString *const newString = [textField.text stringByReplacingCharactersInRange:range
+                                                                        withString:string];
+    if (![newString hasPrefix:@"$"]) {
+        return NO;
+    }
+    
+    return YES;
+}
+
 #pragma mark - Setup
 
 - (void)setUpViews
 {
+    _priceTextField.delegate = self;
     UITabBarController *const tabBarController = (UITabBarController *)self.presentingViewController;
     UINavigationController *const sellingNavController = tabBarController.viewControllers[1];
     SellingViewController *const sellingViewController = (SellingViewController *)sellingNavController.topViewController;
