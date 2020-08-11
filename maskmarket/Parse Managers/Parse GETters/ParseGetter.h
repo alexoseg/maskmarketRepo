@@ -28,6 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)fetchUserWithID:(NSString *)userID
          withCompletion:(void (^)(PFObject * _Nullable object, NSError * _Nullable error))completion;
 
++ (void)fetchListingsBoughtAfter:(NSDate *)date
+                  withCompletion:(void (^)(NSArray * _Nullable objects, NSError * _Nullable error))completion;
+        
 - (instancetype)init NS_UNAVAILABLE;
 
 + (instancetype)new NS_UNAVAILABLE;

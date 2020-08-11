@@ -35,6 +35,7 @@ static NSString *const kSpent = @"spent";
 static NSString *const kBuyerUsername = @"buyerUsername";
 static NSString *const kCompleted = @"completed";
 static NSString *const kTrackingNumber = @"trackingNumber";
+static NSString *const kCreatedAt = @"createdAt";
 
 + (void)fetchAllListingsWithCompletion:(void (^)(NSArray * _Nullable, NSError * _Nullable))completion
 {
@@ -43,11 +44,27 @@ static NSString *const kTrackingNumber = @"trackingNumber";
                                                         whereKey:kMaskQuantity
                                                      greaterThan:@0
                                                    includingKeys:keyArray
-                                                           limit:20];
+                                                           limit:10];
     
     ParseUser *const currentUser = [UserBuilder buildUserfromPFUser:[PFUser currentUser]];
     [query whereKey:kAuthorID notEqualTo:currentUser.userID];
+    [query orderByDescending:kCreatedAt];
+    [query findObjectsInBackgroundWithBlock:completion];
+}
+
++ (void)fetchListingsBoughtAfter:(NSDate *)date
+                  withCompletion:(void (^)(NSArray * _Nullable, NSError * _Nullable))completion
+{
+    NSArray<NSString *> *const keyArray = @[kDescription, kTitle, kCity, kState, kAuthorUsername, kAuthorEmail, kAuthorID, kPrice, kPurchasedDict, kMaskQuantity, kImage];
+    PFQuery *const query = [QueryBuilder buildQueryWithClassName:kListings
+                                                        whereKey:kCreatedAt
+                                                        lessThan:date
+                                                   includingKeys:keyArray
+                                                           limit:10];
     
+    ParseUser *const currentUser = [UserBuilder buildUserfromPFUser:[PFUser currentUser]];
+    [query whereKey:kAuthorID notEqualTo:currentUser.userID];
+       
     [query findObjectsInBackgroundWithBlock:completion];
 }
 

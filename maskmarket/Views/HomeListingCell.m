@@ -10,6 +10,12 @@
 
 @implementation HomeListingCell
 
+- (void)prepareForReuse
+{
+    [super prepareForReuse];
+    _listingImageView.image = nil;
+}
+
 - (void)setUpViewsWithParseMaskListing:(ParseMaskListing *)listing
 {
     self.layer.cornerRadius = 5;

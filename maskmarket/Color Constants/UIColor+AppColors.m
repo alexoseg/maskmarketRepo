@@ -122,10 +122,10 @@
     static dispatch_once_t token;
     
     dispatch_once(&token, ^{
-        color = [UIColor colorWithRed:200.0f/255.0f
-                                green:255.0f/255.0f
-                                 blue:200.0f/255.0f
-                                alpha:1.0];
+        color = [UIColor colorWithRed:0.0f/255.0f
+                                green:153.0f/255.0f
+                                 blue:51.0f/255.0f
+                                alpha:0.2];
     });
     
     return color;

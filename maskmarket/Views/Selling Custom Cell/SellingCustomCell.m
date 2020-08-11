@@ -10,6 +10,12 @@
 
 @implementation SellingCustomCell
 
+- (void)prepareForReuse
+{
+    [super prepareForReuse];
+    _maskImageView.image = nil;
+}
+
 - (void)setUpWithParseMaskListing:(ParseMaskListing *)maskListing
 {
     self.layer.cornerRadius = 10;

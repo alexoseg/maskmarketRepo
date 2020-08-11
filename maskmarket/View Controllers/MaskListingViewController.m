@@ -24,13 +24,15 @@
 <UICollectionViewDelegate,
 UICollectionViewDataSource,
 UICollectionViewDelegateFlowLayout,
-ErrorPopupViewControllerDelegate>
+ErrorPopupViewControllerDelegate,
+UIScrollViewDelegate>
 
 #pragma mark - Properties
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSArray<ParseMaskListing *> *listingsArray;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (nonatomic) BOOL isMoreDateLoading;
 
 @end
 
@@ -55,7 +57,7 @@ static int const cellPaddingSize = 15;
 
 #pragma mark - Networking
 
--(void)fetchListings
+- (void)fetchListings
 {
     typeof(self) __weak weakSelf = self;
     [ParseGetter fetchAllListingsWithCompletion:^(NSArray * _Nullable objects, NSError * _Nullable error) {
@@ -78,6 +80,49 @@ static int const cellPaddingSize = 15;
             [strongSelf.collectionView reloadData];
         }
     }];
+}
+
+- (void)loadMoreData
+{
+    ParseMaskListing *const lastListing = _listingsArray[_listingsArray.count - 1];
+    NSLog(@"%@", lastListing.listingId);
+    typeof(self) __weak weakSelf = self;
+    [ParseGetter fetchListingsBoughtAfter:lastListing.createdAt
+                           withCompletion:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        typeof(weakSelf) strongSelf = weakSelf;
+        if (strongSelf == nil) {
+            return;
+        }
+        
+        if (error) {
+            NSLog(@"There was an error fetching more listings");
+        }
+        if (objects.count == 0) {
+            return;
+        } else {
+            NSArray<ParseMaskListing *> *const newListings = [MaskListingBuilder buildParseMaskListingsFromArray:objects];
+            NSMutableArray *newListingsArray = [[NSMutableArray alloc] initWithArray:strongSelf.listingsArray];
+            [newListingsArray addObjectsFromArray:newListings];
+            strongSelf.listingsArray = [newListingsArray copy];
+            strongSelf.isMoreDateLoading = NO;
+            [strongSelf.collectionView reloadData];
+        }
+    }];
+}
+
+#pragma mark - Scroll View Delegate Methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (!_isMoreDateLoading) {
+        NSInteger const scrollViewContentHeight = _collectionView.contentSize.height;
+        NSInteger const scrollOffsetThreshold = scrollViewContentHeight - _collectionView.bounds.size.height;
+        
+        if (scrollView.contentOffset.y > scrollOffsetThreshold && _collectionView.isDragging) {
+            _isMoreDateLoading = YES;
+            [self loadMoreData];
+        }
+    }
 }
 
 #pragma mark - Error Popup delegate methods

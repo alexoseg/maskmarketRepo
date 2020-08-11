@@ -30,6 +30,12 @@ NS_ASSUME_NONNULL_BEGIN
                                             withClassName:(NSString *)className
                                                  queryKey:(NSString *)key;
 
++ (PFQuery *)buildQueryWithClassName:(NSString *)className
+                            whereKey:(NSString *)key
+                            lessThan:(id)object
+                       includingKeys:(NSArray<NSString *> *)keys
+                               limit:(NSInteger)limit;
+
 - (instancetype)init NS_UNAVAILABLE;
 
 + (instancetype)new NS_UNAVAILABLE;
