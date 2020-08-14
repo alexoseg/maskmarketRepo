@@ -58,7 +58,7 @@ static NSString *const kPurchasedDict = @"purchasedDict";
     
     BOOL actionRequired = NO;
     for (NSString *const listingID in purchasedObjs) {
-        BOOL value = [purchasedObjs[listingID] boolValue];
+        BOOL const value = [purchasedObjs[listingID] boolValue];
         if (value == NO) {
             actionRequired = YES;
             break;

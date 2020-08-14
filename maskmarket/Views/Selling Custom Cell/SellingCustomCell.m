@@ -7,6 +7,12 @@
 //
 
 #import "SellingCustomCell.h"
+#import "UIColor+AppColors.h"
+
+static NSInteger const kCornerRadius = 10;
+static NSInteger const kContainerCornerRadius = 8;
+static double const kShadowRadius = 4.65;
+static double const kShadowOpacity = 0.29;
 
 @implementation SellingCustomCell
 
@@ -18,19 +24,19 @@
 
 - (void)setUpWithParseMaskListing:(ParseMaskListing *)maskListing
 {
-    self.layer.cornerRadius = 10;
+    self.layer.cornerRadius = kCornerRadius;
     self.backgroundColor = [UIColor whiteColor];
     self.layer.shadowColor = UIColor.blackColor.CGColor;
     self.layer.shadowOffset = CGSizeMake(0, 3);
-    self.layer.shadowRadius = 4.65;
-    self.layer.shadowOpacity = 0.29;
+    self.layer.shadowRadius = kShadowRadius;
+    self.layer.shadowOpacity = kShadowOpacity;
     self.layer.masksToBounds = false;
     
     _containerView.layer.masksToBounds = YES;
-    _containerView.layer.cornerRadius = 10;
-    _priceContainerView.layer.cornerRadius = 8;
-    _maskQuantityContainerView.layer.cornerRadius = 8;
-    _thirdContainerView.layer.cornerRadius = 8;
+    _containerView.layer.cornerRadius = kCornerRadius;
+    _priceContainerView.layer.cornerRadius = kContainerCornerRadius;
+    _maskQuantityContainerView.layer.cornerRadius = kContainerCornerRadius;
+    _thirdContainerView.layer.cornerRadius = kContainerCornerRadius;
 
     _titleLabel.text = maskListing.title;
     _descriptionLabel.text = maskListing.maskDescription;
@@ -38,15 +44,9 @@
     _maskQuantityLabel.text = [NSString stringWithFormat:@"%d masks", maskListing.maskQuantity];
 
     if (maskListing.actionRequired) {
-        _thirdContainerView.backgroundColor = [UIColor colorWithRed:219.0f/255.0f
-                                              green:22.0f/255.0f
-                                               blue:47.0f/255.0f
-                                              alpha:0.2];
+        _thirdContainerView.backgroundColor = [UIColor redViewBackgroundColor];
         _thirdLabel.text = @"Action Required";
-        _thirdLabel.textColor = [UIColor colorWithRed:219.0f/255.0f
-                                                green:22.0f/255.0f
-                                                 blue:47.0f/255.0f
-                                                alpha:1.0];
+        _thirdLabel.textColor = [UIColor redLabelColor];
     } else {
         NSDateFormatter *const formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"MMM d, yyyy"];

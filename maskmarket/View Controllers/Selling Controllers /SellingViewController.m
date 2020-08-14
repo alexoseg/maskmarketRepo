@@ -43,6 +43,7 @@ static NSInteger const kLeftRightCellPadding = 15;
 static NSInteger const kTopPadding = 15;
 static NSInteger const kBottomPadding = 15;
 static NSString *const kCreationSegue = @"creationSegue";
+static double const kHeightMultiplier = 0.8;
 
 #pragma mark - Implementation
 
@@ -86,10 +87,7 @@ static NSString *const kCreationSegue = @"creationSegue";
                 EmptyBackgroundView *const emptyView = [[EmptyBackgroundView alloc] initWithImageName:@"mask_icon"
                                                                                                 title:@"You aren't selling anything!" message:@"Once you create a mask listing, the listing itself will appear here."];
                 strongSelf.collectionView.backgroundView = emptyView;
-                [emptyView.topAnchor constraintEqualToAnchor:strongSelf.collectionView.topAnchor].active = YES;
-                [emptyView.leadingAnchor constraintEqualToAnchor:strongSelf.collectionView.leadingAnchor].active = YES;
-                [emptyView.bottomAnchor constraintEqualToAnchor:strongSelf.collectionView.bottomAnchor].active = YES;
-                [emptyView.trailingAnchor constraintEqualToAnchor:strongSelf.collectionView.trailingAnchor].active = YES;
+                [strongSelf layoutEmptyView:emptyView];
                 strongSelf.collectionView.scrollEnabled = NO;
             } else {
                 [strongSelf.collectionView setBackgroundView:nil];
@@ -100,7 +98,6 @@ static NSString *const kCreationSegue = @"creationSegue";
         }
     }];
 }
-
 
 #pragma mark - Collection View Code
 
@@ -127,7 +124,7 @@ static NSString *const kCreationSegue = @"creationSegue";
 {
     NSInteger const totalWidth = self.collectionView.bounds.size.width;
     NSInteger const cellWidth = totalWidth - (2 * kLeftRightCellPadding);
-    CGFloat const cellHeight = totalWidth * 0.80;
+    CGFloat const cellHeight = totalWidth * kHeightMultiplier;
     return CGSizeMake(cellWidth, cellHeight);
 }
 
@@ -197,6 +194,14 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
     _refreshControl.layer.zPosition = -1;
     [_collectionView insertSubview:_refreshControl
                            atIndex:0];
+}
+
+- (void)layoutEmptyView:(EmptyBackgroundView *)emptyView
+{
+    [emptyView.topAnchor constraintEqualToAnchor:_collectionView.topAnchor].active = YES;
+    [emptyView.leadingAnchor constraintEqualToAnchor:_collectionView.leadingAnchor].active = YES;
+    [emptyView.bottomAnchor constraintEqualToAnchor:_collectionView.bottomAnchor].active = YES;
+    [emptyView.trailingAnchor constraintEqualToAnchor:_collectionView.trailingAnchor].active = YES;
 }
 
 @end

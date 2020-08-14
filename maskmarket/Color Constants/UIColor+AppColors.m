@@ -146,4 +146,36 @@
     return color;
 }
 
++ (UIColor *)redViewBackgroundColor
+{
+    
+    static UIColor *color = nil;
+    static dispatch_once_t token;
+    
+    dispatch_once(&token, ^{
+        color = [UIColor colorWithRed:219.0f/255.0f
+                                green:22.0f/255.0f
+                                 blue:47.0f/255.0f
+                                alpha:0.2];;
+    });
+    
+    return color;
+}
+
++ (UIColor *)redLabelColor
+{
+    
+    static UIColor *color = nil;
+    static dispatch_once_t token;
+    
+    dispatch_once(&token, ^{
+        color = [UIColor colorWithRed:219.0f/255.0f
+                                green:22.0f/255.0f
+                                 blue:47.0f/255.0f
+                                alpha:1.0];
+    });
+    
+    return color;
+}
+
 @end

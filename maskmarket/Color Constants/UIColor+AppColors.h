@@ -30,6 +30,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIColor *)greenLabelColor;
 
++ (UIColor *)redViewBackgroundColor;
+
++ (UIColor *)redLabelColor;
+
 @end
 
 NS_ASSUME_NONNULL_END

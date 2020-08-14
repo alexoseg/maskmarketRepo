@@ -35,7 +35,7 @@
     if (self) {
         _listingId = listingId;
         _createdAt = createdAt;
-        _purchasedDict = purchasedDict;
+        _purchasedDict = [purchasedDict copy];
         _actionRequired = actionRequired;
     }
     
